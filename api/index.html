@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MITRA — Emotion-Aware Student AI | KL University</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0b0f1a;--card:#151e2e;--glass:rgba(255,255,255,.04);
+  --border:rgba(255,255,255,.08);--teal-glow:rgba(56,189,248,.25);
+  --t1:#f0f4ff;--t2:#94a3b8;--t3:#4a5568;
+  --teal:#38bdf8;--tdim:rgba(56,189,248,.12);
+  --em:#34d399;--vi:#a78bfa;--ro:#fb7185;--am:#fbbf24;--pk:#f472b6;
+  --jc:#fbbf24;--sc:#60a5fa;--ac:#f87171;--fc:#a78bfa;--stc:#fb923c;--lc:#f472b6;
+  --r:20px;--rl:28px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--t1);min-height:100vh;overflow-x:hidden}
+.orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:.1}
+.o1{width:500px;height:500px;background:#38bdf8;top:-200px;left:-150px}
+.o2{width:400px;height:400px;background:#a78bfa;bottom:-100px;right:-100px}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.25;
+background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E")}
+.page{position:relative;z-index:2}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;border-bottom:1px solid var(--border);backdrop-filter:blur(20px);background:rgba(11,15,26,.8);position:sticky;top:0;z-index:50}
+.nlogo{display:flex;align-items:center;gap:10px}
+.nicon{width:36px;height:36px;background:linear-gradient(135deg,var(--teal),var(--vi));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:0 4px 16px rgba(56,189,248,.3)}
+.ntxt{font-size:18px;font-weight:700;background:linear-gradient(135deg,var(--teal),var(--vi));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.ntabs{display:flex;gap:5px}
+.ntab{font-size:11.5px;font-weight:500;font-family:'Sora',sans-serif;color:var(--t3);background:transparent;border:1px solid transparent;border-radius:20px;padding:5px 13px;cursor:pointer;transition:all .2s}
+.ntab:hover{color:var(--t2);border-color:var(--border)}
+.ntab.active{color:var(--teal);background:var(--tdim);border-color:var(--teal-glow)}
+.nright{display:flex;align-items:center;gap:10px}
+.nbadge{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);background:var(--tdim);border:1px solid var(--teal-glow);padding:4px 11px;border-radius:20px}
+.ndot{display:inline-block;width:5px;height:5px;background:var(--em);border-radius:50%;margin-right:5px;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.nby{font-size:11px;color:var(--t3)}.nby strong{color:var(--t2);font-weight:500}
+.tpage{display:none}.tpage.active{display:block}
+
+/* HERO */
+.hero{text-align:center;padding:48px 20px 32px}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:16px}
+.eyebrow::before,.eyebrow::after{content:'';display:block;width:24px;height:1px;background:var(--teal);opacity:.4}
+.hero h1{font-family:'Crimson Pro',serif;font-size:clamp(32px,5.5vw,60px);font-weight:600;line-height:1.1;letter-spacing:-.02em;margin-bottom:12px}
+.gtxt{background:linear-gradient(135deg,var(--teal) 0%,var(--vi) 60%,var(--ro) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hsub{font-size:13.5px;color:var(--t2);max-width:460px;margin:0 auto 28px;line-height:1.7;font-weight:300}
+.stats{display:flex;justify-content:center;max-width:500px;margin:0 auto 36px;background:var(--glass);border:1px solid var(--border);border-radius:var(--r);backdrop-filter:blur(20px);overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.st{flex:1;padding:14px 16px;border-right:1px solid var(--border);text-align:center}
+.st:last-child{border-right:none}
+.sn{font-size:20px;font-weight:700;background:linear-gradient(135deg,var(--teal),var(--vi));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:3px}
+.sl{font-size:9px;color:var(--t3);font-weight:500;letter-spacing:.05em;text-transform:uppercase}
+.echips{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin-bottom:36px;padding:0 16px}
+.ec{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:500;padding:6px 12px;border-radius:20px;border:1px solid;transition:all .3s;cursor:default}
+.ec:hover{transform:translateY(-2px)}
+.ej{color:var(--jc);border-color:rgba(251,191,36,.25);background:rgba(251,191,36,.06)}.ej:hover{box-shadow:0 8px 24px rgba(251,191,36,.2)}
+.es{color:var(--sc);border-color:rgba(96,165,250,.25);background:rgba(96,165,250,.06)}.es:hover{box-shadow:0 8px 24px rgba(96,165,250,.2)}
+.ea{color:var(--ac);border-color:rgba(248,113,113,.25);background:rgba(248,113,113,.06)}.ea:hover{box-shadow:0 8px 24px rgba(248,113,113,.2)}
+.ef{color:var(--fc);border-color:rgba(167,139,250,.25);background:rgba(167,139,250,.06)}.ef:hover{box-shadow:0 8px 24px rgba(167,139,250,.2)}
+.est{color:var(--stc);border-color:rgba(251,146,60,.25);background:rgba(251,146,60,.06)}.est:hover{box-shadow:0 8px 24px rgba(251,146,60,.2)}
+.el{color:var(--lc);border-color:rgba(244,114,182,.25);background:rgba(244,114,182,.06)}.el:hover{box-shadow:0 8px 24px rgba(244,114,182,.2)}
+
+/* CHAT CARD */
+.csec{max-width:780px;margin:0 auto;padding:0 18px 56px}
+.ccard{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 40px rgba(56,189,248,.12),inset 0 1px 0 rgba(255,255,255,.06);position:relative}
+.ccard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--teal),var(--vi),var(--ro),transparent)}
+.chead{padding:16px 22px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:11px;background:rgba(255,255,255,.02)}
+.chavatar{width:40px;height:40px;background:linear-gradient(135deg,var(--teal),var(--vi));border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;box-shadow:0 4px 16px rgba(56,189,248,.25)}
+.chinfo{flex:1}
+.chname{font-size:12.5px;font-weight:600;margin-bottom:2px}
+.chstatus{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--em)}
+.sdot{width:5px;height:5px;background:var(--em);border-radius:50%;animation:blink 2s infinite}
+.chbadges{display:flex;gap:5px}
+.cbadge{font-size:9px;color:var(--t3);background:var(--glass);border:1px solid var(--border);padding:2px 8px;border-radius:20px}
+.cbadge.kl{color:var(--em);border-color:rgba(52,211,153,.2)}
+
+/* MESSAGES */
+.msgs{min-height:320px;max-height:440px;overflow-y:auto;padding:22px;display:flex;flex-direction:column;gap:16px;scroll-behavior:smooth}
+.msgs::-webkit-scrollbar{width:3px}.msgs::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+.wstate{display:flex;flex-direction:column;align-items:center;justify-content:center;height:260px;gap:12px;text-align:center}
+.wicon{width:60px;height:60px;background:linear-gradient(135deg,rgba(56,189,248,.12),rgba(167,139,250,.12));border:1px solid var(--border);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:26px}
+.wstate h3{font-family:'Crimson Pro',serif;font-size:18px;font-weight:600}
+.wstate p{font-size:12.5px;color:var(--t3);max-width:280px;line-height:1.6;font-weight:300}
+.msg{display:flex;flex-direction:column;gap:6px;animation:mi .35s cubic-bezier(.34,1.56,.64,1)}
+@keyframes mi{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.msg.u{align-items:flex-end}.msg.b{align-items:flex-start}
+.bbl{max-width:84%;padding:11px 15px;border-radius:15px;font-size:13px;line-height:1.7;font-weight:400}
+.u .bbl{background:linear-gradient(135deg,#1e3a5f,#1a2d4a);border:1px solid rgba(56,189,248,.2);border-bottom-right-radius:4px}
+.b .bbl{background:rgba(255,255,255,.04);border:1px solid var(--border);border-bottom-left-radius:4px;backdrop-filter:blur(10px)}
+.b .bbl strong{color:var(--teal)}
+.ebadge{display:inline-flex;align-items:center;gap:5px;font-size:9.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:20px;border:1px solid currentColor;opacity:.9}
+.bJoy{color:var(--jc);background:rgba(251,191,36,.08)}.bSadness{color:var(--sc);background:rgba(96,165,250,.08)}.bAnger{color:var(--ac);background:rgba(248,113,113,.08)}.bFear{color:var(--fc);background:rgba(167,139,250,.08)}.bStress{color:var(--stc);background:rgba(251,146,60,.08)}.bLove{color:var(--lc);background:rgba(244,114,182,.08)}.bNeutral{color:var(--t3);background:rgba(255,255,255,.04)}.bAcademic{color:var(--em);background:rgba(52,211,153,.08);border-color:rgba(52,211,153,.3)}.bTelugu{color:var(--teal);background:rgba(56,189,248,.08);border-color:rgba(56,189,248,.3)}
+.typing{display:flex;align-items:center;gap:5px;padding:12px 16px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:15px;border-bottom-left-radius:4px;width:fit-content}
+.td{width:7px;height:7px;background:var(--teal);border-radius:50%;animation:tb 1.4s infinite;opacity:.6}
+.td:nth-child(2){animation-delay:.2s;background:var(--vi)}.td:nth-child(3){animation-delay:.4s;background:var(--ro)}
+@keyframes tb{0%,80%,100%{transform:translateY(0);opacity:.6}40%{transform:translateY(-7px);opacity:1}}
+.crisis{max-width:85%;background:rgba(251,113,133,.08);border:1px solid rgba(251,113,133,.3);border-radius:12px;padding:12px 15px;font-size:12.5px;color:#fda4af;line-height:1.6;animation:mi .35s ease}
+
+/* QUICK */
+.qarea{padding:12px 22px;border-top:1px solid var(--border);background:rgba(255,255,255,.015)}
+.qlbl{font-size:9.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--t3);margin-bottom:8px}
+.qbtns{display:flex;gap:6px;flex-wrap:wrap}
+.qb{font-size:11.5px;font-weight:400;font-family:'Sora',sans-serif;color:var(--t2);background:var(--glass);border:1px solid var(--border);border-radius:20px;padding:5px 12px;cursor:pointer;transition:all .2s}
+.qb:hover{border-color:var(--teal-glow);color:var(--teal);background:var(--tdim);transform:translateY(-1px)}
+.qb.ac{color:var(--em);border-color:rgba(52,211,153,.2);background:rgba(52,211,153,.05)}
+.qb.ac:hover{border-color:var(--em);background:rgba(52,211,153,.12)}
+
+/* INPUT */
+.iarea{padding:16px 22px;border-top:1px solid var(--border);display:flex;gap:10px;align-items:flex-end;background:rgba(255,255,255,.02)}
+.iwrap{flex:1;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:12px;transition:border-color .2s,box-shadow .2s}
+.iwrap:focus-within{border-color:var(--teal-glow);box-shadow:0 0 0 3px rgba(56,189,248,.08)}
+textarea{width:100%;border:none;background:transparent;color:var(--t1);font-family:'Sora',sans-serif;font-size:13px;font-weight:300;padding:11px 13px;resize:none;outline:none;min-height:44px;max-height:110px;line-height:1.5}
+textarea::placeholder{color:var(--t3)}
+.sbtn{width:44px;height:44px;background:linear-gradient(135deg,var(--teal),#0ea5e9);border:none;border-radius:12px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .25s;box-shadow:0 4px 16px rgba(56,189,248,.35)}
+.sbtn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(56,189,248,.45)}.sbtn:active{transform:scale(.95)}.sbtn:disabled{background:var(--glass);box-shadow:none;cursor:not-allowed;transform:none}
+
+/* ACADEMICS PAGE — Faculty only */
+.apage{max-width:900px;margin:0 auto;padding:32px 18px 56px}
+.ph{margin-bottom:24px}
+.ph h2{font-family:'Crimson Pro',serif;font-size:32px;font-weight:600;margin-bottom:4px}
+.ph p{font-size:12px;color:var(--t3);font-weight:300}
+.acard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;position:relative;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.04)}
+.acard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--c1,var(--teal)),transparent)}
+.ach{display:flex;align-items:center;gap:9px;margin-bottom:14px}
+.aic{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.act{font-size:13px;font-weight:600}.acs{font-size:10px;color:var(--t3);font-weight:300}
+.at{width:100%;border-collapse:collapse;font-size:11.5px}
+.at th{text-align:left;color:var(--t3);font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:9.5px;padding:5px 7px;border-bottom:1px solid var(--border)}
+.at td{padding:7px 7px;color:var(--t2);border-bottom:1px solid rgba(255,255,255,.03);line-height:1.4}
+.at tr:last-child td{border-bottom:none}.at tr:hover td{color:var(--t1);background:rgba(255,255,255,.02)}
+.tag{display:inline-block;font-size:9px;font-weight:600;padding:2px 7px;border-radius:10px}
+.tg{color:var(--em);background:rgba(52,211,153,.1)}.tb{color:var(--teal);background:var(--tdim)}.to{color:var(--stc);background:rgba(251,146,60,.1)}
+.fstats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.fstat{background:var(--glass);border:1px solid var(--border);border-radius:14px;padding:14px;text-align:center}
+.fsn{font-size:22px;font-weight:700;background:linear-gradient(135deg,var(--teal),var(--vi));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:3px}
+.fsl{font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:.05em}
+.fcat{margin-bottom:20px}
+.fcath{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:7px}
+.fcnt{display:flex;flex-wrap:wrap;gap:6px}
+.fname{font-size:11px;color:var(--t2);background:var(--glass);border:1px solid var(--border);border-radius:20px;padding:4px 10px;transition:all .2s}
+.fname:hover{color:var(--t1);border-color:var(--teal-glow);background:var(--tdim)}
+
+/* ADMIN PAGE */
+.adminpage{max-width:720px;margin:0 auto;padding:32px 18px 56px}
+.alock{text-align:center;padding:60px 20px}
+.alicon{font-size:44px;margin-bottom:14px}
+.alock h3{font-family:'Crimson Pro',serif;font-size:26px;margin-bottom:7px}
+.alock p{font-size:12px;color:var(--t3);margin-bottom:20px}
+.pins{display:flex;gap:9px;justify-content:center;margin-bottom:14px}
+.pin{width:48px;height:48px;background:var(--glass);border:1px solid var(--border);border-radius:11px;color:var(--t1);font-size:20px;font-family:'Sora',sans-serif;text-align:center;outline:none;transition:border-color .2s}
+.pin:focus{border-color:var(--teal-glow)}
+.pbtn{background:linear-gradient(135deg,var(--teal),#0ea5e9);border:none;border-radius:11px;color:var(--bg);font-size:12.5px;font-weight:600;font-family:'Sora',sans-serif;padding:11px 26px;cursor:pointer;transition:all .2s}
+.pbtn:hover{transform:translateY(-1px)}
+.perr{font-size:11.5px;color:var(--ro);display:none;margin-top:8px}
+.apanel{display:none}.apanel.open{display:block}
+.asec{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-bottom:14px}
+.astitle{font-size:13px;font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:7px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.frow.s{grid-template-columns:1fr}
+.fg{display:flex;flex-direction:column;gap:5px}
+.fl{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--t3)}
+.fi,.fsel,.fta{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:9px;color:var(--t1);font-size:12.5px;font-family:'Sora',sans-serif;padding:9px 12px;outline:none;transition:border-color .2s;width:100%}
+.fi:focus,.fsel:focus,.fta:focus{border-color:var(--teal-glow)}
+.fsel option{background:#1a2a40}
+.fta{min-height:70px;resize:vertical;line-height:1.5}
+.abtn{background:linear-gradient(135deg,var(--em),#059669);border:none;border-radius:9px;color:var(--bg);font-size:11.5px;font-weight:600;font-family:'Sora',sans-serif;padding:9px 18px;cursor:pointer;transition:all .2s}
+.abtn:hover{transform:translateY(-1px)}
+.citems{margin-top:12px;display:flex;flex-direction:column;gap:7px}
+.ci{display:flex;align-items:flex-start;justify-content:space-between;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:9px;padding:9px 12px;font-size:11.5px;gap:9px}
+.cic{flex:1;line-height:1.5;color:var(--t2)}.cic strong{color:var(--teal);display:block;margin-bottom:2px}
+.dbtn{background:rgba(251,113,133,.1);border:1px solid rgba(251,113,133,.2);border-radius:7px;color:var(--ro);font-size:10px;font-family:'Sora',sans-serif;padding:3px 9px;cursor:pointer;white-space:nowrap;flex-shrink:0}
+.sbanner{background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.2);border-radius:11px;padding:11px 15px;font-size:12.5px;color:var(--em);text-align:center;display:none;margin-top:14px}
+.sbanner.show{display:block}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:28px 32px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.fl2{max-width:320px}
+.flogo{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.fltxt{font-size:16px;font-weight:700;background:linear-gradient(135deg,var(--teal),var(--vi));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.fdesc{font-size:11.5px;color:var(--t3);line-height:1.6;font-weight:300}
+.fr{display:flex;flex-direction:column;align-items:flex-end;gap:9px}
+.crd{background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:13px 16px;text-align:right}
+.crn{font-size:13px;font-weight:600;margin-bottom:2px}.crr{font-size:10.5px;color:var(--t3);font-weight:300}
+.vcbtn{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:500;font-family:'Sora',sans-serif;color:var(--teal);background:var(--tdim);border:1px solid var(--teal-glow);border-radius:20px;padding:7px 16px;cursor:pointer;transition:all .25s}
+.vcbtn:hover{background:var(--teal);color:var(--bg);transform:translateY(-1px)}
+.vcbtn svg{width:12px;height:12px;fill:currentColor}
+
+/* MODAL */
+.moverlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(12px);z-index:200;align-items:center;justify-content:center;padding:18px}
+.moverlay.open{display:flex}
+.modal{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);padding:32px;max-width:420px;width:100%;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.5);animation:moin .35s cubic-bezier(.34,1.56,.64,1)}
+@keyframes moin{from{opacity:0;transform:scale(.92) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.modal::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--vi),var(--ro));border-radius:var(--rl) var(--rl) 0 0}
+.mclose{position:absolute;top:14px;right:14px;background:var(--glass);border:1px solid var(--border);width:28px;height:28px;border-radius:50%;cursor:pointer;color:var(--t3);display:flex;align-items:center;justify-content:center;font-size:12px}
+.mavatar{width:60px;height:60px;background:linear-gradient(135deg,var(--tdim),rgba(167,139,250,.15));border:1px solid var(--border);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:27px;margin-bottom:16px}
+.modal h2{font-family:'Crimson Pro',serif;font-size:26px;font-weight:600;margin-bottom:3px}
+.mrole{font-size:11px;color:var(--t3);margin-bottom:18px;font-weight:300}
+.mrows{display:flex;flex-direction:column;gap:11px;border-top:1px solid var(--border);padding-top:18px}
+.mrow{display:flex;gap:10px;align-items:flex-start;font-size:11.5px}
+.mri{width:28px;height:28px;background:var(--glass);border:1px solid var(--border);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.mrl{font-size:9.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--t3);margin-bottom:2px}
+.mrv{color:var(--t2);line-height:1.5}.mrv a{color:var(--teal);text-decoration:none}
+
+@media(max-width:640px){nav{padding:12px 14px}.ntabs{display:none}footer{flex-direction:column;padding:24px 16px}.fr{align-items:flex-start}.modal{padding:22px 18px}.frow{grid-template-columns:1fr}.fstats{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="orbs"><div class="orb o1"></div><div class="orb o2"></div></div>
+<div class="page">
+
+<!-- NAV -->
+<nav>
+  <div class="nlogo"><div class="nicon">🧠</div><span class="ntxt">MITRA</span></div>
+  <div class="ntabs">
+    <button class="ntab active" onclick="sw('chat',this)">💬 Chat</button>
+    <button class="ntab" onclick="sw('academics',this)">👨‍🏫 Faculty</button>
+    <button class="ntab" onclick="sw('admin',this)">⚙️ Admin</button>
+  </div>
+  <div class="nright">
+    <span class="nbadge"><span class="ndot"></span>Live</span>
+    <span class="nby">By <strong>Lokesh Manepalli</strong></span>
+  </div>
+</nav>
+
+<!-- ═══ CHAT PAGE ═══ -->
+<div id="page-chat" class="tpage active">
+  <section class="hero">
+    <div class="eyebrow">KL University · CSE · Batch 2023–2027</div>
+    <h1>AI That Understands<br><span class="gtxt">How You Feel</span></h1>
+    <p class="hsub">MITRA detects your emotions and responds with empathy + real KL University faculty info. Casual ga matladandi — Telugu lo kuda!</p>
+    <div class="stats">
+      <div class="st"><div class="sn">94.7%</div><div class="sl">Accuracy</div></div>
+      <div class="st"><div class="sn">6</div><div class="sl">Emotions</div></div>
+      <div class="st"><div class="sn">32K</div><div class="sl">Samples</div></div>
+      <div class="st"><div class="sn">370+</div><div class="sl">Faculty</div></div>
+    </div>
+  </section>
+  <div class="echips">
+    <span class="ec ej">😊 Joy</span><span class="ec es">😢 Sadness</span>
+    <span class="ec ea">😠 Anger</span><span class="ec ef">😨 Fear</span>
+    <span class="ec est">😰 Stress</span><span class="ec el">❤️ Love</span>
+  </div>
+  <section class="csec">
+    <div class="ccard">
+      <div class="chead">
+        <div class="chavatar">🤝</div>
+        <div class="chinfo">
+          <div class="chname">MITRA — Mental Health Intelligent Text Recognition Assistant</div>
+          <div class="chstatus"><span class="sdot"></span>Online · Emotion-Aware · Telugu Support</div>
+        </div>
+        <div class="chbadges">
+          <span class="cbadge">BiLSTM-CNN</span>
+          <span class="cbadge kl">🎓 KL DB</span>
+        </div>
+      </div>
+      <div class="msgs" id="msgs">
+        <div class="wstate" id="wstate">
+          <div class="wicon">💬</div>
+          <h3>Hello! I'm MITRA 👋</h3>
+          <p>Bro casual ga matlaду — emotions ainá, faculty info ainá, or just chill talk ainá. Telugu lo kuda okay! 😊</p>
+        </div>
+      </div>
+      <div class="qarea" id="qarea">
+        <div class="qlbl">Try asking</div>
+        <div class="qbtns">
+          <button class="qb" onclick="up(this)">Yaar I'm so stressed 😰</button>
+          <button class="qb ac" onclick="up(this)">Who are the CSE professors?</button>
+          <button class="qb" onclick="up(this)">Sir scolded me today 😔</button>
+          <button class="qb ac" onclick="up(this)">Faculty list icheyyi ra</button>
+          <button class="qb" onclick="up(this)">నాకు చాలా stress గా ఉంది</button>
+          <button class="qb" onclick="up(this)">bro I'm bored today 😐</button>
+          <button class="qb ac" onclick="up(this)">Associate professors evaru?</button>
+        </div>
+      </div>
+      <div class="iarea">
+        <div class="iwrap">
+          <textarea id="inp" placeholder="Type here ra — English or Telugu, emotions or faculty info, anything!" rows="1" onkeydown="hk(event)" oninput="ar(this)"></textarea>
+        </div>
+        <button class="sbtn" id="sbtn" onclick="send()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ FACULTY PAGE ═══ -->
+<div id="page-academics" class="tpage">
+  <div class="apage">
+    <div class="ph">
+      <h2>CSE Faculty Directory</h2>
+      <p>KL University · Complete faculty list that MITRA uses to answer your queries</p>
+    </div>
+    <div class="fstats">
+      <div class="fstat"><div class="fsn">86</div><div class="fsl">Professors</div></div>
+      <div class="fstat"><div class="fsn">106</div><div class="fsl">Assoc. Professors</div></div>
+      <div class="fstat"><div class="fsn">180+</div><div class="fsl">Asst. Professors</div></div>
+    </div>
+    <div class="acard" style="--c1:var(--ro)">
+      <div class="ach"><div class="aic" style="background:rgba(251,113,133,.1)">🎓</div><div><div class="act">Professors</div><div class="acs">86 faculty members · Ph.D holders</div></div></div>
+      <div class="fcat"><div class="fcnt" id="prof-list"></div></div>
+    </div>
+    <br>
+    <div class="acard" style="--c1:var(--vi)">
+      <div class="ach"><div class="aic" style="background:rgba(167,139,250,.1)">👨‍🏫</div><div><div class="act">Associate Professors</div><div class="acs">106 faculty members</div></div></div>
+      <div class="fcat"><div class="fcnt" id="assoc-list"></div></div>
+    </div>
+    <br>
+    <div class="acard" style="--c1:var(--teal)">
+      <div class="ach"><div class="aic" style="background:var(--tdim)">👩‍🏫</div><div><div class="act">Assistant Professors</div><div class="acs">180+ faculty members</div></div></div>
+      <div class="fcat"><div class="fcnt" id="asst-list"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ADMIN PAGE ═══ -->
+<div id="page-admin" class="tpage">
+  <div class="adminpage">
+    <div id="alock" class="alock">
+      <div class="alicon">🔐</div>
+      <h3>Admin Access</h3>
+      <p>Enter PIN to add your own data that MITRA will use in chat.</p>
+      <div class="pins">
+        <input type="password" maxlength="1" class="pin" id="p1" oninput="np(this,'p2')" onkeydown="bp(event,this,null)">
+        <input type="password" maxlength="1" class="pin" id="p2" oninput="np(this,'p3')" onkeydown="bp(event,this,'p1')">
+        <input type="password" maxlength="1" class="pin" id="p3" oninput="np(this,'p4')" onkeydown="bp(event,this,'p2')">
+        <input type="password" maxlength="1" class="pin" id="p4" oninput="np(this,null)" onkeydown="bp(event,this,'p3')">
+      </div>
+      <button class="pbtn" onclick="cp()">Unlock</button>
+      <p class="perr" id="perr">❌ Wrong PIN!</p>
+      <p style="font-size:10px;color:var(--t3);margin-top:10px">Default PIN: 1234</p>
+    </div>
+    <div class="apanel" id="apanel">
+      <div class="ph"><h2>⚙️ Admin Panel</h2><p>Add data — MITRA uses it automatically in chat responses.</p></div>
+      <div class="asec">
+        <div class="astitle"><span>📢</span> Add Announcement</div>
+        <div class="frow s"><div class="fg"><label class="fl">Title</label><input class="fi" id="at2" placeholder="e.g. Hackathon Open"></div></div>
+        <div class="frow s"><div class="fg"><label class="fl">Details</label><textarea class="fta" id="ad" placeholder="Details..."></textarea></div></div>
+        <div class="frow">
+          <div class="fg"><label class="fl">Date</label><input class="fi" id="adate" placeholder="e.g. April 10"></div>
+          <div class="fg"><label class="fl">Category</label><select class="fsel" id="acat"><option>General</option><option>Academic</option><option>Hostel</option><option>Event</option><option>Placement</option></select></div>
+        </div>
+        <button class="abtn" onclick="aan()">+ Add Announcement</button>
+        <div class="citems" id="anl"></div>
+      </div>
+      <div class="asec">
+        <div class="astitle"><span>❓</span> Add Custom FAQ</div>
+        <div class="frow s"><div class="fg"><label class="fl">Question</label><input class="fi" id="fq" placeholder="e.g. Library card renewal process?"></div></div>
+        <div class="frow s"><div class="fg"><label class="fl">Answer</label><textarea class="fta" id="fa" placeholder="Answer MITRA should give..."></textarea></div></div>
+        <button class="abtn" onclick="afq()">+ Add FAQ</button>
+        <div class="citems" id="fql"></div>
+      </div>
+      <div class="sbanner" id="sban">✅ Saved! MITRA will use this in chat.</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fl2">
+    <div class="flogo"><div class="nicon" style="width:30px;height:30px;font-size:13px">🧠</div><span class="fltxt">MITRA</span></div>
+    <p class="fdesc">Research prototype — KL University CSE. Built for student mental well-being & academic support. Not a replacement for professional counselling.</p>
+  </div>
+  <div class="fr">
+    <div class="crd"><div class="crn">Lokesh Manepalli</div><div class="crr">Researcher · KL University · CSE 2023–2027</div></div>
+    <button class="vcbtn" onclick="om()"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>View Creator Details</button>
+  </div>
+</footer>
+</div>
+
+<!-- MODAL -->
+<div class="moverlay" id="mov" onclick="co(event)">
+  <div class="modal">
+    <button class="mclose" onclick="cm()">✕</button>
+    <div class="mavatar">👨‍💻</div>
+    <h2>Lokesh Manepalli</h2>
+    <p class="mrole">Corresponding Author & Researcher · KL University</p>
+    <div class="mrows">
+      <div class="mrow"><div class="mri">🏛️</div><div><div class="mrl">University</div><div class="mrv">KL University (KLEF), Vaddeswaram, Guntur – 522502</div></div></div>
+      <div class="mrow"><div class="mri">💻</div><div><div class="mrl">Department</div><div class="mrv">Integrated Research & Discovery (CSE) · Batch 2023–2027</div></div></div>
+      <div class="mrow"><div class="mri">📧</div><div><div class="mrl">Email</div><div class="mrv"><a href="/cdn-cgi/l/email-protection#e7d5d4d7d7d7d4d6d1d3d0a78c8b92898e918295948e939ec98e89"><span class="__cf_email__" data-cfemail="a795949797979496919390e7cccbd2c9ced1c2d5d4ced3de89cec9">[email&#160;protected]</span></a></div></div></div>
+      <div class="mrow"><div class="mri">🔬</div><div><div class="mrl">Research</div><div class="mrv">Deep Learning · NLP · Conversational AI · Student Mental Well-Being</div></div></div>
+      <div class="mrow"><div class="mri">📄</div><div><div class="mrl">Paper</div><div class="mrv">A Deep Learning–Based Emotion-Aware Conversational AI for Student Mental Well-Being (2025)</div></div></div>
+    </div>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ═══════════════════════════════════════════
+// KL UNIVERSITY FACULTY DATABASE
+// ═══════════════════════════════════════════
+const DB = {
+  general: {
+    name: "KL University (Koneru Lakshmaiah Education Foundation - KLEF)",
+    location: "Green Fields, Vaddeswaram, Guntur – 522502, Andhra Pradesh, India",
+    naac: "A++ Grade",
+    nirf: "Top 50 Engineering Colleges India (2024)",
+    helpline: "1800-599-1888",
+    counseling: "Admin Block Room 12, Mon–Sat 9:30AM–4:30PM"
+  },
+
+  faculty: {
+    professors: [
+      "Dr. Srikanth Vemuru","Dr. Raja Sekhara Prasad Kottapalli","Dr. Venkatram Nidumolu",
+      "Dr. V. Shanmukha Kumar Jagarlapudi","Dr. Prasanth Yalla","Dr. SK. Razia",
+      "Dr. Pavan Kumar Tummala","Dr. Kasula Venkata Durga Kiran","Dr. Haritha D",
+      "Dr. Sekhar Babu Boddu","Dr. B. V. Appa Rao","Dr. P. Lakshmi Prasanna",
+      "Dr. K. Ravindranath","Dr. N. V. S. Pavan Kumar","Dr. Komaragiri Raghava Rao",
+      "Dr. Miriyala Sridhar","Dr. Ghali Venkata Subba Rao","Dr. Burra Vijaya Babu",
+      "Dr. Gajula Siva Nageswara Rao","Dr. Venkata Raju Kallipalli",
+      "Dr. Kopparti V V Satyanarayana","Dr. Pabbisetti Satya Gouri Arunasri",
+      "Dr. Gurrampati Venkata Ramana Reddy","Dr. Kothamasu Kiran Kumar",
+      "Dr. Nulaka Srinivasu","Dr. P.V.R.D. Prasada Rao","Dr. Gera Pradeepini",
+      "Dr. Gandharba Swain","Dr. Pathuri Siva Kumar","Dr. Pothuraju Raja Rajeswari",
+      "Dr. K V Narasimha Rao","Dr. Atluri Vani","Dr. Rachapudi Venubabu",
+      "Dr. Raju Anitha","Dr. Pachipala Yellamma","Dr. Shaik Sagar Imambi",
+      "Dr. Jonnadula Srinivasa Rao","Dr. Moulana Mohammed","Dr. Pellakuri Vidyullatha",
+      "Dr. Kolla Bhanu Prakash","Dr. Enireddy Vamsidhar","Dr. Tatavarthy Santhi Sri",
+      "Dr. Praveen Tumuluru","Dr. Chitrapu Venkata Ramana Murthy","Dr. Padmanaban K",
+      "Dr. Velmurugan A K","Dr. Pasupuleti Venkata Chalapathi","Dr. Kunda Venkata Prasad",
+      "Dr. Burugari Vijay Kumar","Dr. Nallagatla Raghavendra Sai","Dr. Munagala Jogendra Kumar",
+      "Dr. P M Ashok Kumar","Dr. Gottumukkala P Varma","Dr. Vithya Ganesan",
+      "Dr. Shankar Rajendran","Dr. Jyothi N M","Dr. Suryakanth V Gangashetty",
+      "Dr. P Ithaya Rani","Dr. Govind D","Dr. Bandarupalli M Rao","Dr. Thati Anuradha",
+      "Dr. Kailasam Swathi","Dr. Senthil Athithan","Dr. Viswanathan","Dr. K B V Brahma Rao",
+      "Dr. T K Rama Krishna Rao","Dr. Yogesh Kumar Sharma","Dr. N Alangudi Balaji",
+      "Dr. Arpit Jain","Dr. Leena Arya","Dr. Vikram Dara","Dr. Smitha Chowdary CH",
+      "Dr. Veeramallu Bobba","Dr. V Viswanath Shenoi","Dr. Rajendra Kumar Ganiya",
+      "Dr. Gandrety Annapurna","Dr. M Ravi Sankar","Dr. Penubaka Lakshman Krishna Kumar Reddy",
+      "Dr. Kurra Rajasekhararao","Dr. Vuyyuru Krishna Reddy","Dr. Burramukku Tirapathi Reddy",
+      "Dr. Bulli Veerabhadraprasad Namburu","Dr. Konda Jayarami Reddy","Dr. S Saravanan",
+      "Dr. A Sudhirbabu","Dr. P S R C Murthy","Dr. Merajothu Chandra Naik",
+      "Dr. Deepak Kumar Barik","Dr. Girish Kumar Singh"
+    ],
+    assocProfs: [
+      "Dr. Radhika Rani Chintala","Dr. Srinivasa Rao Talagadadeevi","Dr. K. V. Chandra Sekhar",
+      "Dr. Venkata Vara Prasad Padyala","Dr. K. Ruth Ramya","Dr. Koneru Swapna",
+      "Dr. M. Venkateswarlu","Dr. M. Raja Ambethkar","Dr. M. Nageswara Rao",
+      "Dr. Inthiyaz Syed","Dr. Bondalapu Chaitanya Krishna","Dr. Fazal Noorbasha",
+      "Dr. Venkateswara Rao Peddada","Dr. Ravi Kumar Tata","Dr. Dubba Nagamalleswari",
+      "Dr. Kotagiri Vishnu Divya","Dr. Mylavarapu Seetharama Prasad","Dr. Mutyaboyina Latha",
+      "Dr. Vasipalli Subba Reddy","Dr. Cheerla Sreevardhan","Dr. Chakka Raghava Prasad",
+      "Dr. Tamma Eswar Lal","Dr. Gunturi Sunita Sundari","Dr. Anna Venkateswara Rao",
+      "Dr. Alaparthi Venkateswara Rao","Dr. Tiruveedhula Sajana","Dr. Wuriti Sridhar",
+      "Dr. Chitta M. H. Saibaba","Dr. Popuri Gopi Krishna","Dr. Shaik Mohammed Gouse",
+      "Dr. Mahamuda Shaik","Dr. P. Srivenkata Srinivasa Sridhar","Dr. Gogineni Krishna Chaitanya",
+      "Dr. Maguluri Lakshmana Phaneendra","Dr. Modepalli Kavitha","Dr. Yalavarthi Usha Devi",
+      "Dr. Swarna Anjalidevi","Dr. Kinjirapu Ashesh","Dr. Kuchibhotla Swarna",
+      "Dr. Vipul Agarwal","Dr. CH Srinivas Preetham Reddy","Dr. Aswin Kumer S V",
+      "Dr. Mothukuri Radha","Dr. Dinesh Kumar A","Dr. Neelima Choudaraju",
+      "Dr. Pichuka V V S Srinivas","Dr. Shanmugan S","Dr. V Daya Sagar Ketaraju",
+      "Dr. Anusha Marouthu","Dr. Vidya Sagar Ponnam","Dr. Kanike Raghavendra Kumar",
+      "Dr. A Abdul Rahman","Dr. Veerubhotla S R K Sarma","Dr. Veerraju Gampala",
+      "Dr. Balajee R M","Dr. Sadam Kavitha","Dr. Sangaraju Hrushikesava Raju",
+      "Dr. Nilu Singh","Dr. Ratna Kanth Nelapati","Dr. Shaik Hasane Ahammad",
+      "Dr. Batta Uma Maheswara Rao","Dr. N V Kiran Movva","Dr. S S Aravinth",
+      "Dr. Nagarjuna Karyemsetty","Dr. Suneetha Bulla","Dr. G Raja","Dr. Srithar",
+      "Dr. Akhilesh Kumar Dubey","Dr. Thatavarthi Satish","Dr. Asesh Kumar Tripathy",
+      "Dr. Basant Sah","Dr. M M Yamunadevi","Dr. Nesarani","Dr. Vuyyuru Veeraankalu",
+      "Dr. A R Deepa","Dr. Elangovan Guruva Reddy","Dr. Vijaya Kumar Reddy Radha",
+      "Dr. Ammisetti Veeraswamy","Dr. Gurrala Jagadish","Dr. Gopi Adapa","Dr. Bechoo Lal",
+      "Dr. Arunabhaskar Karri","Dr. Nagamani Chippada","Dr. Kodavali Lakshminarayana",
+      "Dr. V Sreenivasa Rao","Dr. V V Jaya Rama Krishnaiah","Dr. Jayavarapu Karthik",
+      "Dr. R Mahendran","Dr. Sam Kumar GV","Dr. Munish Kumar","Dr. Satrughan Kumar",
+      "Dr. Penubaka Balaji","Dr. Surya Kiran Chebrolu","Dr. Phaneendra Kumar B L N",
+      "Dr. Kambala Vijaya Kumar","Dr. Subhamastan Rao Tunmapudi","Dr. Badugu Samatha",
+      "Dr. Madabattula P J Santosh Kumar","Dr. Merigala Rajanidevi","Dr. Ranjan Kumar Mahapatra",
+      "Dr. Ganta Jacob Victor","Dr. Pakalapati Manikya Prasuna","Dr. V Sivaramaraju Vetukuri",
+      "Dr. Kuraganty Shanthi","Dr. M Geetha","Dr. P V Venkateswara Rao",
+      "Dr. Jugunta Suresh Babu","Dr. Chinnarao Kurangi","Dr. Venkataravana Nayak K",
+      "Dr. Vemula Rajiv Jetson","Ch. Ratna Jyothi"
+    ],
+    asstProfs: [
+      "Dr. Dinesh Kumar Gaddameedi","Dr. Srinivasa Rao Tagallamudi","Dr. Sajja Venkata Subrahmanyam",
+      "Dr. Deevi Satish Kumar","Dr. Nalamalapu Konda Reddy","Dr. Jampani Satish Babu",
+      "Dr. Dukkipati Sudha","Dr. Talasila Vamsidhar","Dr. Vasantham Vijay Kumar",
+      "Dr. Nichenametla Rajesh","Dr. Dama Anand","Dr. Sudarsa Dora Babu",
+      "Dr. Premalatha Velagapalli","Dr. Buragadda Kiran Kumar","Dr. V Bhanu Venkata Naga Prasad",
+      "Dr. Ravipati Kumara Swamy","Dr. Amara S A L G Gopala Gupta","Dr. Nerella Srimannarayana",
+      "Dr. Chandol Mohan Kumar","Dr. E Rajesh Kumar","Dr. Syed Karimunnisa",
+      "Dr. T Ganesan","Dr. Koneru Sireesha","Dr. Nellutla Ravinder",
+      "Dr. Tirupthamara Seshaiyer Rajeswari","Dr. U Harita","Dr. Jammalamadaka Rajasekhar",
+      "Dr. Bhimavarapu Usha Rani","Dr. Edara Sreelatha","Dr. Dasari Ramesh",
+      "Dr. Puvvada Nagesh","Dr. Maddali Radha Madhavi","Dr. Vinay Atgur",
+      "Dr. Nadakuduru Venkata Ramana","Dr. Ch Bhupati","Dr. Pathuri Bindu",
+      "Dr. Mutyala Suresh","Dr. Nalleboyina Vijaya","Dr. Ankita Tiwari",
+      "Dr. V Deepak","Dr. Kolli Deepti","Dr. Belguru Venkateswarlu",
+      "Dr. Maganti Syamala","Dr. Somavarapu Vamseekrishna","Dr. Devarapalli Raghu",
+      "Dr. V Raviteja Kanakala","Dr. Kukkamalla Anil Kumar","Dr. Amara Rama Devi",
+      "Dr. Irrinki Mohana Krishna","Dr. Puppala Ramya","Dr. Smritlekha Das",
+      "Dr. Twinkle Dasari","Dr. Kantam Rajeshkumar","Dr. Shaida Farhad",
+      "Dr. Sreedhar Burada","Dr. Venkateswarlu Chandu","Dr. Aravindan",
+      "Dr. Venkateswarlu Gundu","Dr. T Krishnan","Dr. Renuka K",
+      "Dr. Bada Pavan Kumar","Dr. Sajja Tulasi Krishna","Dr. Y Ramakrishna",
+      "Dr. G S Bansode","Dr. Abhijit Santra","Dr. Shameem C C",
+      "Dr. Annam Venkata Padmavathi","Dr. P Dharmendrakumar","Dr. Gurunadha Gupta K",
+      "Dr. Rajesh Bingu","Dr. Imran Ali","Dr. Raveendra Reddy Enumula",
+      "Dr. Puttagunta Murali Krishna","Dr. S N V Jyotsnadevi Kosuru",
+      "Dr. Thella Preethi Priyanka","Dr. Naveen Mukkapati","Dr. Yarasu Madhavilatha",
+      "Dr. Mohd Shamsh Tabarej","Dr. K Selvam","Dr. P V Anusha",
+      "Dr. Sadhana Kodali","Dr. Venkateswara Rao Cheekaty","Dr. S V Suresh Babu Matla",
+      "Dr. Katakam Venkateswara Rao","Dr. Solleti Phani Kumar","Dr. Venkata Rao Maddumala",
+      "Dr. S Balasubramani","Dr. Eswar Patnala","Dr. Uppuluri Lakshmi Soundharya",
+      "Dr. Vankdoth Srinivasarao","Dr. K V Gurnatham Naidu","Dr. K Gowrisankar",
+      "Dr. R S M Lakshmi Patibandla","Dr. Gurusamy Murugesan","Dr. Mohsin Fayaz",
+      "Dr. Pramodh Krishna","Dr. Addanki Mounika","Dr. Challapalli Jhansi Rani",
+      "Dr. Gundu Sirisha","Dr. Panguluri Padmavathi","Dr. Yelisela Rajesh",
+      "Dr. Anusha Papasani","Dr. J Venkata Sandhya Arundathi","Dr. Thaseentaj Shaik",
+      "Dr. Betam Suresh","Dr. T Chitharakumar","Dr. Prabakaran P",
+      "Dr. Shalini R","Dr. Muppidi Soma Sundara Rao","Dr. Saiyed Faiayaz Waris",
+      "Dr. Athimakuri Satish Kumar","Dr. Sampathirao Suneetha","Dr. Lakineni Prasanna Kumar",
+      "Dr. Amit Kumar Kar","Dr. Maheswari Bandi","Dr. Edupuganti Mounika",
+      "Dr. Nirupma Pathak","Dr. Kondapally Krishna Sunalini","Dr. Spandana Mande",
+      "Dr. Tummala Purnima","Dr. Lobsang Darge","Dr. Vaddurai Maneesha",
+      "Dr. Chanumolu Kiran Kumar","Dr. Prakash M K","Dr. Saziya Tabbassum",
+      "Dr. Katamala Mallikarjuna Mallu","Dr. Kumaresan","Dr. Prerna Mohit",
+      "Dr. Saranya K","Dr. Sandeep Kumar Sharma","Dr. Moshe Dayan Sirapangi",
+      "Dr. Uddaraju Sushmitha","Dr. P Thamilselvan","Dr. Terumalasetti Sailaja",
+      "Dr. Koppagiri Jyothsna Devi","Dr. Sujith A","Dr. Chandrapati Lalitha Manasa",
+      "Dr. Yagnam Nagesh","Dr. Gurudatta Verma","Dr. Tanumay Mandal",
+      "Dr. Rashmi Rekha Ram","Dr. Diplesh Gautam","Dr. Rayala Ranjitkumar",
+      "Dr. Bhrugumalla Leela Venkata Seetharama Aditya","Dr. Valeti Nagarjuna",
+      "Dr. Losetty Lakshmaiah","Dr. Sanjeev Kumar Mandal","Dr. Merugu Sree Ram Kiran Nag",
+      "Dr. Nagasundaram S","Dr. Subhadayouti Bose","Dr. Nagavali Saka",
+      "Dr. Rajib Kumar Dash","Dr. Anitha Rani Palakayala","Dr. Baireddy Vijayendra Reddy",
+      "Dr. Satyabrat Sahoo",
+      "Ms. M. V. B. T. Santhi","Mr. Kunchellapalli Stephen Victor","Ms. Kolachana Swetha",
+      "Mr. C M A K Zeelan Basha","Mr. Sornapudi Sandeep Kumar","Mr. Anumalasetty Satya Kalyan",
+      "Mr. Madhavarapu Chandan","Mr. Banda Sai Sandeep","Mr. Challa Ramaiah",
+      "Ms. Chodavarapu L N Deepika","Mr. Vege Hari Kiran","Mr. Jonnalagadda Surya Kiran",
+      "Bobbili Satyanarayana Murthy","Bhavani Vasantha","Valasapalli Mounika",
+      "Shaik Shaikshavali","Pisini Saivijay","Yamini Tondepu","Anusha Ponnuru",
+      "Janjhyam Venkata Naga Ramesh","Tirandasu Ravi Kumar","Ande Pavankumar",
+      "Panguluri Mounica","Savaram Mythreya","Garigipati Rama Krishna",
+      "Doddi Suresh Kumar","Garikapati Naga Lakshmi Sowjanya","Arepalli Gopi",
+      "Akurathi Anjana Devi","Dr. Vinnakota Sai Durga Tejaswi",
+      "Sabitha Chinnam","Ravela Chitti Babu","Ranjith Kumar Rupani",
+      "Tushar Kanti De","Bommisetty Yamini Supriya","Lavanya Dara",
+      "Pottasiri Chandra Mohanarai","Supriya Pacha","B Namasivayam",
+      "S N Lakshmi Malluvalasa","Gobinda Chandra Das","Nagendra Babu Rajaboina",
+      "Nagaraju Choutapalli","T Hemalatha","Suneetha Bandeela",
+      "Vuyyuru Lakshma Reddy","Phani Khanth CH","Tulasi Rajesh",
+      "Dayanidhi Mahapatra","M J D Ebinezer","Pothula Hymavathi",
+      "Miriyala Markandeyulu","Anil Chintalapudi","Dineshnath",
+      "Mandava Manjusha","Chopparapu Gowthami","Alapati Smitha Kranthi",
+      "Dasari Manasa","Anantharamaiah Vengala","Arumalla Nagaraju",
+      "Manasa Patibandla","Linginedi Ushasree","Inakollu Aswani",
+      "Kasturi Sai Sandeep","Vuyyyuru Lalitha","Dhanesh Kumar",
+      "Rayi Krupadanam","Paladugu Venkateswara Rao","Vudata BVNK Suresh",
+      "Kotavarapu Radha","Padhyala Priyadarsan","Prasanthi Valluri",
+      "B V N Prasad P","Bellam Surendra Babu","Pandiyanathan",
+      "Dinesh Chandra Pancharia","Sukham Romen Singh","Somayajulu Ayyalasomayajula",
+      "Uma Maheswari Rayudu","B Santha Kumar","Natha Priya","Deepthi Natha",
+      "Swarna Mahesh Naidu","G N Sowjanya","Rodda Dilip Kumar",
+      "Seetharam R","Vemula Jasmine Sowmya","B Arun Kumar","P Ramadevi",
+      "Kuchipudi Prasanth Kumar","Syed Mohd Azmal","Annamaraju Thanuja",
+      "Mani Mohan Dupaty","Kavitha Sarihaddu","Praneetha Alur",
+      "Rajeswari Setti","Govindu Komali","Kishore Dasari",
+      "Komatigunta Nagaraju","Dr. Anumula Sruthi","Rudramani Bhutia",
+      "R Lakshmi Durga","Pothumarthi Sridevi","Nasaramma Kadiyam",
+      "Goli Balavenkata Kishore","Bangaru Balakrishna","Gnanadeepthi Bitra",
+      "Yenugu Sivaramaiah","Gudipalli Tejo Lakshmi","Konisi Sailaja",
+      "Nimmakanti Mery Sowjanya","Rambabu Kalathoti","Khadri Lalitha Vanisree",
+      "Gurram Anjaneyulu","Thota Lakshmi Deepika Roy","Gudapati Suneetha",
+      "Lavanya Gunda","Ramakrishna Regulagadda","Narne Sravanthi",
+      "Yampati Bhagyalakshmi","Aruna Kolukulapalli","Sathuluri Sagar",
+      "G V Ramana Reddy","Talatoti Ratna Kumar","Donepudi Rohini",
+      "Pinapati Lakshmana Rao","Sai Krishna Edupuganti","Sriramsetti Dakshayani",
+      "B Elangovan","Bandi Prameelarani","Mallampati Mahesh",
+      "Chandolu Naga Mani","Anusha Gudise","Tumikipalli Nagaraju Yadav",
+      "Lakshman B","Jutu Gopaiah","Kedar Nadh Ragam",
+      "Bandla Nirosha","Rompicherla Sathviki","Maram Subba Rao",
+      "K V Subramanyam","Nayapamu Ramarao","Badde Praveen Prakash",
+      "Alluri Swathi","Aditya Ankana","Repudi Pitchaiah",
+      "A S Phanikumar S","Mohammad Ashique Azad","Aravind Nalamothu",
+      "Talluri Jyothi","Kantaraju Kanaparthi","Aplarthi Kumuda",
+      "Kunchala Gopala Krishna","Billa Manindhar","Jonathan Bathula",
+      "Bobba Sahithi","Dudigam Ramya","Ketineni Venkateswari",
+      "Kakumanu Ashok Babu","Thokala Srivalli","Thota Krishna Kishore",
+      "Vadde Sujan Babu","Tirumalasetty Sai Lakshmi","N Mallikharjuna Rao",
+      "Shaik Jilani Basha","Elisabeth Susan Devarapalli","Sathyavani Addanki",
+      "Badipati Sivaganga","Srilakshmiramya Sakamudi","Rakesh Kancharla",
+      "Loya Chandrajit Yadav","Venkata Rao Javvaji","Velchu Balaji",
+      "Sandeep Nanda","Singaraju Srinivasulu","Shaik Sanheera",
+      "C V K Sirisha","Kotturu Prasuna","Chiranjeevi Kothapalli",
+      "Suroju Lekhana Srilakshmi","Gavini Naga Pavani","Aluri Sanjeev Kumar",
+      "Aswini Devi Talupuri","Kari Venkata Sumanth","Sasi Himabindu Ande",
+      "Pravallika Koppula","Stalin Babu J","Cherukupalli Prabhavathi",
+      "Yadavalli Saroja","Seelam Visweswara Rao","Gutti Yateesh",
+      "Talasila Taraka Rajeswara Rao","P Venkata Saichandra Kanth",
+      "Madala Nagendra Babu","Delhipolice Chandu","Jalli Abhigna",
+      "Nalluri Venkatamadhubindu","Sudhakar Atchala","A Amrutavalli",
+      "Poonuru Vijayabhaskar","Koyya Avinash","Bhukya Jabber",
+      "Gangavarapu Mohanarao","Kapalavayi Raja Yasodhar","P Raghavendra Rao",
+      "Siva Sankar Nayak Meghavathu","Yathirajula V K D Bhavani",
+      "Vejendla Balanaga Ajay","Prathipati Sunil Prem Kumar",
+      "Appalaswamy Basana","Dayinaboyina Ramanjaneyulu","Narala Aswani",
+      "Farzana Syed","R Kannan","Talari Aruna Kumari","Sangeeta Prusty",
+      "Rose Rani Chavvakula","Sai Babu Veesam","Dhananjay K Dubey",
+      "Mandepudi Neelima Hima Bindu","Shaik Mahabub Basha","Yenumala Sankararao",
+      "Banala Ranjith Kumar","Yellepeddi Krishna Assish","Akash Chatterjee",
+      "Kolla Lakshmi Narayana","Mr. P. Kiran Kumar","Ms. Nalla Siva Ganga Kumari",
+      "Mr. Jasti Satya Sreekanth","Bhavanam Venkata Suresh Reddy","Boyina Kavya",
+      "Nimmagadda Yaswanth Sai","Inampudi Ajaykumar","Mr. M. Vishnuvardhan",
+      "Ramesh Mylapalli","Thamodharan","Gorrepati Rajani Reddy",
+      "Anju Aravind","Selvamuthukumar T","Rajasekhara Babu Lingisetti",
+      "Hari Kolliboyina","V Shiyam","Vijay R","Saravanan S T",
+      "Pullakurthi Sai Laukya","Sai Sudhindra Aditya Vadluri"
+    ]
+  }
+};
+
+let customData = {announcements:[], faqs:[]};
+let conversationHistory = [];
+
+// Populate faculty page
+function populateFaculty() {
+  const profList = document.getElementById('prof-list');
+  const assocList = document.getElementById('assoc-list');
+  const asstList = document.getElementById('asst-list');
+  DB.faculty.professors.forEach(n => {
+    const s = document.createElement('span'); s.className = 'fname'; s.textContent = n; profList.appendChild(s);
+  });
+  DB.faculty.assocProfs.forEach(n => {
+    const s = document.createElement('span'); s.className = 'fname'; s.textContent = n; assocList.appendChild(s);
+  });
+  DB.faculty.asstProfs.forEach(n => {
+    const s = document.createElement('span'); s.className = 'fname'; s.textContent = n; asstList.appendChild(s);
+  });
+}
+populateFaculty();
+
+function buildDBContext() {
+  const f = DB.faculty;
+  let ctx = `=== KL UNIVERSITY COMPLETE DATABASE ===\n\n`;
+  ctx += `UNIVERSITY: ${DB.general.name}, ${DB.general.location}. NAAC: ${DB.general.naac}, NIRF: ${DB.general.nirf}, Helpline: ${DB.general.helpline}\n`;
+  ctx += `COUNSELING: ${DB.general.counseling}\n\n`;
+
+  // FACULTY
+  ctx += `--- CSE FACULTY (${f.professors.length + f.assocProfs.length + f.asstProfs.length} total) ---\n`;
+  ctx += `PROFESSORS (${f.professors.length}): ${f.professors.join(', ')}\n\n`;
+  ctx += `ASSOCIATE PROFESSORS (${f.assocProfs.length}): ${f.assocProfs.join(', ')}\n\n`;
+  ctx += `ASSISTANT PROFESSORS (${f.asstProfs.length}): ${f.asstProfs.join(', ')}\n`;
+
+  if(customData.announcements.length) ctx += `\nANNOUNCEMENTS: ${customData.announcements.map(a=>`[${a.cat}] ${a.title}: ${a.det}`).join(' | ')}\n`;
+  if(customData.faqs.length) ctx += `\nCUSTOM FAQs: ${customData.faqs.map(f=>`Q:${f.q} A:${f.a}`).join(' | ')}\n`;
+  return ctx;
+}
+
+// ═══════════════════════════════════════════
+// UPGRADED SYSTEM PROMPT — Casual, Telugu support, proper emotion replies
+// ═══════════════════════════════════════════
+const SYSTEM_PROMPT = () => `You are MITRA (Mental Health Intelligent Text Recognition Assistant) — a super chill, emotion-aware AI buddy for KL University CSE students. You're like that one senior who's always there for you — funny, caring, straight-up honest, and never boring.
+
+${buildDBContext()}
+
+━━━ LANGUAGE DETECTION ━━━
+- If the user writes in Telugu (e.g. నాకు, అయ్యో, చదువు, stress గా, ఏమైంది, etc.), you MUST respond FULLY in Telugu. Use natural, casual Telugu that students actually speak — not formal textbook Telugu.
+- If the user mixes Telugu + English (Tenglish), match that same mix.
+- If the user writes in English, respond in English.
+- NEVER switch language without reason.
+
+━━━ EMOTION DETECTION ━━━
+Detect primary emotion from: Joy, Sadness, Anger, Fear, Stress, Love, Neutral, Academic (purely factual/academic question with zero emotional tone)
+
+━━━ RESPONSE STYLE — THIS IS CRITICAL ━━━
+You talk like a close friend, NOT a robot. Think Gen Z + Indian student energy.
+
+FOR EMOTIONAL messages (Sadness, Stress, Fear, Anger):
+- Be GENUINELY empathetic. Don't give generic "I understand how you feel" nonsense.
+- Actually ENGAGE with what they said. Reference their specific situation.
+- Use warm casual Indian phrases naturally: "arey ra", "yaar", "bro", "machha", "tension ledu", "you got this ra", "chill maar", "sach bol raha hoon", "serious ga vintunnava"
+- Offer real comfort + maybe 1 actionable tip or perspective shift
+- Keep it conversational, 2-4 sentences max
+- For Telugu emotional msgs: "ayyo ra", "tension padakku", "nuvvu chestuv ra", "mee gurinchi naaku telusu", "strong ga unda"
+
+FOR ACADEMIC/FACULTY queries:
+- Give accurate info from the database. Be direct and clear.
+- Use **bold** for names and key info
+- Keep it helpful but still warm — not robotic
+
+FOR CASUAL / SMALL TALK:
+- Match their energy! If they're bored, be funny. If they're hyped, hype back.
+- Be genuinely funny sometimes — dad jokes, relatable student struggles, etc.
+- "bro facts", "no cap", "same ra same", etc.
+
+FOR MIXED (emotion + academic):
+- Address emotion FIRST with empathy, then smoothly transition to the academic info
+
+━━━ STRICT RULES ━━━
+1. NEVER start with "I understand", "I can see", "It sounds like", "I'm here for you" — these are robotic openers. Vary it every single time.
+2. NEVER give the same response twice. Each reply is unique and contextual.
+3. Keep responses 2-4 sentences. Concise but warm.
+4. Only mention Counseling Cell (Admin Block Room 12, 9:30AM–4:30PM) for SERIOUS distress — not for every sad message.
+5. Respond ONLY as valid JSON: {"emotion":"EMOTION","response":"RESPONSE","lang":"en|te"}
+6. No markdown in JSON. No extra text outside JSON.`;
+
+const RISK = ['suicide','kill myself','end my life','want to die','hurt myself','self harm','no reason to live','చనిపోవాలి','నాకు బ్రతకాలని లేదు'];
+let busy = false;
+
+function ar(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,110)+'px'}
+function hk(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send()}}
+function up(b){const t=document.getElementById('inp');t.value=b.textContent.trim();ar(t);t.focus()}
+function esc(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>')}
+function sc(){const m=document.getElementById('msgs');m.scrollTop=m.scrollHeight}
+function hw(){
+  const w=document.getElementById('wstate');if(w)w.remove();
+  const q=document.getElementById('qarea');if(q)q.remove();
+}
+function addU(txt){
+  hw();
+  const d=document.createElement('div');d.className='msg u';
+  d.innerHTML=`<div class="bbl">${esc(txt)}</div>`;
+  document.getElementById('msgs').appendChild(d);sc();
+}
+function addTyping(){
+  const d=document.createElement('div');d.className='msg b';d.id='typmsg';
+  d.innerHTML=`<div class="typing"><div class="td"></div><div class="td"></div><div class="td"></div></div>`;
+  document.getElementById('msgs').appendChild(d);sc();
+}
+function rmTyping(){const t=document.getElementById('typmsg');if(t)t.remove()}
+function addBot(emotion,response,lang){
+  rmTyping();
+  const em={Joy:'😊',Sadness:'😢',Anger:'😠',Fear:'😨',Stress:'😰',Love:'❤️',Neutral:'💬',Academic:'🎓'};
+  const formatted=response.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
+  const badgeClass = lang==='te' ? 'bTelugu' : `b${emotion}`;
+  const badgeLabel = lang==='te' ? `🇮🇳 Telugu · ${emotion}` : `${em[emotion]||'💬'} ${emotion}`;
+  const d=document.createElement('div');d.className='msg b';
+  d.innerHTML=`<span class="ebadge ${badgeClass}">${badgeLabel}</span><div class="bbl">${formatted}</div>`;
+  document.getElementById('msgs').appendChild(d);sc();
+}
+function addCrisis(lang){
+  rmTyping();
+  const msg = lang==='te'
+    ? `⚠️ <strong>Ra, nee gurinchi naaku chala worry ga undi.</strong><br>దయచేసి KL Counseling Cell కి వెళ్ళు — Admin Block Room 12, Mon–Sat 9:30AM–4:30PM. Nuvvu alone kaadu, help teeskovadam tappadu. 💙`
+    : `⚠️ <strong>Ra, I'm really worried about you right now.</strong><br>Please go to KL Counseling Cell — Admin Block Room 12, open Mon–Sat 9:30AM–4:30PM. You're not alone in this, someone will listen. 💙`;
+  const d=document.createElement('div');d.className='msg b';
+  d.innerHTML=`<div class="crisis">${msg}</div>`;
+  document.getElementById('msgs').appendChild(d);sc();
+}
+
+// Detect if message has Telugu characters
+function isTeluguMsg(text) {
+  return /[\u0C00-\u0C7F]/.test(text);
+}
+
+async function send(){
+  if(busy)return;
+  const ta=document.getElementById('inp');
+  const text=ta.value.trim();if(!text)return;
+  ta.value='';ar(ta);
+  busy=true;document.getElementById('sbtn').disabled=true;
+  addU(text);
+  const lang = isTeluguMsg(text) ? 'te' : 'en';
+  if(RISK.some(k=>text.toLowerCase().includes(k))){
+    addCrisis(lang);
+    conversationHistory.push({role:"user",content:text});
+    conversationHistory.push({role:"assistant",content:'{"emotion":"Sadness","response":"Crisis support provided.","lang":"'+lang+'"}'});
+    busy=false;document.getElementById('sbtn').disabled=false;return;
+  }
+  addTyping();
+  conversationHistory.push({role:"user",content:text});
+  if(conversationHistory.length > 20) conversationHistory = conversationHistory.slice(-20);
+  try{
+    const res=await fetch("/api/chat",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({
+        model:"claude-sonnet-4-20250514",
+        max_tokens:1000,
+        system:SYSTEM_PROMPT(),
+        messages:conversationHistory
+      })
+    });
+    const data=await res.json();
+    const raw=data.content.map(i=>i.text||'').join('').replace(/```json|```/g,'').trim();
+    const p=JSON.parse(raw);
+    addBot(p.emotion, p.response, p.lang||lang);
+    conversationHistory.push({role:"assistant",content:raw});
+  }catch(err){
+    rmTyping();
+    addBot('Neutral',"Bro oka chinna issue aindi, try again cheyyi ra! 😅",'en');
+    if(conversationHistory.length>0) conversationHistory.pop();
+  }
+  busy=false;document.getElementById('sbtn').disabled=false;ta.focus();
+}
+
+// TAB SWITCHING
+function sw(tab,btn){
+  document.querySelectorAll('.tpage').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.ntab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('page-'+tab).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ADMIN
+function np(el,nid){if(el.value&&nid)document.getElementById(nid).focus()}
+function bp(e,el,pid){if(e.key==='Backspace'&&!el.value&&pid)document.getElementById(pid).focus()}
+function cp(){
+  const pin=['p1','p2','p3','p4'].map(id=>document.getElementById(id).value).join('');
+  if(pin==='1234'){
+    document.getElementById('alock').style.display='none';
+    document.getElementById('apanel').classList.add('open');
+  }else{
+    document.getElementById('perr').style.display='block';
+    ['p1','p2','p3','p4'].forEach(id=>document.getElementById(id).value='');
+    document.getElementById('p1').focus();
+    setTimeout(()=>document.getElementById('perr').style.display='none',2500);
+  }
+}
+function showSave(){const b=document.getElementById('sban');b.classList.add('show');setTimeout(()=>b.classList.remove('show'),2500)}
+function rl(cid,arr,fn){
+  const c=document.getElementById(cid);c.innerHTML='';
+  arr.forEach((item,i)=>{
+    const d=document.createElement('div');d.className='ci';
+    d.innerHTML=`<div class="cic">${fn(item)}</div><button class="dbtn" onclick="di('${cid}',${i})">Remove</button>`;
+    c.appendChild(d);
+  });
+}
+function aan(){
+  const t=document.getElementById('at2').value.trim(),det=document.getElementById('ad').value.trim(),
+        d=document.getElementById('adate').value.trim(),c=document.getElementById('acat').value;
+  if(!t)return;
+  customData.announcements.push({title:t,det,date:d,cat:c});
+  rl('anl',customData.announcements,i=>`<strong>[${i.cat}] ${i.title}</strong>${i.date?' — '+i.date:''}<br>${i.det}`);
+  ['at2','ad','adate'].forEach(id=>document.getElementById(id).value='');showSave();
+}
+function afq(){
+  const q=document.getElementById('fq').value.trim(),a=document.getElementById('fa').value.trim();
+  if(!q||!a)return;
+  customData.faqs.push({q,a});
+  rl('fql',customData.faqs,i=>`<strong>${i.q}</strong>${i.a}`);
+  ['fq','fa'].forEach(id=>document.getElementById(id).value='');showSave();
+}
+function di(cid,idx){
+  if(cid==='anl'){customData.announcements.splice(idx,1);rl('anl',customData.announcements,i=>`<strong>${i.title}</strong>`)}
+  else{customData.faqs.splice(idx,1);rl('fql',customData.faqs,i=>`<strong>${i.q
