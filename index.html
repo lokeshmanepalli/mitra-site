@@ -838,4 +838,13 @@ function afq(){
 }
 function di(cid,idx){
   if(cid==='anl'){customData.announcements.splice(idx,1);rl('anl',customData.announcements,i=>`<strong>${i.title}</strong>`)}
-  else{customData.faqs.splice(idx,1);rl('fql',customData.faqs,i=>`<strong>${i.q
+  else{customData.faqs.splice(idx,1);rl('fql',customData.faqs,i=>`<strong>${i.q}</strong>`)}
+}
+
+// MODAL
+function om(){document.getElementById('mov').classList.add('open')}
+function cm(){document.getElementById('mov').classList.remove('open')}
+function co(e){if(e.target===document.getElementById('mov'))cm()}
+</script>
+</body>
+</html>
