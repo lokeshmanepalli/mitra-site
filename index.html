@@ -640,11 +640,11 @@ function buildDBContext() {
   ctx += `UNIVERSITY: ${DB.general.name}, ${DB.general.location}. NAAC: ${DB.general.naac}, NIRF: ${DB.general.nirf}, Helpline: ${DB.general.helpline}\n`;
   ctx += `COUNSELING: ${DB.general.counseling}\n\n`;
 
-  // FACULTY
-  ctx += `--- CSE FACULTY (${f.professors.length + f.assocProfs.length + f.asstProfs.length} total) ---\n`;
-  ctx += `PROFESSORS (${f.professors.length}): ${f.professors.join(', ')}\n\n`;
-  ctx += `ASSOCIATE PROFESSORS (${f.assocProfs.length}): ${f.assocProfs.join(', ')}\n\n`;
-  ctx += `ASSISTANT PROFESSORS (${f.asstProfs.length}): ${f.asstProfs.join(', ')}\n`;
+  // FACULTY (minimal for token limit)
+  ctx += `--- CSE FACULTY (370+ total) ---\n`;
+  ctx += `PROFESSORS (${f.professors.length}): ${f.professors.slice(0,15).join(', ')} and ${f.professors.length - 15} more\n`;
+  ctx += `ASSOCIATE PROFESSORS (${f.assocProfs.length}): ${f.assocProfs.slice(0,15).join(', ')} and ${f.assocProfs.length - 15} more\n`;
+  ctx += `ASSISTANT PROFESSORS (${f.asstProfs.length}): ${f.asstProfs.slice(0,15).join(', ')} and ${f.asstProfs.length - 15} more\n`;
 
   if(customData.announcements.length) ctx += `\nANNOUNCEMENTS: ${customData.announcements.map(a=>`[${a.cat}] ${a.title}: ${a.det}`).join(' | ')}\n`;
   if(customData.faqs.length) ctx += `\nCUSTOM FAQs: ${customData.faqs.map(f=>`Q:${f.q} A:${f.a}`).join(' | ')}\n`;
