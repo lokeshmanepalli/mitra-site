@@ -218,7 +218,6 @@ footer{border-top:1px solid var(--border);padding:28px 32px;display:flex;justify
   <div class="ntabs">
     <button class="ntab active" onclick="sw('chat',this)">💬 Chat</button>
     <button class="ntab" onclick="sw('academics',this)">👨‍🏫 Faculty</button>
-    <button class="ntab" onclick="sw('admin',this)">⚙️ Admin</button>
   </div>
   <div class="nright">
     <span class="nbadge"><span class="ndot"></span>Live</span>
@@ -313,48 +312,6 @@ footer{border-top:1px solid var(--border);padding:28px 32px;display:flex;justify
     <div class="acard" style="--c1:var(--teal)">
       <div class="ach"><div class="aic" style="background:var(--tdim)">👩‍🏫</div><div><div class="act">Assistant Professors</div><div class="acs">180+ faculty members</div></div></div>
       <div class="fcat"><div class="fcnt" id="asst-list"></div></div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ ADMIN PAGE ═══ -->
-<div id="page-admin" class="tpage">
-  <div class="adminpage">
-    <div id="alock" class="alock">
-      <div class="alicon">🔐</div>
-      <h3>Admin Access</h3>
-      <p>Enter PIN to add your own data that MITRA will use in chat.</p>
-      <div class="pins">
-        <input type="password" maxlength="1" class="pin" id="p1" oninput="np(this,'p2')" onkeydown="bp(event,this,null)">
-        <input type="password" maxlength="1" class="pin" id="p2" oninput="np(this,'p3')" onkeydown="bp(event,this,'p1')">
-        <input type="password" maxlength="1" class="pin" id="p3" oninput="np(this,'p4')" onkeydown="bp(event,this,'p2')">
-        <input type="password" maxlength="1" class="pin" id="p4" oninput="np(this,null)" onkeydown="bp(event,this,'p3')">
-      </div>
-      <button class="pbtn" onclick="cp()">Unlock</button>
-      <p class="perr" id="perr">❌ Wrong PIN!</p>
-      <p style="font-size:10px;color:var(--t3);margin-top:10px">Default PIN: 1234</p>
-    </div>
-    <div class="apanel" id="apanel">
-      <div class="ph"><h2>⚙️ Admin Panel</h2><p>Add data — MITRA uses it automatically in chat responses.</p></div>
-      <div class="asec">
-        <div class="astitle"><span>📢</span> Add Announcement</div>
-        <div class="frow s"><div class="fg"><label class="fl">Title</label><input class="fi" id="at2" placeholder="e.g. Hackathon Open"></div></div>
-        <div class="frow s"><div class="fg"><label class="fl">Details</label><textarea class="fta" id="ad" placeholder="Details..."></textarea></div></div>
-        <div class="frow">
-          <div class="fg"><label class="fl">Date</label><input class="fi" id="adate" placeholder="e.g. April 10"></div>
-          <div class="fg"><label class="fl">Category</label><select class="fsel" id="acat"><option>General</option><option>Academic</option><option>Hostel</option><option>Event</option><option>Placement</option></select></div>
-        </div>
-        <button class="abtn" onclick="aan()">+ Add Announcement</button>
-        <div class="citems" id="anl"></div>
-      </div>
-      <div class="asec">
-        <div class="astitle"><span>❓</span> Add Custom FAQ</div>
-        <div class="frow s"><div class="fg"><label class="fl">Question</label><input class="fi" id="fq" placeholder="e.g. Library card renewal process?"></div></div>
-        <div class="frow s"><div class="fg"><label class="fl">Answer</label><textarea class="fta" id="fa" placeholder="Answer MITRA should give..."></textarea></div></div>
-        <button class="abtn" onclick="afq()">+ Add FAQ</button>
-        <div class="citems" id="fql"></div>
-      </div>
-      <div class="sbanner" id="sban">✅ Saved! MITRA will use this in chat.</div>
     </div>
   </div>
 </div>
