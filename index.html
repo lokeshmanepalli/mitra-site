@@ -25,8 +25,6 @@ body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--t1);min-heig
 body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.25;
 background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E")}
 .page{position:relative;z-index:2}
-
-/* NAV */
 nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;border-bottom:1px solid var(--border);backdrop-filter:blur(20px);background:rgba(11,15,26,.8);position:sticky;top:0;z-index:50}
 .nlogo{display:flex;align-items:center;gap:10px}
 .nicon{width:36px;height:36px;background:linear-gradient(135deg,var(--teal),var(--vi));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:0 4px 16px rgba(56,189,248,.3)}
@@ -43,8 +41,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 3
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 .nby{font-size:11px;color:var(--t3)}.nby strong{color:var(--t2);font-weight:500}
 .tpage{display:none}.tpage.active{display:block}
-
-/* HERO */
 .hero{text-align:center;padding:48px 20px 32px}
 .eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:16px}
 .eyebrow::before,.eyebrow::after{content:'';display:block;width:24px;height:1px;background:var(--teal);opacity:.4}
@@ -65,8 +61,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 3
 .ef{color:var(--fc);border-color:rgba(167,139,250,.25);background:rgba(167,139,250,.06)}.ef:hover{box-shadow:0 8px 24px rgba(167,139,250,.2)}
 .est{color:var(--stc);border-color:rgba(251,146,60,.25);background:rgba(251,146,60,.06)}.est:hover{box-shadow:0 8px 24px rgba(251,146,60,.2)}
 .el{color:var(--lc);border-color:rgba(244,114,182,.25);background:rgba(244,114,182,.06)}.el:hover{box-shadow:0 8px 24px rgba(244,114,182,.2)}
-
-/* CHAT */
 .csec{max-width:780px;margin:0 auto;padding:0 18px 56px}
 .ccard{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 40px rgba(56,189,248,.12),inset 0 1px 0 rgba(255,255,255,.06);position:relative}
 .ccard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--teal),var(--vi),var(--ro),transparent)}
@@ -113,7 +107,6 @@ textarea{width:100%;border:none;background:transparent;color:var(--t1);font-fami
 textarea::placeholder{color:var(--t3)}
 .sbtn{width:44px;height:44px;background:linear-gradient(135deg,var(--teal),#0ea5e9);border:none;border-radius:12px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .25s;box-shadow:0 4px 16px rgba(56,189,248,.35)}
 .sbtn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(56,189,248,.45)}.sbtn:active{transform:scale(.95)}.sbtn:disabled{background:var(--glass);box-shadow:none;cursor:not-allowed;transform:none}
-
 /* SAFETY CHECK */
 .spage{max-width:780px;margin:0 auto;padding:36px 18px 56px}
 .shero{text-align:center;padding:0 0 28px}
@@ -153,7 +146,7 @@ textarea::placeholder{color:var(--t3)}
 .smsg-ta:focus{border-color:rgba(52,211,153,.4);box-shadow:0 0 0 3px rgba(52,211,153,.07)}
 .smsg-ta::placeholder{color:var(--t3)}
 .scheck-row{display:flex;align-items:center;justify-content:space-between;margin-top:13px;gap:10px;flex-wrap:wrap}
-.scheck-hint{font-size:11px;color:var(--t3);display:flex;align-items:center;gap:5px}
+.scheck-hint{font-size:11px;color:var(--t3)}
 .scheck-btn{display:flex;align-items:center;gap:7px;background:linear-gradient(135deg,#34d399,#0ea5e9);border:none;border-radius:11px;color:#0b0f1a;font-size:13px;font-weight:700;font-family:'Sora',sans-serif;padding:11px 22px;cursor:pointer;transition:all .25s;box-shadow:0 4px 16px rgba(52,211,153,.3)}
 .scheck-btn:hover{transform:translateY(-2px)}.scheck-btn:active{transform:scale(.95)}
 .scheck-btn svg{width:15px;height:15px;fill:currentColor}
@@ -220,8 +213,6 @@ textarea::placeholder{color:var(--t3)}
 .sreset{display:flex;justify-content:center;margin-top:6px}
 .sreset-btn{font-size:12px;font-weight:500;font-family:'Sora',sans-serif;color:var(--t3);background:var(--glass);border:1px solid var(--border);border-radius:20px;padding:7px 18px;cursor:pointer;transition:all .2s}
 .sreset-btn:hover{color:var(--t2);border-color:var(--teal-glow)}
-
-/* FACULTY */
 .apage{max-width:900px;margin:0 auto;padding:32px 18px 56px}
 .ph{margin-bottom:24px}
 .ph h2{font-family:'Crimson Pro',serif;font-size:32px;font-weight:600;margin-bottom:4px}
@@ -238,8 +229,6 @@ textarea::placeholder{color:var(--t3)}
 .fcnt{display:flex;flex-wrap:wrap;gap:6px}
 .fname{font-size:11px;color:var(--t2);background:var(--glass);border:1px solid var(--border);border-radius:20px;padding:4px 10px;transition:all .2s}
 .fname:hover{color:var(--t1);border-color:var(--teal-glow);background:var(--tdim)}
-
-/* FOOTER */
 footer{border-top:1px solid var(--border);padding:26px 32px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
 .fl2{max-width:320px}
 .flogo{display:flex;align-items:center;gap:8px;margin-bottom:8px}
@@ -251,8 +240,6 @@ footer{border-top:1px solid var(--border);padding:26px 32px;display:flex;justify
 .vcbtn{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:500;font-family:'Sora',sans-serif;color:var(--teal);background:var(--tdim);border:1px solid var(--teal-glow);border-radius:20px;padding:7px 16px;cursor:pointer;transition:all .25s}
 .vcbtn:hover{background:var(--teal);color:var(--bg);transform:translateY(-1px)}
 .vcbtn svg{width:12px;height:12px;fill:currentColor}
-
-/* MODAL */
 .moverlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(12px);z-index:200;align-items:center;justify-content:center;padding:18px}
 .moverlay.open{display:flex}
 .modal{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);padding:32px;max-width:420px;width:100%;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.5);animation:moin .35s cubic-bezier(.34,1.56,.64,1)}
@@ -267,7 +254,6 @@ footer{border-top:1px solid var(--border);padding:26px 32px;display:flex;justify
 .mri{width:28px;height:28px;background:var(--glass);border:1px solid var(--border);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
 .mrl{font-size:9.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--t3);margin-bottom:2px}
 .mrv{color:var(--t2);line-height:1.5}.mrv a{color:var(--teal);text-decoration:none}
-
 @media(max-width:640px){nav{padding:12px 14px}.ntabs{gap:3px}.ntab{padding:4px 9px;font-size:10.5px}footer{flex-direction:column;padding:24px 16px}.fr{align-items:flex-start}.modal{padding:22px 18px}.fstats{grid-template-columns:1fr 1fr}.scheck-row{flex-direction:column;align-items:stretch}.scheck-btn{justify-content:center}.fuzzy-grid{grid-template-columns:1fr}}
 </style>
 </head>
@@ -275,7 +261,6 @@ footer{border-top:1px solid var(--border);padding:26px 32px;display:flex;justify
 <div class="orbs"><div class="orb o1"></div><div class="orb o2"></div></div>
 <div class="page">
 
-<!-- NAV -->
 <nav>
   <div class="nlogo"><div class="nicon">🧠</div><span class="ntxt">MITRA</span></div>
   <div class="ntabs">
@@ -289,7 +274,7 @@ footer{border-top:1px solid var(--border);padding:26px 32px;display:flex;justify
   </div>
 </nav>
 
-<!-- ═══ CHAT PAGE ═══ -->
+<!-- CHAT PAGE -->
 <div id="page-chat" class="tpage active">
   <section class="hero">
     <div class="eyebrow">KL University · CSE · Batch 2023–2027</div>
@@ -331,13 +316,13 @@ footer{border-top:1px solid var(--border);padding:26px 32px;display:flex;justify
         <div class="qlbl">Try asking</div>
         <div class="qbtns">
           <button class="qb" onclick="up(this)">Yaar I'm so stressed 😰</button>
-          <button class="qb ac" onclick="up(this)">Hostel fees enta ra?</button>
+          <button class="qb ac" onclick="up(this)">CSE fees enta ra?</button>
           <button class="qb" onclick="up(this)">Sir scolded me today 😔</button>
-          <button class="qb ac" onclick="up(this)">List all professors</button>
+          <button class="qb ac" onclick="up(this)">Hostel AC room fees?</button>
           <button class="qb" onclick="up(this)">నాకు చాలా stress గా ఉంది</button>
-          <button class="qb ac" onclick="up(this)">Attendance rule enti?</button>
+          <button class="qb ac" onclick="up(this)">Scholarship details cheppu</button>
           <button class="qb" onclick="up(this)">bro I'm bored 😐</button>
-          <button class="qb ac" onclick="up(this)">College fees details</button>
+          <button class="qb ac" onclick="up(this)">List all professors</button>
         </div>
       </div>
       <div class="iarea">
@@ -352,7 +337,7 @@ footer{border-top:1px solid var(--border);padding:26px 32px;display:flex;justify
   </section>
 </div>
 
-<!-- ═══ SAFETY CHECK PAGE ═══ -->
+<!-- SAFETY CHECK PAGE -->
 <div id="page-safety" class="tpage">
   <div class="spage">
     <div class="shero">
@@ -412,52 +397,22 @@ footer{border-top:1px solid var(--border);padding:26px 32px;display:flex;justify
         </div>
       </div>
     </div>
-
-    <!-- FUZZY METERS -->
     <div class="fuzzy-section" id="fuzzy-section">
-      <div class="fuzzy-title"><span>📊</span> Fuzzy Linguistic Indicators — Paper 3 Algorithm (Real-time)</div>
+      <div class="fuzzy-title"><span>📊</span> Fuzzy Linguistic Indicators — Paper 3 Algorithm</div>
       <div class="fuzzy-grid">
-        <div class="fmeter" id="fm-kd">
-          <div class="fmeter-top"><span class="fmeter-name">Keyword Density</span><span class="fmeter-code">KD</span></div>
-          <div class="fmeter-track"><div class="fmeter-fill" id="ff-kd" style="width:0%"></div></div>
-          <div class="fmeter-bottom"><span class="fmeter-val" id="fv-kd">0.000</span><span class="fmeter-level" id="fl-kd">Low</span></div>
-        </div>
-        <div class="fmeter" id="fm-us">
-          <div class="fmeter-top"><span class="fmeter-name">Urgency Score</span><span class="fmeter-code">US</span></div>
-          <div class="fmeter-track"><div class="fmeter-fill" id="ff-us" style="width:0%"></div></div>
-          <div class="fmeter-bottom"><span class="fmeter-val" id="fv-us">0.000</span><span class="fmeter-level" id="fl-us">Low</span></div>
-        </div>
-        <div class="fmeter" id="fm-pi">
-          <div class="fmeter-top"><span class="fmeter-name">Promotional Intent</span><span class="fmeter-code">PI</span></div>
-          <div class="fmeter-track"><div class="fmeter-fill" id="ff-pi" style="width:0%"></div></div>
-          <div class="fmeter-bottom"><span class="fmeter-val" id="fv-pi">0.000</span><span class="fmeter-level" id="fl-pi">Low</span></div>
-        </div>
-        <div class="fmeter" id="fm-sps">
-          <div class="fmeter-top"><span class="fmeter-name">Suspicious Patterns</span><span class="fmeter-code">SPS</span></div>
-          <div class="fmeter-track"><div class="fmeter-fill" id="ff-sps" style="width:0%"></div></div>
-          <div class="fmeter-bottom"><span class="fmeter-val" id="fv-sps">0.000</span><span class="fmeter-level" id="fl-sps">Low</span></div>
-        </div>
+        <div class="fmeter" id="fm-kd"><div class="fmeter-top"><span class="fmeter-name">Keyword Density</span><span class="fmeter-code">KD</span></div><div class="fmeter-track"><div class="fmeter-fill" id="ff-kd" style="width:0%"></div></div><div class="fmeter-bottom"><span class="fmeter-val" id="fv-kd">0.000</span><span class="fmeter-level" id="fl-kd">Low</span></div></div>
+        <div class="fmeter" id="fm-us"><div class="fmeter-top"><span class="fmeter-name">Urgency Score</span><span class="fmeter-code">US</span></div><div class="fmeter-track"><div class="fmeter-fill" id="ff-us" style="width:0%"></div></div><div class="fmeter-bottom"><span class="fmeter-val" id="fv-us">0.000</span><span class="fmeter-level" id="fl-us">Low</span></div></div>
+        <div class="fmeter" id="fm-pi"><div class="fmeter-top"><span class="fmeter-name">Promotional Intent</span><span class="fmeter-code">PI</span></div><div class="fmeter-track"><div class="fmeter-fill" id="ff-pi" style="width:0%"></div></div><div class="fmeter-bottom"><span class="fmeter-val" id="fv-pi">0.000</span><span class="fmeter-level" id="fl-pi">Low</span></div></div>
+        <div class="fmeter" id="fm-sps"><div class="fmeter-top"><span class="fmeter-name">Suspicious Patterns</span><span class="fmeter-code">SPS</span></div><div class="fmeter-track"><div class="fmeter-fill" id="ff-sps" style="width:0%"></div></div><div class="fmeter-bottom"><span class="fmeter-val" id="fv-sps">0.000</span><span class="fmeter-level" id="fl-sps">Low</span></div></div>
       </div>
     </div>
-
-    <!-- RESULTS -->
     <div class="sresult" id="sresult">
       <div class="sverdict" id="sverdict">
-        <div class="sverdict-top">
-          <div class="sverdict-icon" id="sv-icon"></div>
-          <div class="sverdict-info">
-            <div class="sverdict-lbl">MITRA's Verdict</div>
-            <div class="sverdict-main" id="sv-main"></div>
-            <div class="sverdict-exp" id="sv-exp"></div>
-          </div>
-        </div>
+        <div class="sverdict-top"><div class="sverdict-icon" id="sv-icon"></div><div class="sverdict-info"><div class="sverdict-lbl">MITRA's Verdict</div><div class="sverdict-main" id="sv-main"></div><div class="sverdict-exp" id="sv-exp"></div></div></div>
         <div class="sconf-lbl"><span>Confidence</span><span id="sv-pct"></span></div>
         <div class="sconf-track"><div class="sconf-fill" id="sv-fill" style="width:0%"></div></div>
       </div>
-      <div class="striggers">
-        <div class="striggers-ttl"><span>🔬</span> Word-Level Analysis — What Triggered the Detection</div>
-        <div class="tlist" id="tlist"></div>
-      </div>
+      <div class="striggers"><div class="striggers-ttl"><span>🔬</span> Word-Level Analysis — What Triggered Detection</div><div class="tlist" id="tlist"></div></div>
       <div class="sadvice" id="sadvice">
         <div class="sadvice-ttl"><span id="sa-icon"></span><span id="sa-ttl"></span></div>
         <div class="sadvice-txt" id="sa-txt"></div>
@@ -468,7 +423,7 @@ footer{border-top:1px solid var(--border);padding:26px 32px;display:flex;justify
   </div>
 </div>
 
-<!-- ═══ FACULTY PAGE ═══ -->
+<!-- FACULTY PAGE -->
 <div id="page-academics" class="tpage">
   <div class="apage">
     <div class="ph"><h2>CSE Faculty Directory</h2><p>KL University · Complete faculty list — MITRA uses this to answer your queries</p></div>
@@ -477,22 +432,12 @@ footer{border-top:1px solid var(--border);padding:26px 32px;display:flex;justify
       <div class="fstat"><div class="fsn">106</div><div class="fsl">Assoc. Professors</div></div>
       <div class="fstat"><div class="fsn">180+</div><div class="fsl">Asst. Professors</div></div>
     </div>
-    <div class="acard" style="--c1:var(--ro)">
-      <div class="ach"><div class="aic" style="background:rgba(251,113,133,.1)">🎓</div><div><div class="act">Professors</div><div class="acs">86 · Ph.D</div></div></div>
-      <div class="fcnt" id="prof-list"></div>
-    </div>
-    <div class="acard" style="--c1:var(--vi)">
-      <div class="ach"><div class="aic" style="background:rgba(167,139,250,.1)">👨‍🏫</div><div><div class="act">Associate Professors</div><div class="acs">106 members</div></div></div>
-      <div class="fcnt" id="assoc-list"></div>
-    </div>
-    <div class="acard" style="--c1:var(--teal)">
-      <div class="ach"><div class="aic" style="background:var(--tdim)">👩‍🏫</div><div><div class="act">Assistant Professors</div><div class="acs">180+ members</div></div></div>
-      <div class="fcnt" id="asst-list"></div>
-    </div>
+    <div class="acard" style="--c1:var(--ro)"><div class="ach"><div class="aic" style="background:rgba(251,113,133,.1)">🎓</div><div><div class="act">Professors</div><div class="acs">86 · Ph.D</div></div></div><div class="fcnt" id="prof-list"></div></div>
+    <div class="acard" style="--c1:var(--vi)"><div class="ach"><div class="aic" style="background:rgba(167,139,250,.1)">👨‍🏫</div><div><div class="act">Associate Professors</div><div class="acs">106 members</div></div></div><div class="fcnt" id="assoc-list"></div></div>
+    <div class="acard" style="--c1:var(--teal)"><div class="ach"><div class="aic" style="background:var(--tdim)">👩‍🏫</div><div><div class="act">Assistant Professors</div><div class="acs">180+ members</div></div></div><div class="fcnt" id="asst-list"></div></div>
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="fl2">
     <div class="flogo"><div class="nicon" style="width:30px;height:30px;font-size:13px">🧠</div><span class="fltxt">MITRA</span></div>
@@ -505,7 +450,6 @@ footer{border-top:1px solid var(--border);padding:26px 32px;display:flex;justify
 </footer>
 </div>
 
-<!-- MODAL -->
 <div class="moverlay" id="mov" onclick="co(event)">
   <div class="modal">
     <button class="mclose" onclick="cm()">✕</button>
@@ -526,7 +470,7 @@ footer{border-top:1px solid var(--border);padding:26px 32px;display:flex;justify
 // ══════════════════════════════════════
 // FACULTY DATABASE
 // ══════════════════════════════════════
-const FAC = {
+const FAC={
   professors:["Dr. Srikanth Vemuru","Dr. Raja Sekhara Prasad Kottapalli","Dr. Venkatram Nidumolu","Dr. V. Shanmukha Kumar Jagarlapudi","Dr. Prasanth Yalla","Dr. SK. Razia","Dr. Pavan Kumar Tummala","Dr. Kasula Venkata Durga Kiran","Dr. Haritha D","Dr. Sekhar Babu Boddu","Dr. B. V. Appa Rao","Dr. P. Lakshmi Prasanna","Dr. K. Ravindranath","Dr. N. V. S. Pavan Kumar","Dr. Komaragiri Raghava Rao","Dr. Miriyala Sridhar","Dr. Ghali Venkata Subba Rao","Dr. Burra Vijaya Babu","Dr. Gajula Siva Nageswara Rao","Dr. Venkata Raju Kallipalli","Dr. Kopparti V V Satyanarayana","Dr. Pabbisetti Satya Gouri Arunasri","Dr. Gurrampati Venkata Ramana Reddy","Dr. Kothamasu Kiran Kumar","Dr. Nulaka Srinivasu","Dr. P.V.R.D. Prasada Rao","Dr. Gera Pradeepini","Dr. Gandharba Swain","Dr. Pathuri Siva Kumar","Dr. Pothuraju Raja Rajeswari","Dr. K V Narasimha Rao","Dr. Atluri Vani","Dr. Rachapudi Venubabu","Dr. Raju Anitha","Dr. Pachipala Yellamma","Dr. Shaik Sagar Imambi","Dr. Jonnadula Srinivasa Rao","Dr. Moulana Mohammed","Dr. Pellakuri Vidyullatha","Dr. Kolla Bhanu Prakash","Dr. Enireddy Vamsidhar","Dr. Tatavarthy Santhi Sri","Dr. Praveen Tumuluru","Dr. Chitrapu Venkata Ramana Murthy","Dr. Padmanaban K","Dr. Velmurugan A K","Dr. Pasupuleti Venkata Chalapathi","Dr. Kunda Venkata Prasad","Dr. Burugari Vijay Kumar","Dr. Nallagatla Raghavendra Sai","Dr. Munagala Jogendra Kumar","Dr. P M Ashok Kumar","Dr. Gottumukkala P Varma","Dr. Vithya Ganesan","Dr. Shankar Rajendran","Dr. Jyothi N M","Dr. Suryakanth V Gangashetty","Dr. P Ithaya Rani","Dr. Govind D","Dr. Bandarupalli M Rao","Dr. Thati Anuradha","Dr. Kailasam Swathi","Dr. Senthil Athithan","Dr. Viswanathan","Dr. K B V Brahma Rao","Dr. T K Rama Krishna Rao","Dr. Yogesh Kumar Sharma","Dr. N Alangudi Balaji","Dr. Arpit Jain","Dr. Leena Arya","Dr. Vikram Dara","Dr. Smitha Chowdary CH","Dr. Veeramallu Bobba","Dr. V Viswanath Shenoi","Dr. Rajendra Kumar Ganiya","Dr. Gandrety Annapurna","Dr. M Ravi Sankar","Dr. Penubaka Lakshman Krishna Kumar Reddy","Dr. Kurra Rajasekhararao","Dr. Vuyyuru Krishna Reddy","Dr. Burramukku Tirapathi Reddy","Dr. Bulli Veerabhadraprasad Namburu","Dr. Konda Jayarami Reddy","Dr. S Saravanan","Dr. A Sudhirbabu","Dr. P S R C Murthy","Dr. Merajothu Chandra Naik","Dr. Deepak Kumar Barik","Dr. Girish Kumar Singh"],
   assocProfs:["Dr. Radhika Rani Chintala","Dr. Srinivasa Rao Talagadadeevi","Dr. K. V. Chandra Sekhar","Dr. Venkata Vara Prasad Padyala","Dr. K. Ruth Ramya","Dr. Koneru Swapna","Dr. M. Venkateswarlu","Dr. M. Raja Ambethkar","Dr. M. Nageswara Rao","Dr. Inthiyaz Syed","Dr. Bondalapu Chaitanya Krishna","Dr. Fazal Noorbasha","Dr. Venkateswara Rao Peddada","Dr. Ravi Kumar Tata","Dr. Dubba Nagamalleswari","Dr. Kotagiri Vishnu Divya","Dr. Mylavarapu Seetharama Prasad","Dr. Mutyaboyina Latha","Dr. Vasipalli Subba Reddy","Dr. Cheerla Sreevardhan","Dr. Chakka Raghava Prasad","Dr. Tamma Eswar Lal","Dr. Gunturi Sunita Sundari","Dr. Anna Venkateswara Rao","Dr. Alaparthi Venkateswara Rao","Dr. Tiruveedhula Sajana","Dr. Wuriti Sridhar","Dr. Chitta M. H. Saibaba","Dr. Popuri Gopi Krishna","Dr. Shaik Mohammed Gouse","Dr. Mahamuda Shaik","Dr. P. Srivenkata Srinivasa Sridhar","Dr. Gogineni Krishna Chaitanya","Dr. Maguluri Lakshmana Phaneendra","Dr. Modepalli Kavitha","Dr. Yalavarthi Usha Devi","Dr. Swarna Anjalidevi","Dr. Kinjirapu Ashesh","Dr. Kuchibhotla Swarna","Dr. Vipul Agarwal","Dr. CH Srinivas Preetham Reddy","Dr. Aswin Kumer S V","Dr. Mothukuri Radha","Dr. Dinesh Kumar A","Dr. Neelima Choudaraju","Dr. Pichuka V V S Srinivas","Dr. Shanmugan S","Dr. V Daya Sagar Ketaraju","Dr. Anusha Marouthu","Dr. Vidya Sagar Ponnam","Dr. Kanike Raghavendra Kumar","Dr. A Abdul Rahman","Dr. Veerubhotla S R K Sarma","Dr. Veerraju Gampala","Dr. Balajee R M","Dr. Sadam Kavitha","Dr. Sangaraju Hrushikesava Raju","Dr. Nilu Singh","Dr. Ratna Kanth Nelapati","Dr. Shaik Hasane Ahammad","Dr. Batta Uma Maheswara Rao","Dr. N V Kiran Movva","Dr. S S Aravinth","Dr. Nagarjuna Karyemsetty","Dr. Suneetha Bulla","Dr. G Raja","Dr. Srithar","Dr. Akhilesh Kumar Dubey","Dr. Thatavarthi Satish","Dr. Asesh Kumar Tripathy","Dr. Basant Sah","Dr. M M Yamunadevi","Dr. Nesarani","Dr. Vuyyuru Veeraankalu","Dr. A R Deepa","Dr. Elangovan Guruva Reddy","Dr. Vijaya Kumar Reddy Radha","Dr. Ammisetti Veeraswamy","Dr. Gurrala Jagadish","Dr. Gopi Adapa","Dr. Bechoo Lal","Dr. Arunabhaskar Karri","Dr. Nagamani Chippada","Dr. Kodavali Lakshminarayana","Dr. V Sreenivasa Rao","Dr. V V Jaya Rama Krishnaiah","Dr. Jayavarapu Karthik","Dr. R Mahendran","Dr. Sam Kumar GV","Dr. Munish Kumar","Dr. Satrughan Kumar","Dr. Penubaka Balaji","Dr. Surya Kiran Chebrolu","Dr. Phaneendra Kumar B L N","Dr. Kambala Vijaya Kumar","Dr. Subhamastan Rao Tunmapudi","Dr. Badugu Samatha","Dr. Madabattula P J Santosh Kumar","Dr. Merigala Rajanidevi","Dr. Ranjan Kumar Mahapatra","Dr. Ganta Jacob Victor","Dr. Pakalapati Manikya Prasuna","Dr. V Sivaramaraju Vetukuri","Dr. Kuraganty Shanthi","Dr. M Geetha","Dr. P V Venkateswara Rao","Dr. Jugunta Suresh Babu","Dr. Chinnarao Kurangi","Dr. Venkataravana Nayak K","Dr. Vemula Rajiv Jetson","Ch. Ratna Jyothi"],
   asstProfs:["Dr. Dinesh Kumar Gaddameedi","Dr. Srinivasa Rao Tagallamudi","Dr. Sajja Venkata Subrahmanyam","Dr. Deevi Satish Kumar","Dr. Nalamalapu Konda Reddy","Dr. Jampani Satish Babu","Dr. Dukkipati Sudha","Dr. Talasila Vamsidhar","Dr. Vasantham Vijay Kumar","Dr. Nichenametla Rajesh","Dr. Dama Anand","Ms. M. V. B. T. Santhi","Mr. Kunchellapalli Stephen Victor","Ms. Kolachana Swetha","Mr. Banda Sai Sandeep","Mr. Challa Ramaiah","Bobbili Satyanarayana Murthy","Bhavani Vasantha","Valasapalli Mounika","Yamini Tondepu","Anusha Ponnuru","Janjhyam Venkata Naga Ramesh","Tirandasu Ravi Kumar","Ande Pavankumar","Panguluri Mounica","Savaram Mythreya","Garigipati Rama Krishna","Doddi Suresh Kumar","Arepalli Gopi","Akurathi Anjana Devi","Sabitha Chinnam","Ravela Chitti Babu","Ranjith Kumar Rupani","Bommisetty Yamini Supriya","Lavanya Dara","Supriya Pacha","B Namasivayam","Nagaraju Choutapalli","T Hemalatha","Suneetha Bandeela","Vuyyuru Lakshma Reddy","Tulasi Rajesh","Mandava Manjusha","Chopparapu Gowthami","Dasari Manasa","Manasa Patibandla","Linginedi Ushasree","Kasturi Sai Sandeep","Dhanesh Kumar","Paladugu Venkateswara Rao","Kotavarapu Radha","Prasanthi Valluri","Bellam Surendra Babu","Uma Maheswari Rayudu","B Santha Kumar","Natha Priya","Swarna Mahesh Naidu","G N Sowjanya","Rodda Dilip Kumar","Vemula Jasmine Sowmya","B Arun Kumar","P Ramadevi","Kuchipudi Prasanth Kumar","Annamaraju Thanuja","Kavitha Sarihaddu","Praneetha Alur","Rajeswari Setti","Govindu Komali","Kishore Dasari","R Lakshmi Durga","Pothumarthi Sridevi","Narne Sravanthi","Aruna Kolukulapalli","Sathuluri Sagar","G V Ramana Reddy","Donepudi Rohini","Sai Krishna Edupuganti","B Elangovan","Bandi Prameelarani","Mallampati Mahesh","Chandolu Naga Mani","Anusha Gudise","Lakshman B","Jutu Gopaiah","Bandla Nirosha","Maram Subba Rao","K V Subramanyam","Nayapamu Ramarao","Alluri Swathi","Aravind Nalamothu","Talluri Jyothi","Kunchala Gopala Krishna","Billa Manindhar","Jonathan Bathula","Bobba Sahithi","Dudigam Ramya","Kakumanu Ashok Babu","Rakesh Kancharla","Venkata Rao Javvaji","Velchu Balaji","Sandeep Nanda","C V K Sirisha","Kotturu Prasuna","Gavini Naga Pavani","Aluri Sanjeev Kumar","Kari Venkata Sumanth","Pravallika Koppula","Stalin Babu J","Yadavalli Saroja","Seelam Visweswara Rao","Gutti Yateesh","Madala Nagendra Babu","Delhipolice Chandu","Nalluri Venkatamadhubindu","Sudhakar Atchala","Poonuru Vijayabhaskar","Koyya Avinash","Gangavarapu Mohanarao","P Raghavendra Rao","Vejendla Balanaga Ajay","Narala Aswani","R Kannan","Talari Aruna Kumari","Sangeeta Prusty","Rose Rani Chavvakula","Mandepudi Neelima Hima Bindu","Shaik Mahabub Basha","Banala Ranjith Kumar","Yellepeddi Krishna Assish","Akash Chatterjee","Kolla Lakshmi Narayana","Mr. P. Kiran Kumar","Ms. Nalla Siva Ganga Kumari","Ramesh Mylapalli","Gorrepati Rajani Reddy","Anju Aravind","Pullakurthi Sai Laukya","Sai Sudhindra Aditya Vadluri"]
@@ -541,203 +485,168 @@ function populateFaculty(){
 populateFaculty();
 
 // ══════════════════════════════════════
-// ACADEMIC + FACULTY DATABASE FOR CHAT
+// SMART DB — detects query type and
+// sends only relevant context to API
+// This is the KEY fix for rate limits!
 // ══════════════════════════════════════
-function buildDB(){
-  return `KL UNIVERSITY (KLEF) — VADDESWARAM, GUNTUR. NAAC A++. NIRF Top 50 Engineering 2024. Helpline: 1800-599-1888. Counseling: Admin Block Room 12, Mon-Sat 9:30AM-4:30PM. Website: kluniversity.in
+const KLU_DB = {
+  fees:`COURSE FEES 2025-2026 (VIJAYAWADA CAMPUS):
+B.Tech CSE: ₹1,45,000/sem | ₹2,90,000/year | Full Fee ₹3,00,000/year
+B.Tech AI & Data Science: ₹1,37,500/sem | ₹2,75,000/year | Full Fee ₹2,85,000/year
+B.Tech CS & IT: ₹1,37,500/sem | ₹2,75,000/year | Full Fee ₹2,85,000/year
+B.Tech ECE: ₹1,27,500/sem | ₹2,55,000/year | Full Fee ₹2,65,000/year
+B.Tech IoT: ₹1,27,500/sem | ₹2,55,000/year | Full Fee ₹2,65,000/year
+B.Tech Bio Technology: ₹1,27,500/sem | ₹2,55,000/year | Full Fee ₹2,65,000/year
+B.Tech EEE: ₹1,17,500/sem | ₹2,35,000/year | Full Fee ₹2,45,000/year
+B.Tech Mechanical: ₹1,17,500/sem | ₹2,35,000/year | Full Fee ₹2,45,000/year
+B.Tech Civil: ₹1,15,000/sem | ₹2,30,000/year | Full Fee ₹2,40,000/year
+M.Tech CSE/Cyber Security/AI&DS: ₹80,000/sem | ₹1,60,000/year | Full Fee ₹1,70,000/year
+M.Tech IoT: ₹70,000/sem | ₹1,40,000/year | Full Fee ₹1,50,000/year
+M.Tech VLSI: ₹65,000/sem | ₹1,30,000/year | Full Fee ₹1,40,000/year
+MBA: ₹1,62,500/sem | ₹3,25,000/year | Full Fee ₹3,35,000/year
+MBA Fintech: ₹2,75,000/sem | ₹5,50,000/year
+BCA: ₹1,07,500/sem | ₹2,15,000/year | MCA: ₹1,30,000/sem | ₹2,60,000/year
+BBA: ₹1,07,500/sem | ₹2,15,000/year
+B.Pharmacy: ₹1,17,500/sem | ₹2,35,000/year
+Pharm D: ₹1,55,000/sem | ₹3,10,000/year
+B.Architecture: ₹1,35,000/sem | ₹2,70,000/year
+BBA-LLB: ₹87,500/sem | ₹1,75,000/year
+B.Sc Agriculture: ₹1,17,500/sem | ₹2,35,000/year
+Lateral Entry CSE: ₹1,40,000/sem | ₹2,80,000/year | Full Fee ₹2,90,000/year
+Admission Fee: ₹16,000 one time (waived for KLU Alumni children)
+Full Fee = Merit Fee + ₹10,000/year extra
+HYDERABAD CAMPUS — CSE: ₹1,50,000/sem | ₹3,00,000/year | Full Fee ₹3,10,000/year`,
 
-CREATOR: Lokesh Manepalli, 3rd year CSE student (Batch 2023-2027, Roll: 2300031647). Built MITRA — Deep Learning Based Emotion-Aware Conversational AI. Email: 2300031647@kluniversity.in
+  hostel:`HOSTEL FEES 2025-2026 (VIJAYAWADA CAMPUS):
+Mess Fee (all rooms): ₹89,500/year + 5% GST ₹4,475 = ₹93,975/year
+Registration fee (one-time, non-refundable new students): ₹5,000
+Note: All hostel fees must be paid through ERP only
 
-━━━ COURSE FEES 2025-2026 (VIJAYAWADA CAMPUS) ━━━
+Room Options (Total = Mess+GST+Room Rent | 1st Instalment | 2nd Instalment | Electricity Deposit):
+Non-AC 4-Bed Common Toilet: Room ₹35,000 | Total ₹1,28,975 | 2nd inst ₹66,000 | Elec dep ₹4,000
+Non-AC 3-Bed Common Toilet: Room ₹40,000 | Total ₹1,33,975 | 2nd inst ₹68,500 | Elec dep ₹4,000
+Non-AC 1-Bed Common Toilet: Room ₹50,000 | Total ₹1,43,975 | 2nd inst ₹73,500 | Elec dep ₹4,000
+Non-AC 4-Bed Attached: Room ₹40,000 | Total ₹1,33,975 | 2nd inst ₹68,500 | Elec dep ₹4,000
+Non-AC 3-Bed Attached: Room ₹45,000 | Total ₹1,38,975 | 2nd inst ₹71,000 | Elec dep ₹4,000
+Non-AC 2-Bed Attached: Room ₹50,000 | Total ₹1,43,975 | 2nd inst ₹73,500 | Elec dep ₹4,000
+AC 4-Bed Common Toilet: Room ₹45,000 | Total ₹1,38,975 | 2nd inst ₹71,000 | Elec dep ₹12,000
+AC 3-Bed Common Toilet: Room ₹50,000 | Total ₹1,43,975 | 2nd inst ₹73,500 | Elec dep ₹12,000
+AC 4-Bed Attached: Room ₹50,000 | Total ₹1,43,975 | 2nd inst ₹73,500 | Elec dep ₹12,000
+AC 3-Bed Attached: Room ₹55,000 | Total ₹1,48,975 | 2nd inst ₹76,000 | Elec dep ₹12,000
+AC 2-Bed Attached: Room ₹60,000 | Total ₹1,53,975 | 2nd inst ₹78,500 | Elec dep ₹15,000
+AC Deluxe 4-Bed with Study Room: Room ₹58,000 | Total ₹1,51,975 | Elec dep ₹12,000
+AC Deluxe 3-Bed with Study Room: Room ₹63,000 | Total ₹1,56,975 | Elec dep ₹12,000
+AC Deluxe 2-Bed: Room ₹65,000 | Total ₹1,58,975 | Elec dep ₹15,000
+AC Super Deluxe 3-Bed: Room ₹70,000 | Total ₹1,63,975 | Elec dep ₹12,000
+AC Super Deluxe 2-Bed: Room ₹75,000 | Total ₹1,68,975 | Elec dep ₹15,000
+AC Suite 3-Bed (Balcony): Room ₹70,000 | Total ₹1,63,975 | Elec dep ₹12,000
+AC Executive Suite 3-Bed (North/South View): Room ₹75,000 | Total ₹1,68,975 | Elec dep ₹12,000`,
 
-ENGINEERING UG (B.Tech — 4 Years):
-- CSE: ₹1,45,000/sem | ₹2,90,000/year | Full Fee ₹3,00,000/year
-- AI & Data Science: ₹1,37,500/sem | ₹2,75,000/year | Full Fee ₹2,85,000/year
-- CS & IT: ₹1,37,500/sem | ₹2,75,000/year | Full Fee ₹2,85,000/year
-- ECE: ₹1,27,500/sem | ₹2,55,000/year | Full Fee ₹2,65,000/year
-- IoT: ₹1,27,500/sem | ₹2,55,000/year | Full Fee ₹2,65,000/year
-- Bio Technology: ₹1,27,500/sem | ₹2,55,000/year | Full Fee ₹2,65,000/year
-- EEE: ₹1,17,500/sem | ₹2,35,000/year | Full Fee ₹2,45,000/year
-- Mechanical: ₹1,17,500/sem | ₹2,35,000/year | Full Fee ₹2,45,000/year
-- Civil: ₹1,15,000/sem | ₹2,30,000/year | Full Fee ₹2,40,000/year
-
-ENGINEERING PG (M.Tech — 2 Years):
-- CSE / Cyber Security / AI & DS: ₹80,000/sem | ₹1,60,000/year | Full Fee ₹1,70,000/year
-- IoT: ₹70,000/sem | ₹1,40,000/year | Full Fee ₹1,50,000/year
-- VLSI: ₹65,000/sem | ₹1,30,000/year | Full Fee ₹1,40,000/year
-- Power Electronics / Thermal: ₹62,500/sem | ₹1,25,000/year | Full Fee ₹1,35,000/year
-
-LATERAL ENTRY (B.Tech — 3 Years):
-- CSE Lateral: ₹1,40,000/sem | ₹2,80,000/year | Full Fee ₹2,90,000/year
-- AI & DS / CS&IT Lateral: ₹1,32,500/sem | ₹2,65,000/year | Full Fee ₹2,75,000/year
-
-MANAGEMENT:
-- BBA: ₹1,07,500/sem | ₹2,15,000/year | Full Fee ₹2,25,000/year
-- BBA (Specialisation): ₹1,17,500/sem | ₹2,35,000/year | Full Fee ₹2,45,000/year
-- MBA: ₹1,62,500/sem | ₹3,25,000/year | Full Fee ₹3,35,000/year
-- MBA Fintech: ₹2,75,000/sem | ₹5,50,000/year
-- BCA: ₹1,07,500/sem | ₹2,15,000/year | Full Fee ₹2,25,000/year
-- MCA: ₹1,30,000/sem | ₹2,60,000/year | Full Fee ₹2,70,000/year
-
-OTHER:
-- B.Pharmacy: ₹1,17,500/sem | ₹2,35,000/year | Full Fee ₹2,45,000/year
-- Pharm D: ₹1,55,000/sem | ₹3,10,000/year | Full Fee ₹3,20,000/year
-- B.Architecture: ₹1,35,000/sem | ₹2,70,000/year | Full Fee ₹2,80,000/year
-- BBA-LLB: ₹87,500/sem | ₹1,75,000/year | Full Fee ₹1,85,000/year
-- B.Sc Agriculture: ₹1,17,500/sem | ₹2,35,000/year | Full Fee ₹2,45,000/year
-- Admission Fee: ₹16,000 one time (waived for KLU Alumni children)
-- Full Fee = Merit Fee + ₹10,000 per year extra
-
-HYDERABAD CAMPUS FEES:
-- CSE (Aziz Nagar / Bowrampet): ₹1,50,000/sem | ₹3,00,000/year | Full Fee ₹3,10,000/year
-- AI & DS (Hyderabad): ₹1,45,000/sem | ₹2,90,000/year | Full Fee ₹3,00,000/year
-- ECE (Hyderabad): ₹1,35,000/sem | ₹2,70,000/year | Full Fee ₹2,80,000/year
-
-━━━ HOSTEL FEES 2025-2026 (VIJAYAWADA CAMPUS) ━━━
-Mess fee for all rooms: ₹89,500/year + 5% GST ₹4,475 = ₹93,975
-Registration fee (one time, non-refundable): ₹5,000
-
-Room Types (Total Annual Fee = Mess + GST + Room Rent):
-- Non-AC 4-Bed Common Toilet: Room ₹35,000 | Total 1st instalment ₹1,28,975 | 2nd instalment ₹66,000 | Electricity deposit ₹4,000
-- Non-AC 3-Bed Common Toilet: Room ₹40,000 | Total ₹1,33,975 | 2nd inst ₹68,500
-- Non-AC 2-Bed Attached: Room ₹50,000 | Total ₹1,43,975 | 2nd inst ₹73,500
-- AC 4-Bed Common Toilet: Room ₹45,000 | Total ₹1,38,975 | Electricity deposit ₹12,000
-- AC 3-Bed Common Toilet: Room ₹50,000 | Total ₹1,43,975 | Electricity deposit ₹12,000
-- AC 4-Bed Attached: Room ₹50,000 | Total ₹1,43,975 | Electricity deposit ₹12,000
-- AC 3-Bed Attached: Room ₹55,000 | Total ₹1,48,975 | Electricity deposit ₹12,000
-- AC 2-Bed Attached: Room ₹60,000 | Total ₹1,53,975 | Electricity deposit ₹15,000
-- AC Deluxe 4-Bed with Study Room: Room ₹58,000 | Total ₹1,51,975
-- AC Deluxe 3-Bed with Study Room: Room ₹63,000 | Total ₹1,56,975
-- AC Deluxe 2-Bed: Room ₹65,000 | Total ₹1,58,975 | Electricity deposit ₹15,000
-- AC Super Deluxe 3-Bed: Room ₹70,000 | Total ₹1,63,975
-- AC Super Deluxe 2-Bed: Room ₹75,000 | Total ₹1,68,975 | Electricity deposit ₹15,000
-- AC Suite 3-Bed (Balcony): Room ₹70,000 | Total ₹1,63,975
-- AC Executive Suite 3-Bed (North/South View): Room ₹75,000 | Total ₹1,68,975
-Note: Hostel fee must be paid through ERP only
-
-━━━ SCHOLARSHIPS 2025-2026 ━━━
+  scholarship:`SCHOLARSHIPS 2025-2026:
 
 KLEEE 2025 RANKS (Merit Fee Scholarship):
-- CSE/AI&DS/BT: Rank 1-50 → 50% | 51-1000 → 25% | 1001-2000 → 15% | 2001-5000 → 10% | 5001-20000 → ₹10,000/year
-- ECE/CS&IT/IoT: Rank 1-500 → 50% | 501-1500 → 25% | 1501-3500 → 15% | 3501-7500 → 10% | 7501-15000 → ₹10,000/year
-- CE/ME/EEE: Rank 1-1000 → 50% | 1001-4000 → 25% | 4001-8000 → 15% | 8001-15000 → 10%
+CSE/AI&DS/BT: Rank 1-50→50% | 51-1000→25% | 1001-2000→15% | 2001-5000→10% | 5001-20000→₹10,000/yr
+ECE/CS&IT/IoT: Rank 1-500→50% | 501-1500→25% | 1501-3500→15% | 3501-7500→10% | 7501-15000→₹10,000/yr
+CE/ME/EEE: Rank 1-1000→50% | 1001-4000→25% | 4001-8000→15% | 8001-15000→10%
 
 JEE MAINS (Percentile):
-- CSE/AI&DS: Above 97% → 100% | ≥95% → 50% | ≥93% → 25% | ≥92% → 15% | ≥90% → 10%
-- ECE/CS&IT: ≥96% → 100% | ≥94% → 50% | ≥92% → 25% | ≥90% → 15% | ≥85% → 10%
+CSE/AI&DS: Above 97%→100% | ≥95%→50% | ≥93%→25% | ≥92%→15% | ≥90%→10%
+ECE/CS&IT: ≥96%→100% | ≥94%→50% | ≥92%→25% | ≥90%→15% | ≥85%→10%
+CE/ME/EEE: ≥95%→100% | ≥92%→50% | ≥90%→25% | ≥85%→15% | ≥80%→10%
 
-AP/TS EAMCET RANKS:
-- CSE/AI&DS/BT: Rank 1-1000 → 50% | 1001-5000 → 25% | 5001-10000 → 15% | 10001-15000 → 10%
-- ECE/CS&IT/IoT: Rank 1-2500 → 50% | 2501-7500 → 25% | 7501-12500 → 15%
+AP/TS EAMCET:
+CSE/AI&DS/BT: Rank 1-1000→50% | 1001-5000→25% | 5001-10000→15% | 10001-15000→10%
+ECE/CS&IT/IoT: Rank 1-2500→50% | 2501-7500→25% | 7501-12500→15% | 12501-20000→10%
 
-CBSE % (CSE/AI&DS): ≥94% → 50% | ≥93% → 25% | ≥92% → 15% | ≥91% → 10% | ≥90% → ₹10,000/year
-
-TS/AP State Board (CSE/AI&DS): ≥98% → 25% | ≥97% → 15% | ≥95% → 10% | ≥90% → ₹10,000/year
+CBSE (CSE/AI&DS): ≥94%→50% | ≥93%→25% | ≥92%→15% | ≥91%→10% | ≥90%→₹10,000/yr
+TS/AP State Board (CSE/AI&DS): ≥98%→25% | ≥97%→15% | ≥95%→10% | ≥90%→₹10,000/yr
 
 SPECIAL SCHOLARSHIPS:
-- SC/ST & Differently Abled: ₹10,000/year
-- OBC: ₹5,000/year
-- Sibling of KLU student: ₹10,000/year
-- Single girl child / Children of KLU Alumni: ₹10,000/year
-- Sports & Children of Ex-Army Personnel: Special scholarships available
+SC/ST & Differently Abled: ₹10,000/year | OBC: ₹5,000/year
+Sibling of KLU student: ₹10,000/year
+Single girl child / Children of KLU Alumni: ₹10,000/year
+Sports & Children of Ex-Army Personnel: Available
+
+M.Tech Scholarships: UG 100%-76%→50% off | 75%-65%→25% off
+GATE Qualified (CSE): Rank 1-1000→50% | 1001-5000→25%
 
 SCHOLARSHIP RULES:
-- Only ONE scholarship applicable at any time (best one will be given)
-- All scholarships on Merit Fee only
-- To continue scholarship from 2nd semester: maintain CGPA 9.0 for CSE/AI&DS/ECE/CS&IT | CGPA 8.0 for ME/CE/EEE/IoT | CGPA 8.0 for M.Tech/MCA/MBA | CGPA 7.5 for BBA/BCA/B.Com
+Only ONE scholarship applicable at a time (best one given)
+All scholarships on Merit Fee only
+To continue from 2nd semester maintain: CGPA 9.0 for CSE/AI&DS/ECE/CS&IT | CGPA 8.0 for ME/CE/EEE/IoT/M.Tech/MBA | CGPA 7.5 for BBA/BCA/B.Com`,
 
-━━━ ACADEMIC CALENDAR & HOLIDAYS 2026 ━━━
-- Pongal: Jan 12-17, 2026 | Republic Day: Jan 26 (Social Service)
-- Ugadi: Mar 19 | Ramzan: Mar 21 | Sri Ramanavami: Mar 27
-- Ambedkar Jayanthi: Apr 14 | Independence Day: Aug 15 (Social Service)
-- Varalakshmi Vratham: Aug 28 | Krishnashtami: Sep 4
-- Vinayaka Chavithi: Sep 14 | Gandhi Jayanthi: Oct 2 (Social Service)
-- Dussehra Vacation: Oct 19-24 | Christmas: Dec 25
-- Deepavali: Nov 8 (Sunday) | Day after Deepavali: Nov 9
-- Optional: Good Friday Apr 3 | Bakrid May 27
+  academic:`ATTENDANCE: Min 75% | Condonation up to 65% with medical | Below 65% = Detained
+GRADING: Internal 40 + External 60 = 100 marks | Min 40% in external to pass | GPA 10-point scale
+EXAM SCHEDULE SEM 2 2025: Machine Learning Apr 14 | Computer Networks Apr 17 | Software Engineering Apr 21 | Compiler Design Apr 24 | Web Technologies Apr 28 | Professional Elective May 2 (all at 10AM)
+HOLIDAYS 2026: Pongal Jan 12-17 | Republic Day Jan 26 | Ugadi Mar 19 | Ramzan Mar 21 | Ramanavami Mar 27 | Ambedkar Jayanthi Apr 14 | Independence Day Aug 15 | Vinayaka Chavithi Sep 14 | Dussehra Oct 19-24 | Christmas Dec 25
+FACILITIES: Library 8AM-9PM (60K+ books) | CSE Labs Block D 500+ systems | Medical 24/7 | Sports 6AM-8PM | Cafeteria 7AM-10PM | WiFi 24/7`,
 
-━━━ ATTENDANCE & GRADING ━━━
-- Minimum attendance: 75% required
-- Condonation: up to 65% with medical certificate
-- Below 65%: Detained from exams
-- Internal: 40 marks | External: 60 marks | Min 40% in external to pass
-- GPA on 10-point scale
+  faculty:`CSE PROFESSORS (${FAC.professors.length}): ${FAC.professors.join(', ')}
+CSE ASSOCIATE PROFESSORS (${FAC.assocProfs.length}): ${FAC.assocProfs.join(', ')}
+CSE ASSISTANT PROFESSORS (${FAC.asstProfs.length}): ${FAC.asstProfs.slice(0,50).join(', ')} and ${FAC.asstProfs.length-50} more`
+};
 
-━━━ CAMPUS FACILITIES ━━━
-College Timing: 7:10AM-5:30PM Mon-Sat | Library: 8AM-9PM (60,000+ books)
-Sports Complex: 6AM-8PM | Cafeteria: 7AM-10PM | Medical Center: 24/7
-CSE Labs: Block D (500+ systems) | ATM: Near Admin Block (SBI, Axis)
-WiFi: 24/7 entire campus
+const BASE_INFO = `KL UNIVERSITY (KLEF) — Vaddeswaram, Guntur. NAAC A++. NIRF Top 50 Engineering 2024. Helpline: 1800-599-1888. Counseling: Admin Block Room 12, Mon-Sat 9:30AM-4:30PM. Website: kluniversity.in
+CREATOR: Lokesh Manepalli, 3rd year CSE (2023-2027, Roll: 2300031647). Email: 2300031647@kluniversity.in`;
 
-CSE FACULTY — COMPLETE LIST:
-PROFESSORS (${FAC.professors.length} total): ${FAC.professors.join(', ')}
-ASSOCIATE PROFESSORS (${FAC.assocProfs.length} total): ${FAC.assocProfs.join(', ')}
-ASSISTANT PROFESSORS (${FAC.asstProfs.length} total): ${FAC.asstProfs.join(', ')}`;
+// Smart context builder — only sends relevant data!
+function buildDB(userMsg){
+  const m=userMsg.toLowerCase();
+  let ctx=BASE_INFO+'\n\n';
+
+  // Detect what info is needed
+  const needsFees=/fee|fees|tuition|cost|price|amount|pay|semester fee|year fee|how much|enta|entha|rupee|rupees|₹/i.test(m);
+  const needsHostel=/hostel|room|accommodation|stay|mess|pg|bed|ac room|non.?ac|dormitory/i.test(m);
+  const needsScholarship=/scholarship|merit|rank|discount|waiver|concession|free seat|kleee|jee|eamcet|cbse|state board|gate/i.test(m);
+  const needsFaculty=/professor|faculty|staff|lecturer|teacher|hod|head|associate|assistant prof|dr\.|who teach|evaru|faculty list/i.test(m);
+  const needsAcademic=/attendance|exam|holiday|schedule|grading|internal|external|gpa|cgpa|pass|fail|detain|semester|sem|calendar/i.test(m);
+
+  if(needsFees) ctx+=KLU_DB.fees+'\n\n';
+  if(needsHostel) ctx+=KLU_DB.hostel+'\n\n';
+  if(needsScholarship) ctx+=KLU_DB.scholarship+'\n\n';
+  if(needsFaculty) ctx+=KLU_DB.faculty+'\n\n';
+  if(needsAcademic) ctx+=KLU_DB.academic+'\n\n';
+
+  // If nothing specific detected — send compact general info
+  if(!needsFees&&!needsHostel&&!needsScholarship&&!needsFaculty&&!needsAcademic){
+    ctx+=`CSE fees: ₹2,90,000/year | Hostel Non-AC from ₹1,28,975/year | AC from ₹1,38,975/year | Attendance min 75% | Scholarships available based on KLEEE/JEE/EAMCET ranks`;
+  }
+
+  return ctx;
 }
 
 // ══════════════════════════════════════
-// CHAT SYSTEM — ALL FIXES APPLIED
+// CHAT SYSTEM
 // ══════════════════════════════════════
-let conversationHistory = [];
-let busy = false;
+let conversationHistory=[];
+let busy=false;
 
-const CHAT_SYS = () => `You are MITRA (Mental Health Intelligent Text Recognition Assistant) — a super chill, funny, warm AI buddy for KL University CSE students. You're like that one senior who's always there — cracking jokes, genuinely caring, never boring, full gen-Z + Indian student energy.
+function CHAT_SYS(userMsg){
+  return `You are MITRA (Mental Health Intelligent Text Recognition Assistant) — a super chill, funny, warm AI buddy for KL University CSE students. Like that caring senior who's always there — cracking jokes, genuinely caring, full gen-Z + Indian student energy.
 
-${buildDB()}
+${buildDB(userMsg)}
 
-━━━ LANGUAGE RULES — CRITICAL ━━━
-- Telugu script detected → reply fully in casual spoken Telugu (NOT formal Telugu, actual student spoken style)
-- Tenglish (English + Telugu mix) → match EXACTLY same mix. ALWAYS spell every word correctly — "tension" not "tensoin", "stress" not "stres", "coming" not "comng", "feeling" not "feelin". Zero spelling mistakes in any language.
-- Pure English → reply in English with Indian student slang
-- Match the user's exact language style every time
+LANGUAGE: Telugu script → full casual spoken Telugu. Tenglish → match exactly with CORRECT spellings always. English → English with Indian student slang.
 
-━━━ EMOTION DETECTION ━━━
-Detect freely — Joy, Sadness, Anger, Fear, Stress, Love, Neutral, Academic, or any natural emotion you detect.
+EMOTION: Detect freely — Joy, Sadness, Anger, Fear, Stress, Love, Neutral, Academic, or any natural emotion.
 
-━━━ RESPONSE RULES — READ CAREFULLY ━━━
-
-FOR "WHO ARE YOU" / INTRODUCTION questions:
-→ Introduce yourself as MITRA — your purpose and what you help with
-→ DO NOT list faculty names when someone asks who you are — that is irrelevant!
-→ Example good reply: "I'm MITRA ra — your AI buddy at KLU! I help with emotional support, academic info like fees and hostel, faculty queries, and just casual chill talk. What's up?"
-
-FOR FACULTY queries (ONLY when directly asked about faculty):
-→ Asked about ALL professors → list ALL ${FAC.professors.length} professors
-→ Asked about associate professors → list ALL ${FAC.assocProfs.length} associate professors
-→ Asked about assistant professors → list ALL assistant professors
-→ Asked about specific faculty → give that specific info
-→ NEVER mention faculty names when the question is NOT about faculty
-
-FOR FEES / HOSTEL / ACADEMIC queries:
-→ Use exact data from database above
-→ Use **bold** for amounts and dates
-→ Be helpful and accurate
-
-FOR EMOTIONAL messages:
-→ Be GENUINELY empathetic ra! Use heavy natural slang freely and naturally:
-"arey ra", "bro sach bol", "yaar tension ledu", "machha chill maar", "no cap bro", "bro facts", "same ra same", "you got this ra", "ayyo ra", "nuvvu chestuv ra", "strong ga unda", "dude relax", "fr fr same feeling", "lowkey stressed too bro", "vibe check failed ra", "W move ra", "that's tough ra"
-→ Reference their SPECIFIC situation — be personal not generic
-→ 2-4 sentences max
-
-FOR CASUAL / SMALL TALK:
-→ Match energy 100%! Be funny, relatable, gen-Z + Indian student combo
-→ Use freely: "bro", "ra", "machha", "yaar", "dude", "no cap", "fr fr", "lowkey", "vibe check", "that's it ra", "ekdam correct", "W move", "based", "slay ra", "hits different ra"
-→ Be the funny senior friend — crack jokes, be real, have personality
-
-FOR MIXED (emotion + academic):
-→ Acknowledge emotion FIRST warmly, then answer academic part
-
-━━━ STRICT RULES ━━━
-1. NEVER start responses with "I understand", "I can see", "It sounds like", "I'm here for you" — banned openers
-2. NEVER give same response twice — every reply unique and contextual to conversation
-3. NEVER randomly insert faculty names when question is not about faculty
-4. NEVER make spelling mistakes — especially in Tenglish
-5. Mention Counseling Cell (Admin Block Room 12) ONLY for serious distress cases
-6. Mention creator ONLY if directly asked
+RESPONSE RULES:
+- WHO ARE YOU questions: Introduce MITRA only — purpose and what you help with. NEVER randomly list faculty names.
+- FACULTY queries: Only when directly asked. Give relevant faculty info from context.
+- FEES/HOSTEL/SCHOLARSHIP: Use exact data from context above with **bold** for amounts.
+- EMOTIONAL: Heavy natural slang — "arey ra", "bro sach bol", "yaar tension ledu", "machha chill maar", "no cap", "fr fr", "same ra same", "you got this ra", "ayyo ra", "dude relax", "vibe check failed ra", "W move ra". Reference their specific situation. 2-4 sentences.
+- CASUAL: Be funny, match energy 100%, gen-Z Indian student vibes — "bro", "ra", "machha", "yaar", "no cap", "lowkey", "hits different ra".
+- MIXED: Emotion first, then academic info.
+- NEVER start with "I understand/I can see/It sounds like" — vary openers every time.
+- NEVER repeat same response — every reply unique.
+- Mention Counseling Cell ONLY for serious distress.
+- Mention creator ONLY if directly asked.
+- ZERO spelling mistakes especially in Tenglish.
 
 Respond ONLY as valid JSON: {"emotion":"EMOTION","response":"RESPONSE","lang":"en|te"}`;
+}
 
-const RISK = ['suicide','kill myself','end my life','want to die','hurt myself','self harm','no reason to live','చనిపోవాలి','నాకు బ్రతకాలని లేదు'];
+const RISK=['suicide','kill myself','end my life','want to die','hurt myself','self harm','no reason to live','చనిపోవాలి','నాకు బ్రతకాలని లేదు'];
 
 function ar(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,110)+'px'}
 function hk(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send()}}
@@ -750,9 +659,7 @@ function addTyping(){const d=document.createElement('div');d.className='msg b';d
 function rmTyping(){const t=document.getElementById('typmsg');if(t)t.remove()}
 function addCrisis(lang){
   rmTyping();
-  const msg=lang==='te'
-    ?`⚠️ <strong>Ra, nee gurinchi naaku chala worry ga undi.</strong><br>KL Counseling Cell ki velli ra — Admin Block Room 12, Mon–Sat 9:30AM–4:30PM. Nuvvu alone kaadu ra. 💙`
-    :`⚠️ <strong>Ra, I'm really worried about you right now.</strong><br>Please go to KL Counseling Cell — Admin Block Room 12, Mon–Sat 9:30AM–4:30PM. You're not alone in this. 💙`;
+  const msg=lang==='te'?`⚠️ <strong>Ra, nee gurinchi naaku chala worry ga undi.</strong><br>KL Counseling Cell ki velli ra — Admin Block Room 12, Mon–Sat 9:30AM–4:30PM. Nuvvu alone kaadu. 💙`:`⚠️ <strong>Ra, I'm really worried about you right now.</strong><br>Please go to KL Counseling Cell — Admin Block Room 12, Mon–Sat 9:30AM–4:30PM. You're not alone. 💙`;
   const d=document.createElement('div');d.className='msg b';d.innerHTML=`<div class="crisis">${msg}</div>`;document.getElementById('msgs').appendChild(d);sc();
 }
 function isTe(t){return /[\u0C00-\u0C7F]/.test(t)}
@@ -788,9 +695,10 @@ async function send(){
   }
   addTyping();
   conversationHistory.push({role:"user",content:text});
-  if(conversationHistory.length>20)conversationHistory=conversationHistory.slice(-20);
+  if(conversationHistory.length>16)conversationHistory=conversationHistory.slice(-16);
   try{
-    const raw=await chatAPI(CHAT_SYS(),conversationHistory);
+    // KEY: pass user message to CHAT_SYS so it sends only relevant DB context
+    const raw=await chatAPI(CHAT_SYS(text),conversationHistory);
     const p=JSON.parse(raw.replace(/```json|```/g,'').trim());
     const formatted=p.response.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
     rmTyping();
@@ -804,7 +712,7 @@ async function send(){
   }catch(e){
     rmTyping();
     const d=document.createElement('div');d.className='msg b';
-    d.innerHTML=`<span class="ebadge bNeutral">💬 Neutral</span><div class="bbl">Oka second wait chesi try cheyyi ra! Server busy ga undi 🙏</div>`;
+    d.innerHTML=`<span class="ebadge bNeutral">💬 Neutral</span><div class="bbl">Oka second wait chesi try cheyyi ra! 🙏</div>`;
     document.getElementById('msgs').appendChild(d);sc();
     if(conversationHistory.length>0)conversationHistory.pop();
   }
@@ -812,179 +720,97 @@ async function send(){
 }
 
 // ══════════════════════════════════════
-// PAPER 3 — FUZZY LOGIC IN JAVASCRIPT
-// Zero API calls — runs in browser!
+// PAPER 3 — FUZZY LOGIC (Client-side)
 // ══════════════════════════════════════
-const KLU_WHITELIST=['register','kluniversity.in','placement cell','klu placement','campus recruitment','campus drive','campus interview','department of cse','hod','head of department','klef','koneru lakshmaiah','kl university placement','kl deemed','klu portal'];
-const SPAM_KW=['free','win','winner','won','prize','lottery','claim','reward','gift','bonus','congratulations','selected','shortlisted','chosen','lucky','jackpot','earn','income','profit','money','cash','₹','lakh','thousand','internship','training','certification','aicte','iso','msme','vtu','nasscom','lor','letter of recommendation','placement guarantee','guaranteed','job offer','work from home','remote','part time','freelance','scheme','program','opportunity','resume','ats','mock interview','masterclass','live project','capstone','google cloud','aws','microsoft azure','tcs','infosys','wipro','accenture','collaboration','partner','verified','approved','authorized','hiring','apply now','register now','enroll'];
-const URGENCY_KW=['urgent','urgently','immediately','now','hurry','limited','deadline','expires','expiry','last chance','act now','today only','hours only','apply immediately','limited slots','limited seats','closing soon','final reminder','dont miss','do not miss','offer expires','24 hours','48 hours','before its too late','asap','quickly','fast','rush'];
-const PROMO_KW=['free','offer','discount','deal','win','prize','reward','bonus','gift','exclusive','special','guaranteed','earn','income','profit','opportunity','scheme','program','training','internship','job','placement','recruitment','hiring','apply','register','enroll','join now','click here','apply here','fill','form','link','google form','whatsapp group','congratulations','selected','shortlisted','pre-selected','pre-approved','certificate','certification'];
+const KLU_WHITELIST=['register','kluniversity.in','placement cell','klu placement','campus recruitment','campus drive','campus interview','klef','koneru lakshmaiah','kl university placement'];
+const SPAM_KW=['free','win','winner','won','prize','lottery','claim','reward','gift','bonus','congratulations','selected','shortlisted','chosen','lucky','jackpot','earn','income','profit','money','cash','lakh','thousand','internship','training','certification','aicte','iso','msme','vtu','nasscom','lor','letter of recommendation','placement guarantee','guaranteed','job offer','work from home','remote','part time','freelance','scheme','program','opportunity','resume','ats','mock interview','masterclass','live project','capstone','google cloud','aws','microsoft azure','tcs','infosys','wipro','accenture','collaboration','partner','verified','approved','authorized','hiring','apply now','enroll'];
+const URGENCY_KW=['urgent','urgently','immediately','now','hurry','limited','deadline','expires','last chance','act now','today only','hours only','apply immediately','limited slots','limited seats','closing soon','final reminder','dont miss','do not miss','24 hours','48 hours','asap','quickly','fast','rush'];
+const PROMO_KW=['free','offer','discount','deal','win','prize','reward','bonus','gift','exclusive','special','guaranteed','earn','income','profit','opportunity','scheme','program','training','internship','job','placement','recruitment','hiring','apply','register','enroll','join now','click here','apply here','fill','form','link','google form','whatsapp group','congratulations','selected','shortlisted','certificate','certification'];
 
-function detectSuspiciousPatterns(text){
-  const patterns=[];
-  const urls=text.match(/https?:\/\/[^\s]+|bit\.ly\/[^\s]+|tinyurl[^\s]+/gi)||[];
+function detectSPS(text){
+  const p=[];
+  const urls=text.match(/https?:\/\/[^\s]+|bit\.ly\/[^\s]+/gi)||[];
   const gforms=text.match(/forms\.gle\/[^\s]+/gi)||[];
-  urls.concat(gforms).forEach(u=>{
-    const short=u.length>35?u.substring(0,35)+'...':u;
-    patterns.push({word:short,reason:'External URL found — could be phishing link or unofficial form',impact:'high',type:'spam'});
-  });
-  if(/chat\.whatsapp\.com/i.test(text)) patterns.push({word:'WhatsApp Group Link',reason:'Asking to join WhatsApp group for official process — red flag for fake offers',impact:'high',type:'spam'});
-  if(/forms\.gle|google.*form/i.test(text)&&!/register|kluniversity/i.test(text)) patterns.push({word:'Google Form',reason:'Using Google Form for official recruitment is unofficial and suspicious',impact:'high',type:'spam'});
+  [...urls,...gforms].forEach(u=>p.push({word:u.length>35?u.substring(0,35)+'...':u,reason:'External URL — could be phishing or unofficial form',impact:'high',type:'spam'}));
+  if(/chat\.whatsapp\.com/i.test(text))p.push({word:'WhatsApp Group Link',reason:'Asking to join WhatsApp group for official process — red flag',impact:'high',type:'spam'});
+  if(/forms\.gle|google.*form/i.test(text)&&!/register|kluniversity/i.test(text))p.push({word:'Google Form',reason:'Using Google Form for official recruitment is unofficial and suspicious',impact:'high',type:'spam'});
   const phones=text.match(/\b[6-9]\d{9}\b/g)||[];
-  if(phones.length>0) patterns.push({word:phones[0],reason:'Personal mobile number as official contact — real companies use official numbers/emails',impact:'medium',type:'spam'});
-  const money=text.match(/₹\s*[\d,]+|rs\.?\s*[\d,]+|\d+\s*lakh|\d+\s*thousand/gi)||[];
-  if(money.length>0) patterns.push({word:money[0],reason:'Money amount mentioned — common in prize scams and fake job offers',impact:'medium',type:'spam'});
-  const caps=(text.match(/\b[A-Z]{4,}\b/g)||[]).filter(w=>!['AICTE','NAAC','NIRF','KLEF','MITRA','HTML','HTTP','HTTPS','EMAIL','GMAIL','APPLY'].includes(w));
-  if(caps.length>3) patterns.push({word:caps.slice(0,3).join(', '),reason:'Multiple ALL CAPS words — common spam formatting technique',impact:'low',type:'spam'});
-  return patterns;
+  if(phones.length>0)p.push({word:phones[0],reason:'Personal mobile number as official contact — suspicious',impact:'medium',type:'spam'});
+  const money=text.match(/₹\s*[\d,]+|rs\.?\s*[\d,]+|\d+\s*lakh/gi)||[];
+  if(money.length>0)p.push({word:money[0],reason:'Money amount mentioned — common in prize scams',impact:'medium',type:'spam'});
+  return p;
 }
-
-function fuzzyLevel(val){
-  if(val>=0.45)return 'High';
-  if(val>=0.15)return 'Medium';
-  return 'Low';
-}
-
-function tokenize(text){
-  return text.toLowerCase().replace(/[^a-z0-9\s₹]/g,' ').split(/\s+/).filter(w=>w.length>1);
-}
-
-// Paper 3 Equations 3,4,5,6
+function fuzzyLevel(v){return v>=0.45?'High':v>=0.15?'Medium':'Low'}
+function tokenize(t){return t.toLowerCase().replace(/[^a-z0-9\s₹]/g,' ').split(/\s+/).filter(w=>w.length>1)}
 function calcFuzzy(text){
-  const lower=text.toLowerCase();
-  const tokens=tokenize(text);
-  const N=Math.max(tokens.length,1);
-  // KD Eq.3
-  const spamCount=tokens.filter(t=>SPAM_KW.some(k=>t===k||t.includes(k)||k.includes(t))).length;
-  const KD=Math.min(spamCount/N,1);
-  // US Eq.4
-  const urgCount=URGENCY_KW.filter(u=>lower.includes(u)).length;
-  const US=Math.min(urgCount/Math.max(N*0.2,1),1);
-  // PI Eq.5
-  const promoCount=tokens.filter(t=>PROMO_KW.some(p=>t===p||t.includes(p)||p.includes(t))).length;
-  const PI=Math.min(promoCount/N,1);
-  // SPS Eq.6
-  const susp=(
-    ((text.match(/https?:\/\/|bit\.ly/gi)||[]).length)*3+
-    ((text.match(/chat\.whatsapp\.com/gi)||[]).length)*3+
-    ((text.match(/forms\.gle/gi)||[]).length)*3+
-    ((text.match(/\b[6-9]\d{9}\b/g)||[]).length)*2+
-    ((text.match(/₹\s*[\d,]+/g)||[]).length)*1+
-    (((text.match(/\b[A-Z]{4,}\b/g)||[]).length>3)?2:0)
-  );
+  const lower=text.toLowerCase(),tokens=tokenize(text),N=Math.max(tokens.length,1);
+  const KD=Math.min(tokens.filter(t=>SPAM_KW.some(k=>t===k||t.includes(k))).length/N,1);
+  const US=Math.min(URGENCY_KW.filter(u=>lower.includes(u)).length/Math.max(N*0.2,1),1);
+  const PI=Math.min(tokens.filter(t=>PROMO_KW.some(p=>t===p||t.includes(p))).length/N,1);
+  const susp=((text.match(/https?:\/\/|bit\.ly/gi)||[]).length)*3+((text.match(/chat\.whatsapp\.com/gi)||[]).length)*3+((text.match(/forms\.gle/gi)||[]).length)*3+((text.match(/\b[6-9]\d{9}\b/g)||[]).length)*2+((text.match(/₹\s*[\d,]+/g)||[]).length);
   const SPS=Math.min(susp/12,1);
   return{KD,US,PI,SPS};
 }
-
-function isKLUOfficial(text){
-  const lower=text.toLowerCase();
-  return KLU_WHITELIST.some(k=>lower.includes(k));
-}
-
 function classify(scores,text){
-  const{KD,US,PI,SPS}=scores;
-  const lower=text.toLowerCase();
-  // KLU Official — always Ham
-  if(isKLUOfficial(text)){
-    return{verdict:'Ham',confidence:90+Math.round(Math.random()*7),reason:'Official KLU/REGISTER communication — this is legitimate'};
-  }
-  // OTP — always Ham
-  if(/otp|one.time.password|verification code/i.test(text)&&/do not share|dont share|never share/i.test(text)){
-    return{verdict:'Ham',confidence:96,reason:'Legitimate OTP message with security warning'};
-  }
-  // Casual/friend — Ham if very low scores
-  if(KD<0.04&&US<0.04&&PI<0.04&&SPS<0.08&&text.length<200){
-    return{verdict:'Ham',confidence:87+Math.round(Math.random()*8),reason:'Casual personal message — no spam indicators detected'};
-  }
-  // Weighted score — Paper 3 XGBoost feature weights
+  const{KD,US,PI,SPS}=scores,lower=text.toLowerCase();
+  if(KLU_WHITELIST.some(k=>lower.includes(k)))return{verdict:'Ham',confidence:90+Math.round(Math.random()*7),reason:'Official KLU/REGISTER communication — legitimate'};
+  if(/otp|one.time.password/i.test(text)&&/do not share|dont share/i.test(text))return{verdict:'Ham',confidence:96,reason:'Legitimate OTP with security warning'};
+  if(calcFuzzy(text).KD<0.04&&calcFuzzy(text).US<0.04&&calcFuzzy(text).SPS<0.08&&text.length<200)return{verdict:'Ham',confidence:87+Math.round(Math.random()*8),reason:'Casual personal message — no spam indicators'};
   let score=(KD*0.35)+(US*0.20)+(PI*0.25)+(SPS*0.20);
-  // Brand impersonation boost
-  const brands=['tcs','google','microsoft','amazon','infosys','wipro','accenture','flipkart','deloitte','cognizant','ibm','oracle'];
-  const unknowns=['averixis','solutions pvt','technologies pvt','pvt ltd','private limited','academy','institute','ventures','labs pvt'];
-  const hasBrand=brands.some(b=>lower.includes(b));
-  const hasUnknown=unknowns.some(u=>lower.includes(u));
-  if(hasBrand&&hasUnknown)score=Math.min(score+0.28,1);
-  // WhatsApp + Google Form double flag
+  const brands=['tcs','google','microsoft','amazon','infosys','wipro','accenture'];
+  const unknowns=['averixis','solutions pvt','technologies pvt','pvt ltd','academy','institute','ventures'];
+  if(brands.some(b=>lower.includes(b))&&unknowns.some(u=>lower.includes(u)))score=Math.min(score+0.28,1);
   if(/chat\.whatsapp/.test(lower)&&/forms\.gle|google.*form/.test(lower))score=Math.min(score+0.22,1);
   const isSpam=score>0.22;
   const conf=isSpam?Math.round(60+score*36):Math.round(72+(1-score)*22);
-  let reason='';
+  let reason=isSpam?'Multiple spam indicators detected':'Low spam score — message appears legitimate';
   if(isSpam){
-    if(hasBrand&&hasUnknown)reason='Brand impersonation — famous company name used by unknown organizer';
-    else if(/chat\.whatsapp/.test(lower)&&/forms\.gle|google.*form/.test(lower))reason='WhatsApp group + Google Form combo — classic unofficial internship scam pattern';
-    else if(SPS>0.4)reason='Multiple suspicious patterns — URLs, phone numbers, or external links detected';
-    else if(KD>0.3)reason='High spam keyword density — promotional or scam language pattern detected';
-    else if(US>0.3)reason='High urgency language — pressure tactics commonly used in scam messages';
-    else reason='Multiple spam indicators detected across statistical and linguistic analysis';
-  }else{
-    reason='Low spam score — message appears legitimate across all analysis levels';
+    if(brands.some(b=>lower.includes(b))&&unknowns.some(u=>lower.includes(u)))reason='Brand impersonation — famous company used by unknown organizer';
+    else if(/chat\.whatsapp/.test(lower)&&/forms\.gle/.test(lower))reason='WhatsApp group + Google Form combo — classic unofficial scam pattern';
+    else if(SPS>0.4)reason='Multiple suspicious URLs/phone numbers/patterns detected';
+    else if(KD>0.3)reason='High spam keyword density detected';
   }
   return{verdict:isSpam?'Spam':'Ham',confidence:Math.min(conf,97),reason};
 }
-
 function findTriggers(text,scores){
-  const triggers=[];
-  const lower=text.toLowerCase();
-  const tokens=tokenize(text);
-  // Top spam keywords found
+  const triggers=[],lower=text.toLowerCase(),tokens=tokenize(text);
   const foundSpam=[...new Set(SPAM_KW.filter(k=>tokens.some(t=>t===k||t.includes(k))))].slice(0,2);
-  foundSpam.forEach(k=>{triggers.push({word:k,reason:'Spam keyword — commonly used in scam and promotional messages',impact:'medium',type:'spam'})});
-  // Urgency words found
-  const foundUrg=URGENCY_KW.filter(u=>lower.includes(u)).slice(0,2);
-  foundUrg.forEach(u=>{triggers.push({word:u,reason:'Urgency language — used to pressure victims into hasty decisions',impact:'high',type:'spam'})});
-  // Brand impersonation
-  const brands=['tcs','google','microsoft','amazon','infosys','wipro','accenture'];
-  const foundBrand=brands.find(b=>lower.includes(b));
-  const unknowns=['averixis','solutions pvt','technologies pvt','pvt ltd','academy'];
-  const foundUnknown=unknowns.find(u=>lower.includes(u));
-  if(foundBrand&&foundUnknown)triggers.push({word:`${foundBrand.toUpperCase()} + unknown organizer`,reason:'Brand impersonation — famous company used with unrelated organizer to seem legitimate',impact:'high',type:'spam'});
-  // Suspicious patterns
-  const sps=detectSuspiciousPatterns(text);
-  sps.slice(0,3).forEach(p=>triggers.push(p));
-  // Safe signals
-  if(/register/i.test(text)&&!/register now|register here/i.test(text))triggers.push({word:'REGISTER',reason:'KLU official placement cell reference — indicates legitimate source',impact:'low',type:'safe'});
-  if(/kluniversity\.in/i.test(text))triggers.push({word:'kluniversity.in',reason:'Official KLU domain — indicates legitimate communication',impact:'low',type:'safe'});
-  if(/do not share/i.test(text)&&/otp/i.test(text))triggers.push({word:'Do Not Share (OTP)',reason:'Standard security warning in legitimate bank/portal OTPs',impact:'low',type:'safe'});
+  foundSpam.forEach(k=>triggers.push({word:k,reason:'Spam keyword commonly used in scam messages',impact:'medium',type:'spam'}));
+  URGENCY_KW.filter(u=>lower.includes(u)).slice(0,2).forEach(u=>triggers.push({word:u,reason:'Urgency language — pressuring victims into quick decisions',impact:'high',type:'spam'}));
+  const brands=['tcs','google','microsoft','amazon','infosys','wipro'];
+  const unknowns=['averixis','solutions pvt','pvt ltd','academy'];
+  const fb=brands.find(b=>lower.includes(b)),fu=unknowns.find(u=>lower.includes(u));
+  if(fb&&fu)triggers.push({word:`${fb.toUpperCase()} + unknown organizer`,reason:'Brand impersonation — famous company used with unrelated organizer',impact:'high',type:'spam'});
+  detectSPS(text).slice(0,3).forEach(p=>triggers.push(p));
+  if(/register/i.test(text)&&!/register now|register here/i.test(text))triggers.push({word:'REGISTER',reason:'KLU official placement cell — legitimate source',impact:'low',type:'safe'});
+  if(/kluniversity\.in/i.test(text))triggers.push({word:'kluniversity.in',reason:'Official KLU domain — legitimate',impact:'low',type:'safe'});
   return triggers.slice(0,6);
 }
-
 function getAdvice(result,text){
-  const isSpam=result.verdict==='Spam';
-  const lower=text.toLowerCase();
-  if(!isSpam)return{advice:'This message looks legitimate and safe. Still, always be cautious with links and never share passwords or OTPs with anyone.',steps:['Message appears safe — low spam score across all indicators','Verify any links go to official websites before clicking','If still unsure, contact the sender directly through official channels']};
-  const isFakeJob=/internship|training|certification|lor|placement guarantee|shortlisted/i.test(text);
-  const isPrize=/win|won|prize|lottery|reward|jackpot/i.test(text);
-  const isPhish=/account|suspended|blocked|verify|click here|bank/i.test(text);
-  if(isFakeJob)return{advice:'This is a FAKE internship/training scam ra! Official KLU placements ONLY come through REGISTER (KLU Placement Cell) or your Department HoD — never through WhatsApp groups or Google Forms.',steps:['Do NOT fill any Google Form or join the WhatsApp group','Immediately verify with your Department HoD if this is official','Check REGISTER portal (kluniversity.in) for official placement communications','Report this message to your department as a student scam attempt']};
-  if(isPrize)return{advice:'Classic prize/lottery SCAM ra! You have not won anything. These messages are designed to steal your money or personal details.',steps:['Do NOT call any number mentioned in this message','Do NOT share any personal information or bank details','Block and delete this message immediately','Report to cyber crime portal: cybercrime.gov.in']};
-  if(isPhish)return{advice:'PHISHING attempt detected ra! Banks and institutions NEVER ask you to verify via SMS links. Do not click anything.',steps:['Do NOT click any link in this message','Contact your bank directly through official helpline numbers','Do NOT enter passwords, OTPs, or card details on any linked page','Report to your bank fraud helpline immediately']};
-  return{advice:'Spam/scam message detected ra! Do not respond or share any personal information.',steps:['Do NOT respond to this message','Do NOT click any links or call numbers mentioned','Block the sender immediately','When in doubt, verify only through official channels']};
+  const isSpam=result.verdict==='Spam',lower=text.toLowerCase();
+  if(!isSpam)return{advice:'This message looks legitimate and safe. Still be cautious with links and never share passwords or OTPs.',steps:['Message appears safe — low spam score','Verify links go to official websites before clicking','If unsure, contact the sender directly through official channels']};
+  if(/internship|training|certification|lor|placement guarantee|shortlisted/i.test(text))return{advice:'FAKE internship/training scam ra! Official KLU placements come ONLY through REGISTER or your Department HoD — never through WhatsApp or Google Forms.',steps:['Do NOT fill any Google Form or join the WhatsApp group','Verify with your Department HoD immediately','Check REGISTER portal at kluniversity.in for official placements','Report this to your department as a student scam']};
+  if(/win|won|prize|lottery|reward/i.test(text))return{advice:'Classic prize/lottery SCAM! You have not won anything — these messages steal your money or personal info.',steps:['Do NOT call any number in this message','Do NOT share personal or bank details','Block and delete immediately','Report at cybercrime.gov.in']};
+  if(/account|suspended|blocked|verify|click here|bank/i.test(text))return{advice:'PHISHING attempt! Banks never ask you to verify via SMS links — do not click anything.',steps:['Do NOT click any link in this message','Contact your bank through official helpline directly','Do NOT enter passwords or OTPs on linked pages','Report to your bank fraud helpline immediately']};
+  return{advice:'Spam/scam message detected. Do not respond or share any personal information.',steps:['Do NOT respond to this message','Do NOT click links or call numbers mentioned','Block the sender','Verify only through official channels']};
 }
-
 function renderMeters(scores){
   [['kd',scores.KD],['us',scores.US],['pi',scores.PI],['sps',scores.SPS]].forEach(([k,val])=>{
-    const pct=Math.round(val*100);
     const level=fuzzyLevel(val);
     document.getElementById(`fm-${k}`).className=`fmeter fmeter-${level.toLowerCase()}`;
-    setTimeout(()=>{document.getElementById(`ff-${k}`).style.width=`${pct}%`;},100);
+    setTimeout(()=>{document.getElementById(`ff-${k}`).style.width=`${Math.round(val*100)}%`;},100);
     document.getElementById(`fv-${k}`).textContent=val.toFixed(3);
-    const lel=document.getElementById(`fl-${k}`);
-    lel.textContent=level;
-    lel.className=`fmeter-level level-${level.toLowerCase()}`;
+    const lel=document.getElementById(`fl-${k}`);lel.textContent=level;lel.className=`fmeter-level level-${level.toLowerCase()}`;
   });
   document.getElementById('fuzzy-section').classList.add('show');
 }
-
 function checkSpam(){
   const msg=document.getElementById('smsg').value.trim();
   if(!msg){document.getElementById('smsg').focus();return;}
   document.getElementById('sresult').classList.remove('show');
   document.getElementById('fuzzy-section').classList.remove('show');
   ['kd','us','pi','sps'].forEach(k=>{document.getElementById(`ff-${k}`).style.width='0%';});
-  const scores=calcFuzzy(msg);
-  const result=classify(scores,msg);
-  const triggers=findTriggers(msg,scores);
-  const advice=getAdvice(result,msg);
+  const scores=calcFuzzy(msg),result=classify(scores,msg),triggers=findTriggers(msg,scores),advice=getAdvice(result,msg);
   renderMeters(scores);
   const isSpam=result.verdict==='Spam';
   const verd=document.getElementById('sverdict');
@@ -994,28 +820,18 @@ function checkSpam(){
   document.getElementById('sv-exp').textContent=result.reason;
   document.getElementById('sv-pct').textContent=`${result.confidence}%`;
   setTimeout(()=>{document.getElementById('sv-fill').style.width=`${result.confidence}%`;},100);
-  const tlist=document.getElementById('tlist');
-  tlist.innerHTML='';
-  if(triggers.length===0){
-    tlist.innerHTML='<div class="titem"><span class="treason" style="color:var(--t3)">No specific trigger words detected — message appears normal.</span></div>';
-  }else{
-    triggers.forEach(t=>{
-      const ic=t.impact==='high'?'hi':t.impact==='medium'?'md':'lo';
-      tlist.innerHTML+=`<div class="titem"><span class="tword ${t.type==='safe'?'good':'bad'}">${t.word}</span><span class="treason">${t.reason}</span><span class="timp ${ic}">${t.impact}</span></div>`;
-    });
-  }
+  const tlist=document.getElementById('tlist');tlist.innerHTML='';
+  triggers.length===0?tlist.innerHTML='<div class="titem"><span class="treason" style="color:var(--t3)">No specific trigger words found.</span></div>':triggers.forEach(t=>{const ic=t.impact==='high'?'hi':t.impact==='medium'?'md':'lo';tlist.innerHTML+=`<div class="titem"><span class="tword ${t.type==='safe'?'good':'bad'}">${t.word}</span><span class="treason">${t.reason}</span><span class="timp ${ic}">${t.impact}</span></div>`;});
   const adv=document.getElementById('sadvice');
   adv.className=`sadvice ${isSpam?'spam':'ham'}`;
   document.getElementById('sa-icon').textContent=isSpam?'🛡️':'💚';
   document.getElementById('sa-ttl').textContent=isSpam?'Stay Safe — What To Do Now':'You\'re Good to Go!';
   document.getElementById('sa-txt').textContent=advice.advice;
-  const steps=document.getElementById('sa-steps');
-  steps.innerHTML='';
+  const steps=document.getElementById('sa-steps');steps.innerHTML='';
   advice.steps.forEach((s,i)=>{steps.innerHTML+=`<div class="sstep-item"><div class="sstep-num">${i+1}</div><span>${s}</span></div>`;});
   document.getElementById('sresult').classList.add('show');
   setTimeout(()=>{document.getElementById('fuzzy-section').scrollIntoView({behavior:'smooth',block:'start'});},100);
 }
-
 function resetCheck(){
   document.getElementById('smsg').value='';
   document.getElementById('sresult').classList.remove('show');
@@ -1024,32 +840,16 @@ function resetCheck(){
   document.getElementById('sv-fill').style.width='0%';
   document.getElementById('smsg').focus();
 }
-
-// SAMPLE MESSAGES
 const SAMPLES={
-  internship:`Greetings From TCS,\nDear Student,\nCongratulations on being shortlisted for the Internship Program!\nAverixis Solutions in collaboration with GOOGLE CLOUD PARTNER organizes a TCS Verified 2-Month Training + Internship Program. To proceed, fill the mandatory Google Form: https://forms.gle/hJXhHnFZFAPeyeEu9\nJoin Our Official WhatsApp Group: https://chat.whatsapp.com/HTxRHypbUnu0e7whHY5cbK\nCertification Approvals: AICTE, ISO, MSME, VTU\nLOR from MNCs guaranteed. Placement Guarantee. Resume Building.\nThanks & regards SHIVA, Senior Manager, 6366021420`,
-  prize:`Congratulations! You have won Rs.50,000 in KBC Lottery 2025! Your number has been selected from 1 crore participants. To claim your prize immediately call: 9876543210. Offer valid for 24 hours only! Limited time — act now!`,
-  phishing:`URGENT ALERT: Your SBI bank account has been temporarily suspended due to suspicious activity detected. Click here immediately to verify your identity: bit.ly/sbi-verify-now or your account will be permanently blocked within 2 hours. Do not ignore!`,
-  otp:`Your OTP for KLU Student Portal login is 847291. This OTP is valid for 10 minutes only. Do not share this OTP with anyone including KLU staff. If you did not request this OTP, please contact support immediately.`,
-  register:`Dear Students,\nThis is to inform you that REGISTER (KLU Placement Cell) has scheduled a campus recruitment drive for TCS on April 20th, 2025. Eligible students from CSE branch with 60% aggregate may register through the official KLU placement portal at kluniversity.in/placements before April 15th, 2025.\nFor queries contact: placement@kluniversity.in`,
-  friend:`Hey bro are you coming to college tomorrow? We have ML lab at 10am. Let's meet at the canteen first around 9:30 and then go together. Bring your lab record also, sir might check today.`
+  internship:`Greetings From TCS,\nDear Student,\nCongratulations on being shortlisted for the Internship Program!\nAverixis Solutions in collaboration with GOOGLE CLOUD PARTNER organizes a TCS Verified 2-Month Training + Internship. Fill the Google Form: https://forms.gle/hJXhHnFZFAPeyeEu9\nJoin WhatsApp Group: https://chat.whatsapp.com/HTxRHypbUnu0e7whHY5cbK\nCertification: AICTE, ISO, MSME. LOR from MNCs. Placement Guarantee.\nThanks SHIVA, Senior Manager, 6366021420`,
+  prize:`Congratulations! You won Rs.50,000 in KBC Lottery 2025! Call immediately: 9876543210 to claim. Offer valid 24 hours only! Act now!`,
+  phishing:`URGENT: Your SBI account suspended due to suspicious activity. Verify now: bit.ly/sbi-verify or account permanently blocked in 2 hours.`,
+  otp:`Your OTP for KLU Student Portal login is 847291. Valid 10 minutes. Do not share with anyone including KLU staff.`,
+  register:`Dear Students, REGISTER (KLU Placement Cell) has scheduled campus recruitment for TCS on April 20th. Eligible CSE students with 60% aggregate register at kluniversity.in/placements before April 15. Contact: placement@kluniversity.in`,
+  friend:`Hey bro coming to college tomorrow? ML lab at 10am. Meet at canteen 9:30 first? Bring lab record also, sir might check.`
 };
-function loadSample(key){
-  document.getElementById('smsg').value=SAMPLES[key]||'';
-  document.getElementById('smsg').focus();
-  document.getElementById('sresult').classList.remove('show');
-  document.getElementById('fuzzy-section').classList.remove('show');
-}
-
-// TAB SWITCHING
-function sw(tab,btn){
-  document.querySelectorAll('.tpage').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.ntab').forEach(b=>b.classList.remove('active'));
-  document.getElementById('page-'+tab).classList.add('active');
-  btn.classList.add('active');
-}
-
-// MODAL
+function loadSample(key){document.getElementById('smsg').value=SAMPLES[key]||'';document.getElementById('smsg').focus();document.getElementById('sresult').classList.remove('show');document.getElementById('fuzzy-section').classList.remove('show');}
+function sw(tab,btn){document.querySelectorAll('.tpage').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.ntab').forEach(b=>b.classList.remove('active'));document.getElementById('page-'+tab).classList.add('active');btn.classList.add('active');}
 function om(){document.getElementById('mov').classList.add('open')}
 function cm(){document.getElementById('mov').classList.remove('open')}
 function co(e){if(e.target===document.getElementById('mov'))cm()}
