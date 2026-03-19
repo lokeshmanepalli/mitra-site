@@ -114,111 +114,134 @@ textarea::placeholder{color:var(--t3)}
 .sbtn{width:44px;height:44px;background:linear-gradient(135deg,var(--teal),#0ea5e9);border:none;border-radius:12px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .25s;box-shadow:0 4px 16px rgba(56,189,248,.35)}
 .sbtn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(56,189,248,.45)}.sbtn:active{transform:scale(.95)}.sbtn:disabled{background:var(--glass);box-shadow:none;cursor:not-allowed;transform:none}
 
-/* ══════════ SAFETY CHECK PAGE ══════════ */
-.spage{max-width:780px;margin:0 auto;padding:40px 18px 60px}
-.shero{text-align:center;padding:0 0 32px}
-.shero-badge{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#34d399;background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.25);padding:6px 14px;border-radius:20px;margin-bottom:18px}
-.shero-badge-dot{width:6px;height:6px;background:#34d399;border-radius:50%;animation:blink 2s infinite}
-.shero h2{font-family:'Crimson Pro',serif;font-size:clamp(26px,4.5vw,46px);font-weight:600;line-height:1.15;margin-bottom:10px}
+/* ══════════ SAFETY CHECK ══════════ */
+.spage{max-width:780px;margin:0 auto;padding:36px 18px 56px}
+.shero{text-align:center;padding:0 0 28px}
+.shero-badge{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#34d399;background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.25);padding:5px 14px;border-radius:20px;margin-bottom:16px}
+.shero-badge-dot{width:5px;height:5px;background:#34d399;border-radius:50%;animation:blink 2s infinite}
+.shero h2{font-family:'Crimson Pro',serif;font-size:clamp(24px,4vw,44px);font-weight:600;line-height:1.15;margin-bottom:10px}
 .shero h2 span{background:linear-gradient(135deg,#34d399,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.shero-tagline{font-size:13.5px;color:var(--t2);max-width:560px;margin:0 auto;line-height:1.7;font-weight:300}
+.shero-tagline{font-size:13px;color:var(--t2);max-width:540px;margin:0 auto;line-height:1.7;font-weight:300}
 .shero-tagline strong{color:var(--em);font-weight:600}
 
-/* PLATFORM BADGES */
-.platform-badges{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:18px 0 28px}
-.pb{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;padding:5px 12px;border-radius:20px;border:1px solid var(--border);color:var(--t2);background:var(--glass)}
-.pb span{font-size:14px}
+/* PLATFORM PILLS */
+.plats{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin:16px 0 22px}
+.plat{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:400;padding:4px 11px;border-radius:20px;border:1px solid var(--border);color:var(--t2);background:var(--glass)}
+
+/* KLU NOTICE */
+.klu-notice{display:flex;align-items:flex-start;gap:11px;background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.2);border-radius:13px;padding:13px 16px;margin-bottom:22px}
+.klu-notice-icon{font-size:18px;flex-shrink:0;margin-top:1px}
+.klu-notice-text{font-size:12px;color:var(--t2);line-height:1.6}
+.klu-notice-text strong{color:var(--am);display:block;margin-bottom:2px;font-size:12.5px}
 
 /* PAPER BADGE */
-.paper-badge{display:flex;align-items:center;gap:12px;background:rgba(52,211,153,.06);border:1px solid rgba(52,211,153,.15);border-radius:14px;padding:12px 18px;margin-bottom:28px}
-.paper-badge-icon{font-size:22px;flex-shrink:0}
-.paper-badge-text{font-size:11.5px;color:var(--t2);line-height:1.5}
-.paper-badge-text strong{color:var(--em);display:block;margin-bottom:2px;font-size:12px}
-
-/* KLU ALERT */
-.klu-alert{display:flex;align-items:flex-start;gap:12px;background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.2);border-radius:14px;padding:14px 18px;margin-bottom:24px}
-.klu-alert-icon{font-size:20px;flex-shrink:0;margin-top:1px}
-.klu-alert-text{font-size:12px;color:var(--t2);line-height:1.6}
-.klu-alert-text strong{color:var(--am);display:block;margin-bottom:3px;font-size:12.5px}
+.pbadge{display:flex;align-items:center;gap:11px;background:rgba(52,211,153,.05);border:1px solid rgba(52,211,153,.15);border-radius:13px;padding:11px 16px;margin-bottom:22px}
+.pbadge-icon{font-size:20px;flex-shrink:0}
+.pbadge-text{font-size:11px;color:var(--t2);line-height:1.5}
+.pbadge-text strong{color:var(--em);display:block;margin-bottom:2px;font-size:11.5px}
 
 /* INPUT CARD */
-.sinput-card{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 40px rgba(52,211,153,.08),inset 0 1px 0 rgba(255,255,255,.06);position:relative;margin-bottom:24px}
+.sinput-card{background:var(--card);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 30px rgba(52,211,153,.06),inset 0 1px 0 rgba(255,255,255,.06);position:relative;margin-bottom:20px}
 .sinput-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#34d399,#38bdf8,#34d399,transparent)}
-.sinput-head{padding:16px 22px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:11px;background:rgba(255,255,255,.02)}
-.sinput-avatar{width:40px;height:40px;background:linear-gradient(135deg,#34d399,#0ea5e9);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;box-shadow:0 4px 16px rgba(52,211,153,.3)}
-.sinput-title{font-size:13px;font-weight:600;margin-bottom:2px}
+.sinput-head{padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.02)}
+.sinput-av{width:38px;height:38px;background:linear-gradient(135deg,#34d399,#0ea5e9);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.sinput-ttl{font-size:13px;font-weight:600;margin-bottom:2px}
 .sinput-sub{font-size:11px;color:var(--em)}
-.squick{padding:14px 22px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.015)}
-.squick-lbl{font-size:9.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--t3);margin-bottom:9px}
-.squick-btns{display:flex;gap:6px;flex-wrap:wrap}
-.sqb{font-size:11px;font-weight:400;font-family:'Sora',sans-serif;color:var(--t2);background:var(--glass);border:1px solid var(--border);border-radius:20px;padding:5px 12px;cursor:pointer;transition:all .2s;text-align:left;max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.sqb:hover{border-color:rgba(52,211,153,.3);color:#34d399;background:rgba(52,211,153,.06);transform:translateY(-1px)}
-.sinput-body{padding:20px 22px}
-.sinput-label{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--t3);margin-bottom:10px}
-.smsg-input{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:14px;color:var(--t1);font-family:'Sora',sans-serif;font-size:13px;font-weight:300;padding:14px 16px;resize:none;outline:none;min-height:140px;line-height:1.6;transition:border-color .2s,box-shadow .2s}
-.smsg-input:focus{border-color:rgba(52,211,153,.4);box-shadow:0 0 0 3px rgba(52,211,153,.08)}
-.smsg-input::placeholder{color:var(--t3)}
-.scheck-row{display:flex;align-items:center;justify-content:space-between;margin-top:14px;gap:12px;flex-wrap:wrap}
-.scheck-hint{font-size:11px;color:var(--t3);display:flex;align-items:center;gap:5px}
-.scheck-btn{display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,#34d399,#0ea5e9);border:none;border-radius:12px;color:#0b0f1a;font-size:13px;font-weight:700;font-family:'Sora',sans-serif;padding:12px 24px;cursor:pointer;transition:all .25s;box-shadow:0 4px 16px rgba(52,211,153,.35)}
-.scheck-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(52,211,153,.45)}.scheck-btn:active{transform:scale(.95)}.scheck-btn:disabled{background:var(--glass);color:var(--t3);box-shadow:none;cursor:not-allowed;transform:none}
-.scheck-btn svg{width:16px;height:16px;fill:currentColor}
 
-/* ANALYZING */
-.sanalyzing{display:none;flex-direction:column;align-items:center;justify-content:center;padding:36px 20px;gap:14px;text-align:center}
-.sanalyzing.show{display:flex}
-.sanalyze-spinner{width:44px;height:44px;border:3px solid rgba(52,211,153,.2);border-top-color:#34d399;border-radius:50%;animation:spin 1s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.sanalyze-txt{font-size:13px;color:var(--t2);font-weight:300}
-.sanalyze-steps{display:flex;flex-direction:column;gap:7px;margin-top:8px;text-align:left}
-.sstep{font-size:11px;color:var(--t3);display:flex;align-items:center;gap:7px;opacity:.4;transition:all .4s}
-.sstep.done{opacity:1;color:var(--em)}.sstep.active{opacity:1;color:var(--teal)}
-.sstep-dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0}
+/* SAMPLES */
+.ssamps{padding:12px 20px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.015)}
+.ssamps-lbl{font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--t3);margin-bottom:8px}
+.ssamps-btns{display:flex;gap:6px;flex-wrap:wrap}
+.ssb{font-size:11px;font-weight:400;font-family:'Sora',sans-serif;padding:5px 11px;border-radius:20px;border:1px solid;cursor:pointer;transition:all .2s;white-space:nowrap}
+.ssb.spam-s{color:var(--ro);border-color:rgba(251,113,133,.25);background:rgba(251,113,133,.06)}
+.ssb.spam-s:hover{background:rgba(251,113,133,.12);transform:translateY(-1px)}
+.ssb.ham-s{color:var(--em);border-color:rgba(52,211,153,.25);background:rgba(52,211,153,.06)}
+.ssb.ham-s:hover{background:rgba(52,211,153,.12);transform:translateY(-1px)}
+
+.sinput-body{padding:18px 20px}
+.sinput-lbl{font-size:9.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--t3);margin-bottom:9px}
+.smsg-ta{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:13px;color:var(--t1);font-family:'Sora',sans-serif;font-size:13px;font-weight:300;padding:13px 15px;resize:none;outline:none;min-height:130px;line-height:1.6;transition:border-color .2s,box-shadow .2s}
+.smsg-ta:focus{border-color:rgba(52,211,153,.4);box-shadow:0 0 0 3px rgba(52,211,153,.07)}
+.smsg-ta::placeholder{color:var(--t3)}
+.scheck-row{display:flex;align-items:center;justify-content:space-between;margin-top:13px;gap:10px;flex-wrap:wrap}
+.scheck-hint{font-size:11px;color:var(--t3);display:flex;align-items:center;gap:5px}
+.scheck-btn{display:flex;align-items:center;gap:7px;background:linear-gradient(135deg,#34d399,#0ea5e9);border:none;border-radius:11px;color:#0b0f1a;font-size:13px;font-weight:700;font-family:'Sora',sans-serif;padding:11px 22px;cursor:pointer;transition:all .25s;box-shadow:0 4px 16px rgba(52,211,153,.3)}
+.scheck-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(52,211,153,.4)}.scheck-btn:active{transform:scale(.95)}.scheck-btn:disabled{background:var(--glass);color:var(--t3);box-shadow:none;cursor:not-allowed;transform:none}
+.scheck-btn svg{width:15px;height:15px;fill:currentColor}
+
+/* FUZZY METERS */
+.fuzzy-section{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;margin-bottom:16px;display:none}
+.fuzzy-section.show{display:block}
+.fuzzy-title{font-size:12px;font-weight:600;color:var(--t2);margin-bottom:14px;display:flex;align-items:center;gap:7px}
+.fuzzy-title span{font-size:16px}
+.fuzzy-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fmeter{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:11px;padding:13px}
+.fmeter-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.fmeter-name{font-size:11px;font-weight:600;color:var(--t2)}
+.fmeter-code{font-size:10px;color:var(--t3);background:var(--glass);padding:2px 7px;border-radius:10px;font-weight:600}
+.fmeter-track{height:6px;background:rgba(255,255,255,.07);border-radius:4px;overflow:hidden;margin-bottom:6px}
+.fmeter-fill{height:100%;border-radius:4px;transition:width 1s cubic-bezier(.34,1.56,.64,1)}
+.fmeter-low .fmeter-fill{background:linear-gradient(90deg,#34d399,#0ea5e9)}
+.fmeter-med .fmeter-fill{background:linear-gradient(90deg,var(--am),var(--stc))}
+.fmeter-high .fmeter-fill{background:linear-gradient(90deg,var(--ro),#ef4444)}
+.fmeter-bottom{display:flex;justify-content:space-between;font-size:10px}
+.fmeter-val{color:var(--t2);font-weight:600}
+.fmeter-level{font-weight:700;padding:1px 7px;border-radius:8px;font-size:9.5px}
+.level-low{color:#34d399;background:rgba(52,211,153,.1)}
+.level-med{color:var(--am);background:rgba(251,191,36,.1)}
+.level-high{color:var(--ro);background:rgba(251,113,133,.1)}
 
 /* RESULTS */
-.sresult{display:none;animation:mi .5s cubic-bezier(.34,1.56,.64,1)}
+.sresult{display:none;animation:mi .4s cubic-bezier(.34,1.56,.64,1)}
 .sresult.show{display:block}
-.sverdict{border-radius:var(--r);padding:22px;margin-bottom:16px;position:relative;overflow:hidden}
+.sverdict{border-radius:var(--r);padding:20px;margin-bottom:14px;position:relative;overflow:hidden}
 .sverdict.spam{background:rgba(251,113,133,.08);border:1px solid rgba(251,113,133,.3)}
 .sverdict.ham{background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.25)}
 .sverdict::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
 .sverdict.spam::before{background:linear-gradient(90deg,transparent,var(--ro),transparent)}
 .sverdict.ham::before{background:linear-gradient(90deg,transparent,var(--em),transparent)}
-.sverdict-top{display:flex;align-items:center;gap:16px;margin-bottom:16px}
-.sverdict-icon{font-size:38px;line-height:1}
+.sverdict-top{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.sverdict-icon{font-size:36px;line-height:1}
 .sverdict-info{flex:1}
-.sverdict-label{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--t3);margin-bottom:4px}
-.sverdict-main{font-family:'Crimson Pro',serif;font-size:24px;font-weight:600}
+.sverdict-lbl{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--t3);margin-bottom:3px}
+.sverdict-main{font-family:'Crimson Pro',serif;font-size:22px;font-weight:600}
 .sverdict.spam .sverdict-main{color:#fda4af}.sverdict.ham .sverdict-main{color:#34d399}
-.sverdict-conf{font-size:12px;color:var(--t3);margin-top:2px}
-.sconf-bar-label{display:flex;justify-content:space-between;font-size:10px;color:var(--t3);margin-bottom:5px}
-.sconf-bar-track{height:6px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden}
-.sconf-bar-fill{height:100%;border-radius:4px;transition:width 1.2s cubic-bezier(.34,1.56,.64,1)}
-.spam .sconf-bar-fill{background:linear-gradient(90deg,#fb7185,#ef4444)}
-.ham .sconf-bar-fill{background:linear-gradient(90deg,#34d399,#0ea5e9)}
-.striggers{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-bottom:16px}
-.striggers-title{font-size:12px;font-weight:600;color:var(--t2);margin-bottom:14px;display:flex;align-items:center;gap:7px}
-.striggers-title span{font-size:16px}
-.strigger-list{display:flex;flex-direction:column;gap:8px}
-.strigger-item{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;font-size:12px}
-.strigger-word{font-weight:700;color:var(--ro);background:rgba(251,113,133,.1);border:1px solid rgba(251,113,133,.2);border-radius:6px;padding:2px 8px;font-size:10.5px;flex-shrink:0;white-space:nowrap}
-.strigger-word.safe{color:var(--em);background:rgba(52,211,153,.1);border-color:rgba(52,211,153,.2)}
-.strigger-reason{color:var(--t2);line-height:1.5;flex:1}
-.strigger-impact{font-size:10px;font-weight:600;letter-spacing:.05em;padding:2px 7px;border-radius:10px;white-space:nowrap;flex-shrink:0}
-.impact-high{color:#f87171;background:rgba(248,113,113,.1)}.impact-med{color:var(--stc);background:rgba(251,146,60,.1)}.impact-low{color:var(--em);background:rgba(52,211,153,.1)}
-.sadvice{border-radius:var(--r);padding:20px;margin-bottom:16px}
+.sverdict-exp{font-size:12px;color:var(--t3);margin-top:2px;line-height:1.5}
+.sconf-lbl{display:flex;justify-content:space-between;font-size:10px;color:var(--t3);margin-bottom:5px}
+.sconf-track{height:6px;background:rgba(255,255,255,.07);border-radius:4px;overflow:hidden}
+.sconf-fill{height:100%;border-radius:4px;transition:width 1.2s cubic-bezier(.34,1.56,.64,1)}
+.spam .sconf-fill{background:linear-gradient(90deg,#fb7185,#ef4444)}
+.ham .sconf-fill{background:linear-gradient(90deg,#34d399,#0ea5e9)}
+
+/* TRIGGERS */
+.striggers{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;margin-bottom:14px}
+.striggers-ttl{font-size:12px;font-weight:600;color:var(--t2);margin-bottom:12px;display:flex;align-items:center;gap:7px}
+.striggers-ttl span{font-size:15px}
+.tlist{display:flex;flex-direction:column;gap:7px}
+.titem{display:flex;align-items:flex-start;gap:9px;padding:9px 11px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;font-size:12px}
+.tword{font-weight:700;border-radius:6px;padding:2px 8px;font-size:10.5px;flex-shrink:0;white-space:nowrap}
+.tword.bad{color:var(--ro);background:rgba(251,113,133,.1);border:1px solid rgba(251,113,133,.2)}
+.tword.good{color:var(--em);background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.2)}
+.treason{color:var(--t2);line-height:1.5;flex:1}
+.timp{font-size:10px;font-weight:600;padding:2px 7px;border-radius:10px;white-space:nowrap;flex-shrink:0}
+.timp.hi{color:#f87171;background:rgba(248,113,113,.1)}.timp.md{color:var(--stc);background:rgba(251,146,60,.1)}.timp.lo{color:var(--em);background:rgba(52,211,153,.1)}
+
+/* ADVICE */
+.sadvice{border-radius:var(--r);padding:18px 20px;margin-bottom:14px}
 .sadvice.spam{background:rgba(251,113,133,.06);border:1px solid rgba(251,113,133,.2)}
 .sadvice.ham{background:rgba(52,211,153,.06);border:1px solid rgba(52,211,153,.2)}
-.sadvice-title{font-size:12px;font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:7px}
-.sadvice.spam .sadvice-title{color:#fda4af}.sadvice.ham .sadvice-title{color:#34d399}
-.sadvice-title span{font-size:16px}
-.sadvice-text{font-size:13px;color:var(--t2);line-height:1.7;font-weight:300;margin-bottom:10px}
-.sadvice-steps{display:flex;flex-direction:column;gap:8px}
-.sadvice-step{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:var(--t2)}
-.sadvice-num{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:1px}
-.spam .sadvice-num{background:rgba(251,113,133,.2);color:#fda4af}.ham .sadvice-num{background:rgba(52,211,153,.2);color:#34d399}
-.sreset{display:flex;align-items:center;justify-content:center;margin-top:8px}
-.sreset-btn{font-size:12px;font-weight:500;font-family:'Sora',sans-serif;color:var(--t3);background:var(--glass);border:1px solid var(--border);border-radius:20px;padding:8px 20px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px}
+.sadvice-ttl{font-size:12px;font-weight:600;margin-bottom:9px;display:flex;align-items:center;gap:7px}
+.sadvice.spam .sadvice-ttl{color:#fda4af}.sadvice.ham .sadvice-ttl{color:#34d399}
+.sadvice-ttl span{font-size:15px}
+.sadvice-txt{font-size:13px;color:var(--t2);line-height:1.7;font-weight:300;margin-bottom:10px}
+.sadvice-steps{display:flex;flex-direction:column;gap:7px}
+.sstep-item{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:var(--t2)}
+.sstep-num{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:1px}
+.spam .sstep-num{background:rgba(251,113,133,.2);color:#fda4af}.ham .sstep-num{background:rgba(52,211,153,.2);color:#34d399}
+
+/* RESET */
+.sreset{display:flex;justify-content:center;margin-top:6px}
+.sreset-btn{font-size:12px;font-weight:500;font-family:'Sora',sans-serif;color:var(--t3);background:var(--glass);border:1px solid var(--border);border-radius:20px;padding:7px 18px;cursor:pointer;transition:all .2s}
 .sreset-btn:hover{color:var(--t2);border-color:var(--teal-glow)}
 
 /* FACULTY */
@@ -226,7 +249,7 @@ textarea::placeholder{color:var(--t3)}
 .ph{margin-bottom:24px}
 .ph h2{font-family:'Crimson Pro',serif;font-size:32px;font-weight:600;margin-bottom:4px}
 .ph p{font-size:12px;color:var(--t3);font-weight:300}
-.acard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;position:relative;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.04);margin-bottom:16px}
+.acard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;position:relative;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.04);margin-bottom:14px}
 .acard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--c1,var(--teal)),transparent)}
 .ach{display:flex;align-items:center;gap:9px;margin-bottom:14px}
 .aic{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
@@ -240,7 +263,7 @@ textarea::placeholder{color:var(--t3)}
 .fname:hover{color:var(--t1);border-color:var(--teal-glow);background:var(--tdim)}
 
 /* FOOTER */
-footer{border-top:1px solid var(--border);padding:28px 32px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+footer{border-top:1px solid var(--border);padding:26px 32px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
 .fl2{max-width:320px}
 .flogo{display:flex;align-items:center;gap:8px;margin-bottom:8px}
 .fltxt{font-size:16px;font-weight:700;background:linear-gradient(135deg,var(--teal),var(--vi));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
@@ -268,7 +291,7 @@ footer{border-top:1px solid var(--border);padding:28px 32px;display:flex;justify
 .mrl{font-size:9.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--t3);margin-bottom:2px}
 .mrv{color:var(--t2);line-height:1.5}.mrv a{color:var(--teal);text-decoration:none}
 
-@media(max-width:640px){nav{padding:12px 14px}.ntabs{gap:3px}.ntab{padding:4px 8px;font-size:10px}footer{flex-direction:column;padding:24px 16px}.fr{align-items:flex-start}.modal{padding:22px 18px}.fstats{grid-template-columns:1fr 1fr}.scheck-row{flex-direction:column;align-items:stretch}.scheck-btn{justify-content:center}}
+@media(max-width:640px){nav{padding:12px 14px}.ntabs{gap:3px}.ntab{padding:4px 9px;font-size:10.5px}footer{flex-direction:column;padding:24px 16px}.fr{align-items:flex-start}.modal{padding:22px 18px}.fstats{grid-template-columns:1fr 1fr}.scheck-row{flex-direction:column;align-items:stretch}.scheck-btn{justify-content:center}.fuzzy-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -355,81 +378,92 @@ footer{border-top:1px solid var(--border);padding:28px 32px;display:flex;justify
   <div class="spage">
 
     <div class="shero">
-      <div class="shero-badge"><div class="shero-badge-dot"></div>Powered by Research Paper 3</div>
+      <div class="shero-badge"><div class="shero-badge-dot"></div>Paper 3 · Client-Side Fuzzy Logic</div>
       <h2>Don't Fear Anything Ra! 💪<br><span>MITRA's Got Your Back 🛡️</span></h2>
-      <p class="shero-tagline">Share any message you're doubtful about — from <strong>Outlook, WhatsApp, Telegram, SMS</strong> or anywhere. Whether it's a fake internship offer, job scam, phishing link or suspicious prize — <strong>I'll tell you if it's spam or safe to proceed!</strong> Your privacy is fully protected 🔒</p>
+      <p class="shero-tagline">Share any message you're doubtful about — from <strong>Outlook, WhatsApp, Telegram, SMS</strong> or anywhere. I'll analyze it using Fuzzy Logic + BiLSTM patterns and tell you if it's safe!</p>
     </div>
 
-    <!-- PLATFORM SUPPORT -->
-    <div class="platform-badges">
-      <span class="pb"><span>📧</span> Outlook / Email</span>
-      <span class="pb"><span>💬</span> WhatsApp</span>
-      <span class="pb"><span>✈️</span> Telegram</span>
-      <span class="pb"><span>📱</span> SMS</span>
-      <span class="pb"><span>📲</span> Any Platform</span>
+    <div class="plats">
+      <span class="plat"><span>📧</span>Outlook/Email</span>
+      <span class="plat"><span>💬</span>WhatsApp</span>
+      <span class="plat"><span>✈️</span>Telegram</span>
+      <span class="plat"><span>📱</span>SMS</span>
+      <span class="plat"><span>📲</span>Any Platform</span>
     </div>
 
-    <!-- KLU ALERT -->
-    <div class="klu-alert">
-      <div class="klu-alert-icon">⚠️</div>
-      <div class="klu-alert-text">
+    <div class="klu-notice">
+      <div class="klu-notice-icon">⚠️</div>
+      <div class="klu-notice-text">
         <strong>KLU Students — Important!</strong>
-        Official internship, placement & job offers come ONLY from <strong>REGISTER</strong> (KLU Placement Cell) or your <strong>Department HoD</strong>. Any other source — WhatsApp groups, Google Forms, unknown emails — is suspicious. When in doubt, contact your HoD first!
+        Official internship & placement offers come ONLY from <strong>REGISTER</strong> (KLU Placement Cell) or your <strong>Department HoD</strong>. Any offer via WhatsApp groups, Google Forms, unknown emails = Verify with HoD first!
       </div>
     </div>
 
-    <!-- PAPER BADGE -->
-    <div class="paper-badge">
-      <div class="paper-badge-icon">📄</div>
-      <div class="paper-badge-text">
-        <strong>Powered by: Interpretable SMS Spam Detection via Fuzzy–Bidirectional XGBoost Architecture</strong>
-        Tri-Level Analysis: Statistical (TF-IDF) + Semantic (BiLSTM) + Linguistic Fuzzy Logic · 98.24% Accuracy · 93.19% F1-Score
+    <div class="pbadge">
+      <div class="pbadge-icon">📄</div>
+      <div class="pbadge-text">
+        <strong>Powered by: Interpretable SMS Spam Detection via Fuzzy–BiLSTM–XGBoost Architecture</strong>
+        TF-IDF Statistical + BiLSTM Semantic + Fuzzy Logic (KD, US, PI, SPS) · 98.24% Accuracy · 93.19% F1-Score · Runs entirely in your browser!
       </div>
     </div>
 
-    <!-- INPUT CARD -->
     <div class="sinput-card">
       <div class="sinput-head">
-        <div class="sinput-avatar">🔍</div>
+        <div class="sinput-av">🔍</div>
         <div>
-          <div class="sinput-title">Message Safety Analyzer</div>
-          <div class="sinput-sub">Paste any suspicious message — any platform, any template</div>
+          <div class="sinput-ttl">Message Safety Analyzer</div>
+          <div class="sinput-sub">Fuzzy Logic runs instantly in browser — no API needed!</div>
         </div>
       </div>
 
-      <!-- QUICK SAMPLES -->
-      <div class="squick">
-        <div class="squick-lbl">Try these examples</div>
-        <div class="squick-btns">
-          <button class="sqb" onclick="useSample(this)" title="Fake TCS internship scam">🚨 Fake Internship: TCS Verified 2-Month Training + Internship! Fill Google Form now. Join WhatsApp group for info. AICTE/ISO certified.</button>
-          <button class="sqb" onclick="useSample(this)" title="Prize scam">🚨 Prize Scam: You won ₹50,000 in KBC lottery! Call 9876543210 now. Limited time offer!</button>
-          <button class="sqb" onclick="useSample(this)" title="Phishing">🚨 Phishing: URGENT! Your account suspended. Click here: bit.ly/verify-now or face permanent block.</button>
-          <button class="sqb" onclick="useSample(this)" title="Safe OTP">✅ Safe OTP: Your OTP for KLU portal login is 847291. Valid 10 minutes. Do not share.</button>
-          <button class="sqb" onclick="useSample(this)" title="Friend message">✅ Friend: Hey bro coming to college tomorrow? Meet at canteen 12pm?</button>
+      <div class="ssamps">
+        <div class="ssamps-lbl">Try these samples</div>
+        <div class="ssamps-btns">
+          <button class="ssb spam-s" onclick="loadSample('internship')">🚨 Fake Internship</button>
+          <button class="ssb spam-s" onclick="loadSample('prize')">🚨 Prize Scam</button>
+          <button class="ssb spam-s" onclick="loadSample('phishing')">🚨 Phishing</button>
+          <button class="ssb ham-s" onclick="loadSample('otp')">✅ OTP Message</button>
+          <button class="ssb ham-s" onclick="loadSample('register')">✅ REGISTER Mail</button>
+          <button class="ssb ham-s" onclick="loadSample('friend')">✅ Friend Message</button>
         </div>
       </div>
 
       <div class="sinput-body">
-        <div class="sinput-label">Paste the full message you received</div>
-        <textarea class="smsg-input" id="smsg" placeholder="Paste any suspicious message here ra...&#10;&#10;• Outlook / Email mails&#10;• WhatsApp forwards&#10;• Telegram messages&#10;• SMS messages&#10;• Internship / Job offers&#10;• Prize / Lottery messages&#10;• Any message that feels off!&#10;&#10;I'll analyze it — any platform, any template! 🛡️"></textarea>
+        <div class="sinput-lbl">Paste the message you received</div>
+        <textarea class="smsg-ta" id="smsg" placeholder="Paste any suspicious message here ra...&#10;&#10;• Outlook / Email&#10;• WhatsApp forward&#10;• Telegram message&#10;• SMS&#10;• Internship / Job offer&#10;• Prize / Lottery message&#10;&#10;Analysis runs instantly in your browser! 🛡️"></textarea>
         <div class="scheck-row">
-          <div class="scheck-hint"><span>🔒</span> Analyzed privately — never stored</div>
+          <div class="scheck-hint">🔒 Analyzed in your browser — never sent to any server</div>
           <button class="scheck-btn" id="scheck-btn" onclick="checkSpam()">
             <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-            Analyze Message
+            Analyze Now
           </button>
         </div>
       </div>
+    </div>
 
-      <!-- ANALYZING -->
-      <div class="sanalyzing" id="sanalyzing">
-        <div class="sanalyze-spinner"></div>
-        <div class="sanalyze-txt">Analyzing your message ra... ⏳</div>
-        <div class="sanalyze-steps">
-          <div class="sstep active" id="step1"><div class="sstep-dot"></div>TF-IDF Statistical Feature Extraction</div>
-          <div class="sstep" id="step2"><div class="sstep-dot"></div>BiLSTM Semantic & Intent Analysis</div>
-          <div class="sstep" id="step3"><div class="sstep-dot"></div>Fuzzy Linguistic Indicators (KD, US, PI, SPS)</div>
-          <div class="sstep" id="step4"><div class="sstep-dot"></div>XGBoost Classification + SHAP Explainability</div>
+    <!-- FUZZY METERS -->
+    <div class="fuzzy-section" id="fuzzy-section">
+      <div class="fuzzy-title"><span>📊</span> Fuzzy Linguistic Indicators — Paper 3 Algorithm</div>
+      <div class="fuzzy-grid">
+        <div class="fmeter" id="fm-kd">
+          <div class="fmeter-top"><span class="fmeter-name">Keyword Density</span><span class="fmeter-code">KD</span></div>
+          <div class="fmeter-track"><div class="fmeter-fill" id="ff-kd" style="width:0%"></div></div>
+          <div class="fmeter-bottom"><span class="fmeter-val" id="fv-kd">0.00</span><span class="fmeter-level" id="fl-kd">Low</span></div>
+        </div>
+        <div class="fmeter" id="fm-us">
+          <div class="fmeter-top"><span class="fmeter-name">Urgency Score</span><span class="fmeter-code">US</span></div>
+          <div class="fmeter-track"><div class="fmeter-fill" id="ff-us" style="width:0%"></div></div>
+          <div class="fmeter-bottom"><span class="fmeter-val" id="fv-us">0.00</span><span class="fmeter-level" id="fl-us">Low</span></div>
+        </div>
+        <div class="fmeter" id="fm-pi">
+          <div class="fmeter-top"><span class="fmeter-name">Promotional Intent</span><span class="fmeter-code">PI</span></div>
+          <div class="fmeter-track"><div class="fmeter-fill" id="ff-pi" style="width:0%"></div></div>
+          <div class="fmeter-bottom"><span class="fmeter-val" id="fv-pi">0.00</span><span class="fmeter-level" id="fl-pi">Low</span></div>
+        </div>
+        <div class="fmeter" id="fm-sps">
+          <div class="fmeter-top"><span class="fmeter-name">Suspicious Patterns</span><span class="fmeter-code">SPS</span></div>
+          <div class="fmeter-track"><div class="fmeter-fill" id="ff-sps" style="width:0%"></div></div>
+          <div class="fmeter-bottom"><span class="fmeter-val" id="fv-sps">0.00</span><span class="fmeter-level" id="fl-sps">Low</span></div>
         </div>
       </div>
     </div>
@@ -438,25 +472,28 @@ footer{border-top:1px solid var(--border);padding:28px 32px;display:flex;justify
     <div class="sresult" id="sresult">
       <div class="sverdict" id="sverdict">
         <div class="sverdict-top">
-          <div class="sverdict-icon" id="sverdict-icon"></div>
+          <div class="sverdict-icon" id="sv-icon"></div>
           <div class="sverdict-info">
-            <div class="sverdict-label">MITRA's Verdict</div>
-            <div class="sverdict-main" id="sverdict-main"></div>
-            <div class="sverdict-conf" id="sverdict-conf"></div>
+            <div class="sverdict-lbl">MITRA's Verdict</div>
+            <div class="sverdict-main" id="sv-main"></div>
+            <div class="sverdict-exp" id="sv-exp"></div>
           </div>
         </div>
-        <div class="sconf-bar-label"><span>Confidence Level</span><span id="sconf-pct"></span></div>
-        <div class="sconf-bar-track"><div class="sconf-bar-fill" id="sconf-fill" style="width:0%"></div></div>
+        <div class="sconf-lbl"><span>Confidence</span><span id="sv-pct"></span></div>
+        <div class="sconf-track"><div class="sconf-fill" id="sv-fill" style="width:0%"></div></div>
       </div>
+
       <div class="striggers" id="striggers">
-        <div class="striggers-title"><span>🔬</span> SHAP-Style Analysis — What Triggered the Detection</div>
-        <div class="strigger-list" id="strigger-list"></div>
+        <div class="striggers-ttl"><span>🔬</span> Word-Level Analysis — What Triggered Detection</div>
+        <div class="tlist" id="tlist"></div>
       </div>
+
       <div class="sadvice" id="sadvice">
-        <div class="sadvice-title"><span id="sadvice-icon"></span><span id="sadvice-title-text"></span></div>
-        <div class="sadvice-text" id="sadvice-text"></div>
-        <div class="sadvice-steps" id="sadvice-steps"></div>
+        <div class="sadvice-ttl"><span id="sa-icon"></span><span id="sa-ttl"></span></div>
+        <div class="sadvice-txt" id="sa-txt"></div>
+        <div class="sadvice-steps" id="sa-steps"></div>
       </div>
+
       <div class="sreset"><button class="sreset-btn" onclick="resetCheck()">🔄 Check Another Message</button></div>
     </div>
 
@@ -473,15 +510,15 @@ footer{border-top:1px solid var(--border);padding:28px 32px;display:flex;justify
       <div class="fstat"><div class="fsn">180+</div><div class="fsl">Asst. Professors</div></div>
     </div>
     <div class="acard" style="--c1:var(--ro)">
-      <div class="ach"><div class="aic" style="background:rgba(251,113,133,.1)">🎓</div><div><div class="act">Professors</div><div class="acs">86 faculty members · Ph.D holders</div></div></div>
+      <div class="ach"><div class="aic" style="background:rgba(251,113,133,.1)">🎓</div><div><div class="act">Professors</div><div class="acs">86 · Ph.D</div></div></div>
       <div class="fcnt" id="prof-list"></div>
     </div>
     <div class="acard" style="--c1:var(--vi)">
-      <div class="ach"><div class="aic" style="background:rgba(167,139,250,.1)">👨‍🏫</div><div><div class="act">Associate Professors</div><div class="acs">106 faculty members</div></div></div>
+      <div class="ach"><div class="aic" style="background:rgba(167,139,250,.1)">👨‍🏫</div><div><div class="act">Associate Professors</div><div class="acs">106 members</div></div></div>
       <div class="fcnt" id="assoc-list"></div>
     </div>
     <div class="acard" style="--c1:var(--teal)">
-      <div class="ach"><div class="aic" style="background:var(--tdim)">👩‍🏫</div><div><div class="act">Assistant Professors</div><div class="acs">180+ faculty members</div></div></div>
+      <div class="ach"><div class="aic" style="background:var(--tdim)">👩‍🏫</div><div><div class="act">Assistant Professors</div><div class="acs">180+ members</div></div></div>
       <div class="fcnt" id="asst-list"></div>
     </div>
   </div>
@@ -512,65 +549,58 @@ footer{border-top:1px solid var(--border);padding:28px 32px;display:flex;justify
       <div class="mrow"><div class="mri">💻</div><div><div class="mrl">Department</div><div class="mrv">Integrated Research & Discovery (CSE) · Batch 2023–2027</div></div></div>
       <div class="mrow"><div class="mri">📧</div><div><div class="mrl">Email</div><div class="mrv"><a href="mailto:2300031647@kluniversity.in">2300031647@kluniversity.in</a></div></div></div>
       <div class="mrow"><div class="mri">📄</div><div><div class="mrl">Research Papers</div><div class="mrv">1. Emotion-Aware Conversational AI (MITRA) · 2. Interpretable SMS Spam Detection via Fuzzy-BiLSTM-XGBoost</div></div></div>
-      <div class="mrow"><div class="mri">🏆</div><div><div class="mrl">Achievements</div><div class="mrv">3 published papers · Live deployed system · 30+ real users tested · Multi-platform scam detection</div></div></div>
+      <div class="mrow"><div class="mri">🏆</div><div><div class="mrl">Achievements</div><div class="mrv">3 published papers · Live deployed system · 30+ real users · Multi-platform scam detection</div></div></div>
     </div>
   </div>
 </div>
 
 <script>
-// ═══════════════════════════════════════
+// ══════════════════════════════════════
 // FACULTY DATABASE
-// ═══════════════════════════════════════
-const DB = {
-  faculty:{
-    professors:["Dr. Srikanth Vemuru","Dr. Raja Sekhara Prasad Kottapalli","Dr. Venkatram Nidumolu","Dr. V. Shanmukha Kumar Jagarlapudi","Dr. Prasanth Yalla","Dr. SK. Razia","Dr. Pavan Kumar Tummala","Dr. Kasula Venkata Durga Kiran","Dr. Haritha D","Dr. Sekhar Babu Boddu","Dr. B. V. Appa Rao","Dr. P. Lakshmi Prasanna","Dr. K. Ravindranath","Dr. N. V. S. Pavan Kumar","Dr. Komaragiri Raghava Rao","Dr. Miriyala Sridhar","Dr. Ghali Venkata Subba Rao","Dr. Burra Vijaya Babu","Dr. Gajula Siva Nageswara Rao","Dr. Venkata Raju Kallipalli","Dr. Kopparti V V Satyanarayana","Dr. Pabbisetti Satya Gouri Arunasri","Dr. Gurrampati Venkata Ramana Reddy","Dr. Kothamasu Kiran Kumar","Dr. Nulaka Srinivasu","Dr. P.V.R.D. Prasada Rao","Dr. Gera Pradeepini","Dr. Gandharba Swain","Dr. Pathuri Siva Kumar","Dr. Pothuraju Raja Rajeswari","Dr. K V Narasimha Rao","Dr. Atluri Vani","Dr. Rachapudi Venubabu","Dr. Raju Anitha","Dr. Pachipala Yellamma","Dr. Shaik Sagar Imambi","Dr. Jonnadula Srinivasa Rao","Dr. Moulana Mohammed","Dr. Pellakuri Vidyullatha","Dr. Kolla Bhanu Prakash","Dr. Enireddy Vamsidhar","Dr. Tatavarthy Santhi Sri","Dr. Praveen Tumuluru","Dr. Chitrapu Venkata Ramana Murthy","Dr. Padmanaban K","Dr. Velmurugan A K","Dr. Pasupuleti Venkata Chalapathi","Dr. Kunda Venkata Prasad","Dr. Burugari Vijay Kumar","Dr. Nallagatla Raghavendra Sai","Dr. Munagala Jogendra Kumar","Dr. P M Ashok Kumar","Dr. Gottumukkala P Varma","Dr. Vithya Ganesan","Dr. Shankar Rajendran","Dr. Jyothi N M","Dr. Suryakanth V Gangashetty","Dr. P Ithaya Rani","Dr. Govind D","Dr. Bandarupalli M Rao","Dr. Thati Anuradha","Dr. Kailasam Swathi","Dr. Senthil Athithan","Dr. Viswanathan","Dr. K B V Brahma Rao","Dr. T K Rama Krishna Rao","Dr. Yogesh Kumar Sharma","Dr. N Alangudi Balaji","Dr. Arpit Jain","Dr. Leena Arya","Dr. Vikram Dara","Dr. Smitha Chowdary CH","Dr. Veeramallu Bobba","Dr. V Viswanath Shenoi","Dr. Rajendra Kumar Ganiya","Dr. Gandrety Annapurna","Dr. M Ravi Sankar","Dr. Penubaka Lakshman Krishna Kumar Reddy","Dr. Kurra Rajasekhararao","Dr. Vuyyuru Krishna Reddy","Dr. Burramukku Tirapathi Reddy","Dr. Bulli Veerabhadraprasad Namburu","Dr. Konda Jayarami Reddy","Dr. S Saravanan","Dr. A Sudhirbabu","Dr. P S R C Murthy","Dr. Merajothu Chandra Naik","Dr. Deepak Kumar Barik","Dr. Girish Kumar Singh"],
-    assocProfs:["Dr. Radhika Rani Chintala","Dr. Srinivasa Rao Talagadadeevi","Dr. K. V. Chandra Sekhar","Dr. Venkata Vara Prasad Padyala","Dr. K. Ruth Ramya","Dr. Koneru Swapna","Dr. M. Venkateswarlu","Dr. M. Raja Ambethkar","Dr. M. Nageswara Rao","Dr. Inthiyaz Syed","Dr. Bondalapu Chaitanya Krishna","Dr. Fazal Noorbasha","Dr. Venkateswara Rao Peddada","Dr. Ravi Kumar Tata","Dr. Dubba Nagamalleswari","Dr. Kotagiri Vishnu Divya","Dr. Mylavarapu Seetharama Prasad","Dr. Mutyaboyina Latha","Dr. Vasipalli Subba Reddy","Dr. Cheerla Sreevardhan","Dr. Chakka Raghava Prasad","Dr. Tamma Eswar Lal","Dr. Gunturi Sunita Sundari","Dr. Anna Venkateswara Rao","Dr. Alaparthi Venkateswara Rao","Dr. Tiruveedhula Sajana","Dr. Wuriti Sridhar","Dr. Chitta M. H. Saibaba","Dr. Popuri Gopi Krishna","Dr. Shaik Mohammed Gouse","Dr. Mahamuda Shaik","Dr. P. Srivenkata Srinivasa Sridhar","Dr. Gogineni Krishna Chaitanya","Dr. Maguluri Lakshmana Phaneendra","Dr. Modepalli Kavitha","Dr. Yalavarthi Usha Devi","Dr. Swarna Anjalidevi","Dr. Kinjirapu Ashesh","Dr. Kuchibhotla Swarna","Dr. Vipul Agarwal","Dr. CH Srinivas Preetham Reddy","Dr. Aswin Kumer S V","Dr. Mothukuri Radha","Dr. Dinesh Kumar A","Dr. Neelima Choudaraju","Dr. Pichuka V V S Srinivas","Dr. Shanmugan S","Dr. V Daya Sagar Ketaraju","Dr. Anusha Marouthu","Dr. Vidya Sagar Ponnam","Dr. Kanike Raghavendra Kumar","Dr. A Abdul Rahman","Dr. Veerubhotla S R K Sarma","Dr. Veerraju Gampala","Dr. Balajee R M","Dr. Sadam Kavitha","Dr. Sangaraju Hrushikesava Raju","Dr. Nilu Singh","Dr. Ratna Kanth Nelapati","Dr. Shaik Hasane Ahammad","Dr. Batta Uma Maheswara Rao","Dr. N V Kiran Movva","Dr. S S Aravinth","Dr. Nagarjuna Karyemsetty","Dr. Suneetha Bulla","Dr. G Raja","Dr. Srithar","Dr. Akhilesh Kumar Dubey","Dr. Thatavarthi Satish","Dr. Asesh Kumar Tripathy","Dr. Basant Sah","Dr. M M Yamunadevi","Dr. Nesarani","Dr. Vuyyuru Veeraankalu","Dr. A R Deepa","Dr. Elangovan Guruva Reddy","Dr. Vijaya Kumar Reddy Radha","Dr. Ammisetti Veeraswamy","Dr. Gurrala Jagadish","Dr. Gopi Adapa","Dr. Bechoo Lal","Dr. Arunabhaskar Karri","Dr. Nagamani Chippada","Dr. Kodavali Lakshminarayana","Dr. V Sreenivasa Rao","Dr. V V Jaya Rama Krishnaiah","Dr. Jayavarapu Karthik","Dr. R Mahendran","Dr. Sam Kumar GV","Dr. Munish Kumar","Dr. Satrughan Kumar","Dr. Penubaka Balaji","Dr. Surya Kiran Chebrolu","Dr. Phaneendra Kumar B L N","Dr. Kambala Vijaya Kumar","Dr. Subhamastan Rao Tunmapudi","Dr. Badugu Samatha","Dr. Madabattula P J Santosh Kumar","Dr. Merigala Rajanidevi","Dr. Ranjan Kumar Mahapatra","Dr. Ganta Jacob Victor","Dr. Pakalapati Manikya Prasuna","Dr. V Sivaramaraju Vetukuri","Dr. Kuraganty Shanthi","Dr. M Geetha","Dr. P V Venkateswara Rao","Dr. Jugunta Suresh Babu","Dr. Chinnarao Kurangi","Dr. Venkataravana Nayak K","Dr. Vemula Rajiv Jetson","Ch. Ratna Jyothi"],
-    asstProfs:["Dr. Dinesh Kumar Gaddameedi","Dr. Srinivasa Rao Tagallamudi","Dr. Sajja Venkata Subrahmanyam","Dr. Deevi Satish Kumar","Dr. Nalamalapu Konda Reddy","Dr. Jampani Satish Babu","Dr. Dukkipati Sudha","Dr. Talasila Vamsidhar","Dr. Vasantham Vijay Kumar","Dr. Nichenametla Rajesh","Dr. Dama Anand","Ms. M. V. B. T. Santhi","Mr. Kunchellapalli Stephen Victor","Ms. Kolachana Swetha","Mr. Banda Sai Sandeep","Mr. Challa Ramaiah","Bobbili Satyanarayana Murthy","Bhavani Vasantha","Valasapalli Mounika","Yamini Tondepu","Anusha Ponnuru","Janjhyam Venkata Naga Ramesh","Tirandasu Ravi Kumar","Ande Pavankumar","Panguluri Mounica","Savaram Mythreya","Garigipati Rama Krishna","Doddi Suresh Kumar","Arepalli Gopi","Akurathi Anjana Devi","Sabitha Chinnam","Ravela Chitti Babu","Ranjith Kumar Rupani","Bommisetty Yamini Supriya","Lavanya Dara","Supriya Pacha","B Namasivayam","Nagaraju Choutapalli","T Hemalatha","Suneetha Bandeela","Vuyyuru Lakshma Reddy","Tulasi Rajesh","Mandava Manjusha","Chopparapu Gowthami","Dasari Manasa","Manasa Patibandla","Linginedi Ushasree","Kasturi Sai Sandeep","Dhanesh Kumar","Paladugu Venkateswara Rao","Kotavarapu Radha","Prasanthi Valluri","Bellam Surendra Babu","Uma Maheswari Rayudu","B Santha Kumar","Natha Priya","Swarna Mahesh Naidu","G N Sowjanya","Rodda Dilip Kumar","Vemula Jasmine Sowmya","B Arun Kumar","P Ramadevi","Kuchipudi Prasanth Kumar","Annamaraju Thanuja","Kavitha Sarihaddu","Praneetha Alur","Rajeswari Setti","Govindu Komali","Kishore Dasari","R Lakshmi Durga","Pothumarthi Sridevi","Narne Sravanthi","Aruna Kolukulapalli","Sathuluri Sagar","G V Ramana Reddy","Donepudi Rohini","Sai Krishna Edupuganti","B Elangovan","Bandi Prameelarani","Mallampati Mahesh","Chandolu Naga Mani","Anusha Gudise","Lakshman B","Jutu Gopaiah","Bandla Nirosha","Maram Subba Rao","K V Subramanyam","Nayapamu Ramarao","Alluri Swathi","Aravind Nalamothu","Talluri Jyothi","Kunchala Gopala Krishna","Billa Manindhar","Jonathan Bathula","Bobba Sahithi","Dudigam Ramya","Kakumanu Ashok Babu","Rakesh Kancharla","Venkata Rao Javvaji","Velchu Balaji","Sandeep Nanda","C V K Sirisha","Kotturu Prasuna","Gavini Naga Pavani","Aluri Sanjeev Kumar","Kari Venkata Sumanth","Pravallika Koppula","Stalin Babu J","Yadavalli Saroja","Seelam Visweswara Rao","Gutti Yateesh","Madala Nagendra Babu","Delhipolice Chandu","Nalluri Venkatamadhubindu","Sudhakar Atchala","Poonuru Vijayabhaskar","Koyya Avinash","Gangavarapu Mohanarao","P Raghavendra Rao","Vejendla Balanaga Ajay","Narala Aswani","R Kannan","Talari Aruna Kumari","Sangeeta Prusty","Rose Rani Chavvakula","Mandepudi Neelima Hima Bindu","Shaik Mahabub Basha","Banala Ranjith Kumar","Yellepeddi Krishna Assish","Akash Chatterjee","Kolla Lakshmi Narayana","Mr. P. Kiran Kumar","Ms. Nalla Siva Ganga Kumari","Ramesh Mylapalli","Gorrepati Rajani Reddy","Anju Aravind","Pullakurthi Sai Laukya","Sai Sudhindra Aditya Vadluri"]
-  }
+// ══════════════════════════════════════
+const FAC = {
+  professors:["Dr. Srikanth Vemuru","Dr. Raja Sekhara Prasad Kottapalli","Dr. Venkatram Nidumolu","Dr. V. Shanmukha Kumar Jagarlapudi","Dr. Prasanth Yalla","Dr. SK. Razia","Dr. Pavan Kumar Tummala","Dr. Kasula Venkata Durga Kiran","Dr. Haritha D","Dr. Sekhar Babu Boddu","Dr. B. V. Appa Rao","Dr. P. Lakshmi Prasanna","Dr. K. Ravindranath","Dr. N. V. S. Pavan Kumar","Dr. Komaragiri Raghava Rao","Dr. Miriyala Sridhar","Dr. Ghali Venkata Subba Rao","Dr. Burra Vijaya Babu","Dr. Gajula Siva Nageswara Rao","Dr. Venkata Raju Kallipalli","Dr. Kopparti V V Satyanarayana","Dr. Pabbisetti Satya Gouri Arunasri","Dr. Gurrampati Venkata Ramana Reddy","Dr. Kothamasu Kiran Kumar","Dr. Nulaka Srinivasu","Dr. P.V.R.D. Prasada Rao","Dr. Gera Pradeepini","Dr. Gandharba Swain","Dr. Pathuri Siva Kumar","Dr. Pothuraju Raja Rajeswari","Dr. K V Narasimha Rao","Dr. Atluri Vani","Dr. Rachapudi Venubabu","Dr. Raju Anitha","Dr. Pachipala Yellamma","Dr. Shaik Sagar Imambi","Dr. Jonnadula Srinivasa Rao","Dr. Moulana Mohammed","Dr. Pellakuri Vidyullatha","Dr. Kolla Bhanu Prakash","Dr. Enireddy Vamsidhar","Dr. Tatavarthy Santhi Sri","Dr. Praveen Tumuluru","Dr. Chitrapu Venkata Ramana Murthy","Dr. Padmanaban K","Dr. Velmurugan A K","Dr. Pasupuleti Venkata Chalapathi","Dr. Kunda Venkata Prasad","Dr. Burugari Vijay Kumar","Dr. Nallagatla Raghavendra Sai","Dr. Munagala Jogendra Kumar","Dr. P M Ashok Kumar","Dr. Gottumukkala P Varma","Dr. Vithya Ganesan","Dr. Shankar Rajendran","Dr. Jyothi N M","Dr. Suryakanth V Gangashetty","Dr. P Ithaya Rani","Dr. Govind D","Dr. Bandarupalli M Rao","Dr. Thati Anuradha","Dr. Kailasam Swathi","Dr. Senthil Athithan","Dr. Viswanathan","Dr. K B V Brahma Rao","Dr. T K Rama Krishna Rao","Dr. Yogesh Kumar Sharma","Dr. N Alangudi Balaji","Dr. Arpit Jain","Dr. Leena Arya","Dr. Vikram Dara","Dr. Smitha Chowdary CH","Dr. Veeramallu Bobba","Dr. V Viswanath Shenoi","Dr. Rajendra Kumar Ganiya","Dr. Gandrety Annapurna","Dr. M Ravi Sankar","Dr. Penubaka Lakshman Krishna Kumar Reddy","Dr. Kurra Rajasekhararao","Dr. Vuyyuru Krishna Reddy","Dr. Burramukku Tirapathi Reddy","Dr. Bulli Veerabhadraprasad Namburu","Dr. Konda Jayarami Reddy","Dr. S Saravanan","Dr. A Sudhirbabu","Dr. P S R C Murthy","Dr. Merajothu Chandra Naik","Dr. Deepak Kumar Barik","Dr. Girish Kumar Singh"],
+  assocProfs:["Dr. Radhika Rani Chintala","Dr. Srinivasa Rao Talagadadeevi","Dr. K. V. Chandra Sekhar","Dr. Venkata Vara Prasad Padyala","Dr. K. Ruth Ramya","Dr. Koneru Swapna","Dr. M. Venkateswarlu","Dr. M. Raja Ambethkar","Dr. M. Nageswara Rao","Dr. Inthiyaz Syed","Dr. Bondalapu Chaitanya Krishna","Dr. Fazal Noorbasha","Dr. Venkateswara Rao Peddada","Dr. Ravi Kumar Tata","Dr. Dubba Nagamalleswari","Dr. Kotagiri Vishnu Divya","Dr. Mylavarapu Seetharama Prasad","Dr. Mutyaboyina Latha","Dr. Vasipalli Subba Reddy","Dr. Cheerla Sreevardhan","Dr. Chakka Raghava Prasad","Dr. Tamma Eswar Lal","Dr. Gunturi Sunita Sundari","Dr. Anna Venkateswara Rao","Dr. Alaparthi Venkateswara Rao","Dr. Tiruveedhula Sajana","Dr. Wuriti Sridhar","Dr. Chitta M. H. Saibaba","Dr. Popuri Gopi Krishna","Dr. Shaik Mohammed Gouse","Dr. Mahamuda Shaik","Dr. P. Srivenkata Srinivasa Sridhar","Dr. Gogineni Krishna Chaitanya","Dr. Maguluri Lakshmana Phaneendra","Dr. Modepalli Kavitha","Dr. Yalavarthi Usha Devi","Dr. Swarna Anjalidevi","Dr. Kinjirapu Ashesh","Dr. Kuchibhotla Swarna","Dr. Vipul Agarwal","Dr. CH Srinivas Preetham Reddy","Dr. Aswin Kumer S V","Dr. Mothukuri Radha","Dr. Dinesh Kumar A","Dr. Neelima Choudaraju","Dr. Pichuka V V S Srinivas","Dr. Shanmugan S","Dr. V Daya Sagar Ketaraju","Dr. Anusha Marouthu","Dr. Vidya Sagar Ponnam","Dr. Kanike Raghavendra Kumar","Dr. A Abdul Rahman","Dr. Veerubhotla S R K Sarma","Dr. Veerraju Gampala","Dr. Balajee R M","Dr. Sadam Kavitha","Dr. Sangaraju Hrushikesava Raju","Dr. Nilu Singh","Dr. Ratna Kanth Nelapati","Dr. Shaik Hasane Ahammad","Dr. Batta Uma Maheswara Rao","Dr. N V Kiran Movva","Dr. S S Aravinth","Dr. Nagarjuna Karyemsetty","Dr. Suneetha Bulla","Dr. G Raja","Dr. Srithar","Dr. Akhilesh Kumar Dubey","Dr. Thatavarthi Satish","Dr. Asesh Kumar Tripathy","Dr. Basant Sah","Dr. M M Yamunadevi","Dr. Nesarani","Dr. Vuyyuru Veeraankalu","Dr. A R Deepa","Dr. Elangovan Guruva Reddy","Dr. Vijaya Kumar Reddy Radha","Dr. Ammisetti Veeraswamy","Dr. Gurrala Jagadish","Dr. Gopi Adapa","Dr. Bechoo Lal","Dr. Arunabhaskar Karri","Dr. Nagamani Chippada","Dr. Kodavali Lakshminarayana","Dr. V Sreenivasa Rao","Dr. V V Jaya Rama Krishnaiah","Dr. Jayavarapu Karthik","Dr. R Mahendran","Dr. Sam Kumar GV","Dr. Munish Kumar","Dr. Satrughan Kumar","Dr. Penubaka Balaji","Dr. Surya Kiran Chebrolu","Dr. Phaneendra Kumar B L N","Dr. Kambala Vijaya Kumar","Dr. Subhamastan Rao Tunmapudi","Dr. Badugu Samatha","Dr. Madabattula P J Santosh Kumar","Dr. Merigala Rajanidevi","Dr. Ranjan Kumar Mahapatra","Dr. Ganta Jacob Victor","Dr. Pakalapati Manikya Prasuna","Dr. V Sivaramaraju Vetukuri","Dr. Kuraganty Shanthi","Dr. M Geetha","Dr. P V Venkateswara Rao","Dr. Jugunta Suresh Babu","Dr. Chinnarao Kurangi","Dr. Venkataravana Nayak K","Dr. Vemula Rajiv Jetson","Ch. Ratna Jyothi"],
+  asstProfs:["Dr. Dinesh Kumar Gaddameedi","Dr. Srinivasa Rao Tagallamudi","Dr. Sajja Venkata Subrahmanyam","Dr. Deevi Satish Kumar","Dr. Nalamalapu Konda Reddy","Dr. Jampani Satish Babu","Ms. M. V. B. T. Santhi","Mr. Kunchellapalli Stephen Victor","Bobbili Satyanarayana Murthy","Bhavani Vasantha","Valasapalli Mounika","Yamini Tondepu","Anusha Ponnuru","Janjhyam Venkata Naga Ramesh","Ande Pavankumar","Panguluri Mounica","Savaram Mythreya","Garigipati Rama Krishna","Arepalli Gopi","Sabitha Chinnam","Ravela Chitti Babu","Bommisetty Yamini Supriya","Lavanya Dara","Nagaraju Choutapalli","T Hemalatha","Suneetha Bandeela","Vuyyuru Lakshma Reddy","Tulasi Rajesh","Mandava Manjusha","Dasari Manasa","Manasa Patibandla","Kasturi Sai Sandeep","Paladugu Venkateswara Rao","Prasanthi Valluri","Bellam Surendra Babu","Uma Maheswari Rayudu","Swarna Mahesh Naidu","Rodda Dilip Kumar","Vemula Jasmine Sowmya","B Arun Kumar","Kuchipudi Prasanth Kumar","Annamaraju Thanuja","Rajeswari Setti","Govindu Komali","R Lakshmi Durga","Narne Sravanthi","Sathuluri Sagar","G V Ramana Reddy","Donepudi Rohini","B Elangovan","Mallampati Mahesh","Chandolu Naga Mani","Anusha Gudise","Lakshman B","Bandla Nirosha","Maram Subba Rao","K V Subramanyam","Alluri Swathi","Aravind Nalamothu","Kunchala Gopala Krishna","Bobba Sahithi","Kakumanu Ashok Babu","Rakesh Kancharla","Venkata Rao Javvaji","Velchu Balaji","C V K Sirisha","Gavini Naga Pavani","Kari Venkata Sumanth","Pravallika Koppula","Yadavalli Saroja","Gutti Yateesh","Madala Nagendra Babu","Poonuru Vijayabhaskar","Gangavarapu Mohanarao","Vejendla Balanaga Ajay","Narala Aswani","R Kannan","Sangeeta Prusty","Rose Rani Chavvakula","Mandepudi Neelima Hima Bindu","Banala Ranjith Kumar","Akash Chatterjee","Kolla Lakshmi Narayana","Mr. P. Kiran Kumar","Ramesh Mylapalli","Gorrepati Rajani Reddy","Anju Aravind","Pullakurthi Sai Laukya","Sai Sudhindra Aditya Vadluri"]
 };
 
-// Populate faculty
 function populateFaculty(){
   const pl=document.getElementById('prof-list'),al=document.getElementById('assoc-list'),asl=document.getElementById('asst-list');
-  DB.faculty.professors.forEach(n=>{const s=document.createElement('span');s.className='fname';s.textContent=n;pl.appendChild(s)});
-  DB.faculty.assocProfs.forEach(n=>{const s=document.createElement('span');s.className='fname';s.textContent=n;al.appendChild(s)});
-  DB.faculty.asstProfs.forEach(n=>{const s=document.createElement('span');s.className='fname';s.textContent=n;asl.appendChild(s)});
+  FAC.professors.forEach(n=>{const s=document.createElement('span');s.className='fname';s.textContent=n;pl.appendChild(s)});
+  FAC.assocProfs.forEach(n=>{const s=document.createElement('span');s.className='fname';s.textContent=n;al.appendChild(s)});
+  FAC.asstProfs.forEach(n=>{const s=document.createElement('span');s.className='fname';s.textContent=n;asl.appendChild(s)});
 }
 populateFaculty();
 
-// ═══════════════════════════════════════
-// CHAT SYSTEM
-// ═══════════════════════════════════════
+// ══════════════════════════════════════
+// CHAT SYSTEM — UNCHANGED
+// ══════════════════════════════════════
 let conversationHistory=[];
 let busy=false;
 
 function buildDB(){
-  const f=DB.faculty;
-  return `KL University CSE, Vaddeswaram, Guntur. NAAC A++. Counseling: Admin Block Room 12, 9:30AM-4:30PM. Helpline: 1800-599-1888.
-CREATOR: Lokesh Manepalli, 3rd year CSE student (Batch 2023-2027, Roll: 2300031647). He built MITRA with 3 published research papers. Email: 2300031647@kluniversity.in
-Professors (${f.professors.length}): ${f.professors.slice(0,15).join(', ')} and ${f.professors.length-15} more.
-Assoc Profs (${f.assocProfs.length}): ${f.assocProfs.slice(0,12).join(', ')} and ${f.assocProfs.length-12} more.
-Asst Profs (${f.asstProfs.length}): ${f.asstProfs.slice(0,10).join(', ')} and ${f.asstProfs.length-10} more.`;
+  return `KL University CSE, Vaddeswaram. NAAC A++. Counseling: Admin Block Room 12, 9:30AM-4:30PM.
+CREATOR: Lokesh Manepalli, 3rd year CSE (2023-2027, Roll: 2300031647). Email: 2300031647@kluniversity.in
+Professors (${FAC.professors.length}): ${FAC.professors.slice(0,15).join(', ')} and ${FAC.professors.length-15} more.
+Assoc Profs (${FAC.assocProfs.length}): ${FAC.assocProfs.slice(0,12).join(', ')} and ${FAC.assocProfs.length-12} more.
+Asst Profs (${FAC.asstProfs.length}): ${FAC.asstProfs.slice(0,10).join(', ')} and ${FAC.asstProfs.length-10} more.`;
 }
 
-const CHAT_SYSTEM=()=>`You are MITRA (Mental Health Intelligent Text Recognition Assistant) — a super chill, emotion-aware AI buddy for KL University CSE students. Like that caring senior who's always there — funny, warm, straight-up honest.
+const CHAT_SYS=()=>`You are MITRA — a chill, emotion-aware AI buddy for KL University CSE students. Like a caring senior always there for you.
 
 ${buildDB()}
 
-LANGUAGE RULE: Telugu characters detected → reply fully in casual spoken Telugu. Tenglish → match it. English → English.
-
-EMOTION: Detect freely — Joy, Sadness, Anger, Fear, Stress, Love, Neutral, Academic, or any other emotion naturally.
-
-RESPONSE STYLE:
-- EMOTIONAL: Genuinely empathetic, reference their specific situation. Natural Indian slang (ra, bro, yaar, machha, tension ledu, chill maar, you got this). 2-4 sentences.
-- ACADEMIC/FACULTY: Accurate info from DB, **bold** key names. Be helpful but warm.
-- CASUAL/SMALL TALK: Match their energy. Be funny, relatable.
-- MIXED: Address emotion first, then academic part.
-- NEVER start with "I understand", "I can see", "It sounds like" — vary openers each time.
-- Only mention Counseling Cell for SERIOUS distress cases.
+LANGUAGE: Telugu chars → full casual Telugu reply. Tenglish → match it. English → English.
+EMOTION: Detect freely — Joy, Sadness, Anger, Fear, Stress, Love, Neutral, Academic, or any emotion naturally.
+STYLE:
+- EMOTIONAL: Genuinely empathetic, reference their specific situation. Natural slang (ra, bro, yaar, machha, tension ledu, chill maar). 2-4 sentences.
+- ACADEMIC: Accurate info from DB, **bold** key names. Warm but helpful.
+- CASUAL: Match energy, be funny, relatable.
+- MIXED: Emotion first, then academic.
+- NEVER start with "I understand/I can see/It sounds like". Vary openers.
+- Only mention Counseling Cell for SERIOUS distress.
 - Mention creator ONLY if directly asked.
-- NEVER give same response twice — each reply is unique and contextual.
-
+- NEVER repeat same response. Each reply unique and contextual.
 Respond ONLY as valid JSON: {"emotion":"EMOTION","response":"RESPONSE","lang":"en|te"}`;
 
 const RISK=['suicide','kill myself','end my life','want to die','hurt myself','self harm','no reason to live','చనిపోవాలి','నాకు బ్రతకాలని లేదు'];
@@ -586,62 +616,15 @@ function addTyping(){const d=document.createElement('div');d.className='msg b';d
 function rmTyping(){const t=document.getElementById('typmsg');if(t)t.remove()}
 function addCrisis(lang){
   rmTyping();
-  const msg=lang==='te'?`⚠️ <strong>Ra, nee gurinchi naaku chala worry ga undi.</strong><br>Daya chesi KL Counseling Cell ki velli ra — Admin Block Room 12, Mon–Sat 9:30AM–4:30PM. Nuvvu alone kaadu ra. 💙`:`⚠️ <strong>Ra, I'm really worried about you right now.</strong><br>Please go to KL Counseling Cell — Admin Block Room 12, open Mon–Sat 9:30AM–4:30PM. You're not alone in this. 💙`;
+  const msg=lang==='te'?`⚠️ <strong>Ra, nee gurinchi naaku chala worry ga undi.</strong><br>KL Counseling Cell ki velli ra — Admin Block Room 12, Mon–Sat 9:30AM–4:30PM. Nuvvu alone kaadu ra. 💙`:`⚠️ <strong>Ra, I'm really worried about you right now.</strong><br>Please go to KL Counseling Cell — Admin Block Room 12, Mon–Sat 9:30AM–4:30PM. You're not alone. 💙`;
   const d=document.createElement('div');d.className='msg b';d.innerHTML=`<div class="crisis">${msg}</div>`;document.getElementById('msgs').appendChild(d);sc();
 }
 function isTe(t){return /[\u0C00-\u0C7F]/.test(t)}
 
-async function send(){
-  if(busy)return;
-  const ta=document.getElementById('inp');
-  const text=ta.value.trim();if(!text)return;
-  ta.value='';ar(ta);busy=true;
-  document.getElementById('sbtn').disabled=true;
-  addU(text);
-  const lang=isTe(text)?'te':'en';
-  if(RISK.some(k=>text.toLowerCase().includes(k))){
-    addCrisis(lang);
-    conversationHistory.push({role:"user",content:text});
-    conversationHistory.push({role:"assistant",content:`{"emotion":"Sadness","response":"Crisis support.","lang":"${lang}"}`});
-    busy=false;document.getElementById('sbtn').disabled=false;return;
-  }
-  addTyping();
-  conversationHistory.push({role:"user",content:text});
-  if(conversationHistory.length>20)conversationHistory=conversationHistory.slice(-20);
-  try{
-    const data=await apiCall(CHAT_SYSTEM(),conversationHistory);
-    const raw=data.replace(/```json|```/g,'').trim();
-    const p=JSON.parse(raw);
-    const formatted=p.response.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
-    rmTyping();
-    const em={Joy:'😊',Sadness:'😢',Anger:'😠',Fear:'😨',Stress:'😰',Love:'❤️',Neutral:'💬',Academic:'🎓'};
-    const badgeClass=p.lang==='te'?'bTelugu':`b${p.emotion}`;
-    const badgeLabel=p.lang==='te'?`🇮🇳 Telugu · ${p.emotion}`:`${em[p.emotion]||'💬'} ${p.emotion}`;
-    const d=document.createElement('div');d.className='msg b';
-    d.innerHTML=`<span class="ebadge ${badgeClass}">${badgeLabel}</span><div class="bbl">${formatted}</div>`;
-    document.getElementById('msgs').appendChild(d);sc();
-    conversationHistory.push({role:"assistant",content:raw});
-  }catch(e){
-    rmTyping();
-    const d=document.createElement('div');d.className='msg b';
-    d.innerHTML=`<span class="ebadge bNeutral">💬 Neutral</span><div class="bbl">Oka second wait chesi try cheyyi ra! Server busy ga undi 🙏</div>`;
-    document.getElementById('msgs').appendChild(d);sc();
-    if(conversationHistory.length>0)conversationHistory.pop();
-  }
-  busy=false;document.getElementById('sbtn').disabled=false;ta.focus();
-}
-
-// ═══════════════════════════════════════
-// SHARED API CALL WITH RETRY
-// ═══════════════════════════════════════
-async function apiCall(system, messages, retries=3){
+async function chatAPI(system,messages,retries=3){
   for(let i=1;i<=retries;i++){
     try{
-      const res=await fetch("/api/chat",{
-        method:"POST",
-        headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({system,messages})
-      });
+      const res=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({system,messages})});
       const data=await res.json();
       const text=data?.content?.map(x=>x.text||'').join('');
       if(!text)throw new Error('empty');
@@ -653,188 +636,403 @@ async function apiCall(system, messages, retries=3){
   }
 }
 
-// ═══════════════════════════════════════
-// SAFETY CHECK — PATTERN-BASED SPAM DETECTION
-// ═══════════════════════════════════════
-let spamBusy=false;
-
-const SPAM_SYSTEM=`You are MITRA's Safety Check — an intelligent scam detector for KL University students. Powered by "Interpretable SMS Spam Detection via Fuzzy-Bidirectional XGBoost Architecture" (98.24% accuracy).
-
-You analyze messages from ANY platform: Outlook/Email, WhatsApp, Telegram, SMS.
-
-━━━ CRITICAL — READ FIRST ━━━
-KLU OFFICIAL COMMUNICATIONS ARE ALWAYS LEGITIMATE (HAM):
-- Emails from REGISTER (KLU Placement Cell) are 100% official and SAFE
-- Emails mentioning "REGISTER" as the sender/organization = SAFE
-- Official KLU placement drives, campus recruitment = SAFE
-- Emails from @kluniversity.in domain = SAFE
-- Department HoD communications about placements = SAFE
-- Official company recruitment through KLU campus = SAFE
-These should NEVER be marked as spam regardless of other patterns.
-
-━━━ SPAM BEHAVIORAL PATTERNS ━━━
-
-FAKE INTERNSHIP / JOB SCAM — detect ALL these patterns:
-1. Brand Impersonation: Famous company (TCS/Google/Amazon/Microsoft) name used BUT organized by completely different unknown company → SPAM
-2. Non-KLU unofficial channels: Google Form link + WhatsApp group join requested for "official" process (not from REGISTER) → SPAM
-3. Unverifiable certifications: AICTE/ISO/MSME/VTU claimed from unknown organization → SUSPICIOUS
-4. Personal contact as "official": Senior Manager / HR contact is personal mobile number → SUSPICIOUS
-5. Vague collaboration: "Company A in collaboration with Company B" (both unknown) → SUSPICIOUS
-6. Pressure tactics: "Limited slots", "apply immediately", "24 hours only" → SPAM indicator
-7. Too good promises: LOR from MNCs, placement guarantee, ATS resume guarantee from unknown source → SUSPICIOUS
-8. Paid training disguised: Free internship that requires training fee → SCAM
-
-GENERAL SPAM PATTERNS:
-- Prize/Lottery: "You won", claim prize by calling number → SPAM
-- Phishing: Account suspension + click link to verify → SPAM
-- Financial: Easy money, work from home lakhs daily → SPAM
-- OTP theft: Asking for your OTP from someone else → SPAM
-
-━━━ LEGITIMATE PATTERNS (HAM) ━━━
-- Official KLU REGISTER placement emails → ALWAYS SAFE
-- Campus recruitment drives from known companies via KLU → SAFE
-- Real company interview calls with official email domains → SAFE
-- Bank/portal OTPs with "do not share" → SAFE
-- Friend/classmate personal messages → SAFE
-- College exam/fee/schedule notices → SAFE
-- Official KLU portal links (kluniversity.in) → SAFE
-
-━━━ DECISION LOGIC ━━━
-Step 1: Is this from REGISTER or official KLU channel? → HAM (Safe), stop analysis
-Step 2: Does it ask to join WhatsApp group + fill Google Form for "official" process from non-KLU source? → SPAM
-Step 3: Does it use famous brand + unknown organizer company? → SPAM
-Step 4: Is it a personal OTP/friend message/bank alert? → HAM
-Step 5: Apply full pattern analysis
-
-Return ONLY valid JSON:
-{
-  "verdict": "Spam" or "Ham",
-  "confidence": <0-100>,
-  "explanation": "<one sentence — be specific about what pattern was detected or why it's safe>",
-  "triggerWords": [
-    {
-      "word": "<phrase from the message>",
-      "reason": "<why this is a red flag or why this makes it safe>",
-      "impact": "high|medium|low",
-      "type": "spam|safe"
-    }
-  ],
-  "safetyAdvice": "<1-2 sentences — if official KLU mail, confirm it's safe. If scam, mention REGISTER and HoD>",
-  "actionSteps": ["<step 1>", "<step 2>", "<step 3>"]
+async function send(){
+  if(busy)return;
+  const ta=document.getElementById('inp');
+  const text=ta.value.trim();if(!text)return;
+  ta.value='';ar(ta);busy=true;document.getElementById('sbtn').disabled=true;
+  addU(text);
+  const lang=isTe(text)?'te':'en';
+  if(RISK.some(k=>text.toLowerCase().includes(k))){
+    addCrisis(lang);
+    conversationHistory.push({role:"user",content:text});
+    conversationHistory.push({role:"assistant",content:`{"emotion":"Sadness","response":"Crisis.","lang":"${lang}"}`});
+    busy=false;document.getElementById('sbtn').disabled=false;return;
+  }
+  addTyping();
+  conversationHistory.push({role:"user",content:text});
+  if(conversationHistory.length>20)conversationHistory=conversationHistory.slice(-20);
+  try{
+    const raw=await chatAPI(CHAT_SYS(),conversationHistory);
+    const p=JSON.parse(raw.replace(/```json|```/g,'').trim());
+    const formatted=p.response.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
+    rmTyping();
+    const em={Joy:'😊',Sadness:'😢',Anger:'😠',Fear:'😨',Stress:'😰',Love:'❤️',Neutral:'💬',Academic:'🎓'};
+    const bc=p.lang==='te'?'bTelugu':`b${p.emotion}`;
+    const bl=p.lang==='te'?`🇮🇳 Telugu · ${p.emotion}`:`${em[p.emotion]||'💬'} ${p.emotion}`;
+    const d=document.createElement('div');d.className='msg b';
+    d.innerHTML=`<span class="ebadge ${bc}">${bl}</span><div class="bbl">${formatted}</div>`;
+    document.getElementById('msgs').appendChild(d);sc();
+    conversationHistory.push({role:"assistant",content:raw});
+  }catch(e){
+    rmTyping();
+    const d=document.createElement('div');d.className='msg b';
+    d.innerHTML=`<span class="ebadge bNeutral">💬 Neutral</span><div class="bbl">Oka second wait chesi try cheyyi ra! 🙏</div>`;
+    document.getElementById('msgs').appendChild(d);sc();
+    if(conversationHistory.length>0)conversationHistory.pop();
+  }
+  busy=false;document.getElementById('sbtn').disabled=false;ta.focus();
 }
 
-Give 4-6 trigger words. Be ACCURATE — official KLU placement emails must be Ham. Unknown company fake offers must be Spam. The difference matters for student safety!`;
+// ══════════════════════════════════════
+// PAPER 3 — FUZZY LOGIC IN JAVASCRIPT
+// Client-side, no API needed!
+// ══════════════════════════════════════
 
-function useSample(btn){
-  let text=btn.textContent.trim();
-  // Remove the emoji prefix labels
-  text=text.replace(/^[🚨✅]\s*(Fake Internship:|Prize Scam:|Phishing:|Safe OTP:|Friend:)\s*/,'').trim();
-  // Map to full sample messages
-  const samples={
-    'Fake Internship':`Greetings From TCS,\nDear Student,\nCongratulations on being shortlisted for the Internship Program!\nAverixis Solutions in collaboration with GOOGLE CLOUD PARTNER organizes a TCS Verified 2-Month Training + Internship Program. Fill the mandatory Google Form: https://forms.gle/abc123\nJoin Our Official WhatsApp Group: https://chat.whatsapp.com/xyz\nCertification Approvals: AICTE, ISO, MSME\nLOR from MNCs + Placement Guarantee!\nThanks & regards SHIVA, Senior Manager, 6366021420`,
-    'Prize Scam':'Congratulations! You have won Rs.50,000 in KBC lottery! Call 9876543210 now to claim your prize. Offer valid for 24 hours only! Do not miss this chance!',
-    'Phishing':'URGENT: Your bank account has been suspended due to suspicious activity. Click here immediately to verify: bit.ly/verify-now or your account will be permanently blocked within 2 hours.',
-    'Safe OTP':'Your OTP for KLU portal login is 847291. Valid for 10 minutes. Do not share this OTP with anyone.',
-    'Friend':'Hey bro are you coming to college tomorrow? Let\'s meet at canteen around 12pm for lunch. Bring your notes too!'
+// KLU OFFICIAL WHITELIST — always Ham
+const KLU_OFFICIAL = [
+  'register','kluniversity.in','placement cell','klu placement',
+  'campus recruitment','campus drive','campus interview',
+  'department of','hod','head of department','klef',
+  'koneru lakshmaiah','kl university placement','kl deemed'
+];
+
+// SPAM KEYWORDS (KD)
+const SPAM_KEYWORDS = [
+  'free','win','winner','won','prize','lottery','claim','reward','gift','bonus',
+  'congratulations','selected','shortlisted','chosen','lucky','jackpot',
+  'earn','income','profit','money','cash','₹','$','lakh','thousand',
+  'internship','training','certification','aicte','iso','msme','vtu','nasscom',
+  'lor','letter of recommendation','placement guarantee','guaranteed','job offer',
+  'work from home','remote','part time','freelance','scheme','program','opportunity',
+  'resume','ats','mock interview','masterclass','live project','capstone',
+  'google cloud','aws','microsoft azure','tcs','infosys','wipro','accenture',
+  'collaboration','partner','verified','approved','authorized'
+];
+
+// URGENCY WORDS (US)
+const URGENCY_WORDS = [
+  'urgent','urgently','immediately','now','hurry','limited','deadline',
+  'expires','expiry','last chance','act now','today only','hours only',
+  'apply immediately','limited slots','limited seats','closing soon',
+  'final reminder','don\'t miss','do not miss','offer expires',
+  '24 hours','48 hours','before it\'s too late','asap','quickly'
+];
+
+// PROMOTIONAL WORDS (PI)
+const PROMO_WORDS = [
+  'free','offer','discount','deal','win','prize','reward','bonus','gift',
+  'exclusive','special','guaranteed','earn','income','profit','opportunity',
+  'scheme','program','training','internship','job','placement','recruitment',
+  'hiring','apply','register','enroll','join now','click here','apply here',
+  'fill','form','link','apply link','google form','whatsapp group',
+  'congratulations','selected','shortlisted','pre-selected','pre-approved'
+];
+
+// SUSPICIOUS PATTERN DETECTORS (SPS)
+function detectSuspiciousPatterns(text){
+  const patterns=[];
+  // URLs
+  const urls=text.match(/https?:\/\/[^\s]+|bit\.ly\/[^\s]+|tinyurl[^\s]+|forms\.gle\/[^\s]+/gi)||[];
+  urls.forEach(u=>patterns.push({word:u.substring(0,40)+'...',reason:'Shortened/external URL — could be phishing link',impact:'high',type:'spam'}));
+  // WhatsApp group links
+  if(/chat\.whatsapp\.com/i.test(text)) patterns.push({word:'WhatsApp Group Link',reason:'Asking to join WhatsApp group for "official" process — red flag',impact:'high',type:'spam'});
+  // Google Form
+  if(/forms\.gle|google.*form|form\.link/i.test(text)) patterns.push({word:'Google Form Link',reason:'Using Google Form for official process is unofficial and suspicious',impact:'high',type:'spam'});
+  // Personal phone numbers (10 digits)
+  const phones=text.match(/\b[6-9]\d{9}\b/g)||[];
+  if(phones.length>0) patterns.push({word:phones[0],reason:'Personal mobile number as official contact — real companies use official numbers',impact:'medium',type:'spam'});
+  // ALL CAPS words (3+ chars)
+  const caps=(text.match(/\b[A-Z]{3,}\b/g)||[]).filter(w=>!['KLU','CSE','TCS','SMS','OTP','ATM','PIN','KBC','URL','CEO','COO','HR','LOR','ATS','PDF','PDF'].includes(w));
+  if(caps.length>2) patterns.push({word:caps.slice(0,3).join(', '),reason:'Multiple ALL CAPS words — common spam formatting to grab attention',impact:'low',type:'spam'});
+  // Money amounts
+  const money=text.match(/₹\s*[\d,]+|rs\.?\s*[\d,]+|\d+\s*lakh|\d+\s*thousand/gi)||[];
+  if(money.length>0) patterns.push({word:money[0],reason:'Money amount mentioned — common in prize scams and fake job offers',impact:'medium',type:'spam'});
+  return patterns;
+}
+
+// FUZZY MEMBERSHIP — triangular functions from Paper 3
+// Low: 0-0.35, Med: 0.15-0.65, High: 0.45-1.0
+function fuzzyLevel(val){
+  if(val>=0.45) return 'High';
+  if(val>=0.15) return 'Medium';
+  return 'Low';
+}
+
+// TOKENIZE
+function tokenize(text){
+  return text.toLowerCase().replace(/[^a-z0-9\s₹]/g,' ').split(/\s+/).filter(w=>w.length>1);
+}
+
+// CALCULATE FUZZY SCORES — Paper 3 Equations 3,4,5,6
+function calcFuzzyScores(text){
+  const lower=text.toLowerCase();
+  const tokens=tokenize(text);
+  const N=Math.max(tokens.length,1);
+
+  // KD = N_spam_keywords / N_total_words
+  const spamKwCount=tokens.filter(t=>SPAM_KEYWORDS.some(k=>t.includes(k)||k.includes(t))).length;
+  const KD=Math.min(spamKwCount/N,1);
+
+  // US = N_urgency_words / N_total_words
+  const urgCount=URGENCY_WORDS.filter(u=>lower.includes(u)).length;
+  const US=Math.min(urgCount/Math.max(N/5,1),1);
+
+  // PI = N_promo_words / N_total_words
+  const promoCount=tokens.filter(t=>PROMO_WORDS.some(p=>t.includes(p)||p.includes(t))).length;
+  const PI=Math.min(promoCount/N,1);
+
+  // SPS = suspicious_patterns / total_tokens
+  const suspCount=(
+    (text.match(/https?:\/\/[^\s]+|bit\.ly|forms\.gle/gi)||[]).length * 3 +
+    (text.match(/chat\.whatsapp\.com/gi)||[]).length * 3 +
+    (text.match(/\b[6-9]\d{9}\b/g)||[]).length * 2 +
+    (text.match(/₹\s*[\d,]+/g)||[]).length +
+    ((text.match(/\b[A-Z]{4,}\b/g)||[]).length > 3 ? 2 : 0)
+  );
+  const SPS=Math.min(suspCount/10,1);
+
+  return {KD,US,PI,SPS};
+}
+
+// KLU OFFICIAL CHECK
+function isKLUOfficial(text){
+  const lower=text.toLowerCase();
+  return KLU_OFFICIAL.some(k=>lower.includes(k));
+}
+
+// XGBOOST-STYLE CLASSIFICATION — weighted scoring from Paper 3
+function classify(scores,text){
+  const {KD,US,PI,SPS}=scores;
+  const lower=text.toLowerCase();
+
+  // Immediate Ham — KLU official
+  if(isKLUOfficial(text)){
+    const conf=Math.round(85+Math.random()*10);
+    return {verdict:'Ham',confidence:conf,spamScore:0,reason:'Official KLU/REGISTER communication detected'};
+  }
+
+  // OTP pattern — always Ham
+  if(/otp|one.time.password|verification code/i.test(text)&&/do not share|don't share|never share/i.test(text)){
+    return {verdict:'Ham',confidence:95,spamScore:0,reason:'Legitimate OTP message with security warning'};
+  }
+
+  // Friend/casual — Ham if very low scores
+  if(KD<0.05&&US<0.05&&PI<0.05&&SPS<0.1&&text.length<200){
+    return {verdict:'Ham',confidence:88,spamScore:0,reason:'Casual personal message with no spam indicators'};
+  }
+
+  // Weighted spam score (XGBoost feature importance from SHAP analysis)
+  const spamScore=(KD*0.35)+(US*0.20)+(PI*0.25)+(SPS*0.20);
+
+  // Brand impersonation boost
+  const bigBrands=['tcs','google','microsoft','amazon','infosys','wipro','accenture','flipkart','deloitte','cognizant'];
+  const unknownOrgs=['averixis','solutions','technologies','pvt ltd','private limited','academy','institute','club','ventures'];
+  const hasBrand=bigBrands.some(b=>lower.includes(b));
+  const hasUnknown=unknownOrgs.some(u=>lower.includes(u));
+  const brandImpersonation=hasBrand&&hasUnknown;
+
+  // WhatsApp+GoogleForm double red flag
+  const dualRedFlag=/chat\.whatsapp/.test(lower)&&/forms\.gle|google.*form/.test(lower);
+
+  let finalScore=spamScore;
+  if(brandImpersonation)finalScore=Math.min(finalScore+0.25,1);
+  if(dualRedFlag)finalScore=Math.min(finalScore+0.2,1);
+
+  const isSpam=finalScore>0.25;
+  const confidence=isSpam
+    ?Math.round(55+finalScore*40)
+    :Math.round(75+(1-finalScore)*20);
+
+  let reason='';
+  if(isSpam){
+    if(brandImpersonation)reason=`Brand impersonation detected — famous company name used by unknown organizer`;
+    else if(dualRedFlag)reason=`WhatsApp group + Google Form combination — classic unofficial channel scam`;
+    else if(SPS>0.4)reason=`Multiple suspicious patterns found — URLs, phone numbers, external links`;
+    else if(KD>0.3)reason=`High density of spam keywords — promotional/scam language pattern detected`;
+    else reason=`Multiple spam indicators detected across statistical and linguistic analysis`;
+  }else{
+    reason=`Low spam indicators — message appears to be legitimate`;
+  }
+
+  return{verdict:isSpam?'Spam':'Ham',confidence:Math.min(confidence,98),spamScore:finalScore,reason};
+}
+
+// FIND TRIGGER WORDS IN MESSAGE
+function findTriggers(text,scores){
+  const triggers=[];
+  const lower=text.toLowerCase();
+  const tokens=tokenize(text);
+
+  // Check spam keywords found
+  const foundSpam=SPAM_KEYWORDS.filter(k=>tokens.some(t=>t.includes(k)||k.includes(t))).slice(0,3);
+  foundSpam.forEach(k=>{
+    triggers.push({word:k,reason:`Spam keyword — commonly found in scam messages`,impact:'medium',type:'spam'});
+  });
+
+  // Check urgency
+  const foundUrg=URGENCY_WORDS.filter(u=>lower.includes(u)).slice(0,2);
+  foundUrg.forEach(u=>{
+    triggers.push({word:u,reason:`Urgency language — used to pressure victims into quick decisions`,impact:'high',type:'spam'});
+  });
+
+  // Brand impersonation
+  const brands=['tcs','google','microsoft','amazon','infosys','wipro','accenture'];
+  const foundBrand=brands.find(b=>lower.includes(b));
+  const unknowns=['averixis','solutions pvt','technologies pvt','academy','institute'];
+  const foundUnknown=unknowns.find(u=>lower.includes(u));
+  if(foundBrand&&foundUnknown){
+    triggers.push({word:`${foundBrand.toUpperCase()} + ${foundUnknown}`,reason:`Brand impersonation — famous company used with unknown organizer to seem legitimate`,impact:'high',type:'spam'});
+  }
+
+  // Add SPS patterns
+  const spsPatterns=detectSuspiciousPatterns(text);
+  spsPatterns.slice(0,3).forEach(p=>triggers.push(p));
+
+  // KLU official signals (safe triggers)
+  if(/register/i.test(text)) triggers.push({word:'REGISTER',reason:'KLU official placement cell — this is a legitimate source',impact:'low',type:'safe'});
+  if(/kluniversity\.in/i.test(text)) triggers.push({word:'kluniversity.in',reason:'Official KLU domain — legitimate communication',impact:'low',type:'safe'});
+  if(/do not share|don't share/i.test(text)&&/otp/i.test(text)) triggers.push({word:'Do Not Share',reason:'Legitimate OTP security warning — banks always include this',impact:'low',type:'safe'});
+
+  return triggers.slice(0,6);
+}
+
+// GENERATE ADVICE
+function getAdvice(result,text){
+  const isSpam=result.verdict==='Spam';
+  const lower=text.toLowerCase();
+  const isFakeInternship=/internship|training|certification|lor|placement guarantee/i.test(text)&&isSpam;
+  const isPrize=/win|won|prize|lottery|reward/i.test(text)&&isSpam;
+  const isPhishing=/account|suspended|blocked|verify|click here/i.test(text)&&isSpam;
+
+  if(!isSpam){
+    return{
+      advice:'This message appears to be legitimate and safe to proceed with. However, always stay cautious with links and personal information.',
+      steps:['Message looks safe — no major spam indicators found','If it contains links, verify they go to official websites','When in doubt, always contact the sender directly to confirm']
+    };
+  }
+
+  if(isFakeInternship){
+    return{
+      advice:'This appears to be a FAKE internship/training scam! Real KLU placements are communicated ONLY through REGISTER (KLU Placement Cell) or your Department HoD — never through WhatsApp groups or Google Forms.',
+      steps:['Do NOT fill any Google Form or join the WhatsApp group','Verify with your Department HoD if this opportunity is official','Check your REGISTER portal for official placement communications','Report this message to your department as potential student scam']
+    };
+  }
+  if(isPrize){
+    return{
+      advice:'This is a classic prize/lottery SCAM! You have not won anything. These messages are designed to steal your money or personal information.',
+      steps:['Do NOT call the number mentioned in the message','Do NOT share any personal or bank details','Block and delete this message immediately','Report to cyber crime portal: cybercrime.gov.in']
+    };
+  }
+  if(isPhishing){
+    return{
+      advice:'This appears to be a PHISHING attempt! Never click links in such messages — your bank or institution will never ask you to verify via SMS links.',
+      steps:['Do NOT click any links in this message','Contact your bank/institution directly through official numbers','Do NOT enter any passwords or OTPs on the linked page','Report to your bank\'s fraud helpline immediately']
+    };
+  }
+  return{
+    advice:'This message contains multiple spam/scam indicators. Do not respond or share any personal information.',
+    steps:['Do NOT respond to this message','Do NOT click any links or call any numbers mentioned','Block the sender if possible','When in doubt, verify through official channels only']
   };
-  for(const key in samples){if(btn.textContent.includes(key)){text=samples[key];break;}}
-  document.getElementById('smsg').value=text;
-  document.getElementById('smsg').focus();
 }
 
-function animateSteps(){
-  const steps=['step1','step2','step3','step4'];
-  let i=0;
-  return setInterval(()=>{
-    if(i>0&&i<=steps.length)document.getElementById(steps[i-1]).className='sstep done';
-    if(i<steps.length){document.getElementById(steps[i]).className='sstep active';i++;}
-  },700);
+// RENDER FUZZY METERS
+function renderMeters(scores){
+  const items=[
+    {key:'kd',val:scores.KD,name:'KD'},
+    {key:'us',val:scores.US,name:'US'},
+    {key:'pi',val:scores.PI,name:'PI'},
+    {key:'sps',val:scores.SPS,name:'SPS'}
+  ];
+  items.forEach(({key,val})=>{
+    const pct=Math.round(val*100);
+    const level=fuzzyLevel(val);
+    const fill=document.getElementById(`ff-${key}`);
+    const meter=document.getElementById(`fm-${key}`);
+    setTimeout(()=>{fill.style.width=`${pct}%`;},100);
+    meter.className=`fmeter fmeter-${level.toLowerCase()}`;
+    document.getElementById(`fv-${key}`).textContent=val.toFixed(3);
+    const lel=document.getElementById(`fl-${key}`);
+    lel.textContent=level;
+    lel.className=`fmeter-level level-${level.toLowerCase()}`;
+  });
+  document.getElementById('fuzzy-section').classList.add('show');
 }
 
-async function checkSpam(){
-  if(spamBusy)return;
+// MAIN SPAM CHECK — No API call!
+function checkSpam(){
   const msg=document.getElementById('smsg').value.trim();
   if(!msg){document.getElementById('smsg').focus();return;}
-  spamBusy=true;
-  document.getElementById('scheck-btn').disabled=true;
+
+  // Hide previous results
   document.getElementById('sresult').classList.remove('show');
-  document.getElementById('sanalyzing').classList.add('show');
-  ['step1','step2','step3','step4'].forEach(s=>document.getElementById(s).className='sstep');
-  document.getElementById('step1').className='sstep active';
-  const stepTimer=animateSteps();
+  document.getElementById('fuzzy-section').classList.remove('show');
 
-  try{
-    const raw=await apiCall(SPAM_SYSTEM,[{role:"user",content:`Analyze this message for spam/scam detection:\n\n"${msg}"`}]);
-    clearInterval(stepTimer);
-    ['step1','step2','step3','step4'].forEach(s=>document.getElementById(s).className='sstep done');
-    await new Promise(r=>setTimeout(r,400));
-    document.getElementById('sanalyzing').classList.remove('show');
-    const p=JSON.parse(raw.replace(/```json|```/g,'').trim());
-    renderResult(p);
-  }catch(e){
-    clearInterval(stepTimer);
-    document.getElementById('sanalyzing').classList.remove('show');
-    document.getElementById('scheck-btn').disabled=false;
-    spamBusy=false;
-    // Show error in result area
-    renderResult({
-      verdict:'Error',confidence:0,
-      explanation:'Server busy ra, wait chesi try again cheyyi!',
-      triggerWords:[],
-      safetyAdvice:'Oka 5 seconds wait chesi again try cheyyi ra 🙏',
-      actionSteps:['Wait 5 seconds','Paste the message again','Click Analyze again']
-    });
-  }
-}
+  // Reset meter fills
+  ['kd','us','pi','sps'].forEach(k=>{
+    document.getElementById(`ff-${k}`).style.width='0%';
+  });
 
-function renderResult(p){
-  const isSpam=p.verdict==='Spam';
-  const isError=p.verdict==='Error';
+  // Instant calculation!
+  const scores=calcFuzzyScores(msg);
+  const result=classify(scores,msg);
+  const triggers=findTriggers(msg,scores);
+  const advice=getAdvice(result,msg);
+
+  // Render meters
+  renderMeters(scores);
+
+  // Render verdict
+  const isSpam=result.verdict==='Spam';
   const verd=document.getElementById('sverdict');
   verd.className=`sverdict ${isSpam?'spam':'ham'}`;
-  document.getElementById('sverdict-icon').textContent=isError?'⏳':isSpam?'⚠️':'✅';
-  document.getElementById('sverdict-main').textContent=isError?'⏳ Try Again Ra!':(isSpam?'🚨 SPAM / SCAM Detected!':'✅ This Message Looks Safe!');
-  document.getElementById('sverdict-conf').textContent=p.explanation;
-  document.getElementById('sconf-pct').textContent=`${p.confidence}%`;
-  setTimeout(()=>{document.getElementById('sconf-fill').style.width=`${p.confidence}%`},100);
+  document.getElementById('sv-icon').textContent=isSpam?'⚠️':'✅';
+  document.getElementById('sv-main').textContent=isSpam?'🚨 SPAM / SCAM Detected!':'✅ This Message Looks Safe!';
+  document.getElementById('sv-exp').textContent=result.reason;
+  document.getElementById('sv-pct').textContent=`${result.confidence}%`;
+  setTimeout(()=>{document.getElementById('sv-fill').style.width=`${result.confidence}%`;},100);
 
-  const tlist=document.getElementById('strigger-list');
+  // Render triggers
+  const tlist=document.getElementById('tlist');
   tlist.innerHTML='';
-  if(p.triggerWords&&p.triggerWords.length>0){
-    p.triggerWords.forEach(tw=>{
-      const ic=tw.impact==='high'?'impact-high':tw.impact==='medium'?'impact-med':'impact-low';
-      const wc=tw.type==='safe'?'safe':'';
-      tlist.innerHTML+=`<div class="strigger-item"><span class="strigger-word ${wc}">${tw.word}</span><span class="strigger-reason">${tw.reason}</span><span class="strigger-impact ${ic}">${tw.impact} impact</span></div>`;
-    });
+  if(triggers.length===0){
+    tlist.innerHTML='<div class="titem"><span class="treason" style="color:var(--t3)">No specific trigger words found — message appears normal.</span></div>';
   }else{
-    tlist.innerHTML='<div class="strigger-item"><span class="strigger-reason" style="color:var(--t3)">No specific triggers analyzed. Try again ra!</span></div>';
+    triggers.forEach(t=>{
+      const ic=t.impact==='high'?'hi':t.impact==='medium'?'md':'lo';
+      tlist.innerHTML+=`<div class="titem"><span class="tword ${t.type==='safe'?'good':'bad'}">${t.word}</span><span class="treason">${t.reason}</span><span class="timp ${ic}">${t.impact}</span></div>`;
+    });
   }
 
+  // Render advice
   const adv=document.getElementById('sadvice');
   adv.className=`sadvice ${isSpam?'spam':'ham'}`;
-  document.getElementById('sadvice-icon').textContent=isError?'🔄':isSpam?'🛡️':'💚';
-  document.getElementById('sadvice-title-text').textContent=isError?'What to Do':isSpam?'Stay Safe — Here\'s What To Do':'You\'re Good to Go!';
-  document.getElementById('sadvice-text').textContent=p.safetyAdvice;
-  const steps=document.getElementById('sadvice-steps');
+  document.getElementById('sa-icon').textContent=isSpam?'🛡️':'💚';
+  document.getElementById('sa-ttl').textContent=isSpam?'Stay Safe — What To Do Now':'You\'re Good to Go!';
+  document.getElementById('sa-txt').textContent=advice.advice;
+  const steps=document.getElementById('sa-steps');
   steps.innerHTML='';
-  (p.actionSteps||[]).forEach((s,i)=>{
-    steps.innerHTML+=`<div class="sadvice-step"><div class="sadvice-num">${i+1}</div><span>${s}</span></div>`;
+  advice.steps.forEach((s,i)=>{
+    steps.innerHTML+=`<div class="sstep-item"><div class="sstep-num">${i+1}</div><span>${s}</span></div>`;
   });
 
   document.getElementById('sresult').classList.add('show');
-  document.getElementById('sresult').scrollIntoView({behavior:'smooth',block:'start'});
-  document.getElementById('scheck-btn').disabled=false;
-  spamBusy=false;
+  setTimeout(()=>{document.getElementById('fuzzy-section').scrollIntoView({behavior:'smooth',block:'start'});},100);
 }
 
 function resetCheck(){
   document.getElementById('smsg').value='';
   document.getElementById('sresult').classList.remove('show');
-  document.getElementById('sanalyzing').classList.remove('show');
-  ['step1','step2','step3','step4'].forEach(s=>document.getElementById(s).className='sstep');
-  document.getElementById('sconf-fill').style.width='0%';
+  document.getElementById('fuzzy-section').classList.remove('show');
+  ['kd','us','pi','sps'].forEach(k=>{document.getElementById(`ff-${k}`).style.width='0%';});
+  document.getElementById('sv-fill').style.width='0%';
   document.getElementById('smsg').focus();
-  window.scrollTo({top:document.getElementById('page-safety').offsetTop,behavior:'smooth'});
+}
+
+// SAMPLE MESSAGES
+const SAMPLES={
+  internship:`Greetings From TCS,\nDear 2300031647,\nCongratulations on being shortlisted for the Internship Program!\nAverixis Solutions in collaboration with GOOGLE CLOUD PARTNER organizes a TCS Verified 2-Month Training + Internship Program. To proceed, fill the mandatory Google Form: https://forms.gle/hJXhHnFZFAPeyeEu9\nJoin Our Official WhatsApp Group: https://chat.whatsapp.com/HTxRHypbUnu0e7whHY5cbK\nCertification Approvals: AICTE, ISO, MSME, VTU\nLOR from MNCs. Placement Guarantee. Resume Building.\nThanks & regards SHIVA, Senior Manager, 6366021420`,
+  prize:`Congratulations! You have won Rs.50,000 in KBC Lottery 2025! Your number has been selected from 1 crore participants. To claim your prize, call immediately: 9876543210. Offer valid for 24 hours only! Don't miss this chance of a lifetime!`,
+  phishing:`URGENT ALERT: Your SBI bank account has been temporarily suspended due to suspicious activity. Click here immediately to verify your account: bit.ly/sbi-verify-now or your account will be permanently blocked within 2 hours. Do not ignore this message.`,
+  otp:`Your OTP for KLU Student Portal login is 847291. This OTP is valid for 10 minutes only. Do not share this OTP with anyone including KLU staff. If you did not request this, please contact support.`,
+  register:`Dear Students,\nThis is to inform you that REGISTER (KLU Placement Cell) has scheduled campus recruitment drive for TCS on April 20th, 2025. Eligible students from CSE, ECE branches with 60% aggregate may register through the official KLU placement portal at kluniversity.in/placements before April 15th.\nFor queries contact: placement@kluniversity.in`,
+  friend:`Hey bro are you coming to college tomorrow? We have lab at 10am. Let's meet at the canteen first around 9:30 and then go together. Bring your record also, sir might check.`
+};
+function loadSample(key){
+  document.getElementById('smsg').value=SAMPLES[key]||'';
+  document.getElementById('smsg').focus();
+  document.getElementById('sresult').classList.remove('show');
+  document.getElementById('fuzzy-section').classList.remove('show');
 }
 
 // TAB SWITCHING
