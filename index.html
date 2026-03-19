@@ -648,8 +648,9 @@ function addCrisis(lang){
 }
 function isTe(t){return /[\u0C00-\u0C7F]/.test(t)}
 
-async function chatAPI(system,messages,retries=3){
-  for(let i=1;i<=retries;i++){
+async function chatAPI(system,messages,retries=4){
+  const delays=[1500,3000,5000,8000];
+  for(let i=0;i<retries;i++){
     try{
       const res=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({system,messages})});
       const data=await res.json();
@@ -657,7 +658,7 @@ async function chatAPI(system,messages,retries=3){
       if(!text)throw new Error('empty');
       return text;
     }catch(e){
-      if(i<retries){await new Promise(r=>setTimeout(r,i*1200));continue;}
+      if(i<retries-1){await new Promise(r=>setTimeout(r,delays[i]));continue;}
       throw e;
     }
   }

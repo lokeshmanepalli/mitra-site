@@ -12,43 +12,45 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         model: "llama-3.1-8b-instant",
-        max_tokens: 400,
-        temperature: 0.7,
+        max_tokens: 350,
+        temperature: 0.8,
         messages: [{ role: "system", content: system }, ...messages]
       })
     });
 
+    if (response.status === 429) {
+      const retryAfter = response.headers.get('retry-after') || 2;
+      throw new Error(`RATE_LIMIT:${retryAfter}`);
+    }
+
     const data = await response.json();
-
-    if (response.status === 429) throw new Error('RATE_LIMIT');
-
     const text = data?.choices?.[0]?.message?.content;
-    if (!text) throw new Error('EMPTY_RESPONSE');
-
+    if (!text) throw new Error('EMPTY');
     return text;
   };
 
-  // Retry up to 3 times
-  let lastError;
-  for (let attempt = 1; attempt <= 3; attempt++) {
+  // Retry 4 times with increasing delays
+  const delays = [1500, 3000, 5000, 8000];
+
+  for (let attempt = 0; attempt < 4; attempt++) {
     try {
       const text = await makeRequest();
       return res.status(200).json({ content: [{ type: "text", text }] });
     } catch (err) {
-      lastError = err;
-      if (err.message === 'RATE_LIMIT' && attempt < 3) {
-        await new Promise(r => setTimeout(r, attempt * 1000));
-        continue;
-      }
-      break;
+      const isRateLimit = err.message.startsWith('RATE_LIMIT');
+      const isLast = attempt === 3;
+      if (isLast) break;
+      const delay = isRateLimit
+        ? Math.max(parseInt(err.message.split(':')[1] || 2) * 1000, delays[attempt])
+        : delays[attempt];
+      await new Promise(r => setTimeout(r, delay));
     }
   }
 
-  // Fallback response
-  const isSpam = system && system.includes('Spam');
-  const fallback = isSpam
-    ? '{"verdict":"Error","confidence":0,"explanation":"Try again ra!","triggerWords":[],"safetyAdvice":"Oka second wait chesi again try cheyyi ra!","actionSteps":["Wait 2-3 seconds","Paste message again","Click Analyze"]}'
-    : '{"emotion":"Neutral","response":"Bro server busy ga undi ra, oka second wait chesi try cheyyi! 🙏","lang":"en"}';
-
-  return res.status(200).json({ content: [{ type: "text", text: fallback }] });
+  return res.status(200).json({
+    content: [{
+      type: "text",
+      text: '{"emotion":"Neutral","response":"Arey yaar server oka chinna load lo undi ra — 10 seconds wait chesi again try cheyyi! 🙏","lang":"en"}'
+    }]
+  });
 }
