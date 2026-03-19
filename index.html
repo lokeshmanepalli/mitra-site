@@ -633,7 +633,8 @@ EMOTION: Detect freely — Joy, Sadness, Anger, Fear, Stress, Love, Neutral, Aca
 RESPONSE RULES:
 - WHO ARE YOU questions: Introduce MITRA only — purpose and what you help with. NEVER randomly list faculty names.
 - FACULTY queries: Only when directly asked. Give relevant faculty info from context.
-- FEES/HOSTEL/SCHOLARSHIP: Use exact data from context above with **bold** for amounts.
+- FEES/HOSTEL/SCHOLARSHIP queries: emotion MUST be "Academic". Use exact data from context with **bold** for amounts. After answering, add a friendly follow-up like "Enti ra, full breakdown kavala? 😄" or "Inko room type details kavala? Cheppu!" or "More details kavala bro?" — talk like a friend, not a bot!.
+- EMOTION RULE: Any question about fees/hostel/scholarship/faculty/attendance/exam = emotion MUST be "Academic". Only use "Neutral" for pure casual talk with zero academic content.
 - EMOTIONAL: Heavy natural slang — "arey ra", "bro sach bol", "yaar tension ledu", "machha chill maar", "no cap", "fr fr", "same ra same", "you got this ra", "ayyo ra", "dude relax", "vibe check failed ra", "W move ra". Reference their specific situation. 2-4 sentences.
 - CASUAL: Be funny, match energy 100%, gen-Z Indian student vibes — "bro", "ra", "machha", "yaar", "no cap", "lowkey", "hits different ra".
 - MIXED: Emotion first, then academic info.
@@ -642,6 +643,7 @@ RESPONSE RULES:
 - Mention Counseling Cell ONLY for serious distress.
 - Mention creator ONLY if directly asked.
 - ZERO spelling mistakes especially in Tenglish.
+- NEVER include "Lang: te" or "Lang: en" or any language label inside the response text — language goes in the JSON "lang" field only, not in response!
 
 Respond ONLY as valid JSON: {"emotion":"EMOTION","response":"RESPONSE","lang":"en|te"}`;
 }
@@ -703,8 +705,9 @@ async function send(){
     const formatted=p.response.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
     rmTyping();
     const em={Joy:'😊',Sadness:'😢',Anger:'😠',Fear:'😨',Stress:'😰',Love:'❤️',Neutral:'💬',Academic:'🎓'};
-    const bc=p.lang==='te'?'bTelugu':`b${p.emotion}`;
-    const bl=p.lang==='te'?`🇮🇳 Telugu · ${p.emotion}`:`${em[p.emotion]||'💬'} ${p.emotion}`;
+    const langLabel=p.lang==='te'?'· TE':'· EN';
+    const bc=`b${p.emotion}`;
+    const bl=`${em[p.emotion]||'💬'} ${p.emotion} ${langLabel}`;
     const d=document.createElement('div');d.className='msg b';
     d.innerHTML=`<span class="ebadge ${bc}">${bl}</span><div class="bbl">${formatted}</div>`;
     document.getElementById('msgs').appendChild(d);sc();
