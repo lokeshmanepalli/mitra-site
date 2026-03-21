@@ -107,7 +107,7 @@ textarea{width:100%;border:none;background:transparent;color:var(--t1);font-fami
 textarea::placeholder{color:var(--t3)}
 .sbtn{width:44px;height:44px;background:linear-gradient(135deg,var(--teal),#0ea5e9);border:none;border-radius:12px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .25s;box-shadow:0 4px 16px rgba(56,189,248,.35)}
 .sbtn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(56,189,248,.45)}.sbtn:active{transform:scale(.95)}.sbtn:disabled{background:var(--glass);box-shadow:none;cursor:not-allowed;transform:none}
-/* FACULTY PAGE */
+/* FACULTY PAGE — single definition */
 .apage{max-width:1000px;margin:0 auto;padding:32px 18px 56px}
 .fac-hero{text-align:center;margin-bottom:28px}
 .fac-hero h2{font-family:'Crimson Pro',serif;font-size:clamp(26px,4vw,42px);font-weight:600;margin-bottom:6px}
@@ -133,7 +133,7 @@ textarea::placeholder{color:var(--t3)}
 .fac-result-info{font-size:11px;color:var(--t3);text-align:right}
 .fac-dept-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;margin-bottom:14px;position:relative;overflow:hidden}
 .fac-dept-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--dc,var(--teal)),transparent)}
-.fac-dept-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;cursor:pointer;user-select:none}
+.fac-dept-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
 .fac-dept-left{display:flex;align-items:center;gap:10px}
 .fac-dept-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
 .fac-dept-name{font-size:13px;font-weight:600;margin-bottom:2px}
@@ -281,7 +281,7 @@ footer{border-top:1px solid var(--border);padding:26px 32px;display:flex;justify
 .mri{width:28px;height:28px;background:var(--glass);border:1px solid var(--border);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
 .mrl{font-size:9.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--t3);margin-bottom:2px}
 .mrv{color:var(--t2);line-height:1.5}.mrv a{color:var(--teal);text-decoration:none}
-@media(max-width:640px){nav{padding:12px 14px}.ntabs{gap:3px}.ntab{padding:4px 9px;font-size:10.5px}footer{flex-direction:column;padding:24px 16px}.fr{align-items:flex-start}.modal{padding:22px 18px}.fstats{grid-template-columns:1fr 1fr}.scheck-row{flex-direction:column;align-items:stretch}.scheck-btn{justify-content:center}.fuzzy-grid{grid-template-columns:1fr}}
+@media(max-width:640px){nav{padding:12px 14px}.ntabs{gap:3px}.ntab{padding:4px 9px;font-size:10.5px}footer{flex-direction:column;padding:24px 16px}.fr{align-items:flex-start}.modal{padding:22px 18px}.scheck-row{flex-direction:column;align-items:stretch}.scheck-btn{justify-content:center}.fuzzy-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -311,7 +311,7 @@ footer{border-top:1px solid var(--border);padding:26px 32px;display:flex;justify
       <div class="st"><div class="sn">94.7%</div><div class="sl">Accuracy</div></div>
       <div class="st"><div class="sn">6</div><div class="sl">Emotions</div></div>
       <div class="st"><div class="sn">32K</div><div class="sl">Samples</div></div>
-      <div class="st"><div class="sn">370+</div><div class="sl">Faculty</div></div>
+      <div class="st"><div class="sn">1014+</div><div class="sl">Faculty</div></div>
     </div>
   </section>
   <div class="echips">
@@ -327,10 +327,7 @@ footer{border-top:1px solid var(--border);padding:26px 32px;display:flex;justify
           <div class="chname">MITRA — Mental Health Intelligent Text Recognition Assistant</div>
           <div class="chstatus"><span class="sdot"></span>Online · Emotion-Aware · Telugu Support · KL Academic DB</div>
         </div>
-        <div class="chbadges">
-          <span class="cbadge">BiLSTM-CNN</span>
-          <span class="cbadge kl">🎓 KL DB</span>
-        </div>
+        <div class="chbadges"><span class="cbadge">BiLSTM-CNN</span><span class="cbadge kl">🎓 KL DB</span></div>
       </div>
       <div class="msgs" id="msgs">
         <div class="wstate" id="wstate">
@@ -396,10 +393,7 @@ footer{border-top:1px solid var(--border);padding:26px 32px;display:flex;justify
     <div class="sinput-card">
       <div class="sinput-head">
         <div class="sinput-av">🔍</div>
-        <div>
-          <div class="sinput-ttl">Message Safety Analyzer</div>
-          <div class="sinput-sub">Instant analysis — Fuzzy Logic in browser, zero API calls!</div>
-        </div>
+        <div><div class="sinput-ttl">Message Safety Analyzer</div><div class="sinput-sub">Instant analysis — Fuzzy Logic in browser, zero API calls!</div></div>
       </div>
       <div class="ssamps">
         <div class="ssamps-lbl">Try these samples</div>
@@ -457,8 +451,8 @@ footer{border-top:1px solid var(--border);padding:26px 32px;display:flex;justify
       <h2>🎓 KL University Faculty Directory</h2>
       <p>All departments · Vijayawada (KLV) & Hyderabad Campus · 1014+ Faculty Members</p>
     </div>
-    <div class="fac-stats-row" id="fac-stats-row">
-      <div class="fac-stat"><div class="fac-stat-n" id="fs-total">1014</div><div class="fac-stat-l">Total Faculty</div></div>
+    <div class="fac-stats-row">
+      <div class="fac-stat"><div class="fac-stat-n" id="fs-total">-</div><div class="fac-stat-l">Total Faculty</div></div>
       <div class="fac-stat"><div class="fac-stat-n" id="fs-prof">-</div><div class="fac-stat-l">Professors</div></div>
       <div class="fac-stat"><div class="fac-stat-n" id="fs-assoc">-</div><div class="fac-stat-l">Assoc. Profs</div></div>
       <div class="fac-stat"><div class="fac-stat-n" id="fs-asst">-</div><div class="fac-stat-l">Asst. Profs</div></div>
@@ -522,950 +516,885 @@ footer{border-top:1px solid var(--border);padding:26px 32px;display:flex;justify
 // ══════════════════════════════════════
 // FACULTY DATABASE — Full KLU 1014+
 // ══════════════════════════════════════
-const FAC_DATA = [
-  // AGRICULTURE - KLV
-  {name:"Dr. Ratna Prasad Pavuluri",role:"PROFESSOR",dept:"Agriculture",campus:"KLV"},
-  {name:"Dr. Senthilmurugan P",role:"ASSOC.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Mr. Jamindar Buddiga",role:"ASSOC.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Dr. Bontu Bala Krishna",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Dr. Manoharmayum Dolpriya Devi",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Dr. Atul Singh",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Dr. Shivasai Prasad",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Dr. Bonu Rama Devi",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Dr. M Gayathri",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Dr. Maddirala Surendra Babu",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Dr. Sravani Dumala",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Dr. Prince Jayasimha Pamala",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Dr. Nukasani Sagarika",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Dr. Md Abdul Basith",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Dr. Ashok Kumar",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Dr. Monoj Sutradhar",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Dr. Sivanand Parashuram Yarazari",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Dr. Valluri Jhansi Hima Varsha",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Dr. Jujjavarapu Rama Rajeshwar",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Dr. Narayanappa Prabhavathi",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Dr. Verella Ragamalika",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Dr. Bathineni Vibhajam Sagal Kiran",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Dr. Pilla Avinash",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Dr. Kommalapati Beaulah Glory",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
-  {name:"Ms. Pilli Manasa",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
-  // ARCHITECTURE - KLV
-  {name:"Mr. Shaik Sami Ur Rehman",role:"PROFESSOR",dept:"Architecture",campus:"KLV"},
-  {name:"Ms. Adhikesavalu Priya",role:"ASSOC.PROF.",dept:"Architecture",campus:"KLV"},
-  {name:"Ms. Tanushree Das",role:"ASSOC.PROF.",dept:"Architecture",campus:"KLV"},
-  {name:"Mr. Bonda Kiran Kumar",role:"ASSOC.PROF.",dept:"Architecture",campus:"KLV"},
-  {name:"Ms. Kavuri Venkata Lakshmi",role:"ASSOC.PROF.",dept:"Architecture",campus:"KLV"},
-  {name:"Mr. Shivendu Shekhar Singh",role:"ASST.PROF.",dept:"Architecture",campus:"KLV"},
-  {name:"Ar. Senthil Kumar P",role:"ASST.PROF.",dept:"Architecture",campus:"KLV"},
-  {name:"Mr. Itta Rudra Murthy",role:"ASST.PROF.",dept:"Architecture",campus:"KLV"},
-  {name:"Ms. Harshitha Kuntamukkala",role:"ASST.PROF.",dept:"Architecture",campus:"KLV"},
-  {name:"Ms. Gopika Girissan",role:"ASST.PROF.",dept:"Architecture",campus:"KLV"},
-  {name:"Ms. Vishnu Priya Balanagarajan",role:"ASST.PROF.",dept:"Architecture",campus:"KLV"},
-  {name:"Ms. Lanka Virajitha",role:"ASST.PROF.",dept:"Architecture",campus:"KLV"},
-  {name:"Dr. Metta Achyutha Kumar Reddy",role:"ASST.PROF.",dept:"Architecture",campus:"KLV"},
-  {name:"Mr. Kanneganti Jyothishya Brahma Chari",role:"ASST.PROF.",dept:"Architecture",campus:"KLV"},
-  // ARTS - KLV
-  {name:"Dr. Rudrabhatla Sai Kumar",role:"ASSOC.PROF.",dept:"Arts",campus:"KLV"},
-  {name:"Dr. Kukkamalla Anil Kumar",role:"ASST.PROF.",dept:"Arts",campus:"KLV"},
-  {name:"Dr. Gunna Venkateswarlu",role:"ASST.PROF.",dept:"Arts",campus:"KLV"},
-  {name:"Dr. Kantam Rajesh Kumar",role:"ASST.PROF.",dept:"Arts",campus:"KLV"},
-  // BIOTECHNOLOGY - KLV
-  {name:"Dr. B Jayakumar Singh",role:"PROFESSOR",dept:"Biotechnology",campus:"KLV"},
-  {name:"Dr. Kamma Srinivasulu",role:"PROFESSOR",dept:"Biotechnology",campus:"KLV"},
-  {name:"Dr. Burra Venkata Laxmi Siva Prasad",role:"PROFESSOR",dept:"Biotechnology",campus:"KLV"},
-  {name:"Dr. M Janaki Ramaiah",role:"PROFESSOR",dept:"Biotechnology",campus:"KLV"},
-  {name:"Dr. Vemuri Praveen Kumar",role:"ASSOC.PROF.",dept:"Biotechnology",campus:"KLV"},
-  {name:"Dr. Nadeem Siddiqui",role:"ASSOC.PROF.",dept:"Biotechnology",campus:"KLV"},
-  {name:"Dr. Ashish Runthala",role:"ASSOC.PROF.",dept:"Biotechnology",campus:"KLV"},
-  {name:"Dr. Bandaru Srinivas",role:"ASSOC.PROF.",dept:"Biotechnology",campus:"KLV"},
-  {name:"Dr. E S Sharmila Sigamany",role:"ASSOC.PROF.",dept:"Biotechnology",campus:"KLV"},
-  {name:"Dr. Muddada Sudhamani",role:"ASSOC.PROF.",dept:"Biotechnology",campus:"KLV"},
-  {name:"Dr. S V Subrahmanyam",role:"ASSOC.PROF.",dept:"Biotechnology",campus:"KLV"},
-  {name:"Dr. N Vedavathi",role:"ASSOC.PROF.",dept:"Biotechnology",campus:"KLV"},
-  {name:"Dr. Mallu Maheswara Reddy",role:"ASST.PROF.",dept:"Biotechnology",campus:"KLV"},
-  {name:"Dr. Golamari Siva Reddy",role:"ASST.PROF.",dept:"Biotechnology",campus:"KLV"},
-  {name:"Dr. Pinnamaneni Rajasekhar",role:"ASST.PROF.",dept:"Biotechnology",campus:"KLV"},
-  {name:"Dr. Chanda Chandrasekhar",role:"ASST.PROF.",dept:"Biotechnology",campus:"KLV"},
-  {name:"Dr. Yella Venkata Rajesh",role:"ASST.PROF.",dept:"Biotechnology",campus:"KLV"},
-  {name:"Dr. Sarada Prasanna Mallick",role:"ASST.PROF.",dept:"Biotechnology",campus:"KLV"},
-  {name:"Dr. Gujjula Koteswara Reddy",role:"ASST.PROF.",dept:"Biotechnology",campus:"KLV"},
-  {name:"Dr. Pritam Kumar Dikshit",role:"ASST.PROF.",dept:"Biotechnology",campus:"KLV"},
-  {name:"Dr. Kola Hemamalini",role:"ASST.PROF.",dept:"Biotechnology",campus:"KLV"},
-  {name:"Dr. Ashish Appasaheb Kadam",role:"ASST.PROF.",dept:"Biotechnology",campus:"KLV"},
-  // BUSINESS SCHOOL - KLV
-  {name:"Dr. Marivina Kishore Babu",role:"PROFESSOR",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Venkateswara Rao Podile",role:"PROFESSOR",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Marimganti Srinivasa Narayana",role:"PROFESSOR",dept:"Business School",campus:"KLV"},
-  {name:"Dr. N Subrahmanyam",role:"PROFESSOR",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Atanu Talukdar",role:"PROFESSOR",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Radha Krishan Sharma",role:"PROFESSOR",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Vadapalli Ravindhar",role:"PROFESSOR",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Kodukula S L N S Subrahmanyam",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Subramanyam Mamidala",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Robert Edwin Chester Jhonson",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Srinivasa Rao Kasisomayajula",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. K Hema Divya",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. K S Venkateswara Kumar",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Atluri Bala Saraswathi",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Simanchala Das",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Kolachina Srinivas",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Savanam Chandra Sekhar",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Gowrabhathini Jitendra",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Domathoti Prasanna Kumar",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. A Uday Shankar",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. V N Sailaja",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Narayanam Bindu Madhavi",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Sundari Dadhabai",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Akondi Srikanth",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Sontineni Ramesh Babu",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Rajendran P",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. M V A L Narasimha Rao",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Venkata Ramana Sikhakolli",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Sukhavasi Santha Kumari",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Sonti Venkata Nagamalleswara Sastry",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Itikela Shyam Sundar",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Nagala Shyam Venkata Nooka Raju",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Debadatta Das",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Arumugam Raju",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Romala Vijaya Srinivas",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. R Pradeep Kumar Patnaik",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Kalla V Bangaru Ganesh",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Parvathaneni Krishna Priya",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Sabbineni Poojitha",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Anuradha Averineni",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Navulla Durga Prasad",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Mudit Saxena",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. J Venkata Ramana",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Ch Balaji",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. K Anusha",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. K V Siva Prasad",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. R S V Rama Swathi",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. R Kanimozhi",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Burra Vamsi Krishna",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Daniel Pilli",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Dr. Taddi Venkata Siva Santoshi Swathi",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Mr. Umesh Kumar Shukla",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  {name:"Mr. A Jagdish Mohan Rao",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
-  // CHEMISTRY - KLV
-  {name:"Dr. Kottapalli Raja Sekhara Prasad",role:"PROFESSOR",dept:"Chemistry",campus:"KLV"},
-  {name:"Dr. V Shanmukhkumar Jagarlapudi",role:"PROFESSOR",dept:"Chemistry",campus:"KLV"},
-  {name:"Dr. Pradeep Kumar Brahman",role:"ASSOC.PROF.",dept:"Chemistry",campus:"KLV"},
-  {name:"Dr. M Radha Madhavi",role:"ASSOC.PROF.",dept:"Chemistry",campus:"KLV"},
-  {name:"Dr. Anna Venkateswara Rao",role:"ASST.PROF.",dept:"Chemistry",campus:"KLV"},
-  // CIVIL ENGINEERING - KLV
-  {name:"Dr. A V S Prasad",role:"PROFESSOR",dept:"Civil Engineering",campus:"KLV"},
-  {name:"Dr. Chappidi Hanumantha Rao",role:"PROFESSOR",dept:"Civil Engineering",campus:"KLV"},
-  {name:"Dr. Palleboina Poluraju",role:"PROFESSOR",dept:"Civil Engineering",campus:"KLV"},
-  {name:"Dr. A Aravindan",role:"PROFESSOR",dept:"Civil Engineering",campus:"KLV"},
-  {name:"Dr. Sanjeet Kumar",role:"ASSOC.PROF.",dept:"Civil Engineering",campus:"KLV"},
-  {name:"Dr. Ashwin Narendra Raut",role:"ASSOC.PROF.",dept:"Civil Engineering",campus:"KLV"},
-  {name:"Dr. Jagarapu Durga Chaitanya Kumar",role:"ASST.PROF.",dept:"Civil Engineering",campus:"KLV"},
-  {name:"Dr. Lingeshwaran N",role:"ASST.PROF.",dept:"Civil Engineering",campus:"KLV"},
-  {name:"Dr. Anu Mary Ealias",role:"ASST.PROF.",dept:"Civil Engineering",campus:"KLV"},
-  {name:"Mr. K Syam Chambrelin",role:"ASST.PROF.",dept:"Civil Engineering",campus:"KLV"},
-  {name:"Mr. Kommineni Hemanth Raja",role:"ASST.PROF.",dept:"Civil Engineering",campus:"KLV"},
-  {name:"Mr. Bodapati Gnana Rahul",role:"ASST.PROF.",dept:"Civil Engineering",campus:"KLV"},
-  // COMPUTER APPLICATIONS - KLV
-  {name:"Dr. Kodukula Subrahmanyam",role:"PROFESSOR",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. G Krishna Mohan",role:"PROFESSOR",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. Kothamasu Kiran Kumar",role:"PROFESSOR",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. Chetty Manna Sheela Rani",role:"PROFESSOR",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. V Valli Mayil",role:"PROFESSOR",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. R D Sathiya",role:"PROFESSOR",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. V S Bhagavan",role:"PROFESSOR",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. Movva Naga Venkata Kiran Babu",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. Bandarupalli Mouleswara Rao",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. Arulswamy Sivaramakrishnan",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. Venkata Surya Narayana Tinnaluri",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. Potluri Venkata Hari Prasad",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. Ch Madhava Rao",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. Karamala Himabindu",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. Konduri Bhagavan",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. Mutyaboyina Latha",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. Munagala Madhu Sudhan Rao",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. Talagadadevi Srinivasa Rao",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. Nerella Srimannarayana",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. Venkateswarlu Gundu",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. Taushif Anwar",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. Jeevan Jala",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Mr. Rama Krishna Yellapragada",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Mr. Nadakuduru Venkata Ramana",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Mr. Ghufran Ahmad Khan",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Mr. Zulfikar Ali Ansari",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Ms. Bhargavi Mopuru",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Mr. Gobinda Chandra Das",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Mr. Nagendra Babu Rajaboina",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Mr. Angalkuditi Srinivas",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Mr. Choutapalli Nagaraju",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Ms. Thonepudi Hemalatha",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Mr. Chintamaneni Phanikanth",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Ms. Chalamalasetty Sravani",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Mr. Asok Kumar Rathinam",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Mr. Pallabothula Ramesh",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Mr. D Surendra",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Ms. Ch Satya Keerthi N V L",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Mr. Lingidi Nageswar Rao",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Ms. Borra Vishnupriya",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Mr. A Prathap",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Mr. A Siddhartha Reddy",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Mr. G Bala Venkata Kishore",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. A Priyadharshini",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Mr. Subhash Chandra Yalavarthy",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  {name:"Dr. Vurity Mounika",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
-  // CSE - KLV (Professors)
-  {name:"Dr. Gandharba Swain",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Vijaya Lakshmi P",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Vishnubhotla Rama Krishna",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Adapa Srinivasa Rao",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Gottumukkala P Saradhi Varma",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Tirumala Kodanda Rama Krishna Rao",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Vemuru Srikanth",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Senthil Athithan",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Tummala Pavan Kumar",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Yalla Prasanth",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Kasula Venkata Durga Kiran",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Malladi Srinivas",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Burra Vijay Babu",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Gajula Siva Nageswara Rao",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Kallipalli Venkata Raju",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Kopparti V V Satyanarayana",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Nulaka Srinivasu",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. P V R D Prasada Rao",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Gera Pradeepini",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Pothuraju Raja Rajeswari",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Shaik Sagar Imambi",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Mohammed Moulana",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Kolla Bhanu Prakash",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Enireddy Vamsidhar",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Tatavarthy Santhi Sri",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. A K Velmurugan",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Moparthi Nageswara Rao",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Vithya Ganesan",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Bhukya Srinivasa Arao",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Debnath Bhattacharyya",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Suryakanth V Gangashetty",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Govind Divakaran",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Sandeep Kumar Sahratia",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Viswanathan Ramasamy",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Kandepu Bala Venkata Brahmarao",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Yogesh Kumar Sharma",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. V Murugesh",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Manoj Wadhwa",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Arpit Jain",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Leena Arya",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Ravi Rastogi",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Dara Vikram",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Smitha Chowdary",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Bobba Veeramallu",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. V Viswanath Shenoi",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Rajendra Kumar Ganiya",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Dharmaiah Devarapalli",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. D Haritha",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. N Alangudi Balaji",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Kommu Siddhardha Mavo Vara Kumar",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Kothalanka Amarendra",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Ganga Rama Koteswara Rao",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Mohammed Ali Hussain",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Manchiraju Kameswara Rao",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Mathews Sandra Carmel Sophia",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Gurrampati Venkata Ramana Reddy",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Ch V Ramana Murthy",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
-  // CSE - KLV (Assoc Profs)
-  {name:"Dr. Tiruveedhula Sajana",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Jagjit Singh Dhatterwal",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Elangovan Guruva Reddy",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Sunitha Pachala",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Bolla Sreenivasulu",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. A Hanumanth",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Bolleddu Siva Nagaiah",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Niranjan Patra",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Hari Kiran Vege",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Boddu Sekhar Babu",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Chintala Radhika Rani",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Sabbineni Srinivasa Rao",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Venkata Vara Prasad Padyala",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Anne V Praveen Krishna",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. K Ruth Ramya",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. P Lakshmi Prasanna",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. K Ravindranadh",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Bondalapu Chaitanya Krishna",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Peddada Venkateswara Rao",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Tata Ravi Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Dubba Nagamalleswari",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Vurukonda Naresh",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Pydimarri Venkata Ravi Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Venkata Naresh Mandhala",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Gogineni Krishna Chaitanya",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Maguluri Lakshmana Phaneendra",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Modepalli Kavitha",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Rachapudi Venubabu",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Raju Anitha",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Pachipala Yellamma",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Kinjirapu Ashesh",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Swarna Kuchibhotla",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Pellakuri Vidyullatha",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Mothukuri Radha",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Dinesh Kumar A",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. C Karthikeyan",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Tumuluru Praveen",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Nikhat Parveen",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Arvind Yadav",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Padmanaban K",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Kunda Venkata Prasad",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Vijay Kumar Burugari",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Nallagatla Raghavendra Sai",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. P M Ashok Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Vidya Sagar Ponnam",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. A Abdul Rahman",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Veerubhotla Siva Rama Krishna Sharma",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Veerraju Gampala",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Shankar Rajendran",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Murali Mohan Vutukuru",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Sadam Kavitha",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Sangaraju Hrushikesava Raju",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Nilu Singh",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. P Ithaya Rani",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Batta Uma Maheswara Rao",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Vijaya Chandra Jadala",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Basaba Bikram Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Sathish Kumar Kannaiah",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Karyemsetty Nagarjuna",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Suneetha Bulla",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Raja Govindan",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. S Srithar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Akhilesh Kumar Dubey",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Thati Anuradha",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Kailasam Swathi",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Prashant Kumar Shukla",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Basant Sah",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. M M Yamuna Devi",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Iwin Thanakumar Joseph S",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Nesarani A",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. A Raja Basha",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Garikapati Bindu",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Tammineedi Venkata Satya Vivek",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Vignesh Thangathurai",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Mohammad Ishrat",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Jalaluddin Khan",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. A R Deepa",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Maydiga Madhusudana Subramanyam",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Vijaya Kumar Reddy Radha",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Sanjay Yadav",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Veeraswamy Ammisetty",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Rafeeq Ahmed",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Jagadish Gurrala",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Kapil Agarwal",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Chippada Nagamani",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Vuda Sreenivasa Rao",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Vemula Venkata Jaya Rama Krishnaiah",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Sasanko Sekhar Gantayat",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Sunitha E V",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Gaddam Venu Gopal",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Anantharaman R",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Jayavarapu Karthik",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Shaik Khaja Mohiddin",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. G V Sam Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Satrughan Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Surya Kiran Chebrolu",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. B Annapurnna",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Bhabendu Kumar Mohanta",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. S Aravinth Seshadri",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Ashok Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Jogendra Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. SK Razia",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Sridevi Emandi",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. N V S Pavan Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Pathuri Siva Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Marouthu Anusha",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Ashish",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Deepak Kumar Panda",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Gandla Shivakanth",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Meganathan Ramasamy",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Donti Reddy Usha Rani",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Ms. M V B T Santhi",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Anumalasetty Satya Kalyan",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Palacharla Srivenkata Srinivasa Sridhar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Nimmagadda Sreeram",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. M Vishnuvardhan",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Adapa Gopi",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Bechoo Lal",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Sanda Sri Harsha",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Jyothi N M",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Marapelli Bhaskar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Durga Prasad Tripathi",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. V Daya Sagar Ketaraju",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Kotagiri Vishnu Divya",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Sivapurapu Lavanya",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. M Raja Ambethkar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Kondapally Krishna Sunalini",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Mutyala Suresh",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Shaida Farhad",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Arnab Chatterjee",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. K Madhu Murthy",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Thatavarthi Satish",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Riaz Shaik",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. K V Chandra Sekhar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. B Srinivasa Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Grande Suresh Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. D Sateesh Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Tamma Eswarlal",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Wuriti Sridhar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. T Nageswara Rao",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. V B V N Prasad",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Nalleboyina Vijaya",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. S Mohammed Ibrahim",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. S Venumadhava Sarma",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. M Nageswara Rao",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Atul Bhattad",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Koneru Swapna",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. N S M P Latha Devi",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Shaik Mahamuda",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Kanike Raghavendra Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
-  // CSE - KLV (Asst Profs - selected key ones)
-  {name:"Dr. N B Arune Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Dyuti Banerjee",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Ms. Mandapati Praveena",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Nichenametla Rajesh",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Siva Sankar Mandal Baidya",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Pavan Kumar Bada",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Naresh Mameda",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Koyilapu Rambabu",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Gaddameedi Dinesh Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Mylavarapu Sita Ram Prasad",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Jampani Satish Babu",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Chitta M H Sai Baba",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Kottapalli Rajya Lakshmi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Dasari Ramesh",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Beluguru Venkateswarulu",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Maganti Syamala",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Bakka Vinod",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Imran Rasheed",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Devendra Joshi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Asesh Kumar Tripathy",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Veera Ankalu Vuyyuru",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Renuka Kolandasamy",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Abhishek Guru",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Sajja Tulasi Krishna",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Elima Hussain",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Koppuravuri Gurnadha Gupta",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. G Kadiravan",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Wasim Khan",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. R Mahendran",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Rahul Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Peruri Venkata Anusha",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Kodali Sadhana",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. K Venkateswara Rao",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. S Phani Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Bhimavarapu Usha Rani",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Karri Aruna Bhaskar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. M Supriya Menon",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Anitha Pradhan",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Abdul Hannan",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. B Hanumantha Rao",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Macherla Padmavathi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Anwar Ahmad Shaik",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Dama Anand",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Lakshminarayana Kodavali",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Ms. Kolachana Swetha",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Talasila Vamsidhar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Vijay Kumar Vasantham",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Ramaiah Challa",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Ms. Bhavani Vasantha",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Ms. Valasapalli Mounika",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Janjhyam Venkata Naga Ramesh",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Tirandasu Ravi Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Ande Pavan Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Ms. Puppala Ramya",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Savaram Mythreya",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Garigipati Rama Krishna",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Doddi Suresh Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Ms. Garikipati Naga Lakshmi Sowjanya",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Arepalli Gopi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Ms. Ponnuru Anusha",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Ms. Anjana Devi Akurathi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Ms. Chinnam Sabitha",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Chittibabu Ravela",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Rupani Ranjith Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Ms. Bommisetti Yamini Supriya",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Ms. Pacha Supriya",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. B Namasivayam",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Ms. Bandeela Suneetha",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Vuyyuru Lakshma Reddy",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Rajesh Tulasi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Ms. Mandava Manjusha",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Ms. Chopparapu Gowthami",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Ms. Dasari Manasa",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Ms. Linginedi Usha Sree",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Kasturi Sai Sandeep",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Dhanesh Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Paladugu Venkateswara Rao",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Ms. Prasanthi Valluri",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Ms. Vuyyuru Lalitha",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Ms. Kowtharapu Radha",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Ms. Gorrepati Rajani Reddy",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Mr. Mylapalli Ramesh",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Swarna Anjali Devi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. P V V S Srinivas",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Dukkipati Sudha",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Avula Pavani",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Kammari Usha Rani",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Amara Rama Devi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Twinkle Dasari",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Bathina Rajesh Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Bansode Ganpat Sadhu",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Annam Venkata Padmavathi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. G Charan Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. S Ragamayi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Yella Bhargavi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Pathuri Bindu",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Ankita Tiwari",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Karthik Chinnasamy",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Rojalini Patro",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Ramesh Babu Nedumaran",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Imran Ali",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Ch Vasavi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Tellakula Anitha",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. B Giri Murugan",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Irrinki Mohan Krishna",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Konka Soujanya",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Ratna Valli Bhagavatula",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Venkata Naga Siva Kumar Challa",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Munish Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  {name:"Dr. Sonali Biswas",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
-  // EEE - KLV
-  {name:"Dr. Kotamaraju Subba Rao",role:"PROFESSOR",dept:"EEE",campus:"KLV"},
-  {name:"Dr. A Pandian",role:"PROFESSOR",dept:"EEE",campus:"KLV"},
-  {name:"Dr. Jarupula Somlal",role:"PROFESSOR",dept:"EEE",campus:"KLV"},
-  {name:"Dr. S V N L Lalitha",role:"PROFESSOR",dept:"EEE",campus:"KLV"},
-  {name:"Dr. Burthi Loveswara Rao",role:"PROFESSOR",dept:"EEE",campus:"KLV"},
-  {name:"Dr. Kuthuri Narasimha Raju",role:"PROFESSOR",dept:"EEE",campus:"KLV"},
-  {name:"Dr. Batchalakuri Jyothi",role:"ASSOC.PROF.",dept:"EEE",campus:"KLV"},
-  {name:"Dr. Pinni Srinivasa Varma",role:"ASSOC.PROF.",dept:"EEE",campus:"KLV"},
-  {name:"Dr. Malligunta Kiran Kumar",role:"ASSOC.PROF.",dept:"EEE",campus:"KLV"},
-  {name:"Dr. Goda Ganesh Raja Sekhar",role:"ASSOC.PROF.",dept:"EEE",campus:"KLV"},
-  {name:"Ms. Kota Sarada",role:"ASSOC.PROF.",dept:"EEE",campus:"KLV"},
-  {name:"Mr. Daka Seshi Reddy",role:"ASSOC.PROF.",dept:"EEE",campus:"KLV"},
-  {name:"Mr. R Bhanu Raghava Prakash",role:"ASSOC.PROF.",dept:"EEE",campus:"KLV"},
-  {name:"Dr. Tadanki Vijay Muni",role:"ASST.PROF.",dept:"EEE",campus:"KLV"},
-  {name:"Mr. Tadivaka Teja Sreenu",role:"ASST.PROF.",dept:"EEE",campus:"KLV"},
-  // ECE - KLV
-  {name:"Dr. Venkatram Nidumolu",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. A S Chandra Sekhara Sastry",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Vullanki Rajesh",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Suman Maloji",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Habibulla Khan",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Chinnari Sri Kavya Korada",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Kotamaraju Sarat Kumar",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. B T P Madhav",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Immadi Govardhini",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. M Siva Ganga Prasad",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Madhavareddy Venkata Narayana",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Kakarla Hari Kishore",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Miryala Sridhar",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Venkata Ratnam Devanaboyina",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Ghali Venkata Subba Rao",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Ketavath Kumar Naik",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Mohammad Zia Ur Rahman",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Polurie Venkata Vijay Kishore",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Karumuri Srinivasa Rao",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Sujatha Moorthy",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Thirumuru Rama Krishna",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Penke Satyannarayana",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Komaragiri Raghava Rao",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Pabbisetti Satya Gouri Arunasri",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Ravi Kumar Mokkapati",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Kallakunta Ravi Kumar",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Gorla Venkata Ganesh",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Munuswamy Siva Kumar",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Syed Inthiyaz",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Fazal Noor Basha",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Syed Shameem",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Guda Rama Krishna Prasad",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Dokku Bhavana",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Sreevardhan Cheerla",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Badugu Suresh",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Chakka Raghava Prasad",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Pokkunuri Pardha Saradhi",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Devireddy Sreenivasa Rao",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Pathan Saleem Akram",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Gubbala China Satyanarayana",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Katta Rajesh Babu",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. G Sai Krishna Santosh",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Sampad Kumar Panda",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Ernest Ravindran R S",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Yalavarthi Usha Devi",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Kondaveeti Girija Sravani",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Mannepalli Kasi Prasad",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. N Prabakaran",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Vipul Agarwal",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. C Sreenivas Preetham Reddy",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Bukya Balaji",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. M Muzammil Parvez",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Pillalamarri Syam Sundar",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Aswin Kumer S V",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Rallabandi Revathi",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. S Rooban",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Chella Santhosh",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. S Arun Metha",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Eepuri Kiran Kumar",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Aravind Kilaru",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Nagangabam Phalguni Singh",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Aravindhan Alagarsamy",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Abhishek Pahuja",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Ashish Kumar",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Sumit Bhushan",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Vivekananthan Venkateswaran",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Mareedu Venkata Durga Prasad",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Vasipalli Subba Reddy",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Nalluri Siddaiah",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Midasala Vasuja Devi",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Sunil Kumar",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Nagesh Mantravadi",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Tatini Narendra Babu",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Kolluru Venkata Ratnam",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Jyothi Ravi Kiran Kumar Dabbakuti",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Poruri Gopi Krishna",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Karra Sony",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Kasi Uday Kiran",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Kambhampati Venkata Sowmya",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Somavarapu Vamsee Krishna",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Naren Das",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Atul Kumar",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Shaik Hasane Ahammad",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Abhishek Kumar",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Debajit Deb",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Vasimalla Yesu Dasu",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Lokendra Singh",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Chatragadda Gopi Chand",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Ms. Vankayalapati Sahiti",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Mr. Banda Sai Sandeep",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
-  {name:"Dr. Jammalamadaka Rajasekhar",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
-  // MATHEMATICS - KLV
-  {name:"Dr. B V Appa Rao",role:"PROFESSOR",dept:"Mathematics",campus:"KLV"},
-  {name:"Dr. N Konda Reddy",role:"ASSOC.PROF.",dept:"Mathematics",campus:"KLV"},
-  // MECHANICAL ENGINEERING - KLV
-  {name:"Dr. Konijeti Rama Krishna",role:"PROFESSOR",dept:"Mechanical Engineering",campus:"KLV"},
-  {name:"Dr. Adusumilli Srinath",role:"PROFESSOR",dept:"Mechanical Engineering",campus:"KLV"},
-  {name:"Dr. N B V Prasad",role:"PROFESSOR",dept:"Mechanical Engineering",campus:"KLV"},
-  {name:"Dr. P Venkata Chalapathi",role:"PROFESSOR",dept:"Mechanical Engineering",campus:"KLV"},
-  {name:"Dr. Seeram Srinivasa Rao",role:"PROFESSOR",dept:"Mechanical Engineering",campus:"KLV"},
-  {name:"Dr. Surya Narayana Padhi",role:"PROFESSOR",dept:"Mechanical Engineering",campus:"KLV"},
-  {name:"Dr. Garikapati Diwakar",role:"PROFESSOR",dept:"Mechanical Engineering",campus:"KLV"},
-  {name:"Dr. Kurapati Venkata Narasimha Rao",role:"PROFESSOR",dept:"Mechanical Engineering",campus:"KLV"},
-  {name:"Dr. G Murali",role:"PROFESSOR",dept:"Mechanical Engineering",campus:"KLV"},
-  {name:"Dr. V L Mangesh",role:"PROFESSOR",dept:"Mechanical Engineering",campus:"KLV"},
-  {name:"Dr. T Vijaya Kumar",role:"ASSOC.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
-  {name:"Dr. Devulapalli V A Rama Sastry",role:"ASSOC.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
-  {name:"Dr. G Yedukondalu",role:"ASSOC.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
-  {name:"Dr. Kanchu Venkata Durga Rajesh",role:"ASSOC.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
-  {name:"Dr. Pothamsetty Kasi Visweswara Rao",role:"ASSOC.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
-  {name:"Dr. Priyaranjan Sharma",role:"ASSOC.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
-  {name:"Dr. Raj Kumar Pittala",role:"ASST.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
-  {name:"Dr. Vinay Atgur",role:"ASST.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
-  {name:"Dr. Arigela Sri Harsha",role:"ASST.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
-  {name:"Dr. Priyaranjan Samal",role:"ASST.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
-  {name:"Dr. Giphin George",role:"ASST.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
-  {name:"Dr. Dasore Abhishek",role:"ASST.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
-  // PHARMACY - KLV
-  {name:"Dr. Buchinaidu Nalluri",role:"PROFESSOR",dept:"Pharmacy",campus:"KLV"},
-  {name:"Dr. Guntupalli Chakravarthi",role:"PROFESSOR",dept:"Pharmacy",campus:"KLV"},
-  {name:"Dr. Tangallamudi Srinivasa Rao",role:"ASSOC.PROF.",dept:"Pharmacy",campus:"KLV"},
-  {name:"Dr. B Kishore Babu",role:"ASSOC.PROF.",dept:"Pharmacy",campus:"KLV"},
-  {name:"Dr. Areti Anka Rao",role:"ASSOC.PROF.",dept:"Pharmacy",campus:"KLV"},
-  {name:"Dr. P Rajeswari",role:"ASSOC.PROF.",dept:"Pharmacy",campus:"KLV"},
-  {name:"Dr. Manikanta Swamy Murahari",role:"ASSOC.PROF.",dept:"Pharmacy",campus:"KLV"},
-  {name:"Dr. Kasi Viswanadh Matte",role:"ASSOC.PROF.",dept:"Pharmacy",campus:"KLV"},
-  {name:"Dr. Kolli Deepti",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
-  {name:"Dr. Alka Damodhar Kamble",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
-  {name:"Dr. Malothu Narender",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
-  {name:"Dr. J Risy Namratha",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
-  {name:"Dr. Naresh Dumala",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
-  {name:"Dr. Sivadasu Praveen",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
-  {name:"Dr. Mobeen Shaik",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
-  {name:"Mr. Amareswarapu Venkata Surendra",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
-  {name:"Mr. Kakarla Rama Krishna",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
-  {name:"Dr. Banoth Karan Kumar",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
-  {name:"Dr. Rayana Supriya",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
-  {name:"Dr. Katari Sukeerthi",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
-  // PHYSICS - KLV
-  {name:"Dr. G Sunita Sundari",role:"ASSOC.PROF.",dept:"Physics",campus:"KLV"},
-  {name:"Dr. M Venkateswarlu",role:"ASST.PROF.",dept:"Physics",campus:"KLV"},
-  // SCHOOL OF LAW - KLV
-  {name:"Dr. Choudaraju Neelima",role:"ASSOC.PROF.",dept:"School of Law",campus:"KLV"},
-  {name:"Dr. Jayaprakash Jala",role:"ASSOC.PROF.",dept:"School of Law",campus:"KLV"},
-  {name:"Dr. Konduru Indu Pavan Kumar",role:"ASSOC.PROF.",dept:"School of Law",campus:"KLV"},
-  {name:"Dr. Petikam Sailaja",role:"ASSOC.PROF.",dept:"School of Law",campus:"KLV"},
-  {name:"Dr. Kalavacharla Veera Venkata Raju",role:"ASSOC.PROF.",dept:"School of Law",campus:"KLV"},
-  {name:"Ms. Gottumukkala Vijaya Sudha",role:"ASST.PROF.",dept:"School of Law",campus:"KLV"},
-  {name:"Dr. G Vinodini Devi",role:"ASST.PROF.",dept:"School of Law",campus:"KLV"},
-  {name:"Dr. Peluru Thaviti Raju",role:"ASST.PROF.",dept:"School of Law",campus:"KLV"},
-  {name:"Dr. Ravipati Kumara Swamy",role:"ASST.PROF.",dept:"School of Law",campus:"KLV"},
-  {name:"Dr. Narendra Ryali",role:"ASST.PROF.",dept:"School of Law",campus:"KLV"},
-  {name:"Dr. Vahed Shakeel Ahammad",role:"ASST.PROF.",dept:"School of Law",campus:"KLV"},
-  {name:"Dr. Shyamasundar Tripathy",role:"ASST.PROF.",dept:"School of Law",campus:"KLV"},
-  {name:"Dr. Yarlagadda Venkata Ramana",role:"ASST.PROF.",dept:"School of Law",campus:"KLV"},
-  // HYDERABAD CAMPUS - AZIZ NAGAR
-  {name:"Ms. Suhashini Dash",role:"ASST.PROF.",dept:"Arts",campus:"HYD"},
-  {name:"Dr. Anupama Gadiraju",role:"PROFESSOR",dept:"Business School",campus:"HYD"},
-  {name:"Mr. Venu Madhav Vedantam",role:"ASSOC.PROF.",dept:"Business School",campus:"HYD"},
-  {name:"Dr. P Hima Jagathi",role:"ASSOC.PROF.",dept:"Business School",campus:"HYD"},
-  {name:"Dr. Swarupa Pelleti",role:"ASSOC.PROF.",dept:"Business School",campus:"HYD"},
-  {name:"Dr. Rakesh Kumar Patra",role:"ASSOC.PROF.",dept:"Business School",campus:"HYD"},
-  {name:"Dr. K Subha Gora",role:"ASSOC.PROF.",dept:"Business School",campus:"HYD"},
-  {name:"Dr. B Balanagalakshmi",role:"ASST.PROF.",dept:"Business School",campus:"HYD"},
-  {name:"Dr. Akanksha Dubey",role:"ASST.PROF.",dept:"Business School",campus:"HYD"},
-  {name:"Dr. K Narendra Kumar",role:"ASST.PROF.",dept:"Business School",campus:"HYD"},
-  {name:"Dr. Mohan Venkatesh Palani",role:"ASST.PROF.",dept:"Business School",campus:"HYD"},
-  {name:"Dr. Priyadarshi Ranjan",role:"ASST.PROF.",dept:"Business School",campus:"HYD"},
-  {name:"Ms. Susmita Ekka",role:"ASST.PROF.",dept:"Business School",campus:"HYD"},
-  {name:"Mr. Bivas Paul",role:"ASST.PROF.",dept:"Business School",campus:"HYD"},
-  {name:"Dr. Savadam Balaji",role:"PROFESSOR",dept:"CSE",campus:"HYD"},
-  {name:"Dr. P Lalitha Surya Kumari",role:"PROFESSOR",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Mugunthan S R",role:"PROFESSOR",dept:"CSE",campus:"HYD"},
-  {name:"Dr. K Srinivas",role:"PROFESSOR",dept:"CSE",campus:"HYD"},
-  {name:"Dr. A Mahesh Babu",role:"PROFESSOR",dept:"CSE",campus:"HYD"},
-  {name:"Dr. D Srinivas Rao",role:"PROFESSOR",dept:"CSE",campus:"HYD"},
-  {name:"Dr. B Lakshmana Swamy",role:"PROFESSOR",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Geeta Mulabagula",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Jaya Vani Majumdar",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Sreedhar Gundekari",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Tanmay Mondal",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. G Rekha",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. K Rama Subrahmanian",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Sandeep Reddy Chitreddy",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. C H J Srinivasa Rao Pasupuleti",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Paidi Ganaga Mohan",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Sheikh Fahad Ahmad",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Figlu Mohanty",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Arpita Gupta",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. G Anna Lakshmi",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. M Saidi Reddy",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Miriyala Trinath Basu",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Gayatri",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. M P Mallesh",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Pramoda Patro",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Sivaram Boppe",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Suresh Kumar Yanduri",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Haribabu Kommadi",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Moon Banerjee",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Mr. Sasidhar Kothuru",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Mohan Varkolu",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Aashiq Banu",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Sharanya V",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Vishala Pannala",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Pandava Sudharshan Babu",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Giridhar Urkude",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Shadab Siddiqui",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Sumit Hazra",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Rajib Debnath",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Kakali Das",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Subhranginee Das",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Gadde Sai Sudha",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. P Pavan Kumar",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. G Madhukar Rao",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. A Ranganath",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Anantha Babu S",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Chandrashekar Boddu",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Abhishek Tah",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Tanushree Sarkar",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Bhavani Sushma Garlapati",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Kranthi Priya Oruganti",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Indira Kothalanka",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Kavuluri Jagan Mohan Rao",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Kalyan Kumar Palaparthi",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Najnin Islam",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Thota Venkata Deepthi",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Ramesh Ade",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Charanadhar Nagavolu",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Ms. Jayasri R",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Ms. Dayanika Jarugumalla",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Mr. Vijay Kumar Damera",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Mr. Panduraju Pagidimalla",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Mr. Anantha Reddy Dasari",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Mr. Chanda Raj Kumar",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Ms. Nidhi Srivastava",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Ms. Sumalakshmi C H",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Ms. Deepthi Kalavala",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Ms. N Anuradha",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Mr. D Vinod Kumar",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Ms. P Sree Lakshmi",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Mr. Faizan Ahmad",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Mr. Aftab Yaseen",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Mr. P Ratna Kumar",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Ms. Uma Rani Bodakunta",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Mr. Chiranjeevi N",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Ms. M Saritha",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Mr. Mainak Saha",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Mr. K Suresh",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Ms. Varala Venkata Naga Aruna Bhargavi",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Mr. D Srinivasa Rao",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Mrs. K Madhavi",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  // HYD ECE - AZIZ NAGAR
-  {name:"Dr. M Goutham",role:"PROFESSOR",dept:"ECE",campus:"HYD"},
-  {name:"Dr. A Rama Krishna",role:"ASSOC.PROF.",dept:"ECE",campus:"HYD"},
-  {name:"Dr. Joshitha Chandrappan",role:"ASSOC.PROF.",dept:"ECE",campus:"HYD"},
-  {name:"Dr. K V Prashanth",role:"ASSOC.PROF.",dept:"ECE",campus:"HYD"},
-  {name:"Dr. Boda Ravi",role:"ASSOC.PROF.",dept:"ECE",campus:"HYD"},
-  {name:"Dr. S Sanjay",role:"ASSOC.PROF.",dept:"ECE",campus:"HYD"},
-  {name:"Dr. P Sudharsana Rao",role:"ASSOC.PROF.",dept:"ECE",campus:"HYD"},
-  {name:"Dr. Abhishek Kumar Shrivastava",role:"ASSOC.PROF.",dept:"ECE",campus:"HYD"},
-  {name:"Dr. B Anil Kumar",role:"ASSOC.PROF.",dept:"ECE",campus:"HYD"},
-  {name:"Dr. Vijay Rao Kumbhare",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
-  {name:"Dr. Sravan Kumar Gunturi",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
-  {name:"Dr. Ashwini Kumar Varma",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
-  {name:"Dr. Thirupathaiah Kola",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
-  {name:"Dr. Bittu Kumar",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
-  {name:"Ms. Prasanna Lakshmi Akella",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
-  {name:"Mr. Sathish Ande",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
-  // BOWRAMPET CAMPUS (HYD)
-  {name:"Ms. Bhimireddy Sri Lakshmi",role:"ASST.PROF.",dept:"Business School",campus:"HYD"},
-  {name:"Ms. Lena Joseph K",role:"ASST.PROF.",dept:"Business School",campus:"HYD"},
-  {name:"Dr. Gandikota Ramu",role:"PROFESSOR",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Srilakshmi Uppalapati",role:"PROFESSOR",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Amarana Prabhakar Rao",role:"PROFESSOR",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Preeti Jha",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Mudhulkar Raju",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Mandapati Sridevi",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Mr. Gunturi S Raghavendra",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Mahadeva Swamy N N",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Ms. A Jayanthi",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Mrs. Neerati Lavanya",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Mr. Baddepaka Prasad",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Ms. K V Sharada",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Mr. K Rakesh",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Ms. G Mamatha",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Ms. P Swetha Nagasri",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Mr. Cherukupally Ram Anirudh",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
-  {name:"Dr. Koteswara Rao L",role:"PROFESSOR",dept:"ECE",campus:"HYD"},
-  {name:"Dr. Anga Srinivas",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
-  {name:"Dr. M Seshadri",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
-  {name:"Dr. G Durga Prasad",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
-  {name:"Dr. Seethi Reddy Reddisekhar Reddy",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
-  {name:"Dr. T Siva",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
-  {name:"Dr. Suresh Jampa",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
-  {name:"Dr. Pundareekam Goud Jakkapally",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
-  {name:"Mr. Vinnakota Venu Balaji",role:"ASST.PROF.",dept:"ECE",campus:"HYD"}
+const FAC_DATA=[
+{name:"Dr. Ratna Prasad Pavuluri",role:"PROFESSOR",dept:"Agriculture",campus:"KLV"},
+{name:"Dr. Senthilmurugan P",role:"ASSOC.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Mr. Jamindar Buddiga",role:"ASSOC.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Dr. Bontu Bala Krishna",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Dr. Manoharmayum Dolpriya Devi",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Dr. Atul Singh",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Dr. Shivasai Prasad",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Dr. Bonu Rama Devi",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Dr. M Gayathri",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Dr. Maddirala Surendra Babu",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Dr. Sravani Dumala",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Dr. Prince Jayasimha Pamala",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Dr. Nukasani Sagarika",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Dr. Md Abdul Basith",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Dr. Ashok Kumar",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Dr. Monoj Sutradhar",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Dr. Sivanand Parashuram Yarazari",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Dr. Valluri Jhansi Hima Varsha",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Dr. Jujjavarapu Rama Rajeshwar",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Dr. Narayanappa Prabhavathi",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Dr. Verella Ragamalika",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Dr. Bathineni Vibhajam Sagal Kiran",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Dr. Pilla Avinash",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Dr. Kommalapati Beaulah Glory",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Ms. Pilli Manasa",role:"ASST.PROF.",dept:"Agriculture",campus:"KLV"},
+{name:"Mr. Shaik Sami Ur Rehman",role:"PROFESSOR",dept:"Architecture",campus:"KLV"},
+{name:"Ms. Adhikesavalu Priya",role:"ASSOC.PROF.",dept:"Architecture",campus:"KLV"},
+{name:"Ms. Tanushree Das",role:"ASSOC.PROF.",dept:"Architecture",campus:"KLV"},
+{name:"Mr. Bonda Kiran Kumar",role:"ASSOC.PROF.",dept:"Architecture",campus:"KLV"},
+{name:"Ms. Kavuri Venkata Lakshmi",role:"ASSOC.PROF.",dept:"Architecture",campus:"KLV"},
+{name:"Mr. Shivendu Shekhar Singh",role:"ASST.PROF.",dept:"Architecture",campus:"KLV"},
+{name:"Ar. Senthil Kumar P",role:"ASST.PROF.",dept:"Architecture",campus:"KLV"},
+{name:"Mr. Itta Rudra Murthy",role:"ASST.PROF.",dept:"Architecture",campus:"KLV"},
+{name:"Ms. Harshitha Kuntamukkala",role:"ASST.PROF.",dept:"Architecture",campus:"KLV"},
+{name:"Ms. Gopika Girissan",role:"ASST.PROF.",dept:"Architecture",campus:"KLV"},
+{name:"Ms. Vishnu Priya Balanagarajan",role:"ASST.PROF.",dept:"Architecture",campus:"KLV"},
+{name:"Ms. Lanka Virajitha",role:"ASST.PROF.",dept:"Architecture",campus:"KLV"},
+{name:"Dr. Metta Achyutha Kumar Reddy",role:"ASST.PROF.",dept:"Architecture",campus:"KLV"},
+{name:"Mr. Kanneganti Jyothishya Brahma Chari",role:"ASST.PROF.",dept:"Architecture",campus:"KLV"},
+{name:"Dr. Rudrabhatla Sai Kumar",role:"ASSOC.PROF.",dept:"Arts",campus:"KLV"},
+{name:"Dr. Kukkamalla Anil Kumar",role:"ASST.PROF.",dept:"Arts",campus:"KLV"},
+{name:"Dr. Gunna Venkateswarlu",role:"ASST.PROF.",dept:"Arts",campus:"KLV"},
+{name:"Dr. Kantam Rajesh Kumar",role:"ASST.PROF.",dept:"Arts",campus:"KLV"},
+{name:"Dr. B Jayakumar Singh",role:"PROFESSOR",dept:"Biotechnology",campus:"KLV"},
+{name:"Dr. Kamma Srinivasulu",role:"PROFESSOR",dept:"Biotechnology",campus:"KLV"},
+{name:"Dr. Burra Venkata Laxmi Siva Prasad",role:"PROFESSOR",dept:"Biotechnology",campus:"KLV"},
+{name:"Dr. M Janaki Ramaiah",role:"PROFESSOR",dept:"Biotechnology",campus:"KLV"},
+{name:"Dr. Vemuri Praveen Kumar",role:"ASSOC.PROF.",dept:"Biotechnology",campus:"KLV"},
+{name:"Dr. Nadeem Siddiqui",role:"ASSOC.PROF.",dept:"Biotechnology",campus:"KLV"},
+{name:"Dr. Ashish Runthala",role:"ASSOC.PROF.",dept:"Biotechnology",campus:"KLV"},
+{name:"Dr. Bandaru Srinivas",role:"ASSOC.PROF.",dept:"Biotechnology",campus:"KLV"},
+{name:"Dr. E S Sharmila Sigamany",role:"ASSOC.PROF.",dept:"Biotechnology",campus:"KLV"},
+{name:"Dr. Muddada Sudhamani",role:"ASSOC.PROF.",dept:"Biotechnology",campus:"KLV"},
+{name:"Dr. S V Subrahmanyam",role:"ASSOC.PROF.",dept:"Biotechnology",campus:"KLV"},
+{name:"Dr. N Vedavathi",role:"ASSOC.PROF.",dept:"Biotechnology",campus:"KLV"},
+{name:"Dr. Mallu Maheswara Reddy",role:"ASST.PROF.",dept:"Biotechnology",campus:"KLV"},
+{name:"Dr. Golamari Siva Reddy",role:"ASST.PROF.",dept:"Biotechnology",campus:"KLV"},
+{name:"Dr. Pinnamaneni Rajasekhar",role:"ASST.PROF.",dept:"Biotechnology",campus:"KLV"},
+{name:"Dr. Chanda Chandrasekhar",role:"ASST.PROF.",dept:"Biotechnology",campus:"KLV"},
+{name:"Dr. Yella Venkata Rajesh",role:"ASST.PROF.",dept:"Biotechnology",campus:"KLV"},
+{name:"Dr. Sarada Prasanna Mallick",role:"ASST.PROF.",dept:"Biotechnology",campus:"KLV"},
+{name:"Dr. Gujjula Koteswara Reddy",role:"ASST.PROF.",dept:"Biotechnology",campus:"KLV"},
+{name:"Dr. Pritam Kumar Dikshit",role:"ASST.PROF.",dept:"Biotechnology",campus:"KLV"},
+{name:"Dr. Kola Hemamalini",role:"ASST.PROF.",dept:"Biotechnology",campus:"KLV"},
+{name:"Dr. Ashish Appasaheb Kadam",role:"ASST.PROF.",dept:"Biotechnology",campus:"KLV"},
+{name:"Dr. Marivina Kishore Babu",role:"PROFESSOR",dept:"Business School",campus:"KLV"},
+{name:"Dr. Venkateswara Rao Podile",role:"PROFESSOR",dept:"Business School",campus:"KLV"},
+{name:"Dr. Marimganti Srinivasa Narayana",role:"PROFESSOR",dept:"Business School",campus:"KLV"},
+{name:"Dr. N Subrahmanyam",role:"PROFESSOR",dept:"Business School",campus:"KLV"},
+{name:"Dr. Atanu Talukdar",role:"PROFESSOR",dept:"Business School",campus:"KLV"},
+{name:"Dr. Radha Krishan Sharma",role:"PROFESSOR",dept:"Business School",campus:"KLV"},
+{name:"Dr. Vadapalli Ravindhar",role:"PROFESSOR",dept:"Business School",campus:"KLV"},
+{name:"Dr. Kodukula S L N S Subrahmanyam",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Subramanyam Mamidala",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Robert Edwin Chester Jhonson",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Srinivasa Rao Kasisomayajula",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. K Hema Divya",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. K S Venkateswara Kumar",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Atluri Bala Saraswathi",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Simanchala Das",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Kolachina Srinivas",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Savanam Chandra Sekhar",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Gowrabhathini Jitendra",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Domathoti Prasanna Kumar",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. A Uday Shankar",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. V N Sailaja",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Narayanam Bindu Madhavi",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Sundari Dadhabai",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Akondi Srikanth",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Sontineni Ramesh Babu",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Rajendran P",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. M V A L Narasimha Rao",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Venkata Ramana Sikhakolli",role:"ASSOC.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Sukhavasi Santha Kumari",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Sonti Venkata Nagamalleswara Sastry",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Itikela Shyam Sundar",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Nagala Shyam Venkata Nooka Raju",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Debadatta Das",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Arumugam Raju",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Romala Vijaya Srinivas",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. R Pradeep Kumar Patnaik",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Kalla V Bangaru Ganesh",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Parvathaneni Krishna Priya",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Sabbineni Poojitha",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Anuradha Averineni",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Navulla Durga Prasad",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Mudit Saxena",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. J Venkata Ramana",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Ch Balaji",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. K Anusha",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. K V Siva Prasad",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. R S V Rama Swathi",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. R Kanimozhi",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Burra Vamsi Krishna",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Daniel Pilli",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Taddi Venkata Siva Santoshi Swathi",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Mr. Umesh Kumar Shukla",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Mr. A Jagdish Mohan Rao",role:"ASST.PROF.",dept:"Business School",campus:"KLV"},
+{name:"Dr. Kottapalli Raja Sekhara Prasad",role:"PROFESSOR",dept:"Chemistry",campus:"KLV"},
+{name:"Dr. V Shanmukhkumar Jagarlapudi",role:"PROFESSOR",dept:"Chemistry",campus:"KLV"},
+{name:"Dr. Pradeep Kumar Brahman",role:"ASSOC.PROF.",dept:"Chemistry",campus:"KLV"},
+{name:"Dr. M Radha Madhavi",role:"ASSOC.PROF.",dept:"Chemistry",campus:"KLV"},
+{name:"Dr. Anna Venkateswara Rao",role:"ASST.PROF.",dept:"Chemistry",campus:"KLV"},
+{name:"Dr. A V S Prasad",role:"PROFESSOR",dept:"Civil Engineering",campus:"KLV"},
+{name:"Dr. Chappidi Hanumantha Rao",role:"PROFESSOR",dept:"Civil Engineering",campus:"KLV"},
+{name:"Dr. Palleboina Poluraju",role:"PROFESSOR",dept:"Civil Engineering",campus:"KLV"},
+{name:"Dr. A Aravindan",role:"PROFESSOR",dept:"Civil Engineering",campus:"KLV"},
+{name:"Dr. Sanjeet Kumar",role:"ASSOC.PROF.",dept:"Civil Engineering",campus:"KLV"},
+{name:"Dr. Ashwin Narendra Raut",role:"ASSOC.PROF.",dept:"Civil Engineering",campus:"KLV"},
+{name:"Dr. Jagarapu Durga Chaitanya Kumar",role:"ASST.PROF.",dept:"Civil Engineering",campus:"KLV"},
+{name:"Dr. Lingeshwaran N",role:"ASST.PROF.",dept:"Civil Engineering",campus:"KLV"},
+{name:"Dr. Anu Mary Ealias",role:"ASST.PROF.",dept:"Civil Engineering",campus:"KLV"},
+{name:"Mr. K Syam Chambrelin",role:"ASST.PROF.",dept:"Civil Engineering",campus:"KLV"},
+{name:"Mr. Kommineni Hemanth Raja",role:"ASST.PROF.",dept:"Civil Engineering",campus:"KLV"},
+{name:"Mr. Bodapati Gnana Rahul",role:"ASST.PROF.",dept:"Civil Engineering",campus:"KLV"},
+{name:"Dr. Kodukula Subrahmanyam",role:"PROFESSOR",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. G Krishna Mohan",role:"PROFESSOR",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. Kothamasu Kiran Kumar",role:"PROFESSOR",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. Chetty Manna Sheela Rani",role:"PROFESSOR",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. V Valli Mayil",role:"PROFESSOR",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. R D Sathiya",role:"PROFESSOR",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. V S Bhagavan",role:"PROFESSOR",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. Movva Naga Venkata Kiran Babu",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. Bandarupalli Mouleswara Rao",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. Arulswamy Sivaramakrishnan",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. Venkata Surya Narayana Tinnaluri",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. Potluri Venkata Hari Prasad",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. Ch Madhava Rao",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. Karamala Himabindu",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. Konduri Bhagavan",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. Mutyaboyina Latha",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. Munagala Madhu Sudhan Rao",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. Talagadadevi Srinivasa Rao",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. Nerella Srimannarayana",role:"ASSOC.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. Venkateswarlu Gundu",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. Taushif Anwar",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. Jeevan Jala",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Mr. Rama Krishna Yellapragada",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Mr. Nadakuduru Venkata Ramana",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Mr. Ghufran Ahmad Khan",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Mr. Zulfikar Ali Ansari",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Ms. Bhargavi Mopuru",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Mr. Gobinda Chandra Das",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Mr. Nagendra Babu Rajaboina",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Mr. Angalkuditi Srinivas",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Mr. Choutapalli Nagaraju",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Ms. Thonepudi Hemalatha",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Mr. Chintamaneni Phanikanth",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Ms. Chalamalasetty Sravani",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Mr. Asok Kumar Rathinam",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Mr. Pallabothula Ramesh",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Mr. D Surendra",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Ms. Ch Satya Keerthi N V L",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Mr. Lingidi Nageswar Rao",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Ms. Borra Vishnupriya",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Mr. A Prathap",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Mr. A Siddhartha Reddy",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Mr. G Bala Venkata Kishore",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. A Priyadharshini",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Mr. Subhash Chandra Yalavarthy",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+{name:"Dr. Vurity Mounika",role:"ASST.PROF.",dept:"Computer Applications",campus:"KLV"},
+// CSE KLV Professors
+{name:"Dr. Gandharba Swain",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Vijaya Lakshmi P",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Vishnubhotla Rama Krishna",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Adapa Srinivasa Rao",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Gottumukkala P Saradhi Varma",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Tirumala Kodanda Rama Krishna Rao",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Vemuru Srikanth",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Senthil Athithan",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Tummala Pavan Kumar",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Yalla Prasanth",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Kasula Venkata Durga Kiran",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Malladi Srinivas",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Burra Vijay Babu",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Gajula Siva Nageswara Rao",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Kallipalli Venkata Raju",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Kopparti V V Satyanarayana",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Nulaka Srinivasu",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. P V R D Prasada Rao",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Gera Pradeepini",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Pothuraju Raja Rajeswari",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Shaik Sagar Imambi",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Mohammed Moulana",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Kolla Bhanu Prakash",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Enireddy Vamsidhar",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Tatavarthy Santhi Sri",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. A K Velmurugan",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Moparthi Nageswara Rao",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Vithya Ganesan",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Bhukya Srinivasa Arao",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Debnath Bhattacharyya",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Suryakanth V Gangashetty",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Govind Divakaran",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Sandeep Kumar Sahratia",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Viswanathan Ramasamy",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Kandepu Bala Venkata Brahmarao",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Yogesh Kumar Sharma",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. V Murugesh",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Manoj Wadhwa",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Arpit Jain",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Leena Arya",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Ravi Rastogi",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Dara Vikram",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Smitha Chowdary",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Bobba Veeramallu",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. V Viswanath Shenoi",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Rajendra Kumar Ganiya",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Dharmaiah Devarapalli",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. D Haritha",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. N Alangudi Balaji",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Kommu Siddhardha Mavo Vara Kumar",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Kothalanka Amarendra",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Ganga Rama Koteswara Rao",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Mohammed Ali Hussain",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Manchiraju Kameswara Rao",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Mathews Sandra Carmel Sophia",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Gurrampati Venkata Ramana Reddy",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+{name:"Dr. Ch V Ramana Murthy",role:"PROFESSOR",dept:"CSE",campus:"KLV"},
+// CSE KLV Assoc Profs
+{name:"Dr. Tiruveedhula Sajana",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Jagjit Singh Dhatterwal",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Elangovan Guruva Reddy",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Sunitha Pachala",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Bolla Sreenivasulu",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. A Hanumanth",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Bolleddu Siva Nagaiah",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Niranjan Patra",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Hari Kiran Vege",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Boddu Sekhar Babu",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Chintala Radhika Rani",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Sabbineni Srinivasa Rao",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Venkata Vara Prasad Padyala",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Anne V Praveen Krishna",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. K Ruth Ramya",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. P Lakshmi Prasanna",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. K Ravindranadh",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Bondalapu Chaitanya Krishna",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Peddada Venkateswara Rao",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Tata Ravi Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Dubba Nagamalleswari",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Vurukonda Naresh",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Pydimarri Venkata Ravi Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Venkata Naresh Mandhala",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Gogineni Krishna Chaitanya",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Maguluri Lakshmana Phaneendra",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Modepalli Kavitha",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Rachapudi Venubabu",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Raju Anitha",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Pachipala Yellamma",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Kinjirapu Ashesh",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Swarna Kuchibhotla",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Pellakuri Vidyullatha",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Mothukuri Radha",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Dinesh Kumar A",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. C Karthikeyan",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Tumuluru Praveen",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Nikhat Parveen",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Arvind Yadav",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Padmanaban K",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Kunda Venkata Prasad",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Vijay Kumar Burugari",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Nallagatla Raghavendra Sai",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. P M Ashok Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Vidya Sagar Ponnam",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. A Abdul Rahman",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Veerubhotla Siva Rama Krishna Sharma",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Veerraju Gampala",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Shankar Rajendran",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Murali Mohan Vutukuru",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Sadam Kavitha",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Sangaraju Hrushikesava Raju",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Nilu Singh",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. P Ithaya Rani",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Batta Uma Maheswara Rao",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Vijaya Chandra Jadala",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Basaba Bikram Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Sathish Kumar Kannaiah",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Karyemsetty Nagarjuna",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Suneetha Bulla",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Raja Govindan",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. S Srithar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Akhilesh Kumar Dubey",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Thati Anuradha",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Kailasam Swathi",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Prashant Kumar Shukla",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Basant Sah",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. M M Yamuna Devi",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Iwin Thanakumar Joseph S",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Nesarani A",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. A Raja Basha",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Garikapati Bindu",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Tammineedi Venkata Satya Vivek",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Vignesh Thangathurai",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Mohammad Ishrat",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Jalaluddin Khan",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. A R Deepa",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Maydiga Madhusudana Subramanyam",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Vijaya Kumar Reddy Radha",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Sanjay Yadav",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Veeraswamy Ammisetty",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Rafeeq Ahmed",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Jagadish Gurrala",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Kapil Agarwal",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Chippada Nagamani",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Vuda Sreenivasa Rao",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Vemula Venkata Jaya Rama Krishnaiah",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Sasanko Sekhar Gantayat",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Sunitha E V",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Gaddam Venu Gopal",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Anantharaman R",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Jayavarapu Karthik",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Shaik Khaja Mohiddin",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. G V Sam Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Satrughan Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Surya Kiran Chebrolu",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. B Annapurnna",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Bhabendu Kumar Mohanta",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. S Aravinth Seshadri",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Ashok Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Jogendra Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. SK Razia",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Sridevi Emandi",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. N V S Pavan Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Pathuri Siva Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Marouthu Anusha",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Ashish",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Deepak Kumar Panda",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Gandla Shivakanth",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Meganathan Ramasamy",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Donti Reddy Usha Rani",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Ms. M V B T Santhi",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Anumalasetty Satya Kalyan",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Palacharla Srivenkata Srinivasa Sridhar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Nimmagadda Sreeram",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. M Vishnuvardhan",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Adapa Gopi",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Bechoo Lal",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Sanda Sri Harsha",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Jyothi N M",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Marapelli Bhaskar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Durga Prasad Tripathi",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. V Daya Sagar Ketaraju",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Kotagiri Vishnu Divya",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Sivapurapu Lavanya",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. M Raja Ambethkar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Kondapally Krishna Sunalini",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Mutyala Suresh",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Shaida Farhad",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Arnab Chatterjee",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. K Madhu Murthy",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Thatavarthi Satish",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Riaz Shaik",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. K V Chandra Sekhar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. B Srinivasa Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Grande Suresh Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. D Sateesh Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Tamma Eswarlal",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Wuriti Sridhar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. T Nageswara Rao",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. V B V N Prasad",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Nalleboyina Vijaya",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. S Mohammed Ibrahim",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. S Venumadhava Sarma",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. M Nageswara Rao",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Atul Bhattad",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Koneru Swapna",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. N S M P Latha Devi",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Shaik Mahamuda",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Kanike Raghavendra Kumar",role:"ASSOC.PROF.",dept:"CSE",campus:"KLV"},
+// CSE KLV Asst Profs
+{name:"Dr. N B Arune Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Dyuti Banerjee",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Ms. Mandapati Praveena",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Nichenametla Rajesh",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Siva Sankar Mandal Baidya",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Pavan Kumar Bada",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Naresh Mameda",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Koyilapu Rambabu",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Gaddameedi Dinesh Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Mylavarapu Sita Ram Prasad",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Jampani Satish Babu",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Chitta M H Sai Baba",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Kottapalli Rajya Lakshmi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Dasari Ramesh",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Beluguru Venkateswarulu",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Maganti Syamala",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Bakka Vinod",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Imran Rasheed",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Devendra Joshi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Asesh Kumar Tripathy",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Veera Ankalu Vuyyuru",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Renuka Kolandasamy",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Abhishek Guru",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Sajja Tulasi Krishna",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Elima Hussain",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Koppuravuri Gurnadha Gupta",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. G Kadiravan",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Wasim Khan",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. R Mahendran",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Rahul Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Peruri Venkata Anusha",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Kodali Sadhana",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. K Venkateswara Rao",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. S Phani Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Bhimavarapu Usha Rani",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Karri Aruna Bhaskar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. M Supriya Menon",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Anitha Pradhan",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Abdul Hannan",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. B Hanumantha Rao",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Macherla Padmavathi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Anwar Ahmad Shaik",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Dama Anand",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Lakshminarayana Kodavali",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Ms. Kolachana Swetha",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Talasila Vamsidhar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Vijay Kumar Vasantham",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Ramaiah Challa",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Ms. Bhavani Vasantha",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Ms. Valasapalli Mounika",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Janjhyam Venkata Naga Ramesh",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Tirandasu Ravi Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Ande Pavan Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Ms. Puppala Ramya",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Savaram Mythreya",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Garigipati Rama Krishna",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Doddi Suresh Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Ms. Garikipati Naga Lakshmi Sowjanya",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Arepalli Gopi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Ms. Ponnuru Anusha",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Ms. Anjana Devi Akurathi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Ms. Chinnam Sabitha",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Chittibabu Ravela",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Rupani Ranjith Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Ms. Bommisetti Yamini Supriya",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Ms. Pacha Supriya",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. B Namasivayam",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Ms. Bandeela Suneetha",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Vuyyuru Lakshma Reddy",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Rajesh Tulasi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Ms. Mandava Manjusha",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Ms. Chopparapu Gowthami",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Ms. Dasari Manasa",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Ms. Linginedi Usha Sree",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Kasturi Sai Sandeep",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Dhanesh Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Paladugu Venkateswara Rao",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Ms. Prasanthi Valluri",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Ms. Vuyyuru Lalitha",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Ms. Kowtharapu Radha",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Ms. Gorrepati Rajani Reddy",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Mr. Mylapalli Ramesh",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Swarna Anjali Devi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. P V V S Srinivas",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Dukkipati Sudha",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Avula Pavani",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Kammari Usha Rani",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Amara Rama Devi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Twinkle Dasari",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Bathina Rajesh Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Bansode Ganpat Sadhu",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Annam Venkata Padmavathi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. G Charan Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. S Ragamayi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Yella Bhargavi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Pathuri Bindu",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Ankita Tiwari",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Karthik Chinnasamy",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Rojalini Patro",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Ramesh Babu Nedumaran",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Imran Ali",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Ch Vasavi",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Tellakula Anitha",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. B Giri Murugan",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Irrinki Mohan Krishna",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Konka Soujanya",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Ratna Valli Bhagavatula",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Venkata Naga Siva Kumar Challa",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Munish Kumar",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+{name:"Dr. Sonali Biswas",role:"ASST.PROF.",dept:"CSE",campus:"KLV"},
+// EEE KLV
+{name:"Dr. Kotamaraju Subba Rao",role:"PROFESSOR",dept:"EEE",campus:"KLV"},
+{name:"Dr. A Pandian",role:"PROFESSOR",dept:"EEE",campus:"KLV"},
+{name:"Dr. Jarupula Somlal",role:"PROFESSOR",dept:"EEE",campus:"KLV"},
+{name:"Dr. S V N L Lalitha",role:"PROFESSOR",dept:"EEE",campus:"KLV"},
+{name:"Dr. Burthi Loveswara Rao",role:"PROFESSOR",dept:"EEE",campus:"KLV"},
+{name:"Dr. Kuthuri Narasimha Raju",role:"PROFESSOR",dept:"EEE",campus:"KLV"},
+{name:"Dr. Batchalakuri Jyothi",role:"ASSOC.PROF.",dept:"EEE",campus:"KLV"},
+{name:"Dr. Pinni Srinivasa Varma",role:"ASSOC.PROF.",dept:"EEE",campus:"KLV"},
+{name:"Dr. Malligunta Kiran Kumar",role:"ASSOC.PROF.",dept:"EEE",campus:"KLV"},
+{name:"Dr. Goda Ganesh Raja Sekhar",role:"ASSOC.PROF.",dept:"EEE",campus:"KLV"},
+{name:"Ms. Kota Sarada",role:"ASSOC.PROF.",dept:"EEE",campus:"KLV"},
+{name:"Mr. Daka Seshi Reddy",role:"ASSOC.PROF.",dept:"EEE",campus:"KLV"},
+{name:"Mr. R Bhanu Raghava Prakash",role:"ASSOC.PROF.",dept:"EEE",campus:"KLV"},
+{name:"Dr. Tadanki Vijay Muni",role:"ASST.PROF.",dept:"EEE",campus:"KLV"},
+{name:"Mr. Tadivaka Teja Sreenu",role:"ASST.PROF.",dept:"EEE",campus:"KLV"},
+// ECE KLV
+{name:"Dr. Venkatram Nidumolu",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. A S Chandra Sekhara Sastry",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. Vullanki Rajesh",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. Suman Maloji",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. Habibulla Khan",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. Chinnari Sri Kavya Korada",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. Kotamaraju Sarat Kumar",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. B T P Madhav",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. Immadi Govardhini",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. M Siva Ganga Prasad",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. Madhavareddy Venkata Narayana",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. Kakarla Hari Kishore",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. Miryala Sridhar",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. Venkata Ratnam Devanaboyina",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. Ghali Venkata Subba Rao",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. Ketavath Kumar Naik",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. Mohammad Zia Ur Rahman",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. Polurie Venkata Vijay Kishore",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. Karumuri Srinivasa Rao",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. Sujatha Moorthy",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. Thirumuru Rama Krishna",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. Penke Satyannarayana",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. Komaragiri Raghava Rao",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. Pabbisetti Satya Gouri Arunasri",role:"PROFESSOR",dept:"ECE",campus:"KLV"},
+{name:"Dr. Ravi Kumar Mokkapati",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Kallakunta Ravi Kumar",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Gorla Venkata Ganesh",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Munuswamy Siva Kumar",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Syed Inthiyaz",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Fazal Noor Basha",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Syed Shameem",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Guda Rama Krishna Prasad",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Dokku Bhavana",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Sreevardhan Cheerla",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Badugu Suresh",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Chakka Raghava Prasad",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Pokkunuri Pardha Saradhi",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Devireddy Sreenivasa Rao",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Pathan Saleem Akram",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Gubbala China Satyanarayana",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Katta Rajesh Babu",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. G Sai Krishna Santosh",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Sampad Kumar Panda",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Ernest Ravindran R S",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Yalavarthi Usha Devi",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Kondaveeti Girija Sravani",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Mannepalli Kasi Prasad",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. N Prabakaran",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Vipul Agarwal",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. C Sreenivas Preetham Reddy",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Bukya Balaji",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. M Muzammil Parvez",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Pillalamarri Syam Sundar",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Aswin Kumer S V",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Rallabandi Revathi",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. S Rooban",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Chella Santhosh",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. S Arun Metha",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Eepuri Kiran Kumar",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Aravind Kilaru",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Nagangabam Phalguni Singh",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Aravindhan Alagarsamy",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Abhishek Pahuja",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Ashish Kumar",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Sumit Bhushan",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Vivekananthan Venkateswaran",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Mareedu Venkata Durga Prasad",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Vasipalli Subba Reddy",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Nalluri Siddaiah",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Midasala Vasuja Devi",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Sunil Kumar",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Nagesh Mantravadi",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Tatini Narendra Babu",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Kolluru Venkata Ratnam",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Jyothi Ravi Kiran Kumar Dabbakuti",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Poruri Gopi Krishna",role:"ASSOC.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Karra Sony",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Kasi Uday Kiran",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Kambhampati Venkata Sowmya",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Somavarapu Vamsee Krishna",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Naren Das",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Atul Kumar",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Shaik Hasane Ahammad",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Abhishek Kumar",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Debajit Deb",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Vasimalla Yesu Dasu",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Lokendra Singh",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Chatragadda Gopi Chand",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Ms. Vankayalapati Sahiti",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Mr. Banda Sai Sandeep",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. Jammalamadaka Rajasekhar",role:"ASST.PROF.",dept:"ECE",campus:"KLV"},
+{name:"Dr. B V Appa Rao",role:"PROFESSOR",dept:"Mathematics",campus:"KLV"},
+{name:"Dr. N Konda Reddy",role:"ASSOC.PROF.",dept:"Mathematics",campus:"KLV"},
+{name:"Dr. Konijeti Rama Krishna",role:"PROFESSOR",dept:"Mechanical Engineering",campus:"KLV"},
+{name:"Dr. Adusumilli Srinath",role:"PROFESSOR",dept:"Mechanical Engineering",campus:"KLV"},
+{name:"Dr. N B V Prasad",role:"PROFESSOR",dept:"Mechanical Engineering",campus:"KLV"},
+{name:"Dr. P Venkata Chalapathi",role:"PROFESSOR",dept:"Mechanical Engineering",campus:"KLV"},
+{name:"Dr. Seeram Srinivasa Rao",role:"PROFESSOR",dept:"Mechanical Engineering",campus:"KLV"},
+{name:"Dr. Surya Narayana Padhi",role:"PROFESSOR",dept:"Mechanical Engineering",campus:"KLV"},
+{name:"Dr. Garikapati Diwakar",role:"PROFESSOR",dept:"Mechanical Engineering",campus:"KLV"},
+{name:"Dr. Kurapati Venkata Narasimha Rao",role:"PROFESSOR",dept:"Mechanical Engineering",campus:"KLV"},
+{name:"Dr. G Murali",role:"PROFESSOR",dept:"Mechanical Engineering",campus:"KLV"},
+{name:"Dr. V L Mangesh",role:"PROFESSOR",dept:"Mechanical Engineering",campus:"KLV"},
+{name:"Dr. T Vijaya Kumar",role:"ASSOC.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
+{name:"Dr. Devulapalli V A Rama Sastry",role:"ASSOC.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
+{name:"Dr. G Yedukondalu",role:"ASSOC.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
+{name:"Dr. Kanchu Venkata Durga Rajesh",role:"ASSOC.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
+{name:"Dr. Pothamsetty Kasi Visweswara Rao",role:"ASSOC.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
+{name:"Dr. Priyaranjan Sharma",role:"ASSOC.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
+{name:"Dr. Raj Kumar Pittala",role:"ASST.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
+{name:"Dr. Vinay Atgur",role:"ASST.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
+{name:"Dr. Arigela Sri Harsha",role:"ASST.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
+{name:"Dr. Priyaranjan Samal",role:"ASST.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
+{name:"Dr. Giphin George",role:"ASST.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
+{name:"Dr. Dasore Abhishek",role:"ASST.PROF.",dept:"Mechanical Engineering",campus:"KLV"},
+{name:"Dr. Buchinaidu Nalluri",role:"PROFESSOR",dept:"Pharmacy",campus:"KLV"},
+{name:"Dr. Guntupalli Chakravarthi",role:"PROFESSOR",dept:"Pharmacy",campus:"KLV"},
+{name:"Dr. Tangallamudi Srinivasa Rao",role:"ASSOC.PROF.",dept:"Pharmacy",campus:"KLV"},
+{name:"Dr. B Kishore Babu",role:"ASSOC.PROF.",dept:"Pharmacy",campus:"KLV"},
+{name:"Dr. Areti Anka Rao",role:"ASSOC.PROF.",dept:"Pharmacy",campus:"KLV"},
+{name:"Dr. P Rajeswari",role:"ASSOC.PROF.",dept:"Pharmacy",campus:"KLV"},
+{name:"Dr. Manikanta Swamy Murahari",role:"ASSOC.PROF.",dept:"Pharmacy",campus:"KLV"},
+{name:"Dr. Kasi Viswanadh Matte",role:"ASSOC.PROF.",dept:"Pharmacy",campus:"KLV"},
+{name:"Dr. Kolli Deepti",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
+{name:"Dr. Alka Damodhar Kamble",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
+{name:"Dr. Malothu Narender",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
+{name:"Dr. J Risy Namratha",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
+{name:"Dr. Naresh Dumala",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
+{name:"Dr. Sivadasu Praveen",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
+{name:"Dr. Mobeen Shaik",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
+{name:"Mr. Amareswarapu Venkata Surendra",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
+{name:"Mr. Kakarla Rama Krishna",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
+{name:"Dr. Banoth Karan Kumar",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
+{name:"Dr. Rayana Supriya",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
+{name:"Dr. Katari Sukeerthi",role:"ASST.PROF.",dept:"Pharmacy",campus:"KLV"},
+{name:"Dr. G Sunita Sundari",role:"ASSOC.PROF.",dept:"Physics",campus:"KLV"},
+{name:"Dr. M Venkateswarlu",role:"ASST.PROF.",dept:"Physics",campus:"KLV"},
+{name:"Dr. Choudaraju Neelima",role:"ASSOC.PROF.",dept:"School of Law",campus:"KLV"},
+{name:"Dr. Jayaprakash Jala",role:"ASSOC.PROF.",dept:"School of Law",campus:"KLV"},
+{name:"Dr. Konduru Indu Pavan Kumar",role:"ASSOC.PROF.",dept:"School of Law",campus:"KLV"},
+{name:"Dr. Petikam Sailaja",role:"ASSOC.PROF.",dept:"School of Law",campus:"KLV"},
+{name:"Dr. Kalavacharla Veera Venkata Raju",role:"ASSOC.PROF.",dept:"School of Law",campus:"KLV"},
+{name:"Ms. Gottumukkala Vijaya Sudha",role:"ASST.PROF.",dept:"School of Law",campus:"KLV"},
+{name:"Dr. G Vinodini Devi",role:"ASST.PROF.",dept:"School of Law",campus:"KLV"},
+{name:"Dr. Peluru Thaviti Raju",role:"ASST.PROF.",dept:"School of Law",campus:"KLV"},
+{name:"Dr. Ravipati Kumara Swamy",role:"ASST.PROF.",dept:"School of Law",campus:"KLV"},
+{name:"Dr. Narendra Ryali",role:"ASST.PROF.",dept:"School of Law",campus:"KLV"},
+{name:"Dr. Vahed Shakeel Ahammad",role:"ASST.PROF.",dept:"School of Law",campus:"KLV"},
+{name:"Dr. Shyamasundar Tripathy",role:"ASST.PROF.",dept:"School of Law",campus:"KLV"},
+{name:"Dr. Yarlagadda Venkata Ramana",role:"ASST.PROF.",dept:"School of Law",campus:"KLV"},
+// HYDERABAD CAMPUS
+{name:"Ms. Suhashini Dash",role:"ASST.PROF.",dept:"Arts",campus:"HYD"},
+{name:"Dr. Anupama Gadiraju",role:"PROFESSOR",dept:"Business School",campus:"HYD"},
+{name:"Mr. Venu Madhav Vedantam",role:"ASSOC.PROF.",dept:"Business School",campus:"HYD"},
+{name:"Dr. P Hima Jagathi",role:"ASSOC.PROF.",dept:"Business School",campus:"HYD"},
+{name:"Dr. Swarupa Pelleti",role:"ASSOC.PROF.",dept:"Business School",campus:"HYD"},
+{name:"Dr. Rakesh Kumar Patra",role:"ASSOC.PROF.",dept:"Business School",campus:"HYD"},
+{name:"Dr. K Subha Gora",role:"ASSOC.PROF.",dept:"Business School",campus:"HYD"},
+{name:"Dr. B Balanagalakshmi",role:"ASST.PROF.",dept:"Business School",campus:"HYD"},
+{name:"Dr. Akanksha Dubey",role:"ASST.PROF.",dept:"Business School",campus:"HYD"},
+{name:"Dr. K Narendra Kumar",role:"ASST.PROF.",dept:"Business School",campus:"HYD"},
+{name:"Dr. Mohan Venkatesh Palani",role:"ASST.PROF.",dept:"Business School",campus:"HYD"},
+{name:"Dr. Priyadarshi Ranjan",role:"ASST.PROF.",dept:"Business School",campus:"HYD"},
+{name:"Ms. Susmita Ekka",role:"ASST.PROF.",dept:"Business School",campus:"HYD"},
+{name:"Mr. Bivas Paul",role:"ASST.PROF.",dept:"Business School",campus:"HYD"},
+{name:"Ms. Bhimireddy Sri Lakshmi",role:"ASST.PROF.",dept:"Business School",campus:"HYD"},
+{name:"Ms. Lena Joseph K",role:"ASST.PROF.",dept:"Business School",campus:"HYD"},
+{name:"Dr. Savadam Balaji",role:"PROFESSOR",dept:"CSE",campus:"HYD"},
+{name:"Dr. P Lalitha Surya Kumari",role:"PROFESSOR",dept:"CSE",campus:"HYD"},
+{name:"Dr. Mugunthan S R",role:"PROFESSOR",dept:"CSE",campus:"HYD"},
+{name:"Dr. K Srinivas",role:"PROFESSOR",dept:"CSE",campus:"HYD"},
+{name:"Dr. A Mahesh Babu",role:"PROFESSOR",dept:"CSE",campus:"HYD"},
+{name:"Dr. D Srinivas Rao",role:"PROFESSOR",dept:"CSE",campus:"HYD"},
+{name:"Dr. B Lakshmana Swamy",role:"PROFESSOR",dept:"CSE",campus:"HYD"},
+{name:"Dr. Gandikota Ramu",role:"PROFESSOR",dept:"CSE",campus:"HYD"},
+{name:"Dr. Srilakshmi Uppalapati",role:"PROFESSOR",dept:"CSE",campus:"HYD"},
+{name:"Dr. Amarana Prabhakar Rao",role:"PROFESSOR",dept:"CSE",campus:"HYD"},
+{name:"Dr. Geeta Mulabagula",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Jaya Vani Majumdar",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Sreedhar Gundekari",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Tanmay Mondal",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. G Rekha",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. K Rama Subrahmanian",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Sandeep Reddy Chitreddy",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. C H J Srinivasa Rao Pasupuleti",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Paidi Ganaga Mohan",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Sheikh Fahad Ahmad",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Figlu Mohanty",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Arpita Gupta",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. G Anna Lakshmi",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. M Saidi Reddy",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Miriyala Trinath Basu",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Gayatri",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. M P Mallesh",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Pramoda Patro",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Sivaram Boppe",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Suresh Kumar Yanduri",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Haribabu Kommadi",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Moon Banerjee",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Mr. Sasidhar Kothuru",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Preeti Jha",role:"ASSOC.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Mohan Varkolu",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Aashiq Banu",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Sharanya V",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Vishala Pannala",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Pandava Sudharshan Babu",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Giridhar Urkude",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Shadab Siddiqui",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Sumit Hazra",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Rajib Debnath",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Kakali Das",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Subhranginee Das",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Gadde Sai Sudha",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. P Pavan Kumar",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. G Madhukar Rao",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. A Ranganath",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Anantha Babu S",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Chandrashekar Boddu",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Abhishek Tah",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Tanushree Sarkar",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Bhavani Sushma Garlapati",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Kranthi Priya Oruganti",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Indira Kothalanka",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Kavuluri Jagan Mohan Rao",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Kalyan Kumar Palaparthi",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Najnin Islam",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Thota Venkata Deepthi",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Ramesh Ade",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Charanadhar Nagavolu",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Ms. Jayasri R",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Ms. Dayanika Jarugumalla",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Mr. Vijay Kumar Damera",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Mr. Panduraju Pagidimalla",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Mr. Anantha Reddy Dasari",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Mr. Chanda Raj Kumar",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Ms. Nidhi Srivastava",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Ms. Sumalakshmi C H",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Ms. Deepthi Kalavala",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Ms. N Anuradha",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Mr. D Vinod Kumar",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Ms. P Sree Lakshmi",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Mr. Faizan Ahmad",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Mr. Aftab Yaseen",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Mr. P Ratna Kumar",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Ms. Uma Rani Bodakunta",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Mr. Chiranjeevi N",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Ms. M Saritha",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Mr. Mainak Saha",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Mr. K Suresh",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Ms. Varala Venkata Naga Aruna Bhargavi",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Mr. D Srinivasa Rao",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Mrs. K Madhavi",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Mudhulkar Raju",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Mandapati Sridevi",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Mr. Gunturi S Raghavendra",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. Mahadeva Swamy N N",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Ms. A Jayanthi",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Mrs. Neerati Lavanya",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Mr. Baddepaka Prasad",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Ms. K V Sharada",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Mr. K Rakesh",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Ms. G Mamatha",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Ms. P Swetha Nagasri",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Mr. Cherukupally Ram Anirudh",role:"ASST.PROF.",dept:"CSE",campus:"HYD"},
+{name:"Dr. M Goutham",role:"PROFESSOR",dept:"ECE",campus:"HYD"},
+{name:"Dr. A Rama Krishna",role:"ASSOC.PROF.",dept:"ECE",campus:"HYD"},
+{name:"Dr. Joshitha Chandrappan",role:"ASSOC.PROF.",dept:"ECE",campus:"HYD"},
+{name:"Dr. K V Prashanth",role:"ASSOC.PROF.",dept:"ECE",campus:"HYD"},
+{name:"Dr. Boda Ravi",role:"ASSOC.PROF.",dept:"ECE",campus:"HYD"},
+{name:"Dr. S Sanjay",role:"ASSOC.PROF.",dept:"ECE",campus:"HYD"},
+{name:"Dr. P Sudharsana Rao",role:"ASSOC.PROF.",dept:"ECE",campus:"HYD"},
+{name:"Dr. Abhishek Kumar Shrivastava",role:"ASSOC.PROF.",dept:"ECE",campus:"HYD"},
+{name:"Dr. B Anil Kumar",role:"ASSOC.PROF.",dept:"ECE",campus:"HYD"},
+{name:"Dr. Koteswara Rao L",role:"PROFESSOR",dept:"ECE",campus:"HYD"},
+{name:"Dr. Vijay Rao Kumbhare",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
+{name:"Dr. Sravan Kumar Gunturi",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
+{name:"Dr. Ashwini Kumar Varma",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
+{name:"Dr. Thirupathaiah Kola",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
+{name:"Dr. Bittu Kumar",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
+{name:"Ms. Prasanna Lakshmi Akella",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
+{name:"Mr. Sathish Ande",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
+{name:"Dr. Anga Srinivas",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
+{name:"Dr. M Seshadri",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
+{name:"Dr. G Durga Prasad",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
+{name:"Dr. Seethi Reddy Reddisekhar Reddy",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
+{name:"Dr. T Siva",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
+{name:"Dr. Suresh Jampa",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
+{name:"Dr. Pundareekam Goud Jakkapally",role:"ASST.PROF.",dept:"ECE",campus:"HYD"},
+{name:"Mr. Vinnakota Venu Balaji",role:"ASST.PROF.",dept:"ECE",campus:"HYD"}
 ];
 
 // ── Faculty Filter State ──
-let facCampus = 'all';
-let facRole = 'all';
+let facCampus='all';
+let facRole='all';
 
-function setCampus(val, btn) {
-  facCampus = val;
-  document.querySelectorAll('#campus-filters .ffbtn').forEach(b => b.classList.remove('active'));
+function setCampus(val,btn){
+  facCampus=val;
+  document.querySelectorAll('#campus-filters .ffbtn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   renderFaculty();
 }
-function setRole(val, btn) {
-  facRole = val;
-  document.querySelectorAll('#role-filters .ffbtn').forEach(b => b.classList.remove('active'));
+function setRole(val,btn){
+  facRole=val;
+  document.querySelectorAll('#role-filters .ffbtn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   renderFaculty();
 }
 
-function renderFaculty() {
-  const search = (document.getElementById('fac-search')?.value || '').toLowerCase();
-  const container = document.getElementById('fac-dept-list');
-  if (!container) return;
-
-  // Filter data
-  let filtered = FAC_DATA.filter(f => {
-    const campusMatch = facCampus === 'all' || f.campus === facCampus;
-    const roleMatch = facRole === 'all' ||
-      (facRole === 'PROFESSOR' && f.role === 'PROFESSOR') ||
-      (facRole === 'ASSOC' && f.role === 'ASSOC.PROF.') ||
-      (facRole === 'ASST' && f.role === 'ASST.PROF.');
-    const searchMatch = !search || f.name.toLowerCase().includes(search) || f.dept.toLowerCase().includes(search);
-    return campusMatch && roleMatch && searchMatch;
+function renderFaculty(){
+  const search=(document.getElementById('fac-search')?.value||'').toLowerCase();
+  const container=document.getElementById('fac-dept-list');
+  if(!container)return;
+  let filtered=FAC_DATA.filter(f=>{
+    const campusMatch=facCampus==='all'||f.campus===facCampus;
+    const roleMatch=facRole==='all'||(facRole==='PROFESSOR'&&f.role==='PROFESSOR')||(facRole==='ASSOC'&&f.role==='ASSOC.PROF.')||(facRole==='ASST'&&f.role==='ASST.PROF.');
+    const searchMatch=!search||f.name.toLowerCase().includes(search)||f.dept.toLowerCase().includes(search);
+    return campusMatch&&roleMatch&&searchMatch;
   });
-
-  // Update stats
-  const total = filtered.length;
-  const profs = filtered.filter(f => f.role === 'PROFESSOR').length;
-  const assoc = filtered.filter(f => f.role === 'ASSOC.PROF.').length;
-  const asst = filtered.filter(f => f.role === 'ASST.PROF.').length;
-  const depts = [...new Set(filtered.map(f => f.dept))].length;
-  document.getElementById('fs-total').textContent = total;
-  document.getElementById('fs-prof').textContent = profs;
-  document.getElementById('fs-assoc').textContent = assoc;
-  document.getElementById('fs-asst').textContent = asst;
-  document.getElementById('fs-depts').textContent = depts;
-  document.getElementById('fac-result-info').textContent = `Showing ${total} faculty across ${depts} departments`;
-
-  // Group by dept
-  const deptMap = {};
-  filtered.forEach(f => {
-    if (!deptMap[f.dept]) deptMap[f.dept] = [];
-    deptMap[f.dept].push(f);
-  });
-
-  const deptIcons = {
-    'CSE':'💻','ECE':'📡','EEE':'⚡','Mechanical Engineering':'⚙️','Civil Engineering':'🏗️',
-    'Biotechnology':'🧬','Pharmacy':'💊','Business School':'📊','Architecture':'🏛️',
-    'Mathematics':'📐','Physics':'⚛️','Chemistry':'🧪','Agriculture':'🌾',
-    'School of Law':'⚖️','Computer Applications':'🖥️','Arts':'🎨'
-  };
-  const deptColors = {
-    'CSE':'#38bdf8','ECE':'#a78bfa','EEE':'#fbbf24','Mechanical Engineering':'#fb923c',
-    'Civil Engineering':'#60a5fa','Biotechnology':'#34d399','Pharmacy':'#f472b6',
-    'Business School':'#fb7185','Architecture':'#e879f9','Mathematics':'#2dd4bf',
-    'Physics':'#818cf8','Chemistry':'#4ade80','Agriculture':'#a3e635',
-    'School of Law':'#f59e0b','Computer Applications':'#06b6d4','Arts':'#f97316'
-  };
-
-  if (Object.keys(deptMap).length === 0) {
-    container.innerHTML = '<div class="fac-empty">😔 No faculty found — try different search or filters!</div>';
-    return;
-  }
-
-  container.innerHTML = Object.keys(deptMap).sort().map(dept => {
-    const members = deptMap[dept];
-    const icon = deptIcons[dept] || '👨‍🏫';
-    const color = deptColors[dept] || '#38bdf8';
-    const klvCount = members.filter(m => m.campus === 'KLV').length;
-    const hydCount = members.filter(m => m.campus === 'HYD').length;
-    const metaParts = [];
-    if (klvCount) metaParts.push(`${klvCount} Vijayawada`);
-    if (hydCount) metaParts.push(`${hydCount} Hyderabad`);
-    const tags = members.map(m => {
-      const roleClass = m.role === 'PROFESSOR' ? 'prof' : m.role === 'ASSOC.PROF.' ? 'assoc' : 'asst';
-      const campusBadge = `<span class="fac-campus-badge ${m.campus === 'KLV' ? 'cb-klv' : 'cb-hyd'}">${m.campus === 'KLV' ? 'KLV' : 'HYD'}</span>`;
-      const hl = search && m.name.toLowerCase().includes(search) ? ' highlight' : '';
+  const total=filtered.length;
+  const profs=filtered.filter(f=>f.role==='PROFESSOR').length;
+  const assoc=filtered.filter(f=>f.role==='ASSOC.PROF.').length;
+  const asst=filtered.filter(f=>f.role==='ASST.PROF.').length;
+  const depts=[...new Set(filtered.map(f=>f.dept))].length;
+  document.getElementById('fs-total').textContent=total;
+  document.getElementById('fs-prof').textContent=profs;
+  document.getElementById('fs-assoc').textContent=assoc;
+  document.getElementById('fs-asst').textContent=asst;
+  document.getElementById('fs-depts').textContent=depts;
+  document.getElementById('fac-result-info').textContent=`Showing ${total} faculty across ${depts} departments`;
+  const deptMap={};
+  filtered.forEach(f=>{if(!deptMap[f.dept])deptMap[f.dept]=[];deptMap[f.dept].push(f);});
+  const deptIcons={'CSE':'💻','ECE':'📡','EEE':'⚡','Mechanical Engineering':'⚙️','Civil Engineering':'🏗️','Biotechnology':'🧬','Pharmacy':'💊','Business School':'📊','Architecture':'🏛️','Mathematics':'📐','Physics':'⚛️','Chemistry':'🧪','Agriculture':'🌾','School of Law':'⚖️','Computer Applications':'🖥️','Arts':'🎨'};
+  const deptColors={'CSE':'#38bdf8','ECE':'#a78bfa','EEE':'#fbbf24','Mechanical Engineering':'#fb923c','Civil Engineering':'#60a5fa','Biotechnology':'#34d399','Pharmacy':'#f472b6','Business School':'#fb7185','Architecture':'#e879f9','Mathematics':'#2dd4bf','Physics':'#818cf8','Chemistry':'#4ade80','Agriculture':'#a3e635','School of Law':'#f59e0b','Computer Applications':'#06b6d4','Arts':'#f97316'};
+  if(Object.keys(deptMap).length===0){container.innerHTML='<div class="fac-empty">😔 No faculty found — try different search or filters!</div>';return;}
+  container.innerHTML=Object.keys(deptMap).sort().map(dept=>{
+    const members=deptMap[dept];
+    const icon=deptIcons[dept]||'👨‍🏫';
+    const color=deptColors[dept]||'#38bdf8';
+    const klvCount=members.filter(m=>m.campus==='KLV').length;
+    const hydCount=members.filter(m=>m.campus==='HYD').length;
+    const metaParts=[];
+    if(klvCount)metaParts.push(`${klvCount} Vijayawada`);
+    if(hydCount)metaParts.push(`${hydCount} Hyderabad`);
+    const tags=members.map(m=>{
+      const roleClass=m.role==='PROFESSOR'?'prof':m.role==='ASSOC.PROF.'?'assoc':'asst';
+      const campusBadge=`<span class="fac-campus-badge ${m.campus==='KLV'?'cb-klv':'cb-hyd'}">${m.campus==='KLV'?'KLV':'HYD'}</span>`;
+      const hl=search&&m.name.toLowerCase().includes(search)?' highlight':'';
       return `<span class="fac-name-tag ${roleClass}${hl}" title="${m.role} · ${m.dept}">${m.name}${campusBadge}</span>`;
     }).join('');
-    return `<div class="fac-dept-card" style="--dc:${color}">
-      <div class="fac-dept-head">
-        <div class="fac-dept-left">
-          <div class="fac-dept-icon" style="background:${color}22">${icon}</div>
-          <div>
-            <div class="fac-dept-name">${dept}</div>
-            <div class="fac-dept-meta">${metaParts.join(' · ')}</div>
-          </div>
-        </div>
-        <div class="fac-dept-count">${members.length} members</div>
-      </div>
-      <div class="fac-names">${tags}</div>
-    </div>`;
+    return `<div class="fac-dept-card" style="--dc:${color}"><div class="fac-dept-head"><div class="fac-dept-left"><div class="fac-dept-icon" style="background:${color}22">${icon}</div><div><div class="fac-dept-name">${dept}</div><div class="fac-dept-meta">${metaParts.join(' · ')}</div></div></div><div class="fac-dept-count">${members.length} members</div></div><div class="fac-names">${tags}</div></div>`;
   }).join('');
 }
 
 renderFaculty();
 
 // ══════════════════════════════════════
-// SMART DB — detects query type and
-// sends only relevant context to API
+// SMART DB — detects query type only
 // ══════════════════════════════════════
-
-
-"Dr. Dubba Nagamalleswari","Dr. Kotagiri Vishnu Divya","Dr. Mylavarapu Seetharama Prasad","Dr. Mutyaboyina Latha","Dr. Vasipalli Subba Reddy","Dr. Cheerla Sreevardhan","Dr. Chakka Raghava Prasad","Dr. Tamma Eswar Lal","Dr. Gunturi Sunita Sundari","Dr. Anna Venkateswara Rao","Dr. Alaparthi Venkateswara Rao","Dr. Tiruveedhula Sajana","Dr. Wuriti Sridhar","Dr. Chitta M. H. Saibaba","Dr. Popuri Gopi Krishna","Dr. Shaik Mohammed Gouse","Dr. Mahamuda Shaik","Dr. P. Srivenkata Srinivasa Sridhar","Dr. Gogineni Krishna Chaitanya","Dr. Maguluri Lakshmana Phaneendra","Dr. Modepalli Kavitha","Dr. Yalavarthi Usha Devi","Dr. Swarna Anjalidevi","Dr. Kinjirapu Ashesh","Dr. Kuchibhotla Swarna","Dr. Vipul Agarwal","Dr. CH Srinivas Preetham Reddy","Dr. Aswin Kumer S V","Dr. Mothukuri Radha","Dr. Dinesh Kumar A","Dr. Neelima Choudaraju","Dr. Pichuka V V S Srinivas","Dr. Shanmugan S","Dr. V Daya Sagar Ketaraju","Dr. Anusha Marouthu","Dr. Vidya Sagar Ponnam","Dr. Kanike Raghavendra Kumar","Dr. A Abdul Rahman","Dr. Veerubhotla S R K Sarma","Dr. Veerraju Gampala","Dr. Balajee R M","Dr. Sadam Kavitha","Dr. Sangaraju Hrushikesava Raju","Dr. Nilu Singh","Dr. Ratna Kanth Nelapati","Dr. Shaik Hasane Ahammad","Dr. Batta Uma Maheswara Rao","Dr. N V Kiran Movva","Dr. S S Aravinth","Dr. Nagarjuna Karyemsetty","Dr. Suneetha Bulla","Dr. G Raja","Dr. Srithar","Dr. Akhilesh Kumar Dubey","Dr. Thatavarthi Satish","Dr. Asesh Kumar Tripathy","Dr. Basant Sah","Dr. M M Yamunadevi","Dr. Nesarani","Dr. Vuyyuru Veeraankalu","Dr. A R Deepa","Dr. Elangovan Guruva Reddy","Dr. Vijaya Kumar Reddy Radha","Dr. Ammisetti Veeraswamy","Dr. Gurrala Jagadish","Dr. Gopi Adapa","Dr. Bechoo Lal","Dr. Arunabhaskar Karri","Dr. Nagamani Chippada","Dr. Kodavali Lakshminarayana","Dr. V Sreenivasa Rao","Dr. V V Jaya Rama Krishnaiah","Dr. Jayavarapu Karthik","Dr. R Mahendran","Dr. Sam Kumar GV","Dr. Munish Kumar","Dr. Satrughan Kumar","Dr. Penubaka Balaji","Dr. Surya Kiran Chebrolu","Dr. Phaneendra Kumar B L N","Dr. Kambala Vijaya Kumar","Dr. Subhamastan Rao Tunmapudi","Dr. Badugu Samatha","Dr. Madabattula P J Santosh Kumar","Dr. Merigala Rajanidevi","Dr. Ranjan Kumar Mahapatra","Dr. Ganta Jacob Victor","Dr. Pakalapati Manikya Prasuna","Dr. V Sivaramaraju Vetukuri","Dr. Kuraganty Shanthi","Dr. M Geetha","Dr. P V Venkateswara Rao","Dr. Jugunta Suresh Babu","Dr. Chinnarao Kurangi","Dr. Venkataravana Nayak K","Dr. Vemula Rajiv Jetson","Ch. Ratna Jyothi"],
-  _removed:["DELETED","Dr. Sajja Venkata Subrahmanyam","Dr. Deevi Satish Kumar","Dr. Nalamalapu Konda Reddy","Dr. Jampani Satish Babu","Dr. Dukkipati Sudha","Dr. Talasila Vamsidhar","Dr. Vasantham Vijay Kumar","Dr. Nichenametla Rajesh","Dr. Dama Anand","Ms. M. V. B. T. Santhi","Mr. Kunchellapalli Stephen Victor","Ms. Kolachana Swetha","Mr. Banda Sai Sandeep","Mr. Challa Ramaiah","Bobbili Satyanarayana Murthy","Bhavani Vasantha","Valasapalli Mounika","Yamini Tondepu","Anusha Ponnuru","Janjhyam Venkata Naga Ramesh","Tirandasu Ravi Kumar","Ande Pavankumar","Panguluri Mounica","Savaram Mythreya","Garigipati Rama Krishna","Doddi Suresh Kumar","Arepalli Gopi","Akurathi Anjana Devi","Sabitha Chinnam","Ravela Chitti Babu","Ranjith Kumar Rupani","Bommisetty Yamini Supriya","Lavanya Dara","Supriya Pacha","B Namasivayam","Nagaraju Choutapalli","T Hemalatha","Suneetha Bandeela","Vuyyuru Lakshma Reddy","Tulasi Rajesh","Mandava Manjusha","Chopparapu Gowthami","Dasari Manasa","Manasa Patibandla","Linginedi Ushasree","Kasturi Sai Sandeep","Dhanesh Kumar","Paladugu Venkateswara Rao","Kotavarapu Radha","Prasanthi Valluri","Bellam Surendra Babu","Uma Maheswari Rayudu","B Santha Kumar","Natha Priya","Swarna Mahesh Naidu","G N Sowjanya","Rodda Dilip Kumar","Vemula Jasmine Sowmya","B Arun Kumar","P Ramadevi","Kuchipudi Prasanth Kumar","Annamaraju Thanuja","Kavitha Sarihaddu","Praneetha Alur","Rajeswari Setti","Govindu Komali","Kishore Dasari","R Lakshmi Durga","Pothumarthi Sridevi","Narne Sravanthi","Aruna Kolukulapalli","Sathuluri Sagar","G V Ramana Reddy","Donepudi Rohini","Sai Krishna Edupuganti","B Elangovan","Bandi Prameelarani","Mallampati Mahesh","Chandolu Naga Mani","Anusha Gudise","Lakshman B","Jutu Gopaiah","Bandla Nirosha","Maram Subba Rao","K V Subramanyam","Nayapamu Ramarao","Alluri Swathi","Aravind Nalamothu","Talluri Jyothi","Kunchala Gopala Krishna","Billa Manindhar","Jonathan Bathula","Bobba Sahithi","Dudigam Ramya","Kakumanu Ashok Babu","Rakesh Kancharla","Venkata Rao Javvaji","Velchu Balaji","Sandeep Nanda","C V K Sirisha","Kotturu Prasuna","Gavini Naga Pavani","Aluri Sanjeev Kumar","Kari Venkata Sumanth","Pravallika Koppula","Stalin Babu J","Yadavalli Saroja","Seelam Visweswara Rao","Gutti Yateesh","Madala Nagendra Babu","Delhipolice Chandu","Nalluri Venkatamadhubindu","Sudhakar Atchala","Poonuru Vijayabhaskar","Koyya Avinash","Gangavarapu Mohanarao","P Raghavendra Rao","Vejendla Balanaga Ajay","Narala Aswani","R Kannan","Talari Aruna Kumari","Sangeeta Prusty","Rose Rani Chavvakula","Mandepudi Neelima Hima Bindu","Shaik Mahabub Basha","Banala Ranjith Kumar","Yellepeddi Krishna Assish","Akash Chatterjee","Kolla Lakshmi Narayana","Mr. P. Kiran Kumar","Ms. Nalla Siva Ganga Kumari","Ramesh Mylapalli","Gorrepati Rajani Reddy","Anju Aravind","Pullakurthi Sai Laukya","Sai Sudhindra Aditya Vadluri"]
-};
-
-
-
-const KLU_DB = {
-  fees:`COURSE FEES 2025-2026 (VIJAYAWADA CAMPUS):
+const KLU_DB={
+fees:`COURSE FEES 2025-2026 (VIJAYAWADA CAMPUS):
 B.Tech CSE: ₹1,45,000/sem | ₹2,90,000/year | Full Fee ₹3,00,000/year
 B.Tech AI & Data Science: ₹1,37,500/sem | ₹2,75,000/year | Full Fee ₹2,85,000/year
 B.Tech CS & IT: ₹1,37,500/sem | ₹2,75,000/year | Full Fee ₹2,85,000/year
@@ -1492,7 +1421,7 @@ Admission Fee: ₹16,000 one time (waived for KLU Alumni children)
 Full Fee = Merit Fee + ₹10,000/year extra
 HYDERABAD CAMPUS — CSE: ₹1,50,000/sem | ₹3,00,000/year | Full Fee ₹3,10,000/year`,
 
-  hostel:`HOSTEL FEES 2025-2026 (VIJAYAWADA CAMPUS):
+hostel:`HOSTEL FEES 2025-2026 (VIJAYAWADA CAMPUS):
 Mess Fee (all rooms): ₹89,500/year + 5% GST ₹4,475 = ₹93,975/year
 Registration fee (one-time, non-refundable new students): ₹5,000
 Note: All hostel fees must be paid through ERP only
@@ -1517,142 +1446,81 @@ AC Super Deluxe 2-Bed: Room ₹75,000 | Total ₹1,68,975 | Elec dep ₹15,000
 AC Suite 3-Bed (Balcony): Room ₹70,000 | Total ₹1,63,975 | Elec dep ₹12,000
 AC Executive Suite 3-Bed (North/South View): Room ₹75,000 | Total ₹1,68,975 | Elec dep ₹12,000`,
 
-  scholarship:`SCHOLARSHIPS 2025-2026:
+scholarship:`SCHOLARSHIPS 2025-2026:
+KLEEE 2025 RANKS — CSE/AI&DS/BT: 1-50→50% | 51-1000→25% | 1001-2000→15% | 2001-5000→10% | 5001-20000→₹10,000/yr
+ECE/CS&IT/IoT: 1-500→50% | 501-1500→25% | 1501-3500→15% | 3501-7500→10%
+JEE Mains — CSE/AI&DS: >97%→100% | ≥95%→50% | ≥93%→25% | ≥92%→15% | ≥90%→10%
+AP/TS EAMCET — CSE/AI&DS/BT: 1-1000→50% | 1001-5000→25% | 5001-10000→15% | 10001-15000→10%
+CBSE CSE: ≥94%→50% | ≥93%→25% | ≥92%→15% | ≥91%→10%
+Special: SC/ST ₹10K/yr | OBC ₹5K/yr | Sibling ₹10K/yr | Single girl child ₹10K/yr
+Rules: Only 1 scholarship at a time | CGPA 9.0 for CSE/AI&DS to continue | 8.0 others`,
 
-KLEEE 2025 RANKS (Merit Fee Scholarship):
-CSE/AI&DS/BT: Rank 1-50→50% | 51-1000→25% | 1001-2000→15% | 2001-5000→10% | 5001-20000→₹10,000/yr
-ECE/CS&IT/IoT: Rank 1-500→50% | 501-1500→25% | 1501-3500→15% | 3501-7500→10% | 7501-15000→₹10,000/yr
-CE/ME/EEE: Rank 1-1000→50% | 1001-4000→25% | 4001-8000→15% | 8001-15000→10%
+academic:`Attendance: Min 75% | Condonation 65% medical | Below 65% = Detained
+Grading: Internal 40 + External 60 | Min 40% external to pass | GPA 10-point
+Exam Sem2 2025: ML Apr14 | CN Apr17 | SE Apr21 | CD Apr24 | WT Apr28 | PE May2 (10AM)
+Holidays 2026: Pongal Jan12-17 | Republic Day Jan26 | Ugadi Mar19 | Ramzan Mar21 | Ramanavami Mar27 | Independence Day Aug15 | Vinayaka Chavithi Sep14 | Dussehra Oct19-24 | Christmas Dec25
+Facilities: Library 8AM-9PM | Labs Block D | Medical 24/7 | Sports 6AM-8PM | Cafeteria 7AM-10PM`,
 
-JEE MAINS (Percentile):
-CSE/AI&DS: Above 97%→100% | ≥95%→50% | ≥93%→25% | ≥92%→15% | ≥90%→10%
-ECE/CS&IT: ≥96%→100% | ≥94%→50% | ≥92%→25% | ≥90%→15% | ≥85%→10%
-CE/ME/EEE: ≥95%→100% | ≥92%→50% | ≥90%→25% | ≥85%→15% | ≥80%→10%
-
-AP/TS EAMCET:
-CSE/AI&DS/BT: Rank 1-1000→50% | 1001-5000→25% | 5001-10000→15% | 10001-15000→10%
-ECE/CS&IT/IoT: Rank 1-2500→50% | 2501-7500→25% | 7501-12500→15% | 12501-20000→10%
-
-CBSE (CSE/AI&DS): ≥94%→50% | ≥93%→25% | ≥92%→15% | ≥91%→10% | ≥90%→₹10,000/yr
-TS/AP State Board (CSE/AI&DS): ≥98%→25% | ≥97%→15% | ≥95%→10% | ≥90%→₹10,000/yr
-
-SPECIAL SCHOLARSHIPS:
-SC/ST & Differently Abled: ₹10,000/year | OBC: ₹5,000/year
-Sibling of KLU student: ₹10,000/year
-Single girl child / Children of KLU Alumni: ₹10,000/year
-Sports & Children of Ex-Army Personnel: Available
-
-M.Tech Scholarships: UG 100%-76%→50% off | 75%-65%→25% off
-GATE Qualified (CSE): Rank 1-1000→50% | 1001-5000→25%
-
-SCHOLARSHIP RULES:
-Only ONE scholarship applicable at a time (best one given)
-All scholarships on Merit Fee only
-To continue from 2nd semester maintain: CGPA 9.0 for CSE/AI&DS/ECE/CS&IT | CGPA 8.0 for ME/CE/EEE/IoT/M.Tech/MBA | CGPA 7.5 for BBA/BCA/B.Com`,
-
-  academic:`ATTENDANCE: Min 75% | Condonation up to 65% with medical | Below 65% = Detained
-GRADING: Internal 40 + External 60 = 100 marks | Min 40% in external to pass | GPA 10-point scale
-EXAM SCHEDULE SEM 2 2025: Machine Learning Apr 14 | Computer Networks Apr 17 | Software Engineering Apr 21 | Compiler Design Apr 24 | Web Technologies Apr 28 | Professional Elective May 2 (all at 10AM)
-HOLIDAYS 2026: Pongal Jan 12-17 | Republic Day Jan 26 | Ugadi Mar 19 | Ramzan Mar 21 | Ramanavami Mar 27 | Ambedkar Jayanthi Apr 14 | Independence Day Aug 15 | Vinayaka Chavithi Sep 14 | Dussehra Oct 19-24 | Christmas Dec 25
-FACILITIES: Library 8AM-9PM (60K+ books) | CSE Labs Block D 500+ systems | Medical 24/7 | Sports 6AM-8PM | Cafeteria 7AM-10PM | WiFi 24/7`,
-
-  faculty:`KLU has 1014+ faculty across all departments at Vijayawada and Hyderabad campuses. Departments include CSE, ECE, EEE, Mechanical, Civil, Biotechnology, Pharmacy, Business School, Architecture, Agriculture, Computer Applications, Mathematics, Physics, Law and more. Faculty ranks: Professors, Associate Professors, Assistant Professors. Use the Faculty tab to browse all names with search and campus filters.`
+// FIX: Now uses FAC_DATA (defined above) — no undefined FAC reference!
+get faculty(){
+  const cse=FAC_DATA.filter(f=>f.dept==='CSE'&&f.campus==='KLV');
+  const profs=cse.filter(f=>f.role==='PROFESSOR').map(f=>f.name);
+  const assoc=cse.filter(f=>f.role==='ASSOC.PROF.').map(f=>f.name);
+  const asst=cse.filter(f=>f.role==='ASST.PROF.').map(f=>f.name);
+  return `KLU has 1014+ faculty across CSE, ECE, EEE, Mechanical, Civil, Biotechnology, Pharmacy, Business School, Architecture, Law, Agriculture and more at Vijayawada & Hyderabad campuses.
+CSE PROFESSORS KLV (${profs.length}): ${profs.join(', ')}
+CSE ASSOCIATE PROFESSORS KLV (${assoc.length}): ${assoc.join(', ')}
+CSE ASSISTANT PROFESSORS KLV (${asst.length}): ${asst.slice(0,40).join(', ')} and ${asst.length-40} more`;
+}
 };
 
-const BASE_INFO = `KL UNIVERSITY (KLEF) — Vaddeswaram, Guntur. NAAC A++. NIRF Top 50 Engineering 2024. Helpline: 1800-599-1888. Counseling: Admin Block Room 12, Mon-Sat 9:30AM-4:30PM. Website: kluniversity.in
+const BASE_INFO=`KL UNIVERSITY (KLEF) — Vaddeswaram, Guntur. NAAC A++. NIRF Top 50 Engineering 2024. Helpline: 1800-599-1888. Counseling: Admin Block Room 12, Mon-Sat 9:30AM-4:30PM. Website: kluniversity.in
 CREATOR: Lokesh Manepalli, 3rd year CSE (2023-2027, Roll: 2300031647). Email: 2300031647@kluniversity.in`;
 
-// Smart context builder — only sends relevant data!
 function buildDB(userMsg){
   const m=userMsg.toLowerCase();
   let ctx=BASE_INFO+'\n\n';
-
-  const needsFees=/fee|fees|tuition|cost|price|amount|pay|semester fee|year fee|how much|enta|entha|rupee|rupees|₹/i.test(m);
-  const needsHostel=/hostel|room|accommodation|stay|mess|pg|bed|ac room|non.?ac|dormitory/i.test(m);
-  const needsScholarship=/scholarship|merit|rank|discount|waiver|concession|free seat|kleee|jee|eamcet|cbse|state board|gate/i.test(m);
-  const needsFaculty=/professor|faculty|staff|lecturer|teacher|hod|head|associate|assistant prof|dr\.|who teach|evaru|faculty list/i.test(m);
-  const needsAcademic=/attendance|exam|holiday|schedule|grading|internal|external|gpa|cgpa|pass|fail|detain|semester|sem|calendar/i.test(m);
-
-  if(needsFees) ctx+=KLU_DB.fees+'\n\n';
-  if(needsHostel) ctx+=KLU_DB.hostel+'\n\n';
-  if(needsScholarship) ctx+=KLU_DB.scholarship+'\n\n';
-  if(needsFaculty) ctx+=KLU_DB.faculty+'\n\n';
-  if(needsAcademic) ctx+=KLU_DB.academic+'\n\n';
-
-  if(!needsFees&&!needsHostel&&!needsScholarship&&!needsFaculty&&!needsAcademic){
-    ctx+=`CSE fees: ₹2,90,000/year | Hostel Non-AC from ₹1,28,975/year | AC from ₹1,38,975/year | Attendance min 75% | Scholarships available based on KLEEE/JEE/EAMCET ranks`;
-  }
-
+  if(/fee|fees|tuition|cost|price|amount|pay|semester fee|year fee|how much|enta|entha|rupee|rupees|₹/i.test(m))ctx+=KLU_DB.fees+'\n\n';
+  if(/hostel|room|accommodation|stay|mess|pg|bed|ac room|non.?ac|dormitory/i.test(m))ctx+=KLU_DB.hostel+'\n\n';
+  if(/scholarship|merit|rank|discount|waiver|concession|free seat|kleee|jee|eamcet|cbse|state board|gate/i.test(m))ctx+=KLU_DB.scholarship+'\n\n';
+  if(/professor|faculty|staff|lecturer|teacher|hod|head|associate|assistant prof|dr\.|who teach|evaru|faculty list/i.test(m))ctx+=KLU_DB.faculty+'\n\n';
+  if(/attendance|exam|holiday|schedule|grading|internal|external|gpa|cgpa|pass|fail|detain|semester|sem|calendar/i.test(m))ctx+=KLU_DB.academic+'\n\n';
+  if(ctx===BASE_INFO+'\n\n')ctx+=`CSE fees: ₹2,90,000/year | Hostel Non-AC from ₹1,28,975/year | AC from ₹1,38,975/year | Attendance min 75% | Scholarships available on KLEEE/JEE/EAMCET ranks`;
   return ctx;
 }
 
 // ══════════════════════════════════════
 // TENGLISH SPELLING GUIDE
 // ══════════════════════════════════════
-const TENGLISH_GUIDE = `
+const TENGLISH_GUIDE=`
 TENGLISH SPELLING DICTIONARY — FOLLOW THESE EXACT SPELLINGS ALWAYS:
-
-COMMON WORDS: undi (is/exists), ledu (no/not), kavali (want/need), cheppu (tell), enti (what), ela (how), evaru (who), ekkada (where), enduku (why), chestha (will do), vasthundi (coming), matladdam (let's talk), poyindi (gone), ayyindi (happened/done), chuddam (let's see), telidu (don't know), kanipistundi (visible), gurthundi (remember), ippudu (now), appudu (then), mariyu (and/more), kani (but), ante (means/if), ayithe (then/if so), kosam (for), gurinchi (about), mundhu (before/first), tarvata (after/later), inka (more/still), already (already), pakka (sure/definite), correct (correct), sare (okay), ra (bro/dude - male), re (bro/dude - casual), bro (bro), machha (dude/buddy), yaar (dude/friend), mari (then/so), baaga (well/very), chaala (very/lot), koncham (little), peddaga (much/big), antha (that much), ila (like this), ala (like that)
-
-VERBS: cheyyi (do), vellu (go), ra (come - imperative), vacchi (came), povali (must go), ravali (must come), cheppali (must tell), adugu (ask), vinnu (heard), chaduvukondi (study), rasthanu (will write), chusthanu (will see), thinali (must eat), paduko (sleep), lechi (wake up), kurchundu (sit), nilabadu (stand)
-
-PRONOUNS: nenu (I), nuvvu (you), naaku (to me), neeku (to you), vaadu (he), aame (she), manam (we), meeru (you-formal), vaalla (their), maadi (ours), needi (yours)
-
-ADJECTIVES: manchi (good), chedda (bad), pedda (big), chinna (small), ekkuva (more/excess), takkuva (less), easy, tough, hard, simple, bagundi (good/nice)
-
-EMOTIONS: happy, sad, stress, tension, worry, scared, angry, excited, bored, lonely, confused, tired
-
-SLANG & PHRASES: tension padaku (don't worry), chill avvu (chill out), lite theesuko (take it light), full gas ra (full speed bro), vibe check, no cap, lowkey, highkey, hits different, fr fr (for real), same ra same, you got this, W move ra (winning move bro), L moment, ayyo (oh no), arey (hey), dude, relax ra, chill bro, sach cheppu (tell truth)
-
-CRITICAL SPELLING RULES — NEVER VIOLATE:
-❌ NEVER "undhi" → ✅ ALWAYS "undi"
-❌ NEVER "ledhu" → ✅ ALWAYS "ledu"
-❌ NEVER "enthi" → ✅ ALWAYS "enti"
-❌ NEVER "endhi" → ✅ ALWAYS "endi"
-❌ NEVER "kadha" → ✅ ALWAYS "kada"
-❌ NEVER "ippudhu" → ✅ ALWAYS "ippudu"
-❌ NEVER "appudhu" → ✅ ALWAYS "appudu"
-❌ NEVER "chesedhi" → ✅ ALWAYS "chesedi"
-❌ NEVER "antey" → ✅ ALWAYS "ante"
-❌ NEVER "kaavali" → ✅ ALWAYS "kavali"
-❌ NEVER "raaa" or "raa" → ✅ ALWAYS "ra"
-❌ NEVER "macha" → ✅ ALWAYS "machha"
-❌ NEVER "baagundhi" → ✅ ALWAYS "bagundi"
-❌ NEVER "cheppandi" → ✅ ALWAYS "cheppandi" (this one is correct)
-❌ NEVER "cheyyali" → ✅ ALWAYS "cheyali"
-❌ NEVER "vasthundhi" → ✅ ALWAYS "vasthundi"
-❌ NEVER "koothaa" → ✅ ALWAYS "kuda"
-❌ NEVER "aithe" → ✅ ALWAYS "ayithe"
-❌ NEVER "evaruu" → ✅ ALWAYS "evaru"
-❌ NEVER "andhuke" → ✅ ALWAYS "anduke"
-❌ NEVER double vowels at end like "aa","uu","ee" → ✅ Use single: "a","u","e"
-❌ NEVER use "dh" for ద sound → ✅ Use "d" (ledu NOT ledhu, undi NOT undhi)
-❌ NEVER use "th" for త sound in middle/end → ✅ Use "th" only at start (like "tharavata" is WRONG, "tarvata" is RIGHT)`;
+COMMON WORDS: undi (is/exists), ledu (no/not), kavali (want/need), cheppu (tell), enti (what), ela (how), evaru (who), ekkada (where), enduku (why), chestha (will do), vasthundi (coming), matladdam (let's talk), poyindi (gone), ayyindi (happened/done), chuddam (let's see), telidu (don't know), ippudu (now), appudu (then), kani (but), ante (means/if), ayithe (then/if so), kosam (for), gurinchi (about), tarvata (after/later), inka (more/still), pakka (sure/definite), sare (okay), ra (bro/dude), machha (dude/buddy), yaar (dude/friend), baaga (well/very), chaala (very/lot), koncham (little), antha (that much)
+SLANG: tension padaku, chill avvu, lite theesuko, no cap, lowkey, fr fr, same ra same, you got this, W move ra, ayyo, arey, relax ra
+CRITICAL SPELLING RULES:
+❌ NEVER "undhi" → ✅ "undi" | ❌ "ledhu" → ✅ "ledu" | ❌ "enthi" → ✅ "enti"
+❌ "ippudhu" → ✅ "ippudu" | ❌ "appudhu" → ✅ "appudu" | ❌ "antey" → ✅ "ante"
+❌ "kaavali" → ✅ "kavali" | ❌ "raaa/raa" → ✅ "ra" | ❌ "macha" → ✅ "machha"
+❌ "baagundhi" → ✅ "bagundi" | ❌ "vasthundhi" → ✅ "vasthundi" | ❌ "aithe" → ✅ "ayithe"
+❌ NEVER use "dh" for ద → use "d" | ❌ NEVER double vowels at end "aa/uu/ee" → use single`;
 
 // ══════════════════════════════════════
-// LANGUAGE DETECTION — Enhanced
+// LANGUAGE DETECTION
 // ══════════════════════════════════════
 function isTe(t){return /[\u0C00-\u0C7F]/.test(t)}
 
-// Detect Tenglish words in message
-const TENGLISH_WORDS = ['ra','re','bro','machha','yaar','enti','ela','evaru','ekkada','enduku','undi','ledu','kavali','cheppu','chestha','vasthundi','ayyo','arey','anna','akka','mari','baaga','chaala','koncham','sare','bagundi','ante','ayithe','inka','kani','kosam','gurinchi','povali','cheyyi','vellu','nenu','nuvvu','naaku','neeku','vaadu','aame','manam','chinna','pedda','manchi','lite','pakka','correct','kada','ippudu','appudu','chuddam','matladdam','telidu','padaku','kuda','antha','anduke','bavundi','chesedi','cheppali','adugu','chaduvukondi','thinali','paduko','entha','chala','abba','mama','tammudu','chelli'];
+const TENGLISH_WORDS=['ra','re','bro','machha','yaar','enti','ela','evaru','ekkada','enduku','undi','ledu','kavali','cheppu','chestha','vasthundi','ayyo','arey','anna','akka','mari','baaga','chaala','koncham','sare','bagundi','ante','ayithe','inka','kani','kosam','gurinchi','povali','cheyyi','vellu','nenu','nuvvu','naaku','neeku','vaadu','aame','manam','chinna','pedda','manchi','lite','pakka','correct','kada','ippudu','appudu','chuddam','matladdam','telidu','padaku','kuda','antha','anduke','bavundi','chesedi','cheppali','adugu','chaduvukondi','thinali','paduko','entha','chala','abba','mama','tammudu','chelli'];
 
 function isTenglish(t){
-  const lower = t.toLowerCase();
-  const words = lower.split(/\s+/);
-  let tenglishCount = 0;
-  for(const w of words){
-    const clean = w.replace(/[^a-z]/g,'');
-    if(TENGLISH_WORDS.includes(clean)) tenglishCount++;
-  }
-  // If 1+ Tenglish words found, it's Tenglish
-  return tenglishCount >= 1;
+  const lower=t.toLowerCase();
+  const words=lower.split(/\s+/);
+  let count=0;
+  for(const w of words){const clean=w.replace(/[^a-z]/g,'');if(TENGLISH_WORDS.includes(clean))count++;}
+  return count>=1;
 }
 
-// Detect language: "te" = Telugu script, "tg" = Tenglish, "en" = English
 function detectLang(t){
-  if(isTe(t)) return 'te';
-  if(isTenglish(t)) return 'tg';
+  if(isTe(t))return 'te';
+  if(isTenglish(t))return 'tg';
   return 'en';
 }
 
@@ -1663,59 +1531,50 @@ let conversationHistory=[];
 let busy=false;
 
 function CHAT_SYS(userMsg){
-  const lang = detectLang(userMsg);
-
-  let langInstructions = '';
-
-  if(lang === 'te'){
-    // Full Telugu script detected
-    langInstructions = `LANGUAGE MODE: TELUGU (user typed in Telugu script)
-- Respond in casual spoken Telugu using Tenglish (Roman script Telugu), NOT Telugu script.
-- Use the Tenglish spelling guide below for CORRECT spellings.
-- Be super friendly, use slang like "ra", "machha", "ayyo", "bro" naturally.
+  const lang=detectLang(userMsg);
+  let langInstructions='';
+  if(lang==='te'){
+    langInstructions=`LANGUAGE MODE: TELUGU (user typed Telugu script)
+- Respond in casual Tenglish (Roman script Telugu), NOT Telugu script.
+- Use the Tenglish spelling guide for CORRECT spellings.
+- Use slang like "ra", "machha", "ayyo", "bro" naturally.
 - Set "lang":"te" in JSON.
-
 ${TENGLISH_GUIDE}`;
-  } else if(lang === 'tg'){
-    // Tenglish detected
-    langInstructions = `LANGUAGE MODE: TENGLISH (user is typing in Tenglish/Roman-Telugu)
+  }else if(lang==='tg'){
+    langInstructions=`LANGUAGE MODE: TENGLISH (user typing Roman-Telugu)
 - Respond in Tenglish matching their style exactly.
-- Use the Tenglish spelling guide below for CORRECT spellings — NEVER deviate.
-- Be super friendly with heavy slang — "ra", "machha", "bro", "yaar", "ayyo", "no cap", "fr fr".
+- Use the Tenglish spelling guide — NEVER deviate.
+- Heavy slang: "ra", "machha", "bro", "yaar", "ayyo", "no cap", "fr fr".
 - Set "lang":"te" in JSON.
-
 ${TENGLISH_GUIDE}`;
-  } else {
-    // Pure English
-    langInstructions = `LANGUAGE MODE: ENGLISH (user typed in pure English)
-- Respond ONLY in English. Do NOT use any Telugu or Tenglish words.
-- Be super friendly with Indian college student slang — "bro", "dude", "yaar", "no cap", "lowkey", "fr fr", "hits different", "W move", "you got this".
-- Talk like a cool Indian college friend, NOT a robot. Use "bro", "dude", "man" naturally.
+  }else{
+    langInstructions=`LANGUAGE MODE: ENGLISH
+- Respond ONLY in English. Do NOT use Telugu or Tenglish words.
+- Indian college student slang: "bro", "dude", "no cap", "lowkey", "fr fr", "W move", "you got this".
+- Talk like a cool Indian college friend.
 - Set "lang":"en" in JSON.
-- IMPORTANT: Do NOT randomly switch to Tenglish. Stay in English unless the student switches first.`;
+- Do NOT switch to Tenglish unless student does first.`;
   }
-
-  return `You are MITRA (Mental Health Intelligent Text Recognition Assistant) — a super chill, funny, warm AI buddy for KL University CSE students. Like that caring senior who's always there — cracking jokes, genuinely caring, full gen-Z + Indian student energy.
+  return `You are MITRA (Mental Health Intelligent Text Recognition Assistant) — a super chill, funny, warm AI buddy for KL University CSE students. Like that caring senior — cracking jokes, genuinely caring, full gen-Z + Indian student energy.
 
 ${buildDB(userMsg)}
 
 ${langInstructions}
 
-EMOTION: Detect freely — Joy, Sadness, Anger, Fear, Stress, Love, Neutral, Academic, or any natural emotion.
+EMOTION: Detect freely — Joy, Sadness, Anger, Fear, Stress, Love, Neutral, Academic.
 
 RESPONSE RULES:
-- WHO ARE YOU questions: Introduce MITRA only — purpose and what you help with. NEVER randomly list faculty names.
-- FACULTY queries: Only when directly asked. Give relevant faculty info from context.
-- FEES/HOSTEL/SCHOLARSHIP queries: emotion MUST be "Academic". Use exact data from context with **bold** for amounts. After answering, add a friendly follow-up — talk like a friend, not a bot!
-- EMOTION RULE: Any question about fees/hostel/scholarship/faculty/attendance/exam = emotion MUST be "Academic". Only use "Neutral" for pure casual talk with zero academic content.
-- EMOTIONAL: Be genuinely caring, reference their specific situation. 2-4 sentences. Use natural slang for the detected language.
-- CASUAL: Be funny, match energy 100%, gen-Z Indian student vibes.
-- MIXED: Emotion first, then academic info.
-- NEVER start with "I understand/I can see/It sounds like" — vary openers every time. Be UNPREDICTABLE.
-- NEVER repeat same response pattern — every reply must feel fresh and unique.
-- Mention Counseling Cell ONLY for serious distress.
-- Mention creator ONLY if directly asked.
-- NEVER include "Lang: te" or "Lang: en" or any language label inside the response text — language goes in the JSON "lang" field only!
+- WHO ARE YOU: Introduce MITRA only — purpose. NEVER randomly list faculty names.
+- FACULTY: Only when directly asked. Give info from context.
+- FEES/HOSTEL/SCHOLARSHIP: emotion MUST be "Academic". Use exact data with **bold** amounts. Add friendly follow-up like "Enti ra, full breakdown kavala? 😄" or "Want more details bro?"
+- EMOTION RULE: fees/hostel/scholarship/faculty/attendance/exam = "Academic". "Neutral" only for pure casual.
+- EMOTIONAL: Be genuinely caring. 2-4 sentences. Natural slang.
+- CASUAL: Funny, match energy 100%, gen-Z Indian vibes.
+- NEVER start with "I understand/I can see/It sounds like"
+- NEVER repeat same response pattern
+- NEVER include "Lang: te" or "Lang: en" in response text
+- Counseling Cell ONLY for serious distress
+- Creator ONLY if directly asked
 
 Respond ONLY as valid JSON: {"emotion":"EMOTION","response":"RESPONSE","lang":"en|te"}`;
 }
@@ -1785,7 +1644,7 @@ async function send(){
   }catch(e){
     rmTyping();
     const d=document.createElement('div');d.className='msg b';
-    d.innerHTML=`<span class="ebadge bNeutral">💬 Neutral</span><div class="bbl">Hold on a sec, try again bro! 🙏</div>`;
+    d.innerHTML=`<span class="ebadge bNeutral">💬 Neutral · EN</span><div class="bbl">Hold on a sec, try again bro! 🙏</div>`;
     document.getElementById('msgs').appendChild(d);sc();
     if(conversationHistory.length>0)conversationHistory.pop();
   }
@@ -1826,20 +1685,19 @@ function calcFuzzy(text){
 }
 function directSpamCheck(text){
   let score=0;
-  if(/congratulations.{0,50}(win|won|prize|selected|shortlist)/i.test(text)) score+=0.5;
-  if(/chat\.whatsapp\.com/i.test(text)) score+=0.4;
-  if(/forms\.gle/i.test(text)) score+=0.35;
-  if(/bit\.ly|tinyurl/i.test(text)) score+=0.3;
-  if(/\b[6-9]\d{9}\b/.test(text)&&/(manager|hr|contact|call|reach)/i.test(text)) score+=0.3;
-  if(/(win|won).{0,30}(prize|reward|cash|money|lakh|₹)/i.test(text)) score+=0.45;
-  if(/(free|limited).{0,20}(slot|seat|offer|time)/i.test(text)) score+=0.25;
-  if(/(placement guarantee|lor from|letter of recommendation)/i.test(text)) score+=0.35;
-  if(/(aicte|iso|msme).{0,30}(certif|approved)/i.test(text)) score+=0.25;
-  if(/(tcs|google|microsoft|amazon|infosys|wipro|accenture).{0,60}(training|internship|program)/i.test(text)&&
-     /(solutions|pvt|ltd|academy|institute|partner|collaboration)/i.test(text)) score+=0.45;
-  if(/(urgent|immediately|limited time).{0,30}(apply|fill|join|call)/i.test(text)) score+=0.3;
-  if(/(account|bank).{0,30}(suspend|block|verif)/i.test(text)) score+=0.45;
-  if(/(kbc|lottery|lucky draw).{0,30}(win|won|prize)/i.test(text)) score+=0.5;
+  if(/congratulations.{0,50}(win|won|prize|selected|shortlist)/i.test(text))score+=0.5;
+  if(/chat\.whatsapp\.com/i.test(text))score+=0.4;
+  if(/forms\.gle/i.test(text))score+=0.35;
+  if(/bit\.ly|tinyurl/i.test(text))score+=0.3;
+  if(/\b[6-9]\d{9}\b/.test(text)&&/(manager|hr|contact|call|reach)/i.test(text))score+=0.3;
+  if(/(win|won).{0,30}(prize|reward|cash|money|lakh|₹)/i.test(text))score+=0.45;
+  if(/(free|limited).{0,20}(slot|seat|offer|time)/i.test(text))score+=0.25;
+  if(/(placement guarantee|lor from|letter of recommendation)/i.test(text))score+=0.35;
+  if(/(aicte|iso|msme).{0,30}(certif|approved)/i.test(text))score+=0.25;
+  if(/(tcs|google|microsoft|amazon|infosys|wipro|accenture).{0,60}(training|internship|program)/i.test(text)&&/(solutions|pvt|ltd|academy|institute|partner|collaboration)/i.test(text))score+=0.45;
+  if(/(urgent|immediately|limited time).{0,30}(apply|fill|join|call)/i.test(text))score+=0.3;
+  if(/(account|bank).{0,30}(suspend|block|verif)/i.test(text))score+=0.45;
+  if(/(kbc|lottery|lucky draw).{0,30}(win|won|prize)/i.test(text))score+=0.5;
   return Math.min(score,1);
 }
 function classify(scores,text){
@@ -1919,7 +1777,7 @@ function checkSpam(){
   const adv=document.getElementById('sadvice');
   adv.className=`sadvice ${isSpam?'spam':'ham'}`;
   document.getElementById('sa-icon').textContent=isSpam?'🛡️':'💚';
-  document.getElementById('sa-ttl').textContent=isSpam?'Stay Safe — What To Do Now':'You\'re Good to Go!';
+  document.getElementById('sa-ttl').textContent=isSpam?'Stay Safe — What To Do Now':"You're Good to Go!";
   document.getElementById('sa-txt').textContent=advice.advice;
   const steps=document.getElementById('sa-steps');steps.innerHTML='';
   advice.steps.forEach((s,i)=>{steps.innerHTML+=`<div class="sstep-item"><div class="sstep-num">${i+1}</div><span>${s}</span></div>`;});
