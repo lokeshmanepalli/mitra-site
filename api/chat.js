@@ -50,7 +50,7 @@ export default async function handler(req, res) {
   return res.status(200).json({
     content: [{
       type: "text",
-      text: '{"emotion":"Neutral","response":"Arey yaar server oka chinna load lo undi ra — 10 seconds wait chesi again try cheyyi! 🙏","lang":"en"}'
+      text: '{"emotion":"Neutral","response":"Arey server chinna load lo undi ra — 10 seconds wait chesi again try cheyyi! 🙏","lang":"en"}'
     }]
   });
 }

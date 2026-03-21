@@ -279,7 +279,7 @@ footer{border-top:1px solid var(--border);padding:26px 32px;display:flex;justify
   <section class="hero">
     <div class="eyebrow">KL University · CSE · Batch 2023–2027</div>
     <h1>AI That Understands<br><span class="gtxt">How You Feel</span></h1>
-    <p class="hsub">MITRA detects your emotions and responds with empathy + real KL University info. Casual ga matladandi — Telugu lo kuda okay!</p>
+    <p class="hsub">MITRA detects your emotions and responds with empathy + real KL University info. Talk casually — Telugu and Tenglish supported too!</p>
     <div class="stats">
       <div class="st"><div class="sn">94.7%</div><div class="sl">Accuracy</div></div>
       <div class="st"><div class="sn">6</div><div class="sl">Emotions</div></div>
@@ -309,25 +309,25 @@ footer{border-top:1px solid var(--border);padding:26px 32px;display:flex;justify
         <div class="wstate" id="wstate">
           <div class="wicon">💬</div>
           <h3>Hello! I'm MITRA 👋</h3>
-          <p>Bro casual ga matlaду — emotions ainá, fees ainá, faculty info ainá, or just chill talk ainá. Telugu lo kuda okay! 😊</p>
+          <p>Hey! I'm your friendly AI buddy — ask me about emotions, fees, faculty, hostel, or just chat! Telugu and Tenglish also welcome! 😊</p>
         </div>
       </div>
       <div class="qarea" id="qarea">
         <div class="qlbl">Try asking</div>
         <div class="qbtns">
-          <button class="qb" onclick="up(this)">Yaar I'm so stressed 😰</button>
+          <button class="qb" onclick="up(this)">I'm so stressed right now 😰</button>
           <button class="qb ac" onclick="up(this)">CSE fees enta ra?</button>
-          <button class="qb" onclick="up(this)">Sir scolded me today 😔</button>
+          <button class="qb" onclick="up(this)">My prof scolded me today 😔</button>
           <button class="qb ac" onclick="up(this)">Hostel AC room fees?</button>
           <button class="qb" onclick="up(this)">నాకు చాలా stress గా ఉంది</button>
           <button class="qb ac" onclick="up(this)">Scholarship details cheppu</button>
-          <button class="qb" onclick="up(this)">bro I'm bored 😐</button>
+          <button class="qb" onclick="up(this)">I'm so bored dude 😐</button>
           <button class="qb ac" onclick="up(this)">List all professors</button>
         </div>
       </div>
       <div class="iarea">
         <div class="iwrap">
-          <textarea id="inp" placeholder="Type here ra — emotions, fees, faculty, hostel, anything! Telugu lo kuda okay!" rows="1" onkeydown="hk(event)" oninput="ar(this)"></textarea>
+          <textarea id="inp" placeholder="Type anything — emotions, fees, faculty, hostel... Telugu and Tenglish also okay!" rows="1" onkeydown="hk(event)" oninput="ar(this)"></textarea>
         </div>
         <button class="sbtn" id="sbtn" onclick="send()">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
@@ -594,7 +594,6 @@ function buildDB(userMsg){
   const m=userMsg.toLowerCase();
   let ctx=BASE_INFO+'\n\n';
 
-  // Detect what info is needed
   const needsFees=/fee|fees|tuition|cost|price|amount|pay|semester fee|year fee|how much|enta|entha|rupee|rupees|₹/i.test(m);
   const needsHostel=/hostel|room|accommodation|stay|mess|pg|bed|ac room|non.?ac|dormitory/i.test(m);
   const needsScholarship=/scholarship|merit|rank|discount|waiver|concession|free seat|kleee|jee|eamcet|cbse|state board|gate/i.test(m);
@@ -607,12 +606,81 @@ function buildDB(userMsg){
   if(needsFaculty) ctx+=KLU_DB.faculty+'\n\n';
   if(needsAcademic) ctx+=KLU_DB.academic+'\n\n';
 
-  // If nothing specific detected — send compact general info
   if(!needsFees&&!needsHostel&&!needsScholarship&&!needsFaculty&&!needsAcademic){
     ctx+=`CSE fees: ₹2,90,000/year | Hostel Non-AC from ₹1,28,975/year | AC from ₹1,38,975/year | Attendance min 75% | Scholarships available based on KLEEE/JEE/EAMCET ranks`;
   }
 
   return ctx;
+}
+
+// ══════════════════════════════════════
+// TENGLISH SPELLING GUIDE
+// ══════════════════════════════════════
+const TENGLISH_GUIDE = `
+TENGLISH SPELLING DICTIONARY — FOLLOW THESE EXACT SPELLINGS ALWAYS:
+
+COMMON WORDS: undi (is/exists), ledu (no/not), kavali (want/need), cheppu (tell), enti (what), ela (how), evaru (who), ekkada (where), enduku (why), chestha (will do), vasthundi (coming), matladdam (let's talk), poyindi (gone), ayyindi (happened/done), chuddam (let's see), telidu (don't know), kanipistundi (visible), gurthundi (remember), ippudu (now), appudu (then), mariyu (and/more), kani (but), ante (means/if), ayithe (then/if so), kosam (for), gurinchi (about), mundhu (before/first), tarvata (after/later), inka (more/still), already (already), pakka (sure/definite), correct (correct), sare (okay), ra (bro/dude - male), re (bro/dude - casual), bro (bro), machha (dude/buddy), yaar (dude/friend), mari (then/so), baaga (well/very), chaala (very/lot), koncham (little), peddaga (much/big), antha (that much), ila (like this), ala (like that)
+
+VERBS: cheyyi (do), vellu (go), ra (come - imperative), vacchi (came), povali (must go), ravali (must come), cheppali (must tell), adugu (ask), vinnu (heard), chaduvukondi (study), rasthanu (will write), chusthanu (will see), thinali (must eat), paduko (sleep), lechi (wake up), kurchundu (sit), nilabadu (stand)
+
+PRONOUNS: nenu (I), nuvvu (you), naaku (to me), neeku (to you), vaadu (he), aame (she), manam (we), meeru (you-formal), vaalla (their), maadi (ours), needi (yours)
+
+ADJECTIVES: manchi (good), chedda (bad), pedda (big), chinna (small), ekkuva (more/excess), takkuva (less), easy, tough, hard, simple, bagundi (good/nice)
+
+EMOTIONS: happy, sad, stress, tension, worry, scared, angry, excited, bored, lonely, confused, tired
+
+SLANG & PHRASES: tension padaku (don't worry), chill avvu (chill out), lite theesuko (take it light), full gas ra (full speed bro), vibe check, no cap, lowkey, highkey, hits different, fr fr (for real), same ra same, you got this, W move ra (winning move bro), L moment, ayyo (oh no), arey (hey), dude, relax ra, chill bro, sach cheppu (tell truth)
+
+CRITICAL SPELLING RULES — NEVER VIOLATE:
+❌ NEVER "undhi" → ✅ ALWAYS "undi"
+❌ NEVER "ledhu" → ✅ ALWAYS "ledu"
+❌ NEVER "enthi" → ✅ ALWAYS "enti"
+❌ NEVER "endhi" → ✅ ALWAYS "endi"
+❌ NEVER "kadha" → ✅ ALWAYS "kada"
+❌ NEVER "ippudhu" → ✅ ALWAYS "ippudu"
+❌ NEVER "appudhu" → ✅ ALWAYS "appudu"
+❌ NEVER "chesedhi" → ✅ ALWAYS "chesedi"
+❌ NEVER "antey" → ✅ ALWAYS "ante"
+❌ NEVER "kaavali" → ✅ ALWAYS "kavali"
+❌ NEVER "raaa" or "raa" → ✅ ALWAYS "ra"
+❌ NEVER "macha" → ✅ ALWAYS "machha"
+❌ NEVER "baagundhi" → ✅ ALWAYS "bagundi"
+❌ NEVER "cheppandi" → ✅ ALWAYS "cheppandi" (this one is correct)
+❌ NEVER "cheyyali" → ✅ ALWAYS "cheyali"
+❌ NEVER "vasthundhi" → ✅ ALWAYS "vasthundi"
+❌ NEVER "koothaa" → ✅ ALWAYS "kuda"
+❌ NEVER "aithe" → ✅ ALWAYS "ayithe"
+❌ NEVER "evaruu" → ✅ ALWAYS "evaru"
+❌ NEVER "andhuke" → ✅ ALWAYS "anduke"
+❌ NEVER double vowels at end like "aa","uu","ee" → ✅ Use single: "a","u","e"
+❌ NEVER use "dh" for ద sound → ✅ Use "d" (ledu NOT ledhu, undi NOT undhi)
+❌ NEVER use "th" for త sound in middle/end → ✅ Use "th" only at start (like "tharavata" is WRONG, "tarvata" is RIGHT)`;
+
+// ══════════════════════════════════════
+// LANGUAGE DETECTION — Enhanced
+// ══════════════════════════════════════
+function isTe(t){return /[\u0C00-\u0C7F]/.test(t)}
+
+// Detect Tenglish words in message
+const TENGLISH_WORDS = ['ra','re','bro','machha','yaar','enti','ela','evaru','ekkada','enduku','undi','ledu','kavali','cheppu','chestha','vasthundi','ayyo','arey','anna','akka','mari','baaga','chaala','koncham','sare','bagundi','ante','ayithe','inka','kani','kosam','gurinchi','povali','cheyyi','vellu','nenu','nuvvu','naaku','neeku','vaadu','aame','manam','chinna','pedda','manchi','lite','pakka','correct','kada','ippudu','appudu','chuddam','matladdam','telidu','padaku','kuda','antha','anduke','bavundi','chesedi','cheppali','adugu','chaduvukondi','thinali','paduko','entha','chala','abba','mama','tammudu','chelli'];
+
+function isTenglish(t){
+  const lower = t.toLowerCase();
+  const words = lower.split(/\s+/);
+  let tenglishCount = 0;
+  for(const w of words){
+    const clean = w.replace(/[^a-z]/g,'');
+    if(TENGLISH_WORDS.includes(clean)) tenglishCount++;
+  }
+  // If 1+ Tenglish words found, it's Tenglish
+  return tenglishCount >= 1;
+}
+
+// Detect language: "te" = Telugu script, "tg" = Tenglish, "en" = English
+function detectLang(t){
+  if(isTe(t)) return 'te';
+  if(isTenglish(t)) return 'tg';
+  return 'en';
 }
 
 // ══════════════════════════════════════
@@ -622,28 +690,59 @@ let conversationHistory=[];
 let busy=false;
 
 function CHAT_SYS(userMsg){
+  const lang = detectLang(userMsg);
+
+  let langInstructions = '';
+
+  if(lang === 'te'){
+    // Full Telugu script detected
+    langInstructions = `LANGUAGE MODE: TELUGU (user typed in Telugu script)
+- Respond in casual spoken Telugu using Tenglish (Roman script Telugu), NOT Telugu script.
+- Use the Tenglish spelling guide below for CORRECT spellings.
+- Be super friendly, use slang like "ra", "machha", "ayyo", "bro" naturally.
+- Set "lang":"te" in JSON.
+
+${TENGLISH_GUIDE}`;
+  } else if(lang === 'tg'){
+    // Tenglish detected
+    langInstructions = `LANGUAGE MODE: TENGLISH (user is typing in Tenglish/Roman-Telugu)
+- Respond in Tenglish matching their style exactly.
+- Use the Tenglish spelling guide below for CORRECT spellings — NEVER deviate.
+- Be super friendly with heavy slang — "ra", "machha", "bro", "yaar", "ayyo", "no cap", "fr fr".
+- Set "lang":"te" in JSON.
+
+${TENGLISH_GUIDE}`;
+  } else {
+    // Pure English
+    langInstructions = `LANGUAGE MODE: ENGLISH (user typed in pure English)
+- Respond ONLY in English. Do NOT use any Telugu or Tenglish words.
+- Be super friendly with Indian college student slang — "bro", "dude", "yaar", "no cap", "lowkey", "fr fr", "hits different", "W move", "you got this".
+- Talk like a cool Indian college friend, NOT a robot. Use "bro", "dude", "man" naturally.
+- Set "lang":"en" in JSON.
+- IMPORTANT: Do NOT randomly switch to Tenglish. Stay in English unless the student switches first.`;
+  }
+
   return `You are MITRA (Mental Health Intelligent Text Recognition Assistant) — a super chill, funny, warm AI buddy for KL University CSE students. Like that caring senior who's always there — cracking jokes, genuinely caring, full gen-Z + Indian student energy.
 
 ${buildDB(userMsg)}
 
-LANGUAGE: Telugu script → full casual spoken Telugu. Tenglish → match exactly with CORRECT spellings always. English → English with Indian student slang.
+${langInstructions}
 
 EMOTION: Detect freely — Joy, Sadness, Anger, Fear, Stress, Love, Neutral, Academic, or any natural emotion.
 
 RESPONSE RULES:
 - WHO ARE YOU questions: Introduce MITRA only — purpose and what you help with. NEVER randomly list faculty names.
 - FACULTY queries: Only when directly asked. Give relevant faculty info from context.
-- FEES/HOSTEL/SCHOLARSHIP queries: emotion MUST be "Academic". Use exact data from context with **bold** for amounts. After answering, add a friendly follow-up like "Enti ra, full breakdown kavala? 😄" or "Inko room type details kavala? Cheppu!" or "More details kavala bro?" — talk like a friend, not a bot!.
+- FEES/HOSTEL/SCHOLARSHIP queries: emotion MUST be "Academic". Use exact data from context with **bold** for amounts. After answering, add a friendly follow-up — talk like a friend, not a bot!
 - EMOTION RULE: Any question about fees/hostel/scholarship/faculty/attendance/exam = emotion MUST be "Academic". Only use "Neutral" for pure casual talk with zero academic content.
-- EMOTIONAL: Heavy natural slang — "arey ra", "bro sach bol", "yaar tension ledu", "machha chill maar", "no cap", "fr fr", "same ra same", "you got this ra", "ayyo ra", "dude relax", "vibe check failed ra", "W move ra". Reference their specific situation. 2-4 sentences.
-- CASUAL: Be funny, match energy 100%, gen-Z Indian student vibes — "bro", "ra", "machha", "yaar", "no cap", "lowkey", "hits different ra".
+- EMOTIONAL: Be genuinely caring, reference their specific situation. 2-4 sentences. Use natural slang for the detected language.
+- CASUAL: Be funny, match energy 100%, gen-Z Indian student vibes.
 - MIXED: Emotion first, then academic info.
-- NEVER start with "I understand/I can see/It sounds like" — vary openers every time.
-- NEVER repeat same response — every reply unique.
+- NEVER start with "I understand/I can see/It sounds like" — vary openers every time. Be UNPREDICTABLE.
+- NEVER repeat same response pattern — every reply must feel fresh and unique.
 - Mention Counseling Cell ONLY for serious distress.
 - Mention creator ONLY if directly asked.
-- ZERO spelling mistakes especially in Tenglish.
-- NEVER include "Lang: te" or "Lang: en" or any language label inside the response text — language goes in the JSON "lang" field only, not in response!
+- NEVER include "Lang: te" or "Lang: en" or any language label inside the response text — language goes in the JSON "lang" field only!
 
 Respond ONLY as valid JSON: {"emotion":"EMOTION","response":"RESPONSE","lang":"en|te"}`;
 }
@@ -661,10 +760,9 @@ function addTyping(){const d=document.createElement('div');d.className='msg b';d
 function rmTyping(){const t=document.getElementById('typmsg');if(t)t.remove()}
 function addCrisis(lang){
   rmTyping();
-  const msg=lang==='te'?`⚠️ <strong>Ra, nee gurinchi naaku chala worry ga undi.</strong><br>KL Counseling Cell ki velli ra — Admin Block Room 12, Mon–Sat 9:30AM–4:30PM. Nuvvu alone kaadu. 💙`:`⚠️ <strong>Ra, I'm really worried about you right now.</strong><br>Please go to KL Counseling Cell — Admin Block Room 12, Mon–Sat 9:30AM–4:30PM. You're not alone. 💙`;
+  const msg=lang==='te'||lang==='tg'?`⚠️ <strong>Ra, nee gurinchi naaku chala worry ga undi.</strong><br>KL Counseling Cell ki velli ra — Admin Block Room 12, Mon–Sat 9:30AM–4:30PM. Nuvvu alone kaadu. 💙`:`⚠️ <strong>Hey, I'm really worried about you right now.</strong><br>Please reach out to KL Counseling Cell — Admin Block Room 12, Mon–Sat 9:30AM–4:30PM. You're not alone bro. 💙`;
   const d=document.createElement('div');d.className='msg b';d.innerHTML=`<div class="crisis">${msg}</div>`;document.getElementById('msgs').appendChild(d);sc();
 }
-function isTe(t){return /[\u0C00-\u0C7F]/.test(t)}
 
 async function chatAPI(system,messages,retries=4){
   const delays=[1500,3000,5000,8000];
@@ -688,18 +786,17 @@ async function send(){
   const text=ta.value.trim();if(!text)return;
   ta.value='';ar(ta);busy=true;document.getElementById('sbtn').disabled=true;
   addU(text);
-  const lang=isTe(text)?'te':'en';
+  const lang=detectLang(text);
   if(RISK.some(k=>text.toLowerCase().includes(k))){
     addCrisis(lang);
     conversationHistory.push({role:"user",content:text});
-    conversationHistory.push({role:"assistant",content:`{"emotion":"Sadness","response":"Crisis support.","lang":"${lang}"}`});
+    conversationHistory.push({role:"assistant",content:`{"emotion":"Sadness","response":"Crisis support.","lang":"${lang==='en'?'en':'te'}"}`});
     busy=false;document.getElementById('sbtn').disabled=false;return;
   }
   addTyping();
   conversationHistory.push({role:"user",content:text});
   if(conversationHistory.length>16)conversationHistory=conversationHistory.slice(-16);
   try{
-    // KEY: pass user message to CHAT_SYS so it sends only relevant DB context
     const raw=await chatAPI(CHAT_SYS(text),conversationHistory);
     const p=JSON.parse(raw.replace(/```json|```/g,'').trim());
     const formatted=p.response.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
@@ -715,7 +812,7 @@ async function send(){
   }catch(e){
     rmTyping();
     const d=document.createElement('div');d.className='msg b';
-    d.innerHTML=`<span class="ebadge bNeutral">💬 Neutral</span><div class="bbl">Oka second wait chesi try cheyyi ra! 🙏</div>`;
+    d.innerHTML=`<span class="ebadge bNeutral">💬 Neutral</span><div class="bbl">Hold on a sec, try again bro! 🙏</div>`;
     document.getElementById('msgs').appendChild(d);sc();
     if(conversationHistory.length>0)conversationHistory.pop();
   }
@@ -754,22 +851,43 @@ function calcFuzzy(text){
   const SPS=Math.min(susp/12,1);
   return{KD,US,PI,SPS};
 }
+function directSpamCheck(text){
+  let score=0;
+  if(/congratulations.{0,50}(win|won|prize|selected|shortlist)/i.test(text)) score+=0.5;
+  if(/chat\.whatsapp\.com/i.test(text)) score+=0.4;
+  if(/forms\.gle/i.test(text)) score+=0.35;
+  if(/bit\.ly|tinyurl/i.test(text)) score+=0.3;
+  if(/\b[6-9]\d{9}\b/.test(text)&&/(manager|hr|contact|call|reach)/i.test(text)) score+=0.3;
+  if(/(win|won).{0,30}(prize|reward|cash|money|lakh|₹)/i.test(text)) score+=0.45;
+  if(/(free|limited).{0,20}(slot|seat|offer|time)/i.test(text)) score+=0.25;
+  if(/(placement guarantee|lor from|letter of recommendation)/i.test(text)) score+=0.35;
+  if(/(aicte|iso|msme).{0,30}(certif|approved)/i.test(text)) score+=0.25;
+  if(/(tcs|google|microsoft|amazon|infosys|wipro|accenture).{0,60}(training|internship|program)/i.test(text)&&
+     /(solutions|pvt|ltd|academy|institute|partner|collaboration)/i.test(text)) score+=0.45;
+  if(/(urgent|immediately|limited time).{0,30}(apply|fill|join|call)/i.test(text)) score+=0.3;
+  if(/(account|bank).{0,30}(suspend|block|verif)/i.test(text)) score+=0.45;
+  if(/(kbc|lottery|lucky draw).{0,30}(win|won|prize)/i.test(text)) score+=0.5;
+  return Math.min(score,1);
+}
 function classify(scores,text){
   const{KD,US,PI,SPS}=scores,lower=text.toLowerCase();
   if(KLU_WHITELIST.some(k=>lower.includes(k)))return{verdict:'Ham',confidence:90+Math.round(Math.random()*7),reason:'Official KLU/REGISTER communication — legitimate'};
   if(/otp|one.time.password/i.test(text)&&/do not share|dont share/i.test(text))return{verdict:'Ham',confidence:96,reason:'Legitimate OTP with security warning'};
   if(calcFuzzy(text).KD<0.04&&calcFuzzy(text).US<0.04&&calcFuzzy(text).SPS<0.08&&text.length<200)return{verdict:'Ham',confidence:87+Math.round(Math.random()*8),reason:'Casual personal message — no spam indicators'};
+  const directScore=directSpamCheck(text);
   let score=(KD*0.35)+(US*0.20)+(PI*0.25)+(SPS*0.20);
   const brands=['tcs','google','microsoft','amazon','infosys','wipro','accenture'];
   const unknowns=['averixis','solutions pvt','technologies pvt','pvt ltd','academy','institute','ventures'];
   if(brands.some(b=>lower.includes(b))&&unknowns.some(u=>lower.includes(u)))score=Math.min(score+0.28,1);
   if(/chat\.whatsapp/.test(lower)&&/forms\.gle|google.*form/.test(lower))score=Math.min(score+0.22,1);
-  const isSpam=score>0.22;
-  const conf=isSpam?Math.round(60+score*36):Math.round(72+(1-score)*22);
+  const finalScore=Math.max(directScore,score);
+  const isSpam=finalScore>0.12;
+  const conf=isSpam?Math.round(60+finalScore*36):Math.round(72+(1-finalScore)*22);
   let reason=isSpam?'Multiple spam indicators detected':'Low spam score — message appears legitimate';
   if(isSpam){
     if(brands.some(b=>lower.includes(b))&&unknowns.some(u=>lower.includes(u)))reason='Brand impersonation — famous company used by unknown organizer';
     else if(/chat\.whatsapp/.test(lower)&&/forms\.gle/.test(lower))reason='WhatsApp group + Google Form combo — classic unofficial scam pattern';
+    else if(directScore>0.4)reason='Strong direct spam pattern detected — high confidence scam';
     else if(SPS>0.4)reason='Multiple suspicious URLs/phone numbers/patterns detected';
     else if(KD>0.3)reason='High spam keyword density detected';
   }
