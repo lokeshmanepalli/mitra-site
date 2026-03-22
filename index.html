@@ -896,7 +896,13 @@ const SAMPLES={
   friend:`Hey bro coming to college tomorrow? ML lab at 10am. Meet at canteen 9:30 first? Bring lab record also, sir might check.`
 };
 function loadSample(key){document.getElementById('smsg').value=SAMPLES[key]||'';document.getElementById('smsg').focus();document.getElementById('sresult').classList.remove('show');document.getElementById('fuzzy-section').classList.remove('show');}
-classList.add('active');}
+function sw(tab,btn){
+  document.querySelectorAll('.tpage').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.ntab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('page-'+tab).classList.add('active');
+  btn.classList.add('active');
+  if(tab==='academics') renderFaculty();
+}
 function om(){document.getElementById('mov').classList.add('open')}
 function cm(){document.getElementById('mov').classList.remove('open')}
 function co(e){if(e.target===document.getElementById('mov'))cm()}
