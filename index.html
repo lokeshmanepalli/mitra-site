@@ -283,8 +283,6 @@ footer{border-top:1px solid var(--border);padding:26px 32px;display:flex;justify
 .mrv{color:var(--t2);line-height:1.5}.mrv a{color:var(--teal);text-decoration:none}
 @media(max-width:640px){nav{padding:12px 14px}.ntabs{gap:3px}.ntab{padding:4px 9px;font-size:10.5px}footer{flex-direction:column;padding:24px 16px}.fr{align-items:flex-start}.modal{padding:22px 18px}.scheck-row{flex-direction:column;align-items:stretch}.scheck-btn{justify-content:center}.fuzzy-grid{grid-template-columns:1fr}}
 </style>
-    <script src="data.js"></script>
-    <script src="faculty_data.js"></script>
 </head>
 <body>
 <div class="orbs"><div class="orb o1"></div><div class="orb o2"></div></div>
@@ -580,7 +578,8 @@ function renderFaculty(){
   }).join('');
 }
 
-renderFaculty();
+// renderFaculty() called only when Faculty tab is opened (via sw() function)
+// NOT on page load — avoids FAC_DATA not defined error
 
 // ══════════════════════════════════════
 // TENGLISH SPELLING GUIDE
@@ -622,6 +621,88 @@ function detectLang(t){
 // ══════════════════════════════════════
 let conversationHistory=[];
 let busy=false;
+
+// ══════════════════════════════════════
+// CREATOR VERIFICATION SYSTEM
+// ══════════════════════════════════════
+let creatorVerification={
+  active:false,
+  step:0,
+  correct:0,
+  questions:[
+    "Interesting! 🤔 Let's begin your verification! **Question 1 of 3:** What is your favourite Web Series and Movie? 🎬",
+    "Great answer! 😊 **Question 2 of 3:** What are your top 3 favourite songs? 🎵 (tell me all 3!)",
+    "Interesting response! 🎯 **Question 3 of 3:** Who is your favourite Pop Star / Singer? 🌟"
+  ],
+  // Answer checkers — flexible matching
+  check:[
+    (ans)=>{
+      const a=ans.toLowerCase();
+      return (a.includes('dark')&&(a.includes('fight club')||a.includes('fightclub')));
+    },
+    (ans)=>{
+      const a=ans.toLowerCase();
+      return (a.includes('peaky')||a.includes('otnicka'))&&
+             (a.includes('till forever')||a.includes('ashe'))&&
+             (a.includes('holy')||a.includes('bieber')||a.includes('justin'));
+    },
+    (ans)=>{
+      const a=ans.toLowerCase();
+      return a.includes('justin bieber')||a.includes('justin')||
+             /\bjb\b/.test(a)||a.includes('bieber');
+    }
+  ]
+};
+
+function isCreatorClaim(text){
+  const t=text.toLowerCase();
+  return (t.includes('lokesh')&&(t.includes('creator')||t.includes('i am')||t.includes('iam')||t.includes('myself')))||
+         (t.includes('i am your creator'))||
+         (t.includes('i am lokesh'))||
+         (t.includes('iam lokesh'))||
+         (t.includes('nenu lokesh'))||
+         (t.includes('nenu creator'));
+}
+
+function handleCreatorVerification(text){
+  const v=creatorVerification;
+
+  // Start verification
+  if(!v.active){
+    v.active=true;
+    v.step=0;
+    v.correct=0;
+    return `Hey there! 👋 Great to speak to you, Lokesh! But before I confirm your identity as my Creator, I need to verify you with **3 quick questions**! 🔐\n\n${v.questions[0]}`;
+  }
+
+  // Check current answer — always respond positively regardless of right/wrong
+  // (psychological trick — never reveal if answer was right or wrong!)
+  const isCorrect=v.check[v.step](text);
+  if(isCorrect) v.correct++;
+  v.step++;
+
+  // Still have more questions
+  if(v.step<3){
+    const encouragements=[
+      "Great answer! 😊",
+      "Interesting! 🤔 Love it!",
+      "Nice one! 👌",
+      "Hmm, interesting! 😄"
+    ];
+    const enc=encouragements[Math.floor(Math.random()*encouragements.length)];
+    return `${enc} ${v.questions[v.step]}`;
+  }
+
+  // All 3 questions done — now reveal result
+  v.active=false;
+  const allCorrect=v.correct===3;
+
+  if(allCorrect){
+    return `🎉 **Verification Complete!**\n\nBased on your answers... **CONFIRMED!** ✅\n\nWelcome back, Creator Lokesh! 🙌 You built me, you trained me, and I'm proud to be your creation! Ready to assist as always! 😎🔥`;
+  }else{
+    return `🎭 **Verification Complete!**\n\nHmm... Based on your answers, it is confirmed that you are **NOT Lokesh Manepalli** — my Creator! ❌\n\n**Nice Try Buddy! 😄🎭** Better luck next time! If you're the real Lokesh, you know what to do! 😉\n\nAnyway, how can I help you today? 😊`;
+  }
+}
 
 function CHAT_SYS(userMsg){
   const lang=detectLang(userMsg);
@@ -714,6 +795,19 @@ async function send(){
   ta.value='';ar(ta);busy=true;document.getElementById('sbtn').disabled=true;
   addU(text);
   const lang=detectLang(text);
+
+  // ── CREATOR VERIFICATION CHECK ──
+  if(creatorVerification.active||isCreatorClaim(text)){
+    const reply=handleCreatorVerification(text);
+    setTimeout(()=>{
+      const formatted=reply.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>');
+      const d=document.createElement('div');d.className='msg b';
+      d.innerHTML=`<span class="ebadge bNeutral">🔐 Verification · EN</span><div class="bbl">${formatted}</div>`;
+      document.getElementById('msgs').appendChild(d);sc();
+    },800);
+    busy=false;document.getElementById('sbtn').disabled=false;ta.focus();return;
+  }
+
   if(RISK.some(k=>text.toLowerCase().includes(k))){
     addCrisis(lang);
     conversationHistory.push({role:"user",content:text});
@@ -907,5 +1001,7 @@ function om(){document.getElementById('mov').classList.add('open')}
 function cm(){document.getElementById('mov').classList.remove('open')}
 function co(e){if(e.target===document.getElementById('mov'))cm()}
 </script>
+<script src="data.js"></script>
+<script src="faculty_data.js"></script>
 </body>
 </html>
