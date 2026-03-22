@@ -629,11 +629,6 @@ let creatorVerification={
   active:false,
   step:0,
   correct:0,
-  questions:[
-    "Interesting! 🤔 Let's begin your verification! **Question 1 of 3:** What is your favourite Web Series and Movie? 🎬",
-    "Great answer! 😊 **Question 2 of 3:** What are your top 3 favourite songs? 🎵 (tell me all 3!)",
-    "Interesting response! 🎯 **Question 3 of 3:** Who is your favourite Pop Star / Singer? 🌟"
-  ],
   // Answer checkers — flexible matching
   check:[
     (ans)=>{
@@ -655,45 +650,55 @@ let creatorVerification={
 };
 
 function isCreatorClaim(text){
-  const t=text.toLowerCase();
-  return (t.includes('lokesh')&&(t.includes('creator')||t.includes('i am')||t.includes('iam')||t.includes('myself')))||
-         (t.includes('i am your creator'))||
-         (t.includes('i am lokesh'))||
-         (t.includes('iam lokesh'))||
-         (t.includes('nenu lokesh'))||
-         (t.includes('nenu creator'));
+  const t=text.toLowerCase().trim();
+  // Only trigger when someone is DIRECTLY claiming to be Lokesh
+  // NOT when asking about the feature or talking about it
+  const directClaims=[
+    'i am lokesh',
+    'i am your creator',
+    'iam lokesh',
+    'iam your creator',
+    'nenu lokesh',
+    'nenu creator',
+    'nenu mitra creator',
+    'myself lokesh',
+    'this is lokesh'
+  ];
+  // Must be a short direct claim — not a question or explanation about the feature
+  // If sentence is long (>60 chars) or contains question words, skip
+  if(t.length>80) return false;
+  if(/\?|if|when|someone|anybody|how|what|why|about|means|tell me/.test(t)) return false;
+  return directClaims.some(claim=>t.includes(claim));
 }
 
 function handleCreatorVerification(text){
   const v=creatorVerification;
 
-  // Start verification
+  // Start verification — only show intro + Q1, no duplicate text
   if(!v.active){
     v.active=true;
     v.step=0;
     v.correct=0;
-    return `Hey there! 👋 Great to speak to you, Lokesh! But before I confirm your identity as my Creator, I need to verify you with **3 quick questions**! 🔐\n\n${v.questions[0]}`;
+    return `Hey there! 👋 Great to speak to you, Lokesh! But before I confirm your identity as my Creator, I need to verify you with **3 quick questions**! 🔐\n\n**Question 1 of 3:** What is your favourite Web Series and Movie? 🎬`;
   }
 
-  // Check current answer — always respond positively regardless of right/wrong
-  // (psychological trick — never reveal if answer was right or wrong!)
+  // Check current answer
   const isCorrect=v.check[v.step](text);
   if(isCorrect) v.correct++;
   v.step++;
 
-  // Still have more questions
+  // Still have more questions — just encouragement + NEXT question (no duplicate!)
   if(v.step<3){
-    const encouragements=[
-      "Great answer! 😊",
-      "Interesting! 🤔 Love it!",
-      "Nice one! 👌",
-      "Hmm, interesting! 😄"
-    ];
+    const encouragements=['Great answer! 😊','Interesting! 🤔','Nice one! 👌','Hmm, interesting! 😄'];
     const enc=encouragements[Math.floor(Math.random()*encouragements.length)];
-    return `${enc} ${v.questions[v.step]}`;
+    const nextQuestions=[
+      '**Question 2 of 3:** What are your top 3 favourite songs? 🎵 (tell me all 3!)',
+      '**Question 3 of 3:** Who is your favourite Pop Star / Singer? 🌟'
+    ];
+    return `${enc}\n\n${nextQuestions[v.step-1]}`;
   }
 
-  // All 3 questions done — now reveal result
+  // All 3 done — reveal result
   v.active=false;
   const allCorrect=v.correct===3;
 
