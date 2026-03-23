@@ -20,7 +20,15 @@ Labs & Research Centers: 344+
 Programs Offered: 100+ UG, PG, Doctoral, Post-Doctoral programs
 Placement Record: ~100% placement record for last decade
 Helpline: 1800-599-1888 (Toll Free)
-Counseling Cell: Admin Block Room 12, Mon-Sat 9:30AM-4:30PM
+Counseling Services: KLU has dedicated psychologists & counselors for mental health, stress management, anxiety support.
+  - Direct Access: Students can approach counselors directly at C-Block, Vaddeswaram Campus
+  - Contact: cvimala@kluniversity.in | 📞 7981337620
+  - Faculty Mentor System: Each student assigned a faculty mentor from 2nd year till graduation (15-20 students per mentor)
+  - Department Counselors: Each department has dedicated counseling staff (e.g., CSE dept has own counselors)
+  - Women Development Cell: Specialized counseling for female students
+  - SWEAR Analysis: Career counseling framework (Strengths, Weaknesses, Eligibility, Availability, Resources)
+  - Mental Health Policy: Confidential, safe space for emotional well-being
+  - Sessions tracked with regular HoD feedback
 Website: kluniversity.in
 
 CAMPUSES:
@@ -553,9 +561,21 @@ function buildKLUContext(userMsg) {
     ctx += KLU_DATA.academic + '\n\n';
   }
 
-  // ── Faculty queries ──
-  if (/professor|faculty|staff|lecturer|teacher|hod|who teach|evaru/i.test(m)) {
-    ctx += `KLU FACULTY: 1014+ faculty members across all departments at Vijayawada and Hyderabad campuses. CSE dept alone has 55+ Professors, 120+ Associate Professors, 150+ Assistant Professors. Check the Faculty tab for complete directory with search & filter.\n\n`;
+  // ── Hostel facilities query ──
+  if (/facilit|amenit|room type|ac room|non.?ac|attached|common toilet|what.*hostel|hostel.*what|provided.*hostel|hostel.*provided/i.test(m)) {
+    ctx += KLU_DATA.hostels_boys + '\n\n';
+    ctx += KLU_DATA.hostels_girls + '\n\n';
+    ctx += KLU_DATA.hostel_fees + '\n\n';
+    ctx += `HOSTEL FACILITIES: 9 Boys Hostels + 2 Girls Hostels. Room types: 2-bed, 3-bed with attached/common toilets. AC and Non-AC rooms available. Deluxe rooms with study room available. Food: Veg + Non-Veg both available. South Indian + North Indian menu. Mess timings: Breakfast 6:15-9:15AM, Lunch 11:45AM-2:30PM, Snacks 4:45-5:45PM, Dinner 7:30-9:15PM. WiFi available. Medical center 24/7.\n\n`;
+  }
+
+  // ── Faculty queries — use getFacultyChatSummary if available ──
+  if (/professor|faculty|staff|lecturer|teacher|hod|who teach|evaru|list.*prof|all.*prof|prof.*list/i.test(m)) {
+    // getFacultyChatSummary is defined in faculty_data.js
+    const facSummary = typeof getFacultyChatSummary === 'function'
+      ? getFacultyChatSummary(userMsg)
+      : `KLU has 1014+ faculty across all departments. CSE: 57 Professors, 150+ Assoc Profs, 300+ Asst Profs. Check Faculty tab for full list!`;
+    ctx += `FACULTY INFO: ${facSummary}\n\n`;
   }
 
   // ── Fallback — if NOTHING matched, send all hostel + basic summary ──
