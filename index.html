@@ -853,7 +853,7 @@ async function send(){
     const p=JSON.parse(raw.replace(/```json|```/g,'').trim());
     const formatted=p.response.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
     rmTyping();
-    const em={Joy:'😊',Sadness:'😢',Anger:'😠',Fear:'😨',Stress:'😰',Love:'❤️',Neutral:'💬',Academic:'🎓'};
+    const em={Joy:'😊',Sadness:'😢',Anger:'😠',Fear:'😨',Stress:'😰',Love:'❤️',Neutral:'',Academic:'🎓'};
     const langLabel=p.lang==='te'?'· TE':'· EN';
     const bc=`b${p.emotion}`;
     const bl=`${em[p.emotion]||'💬'} ${p.emotion} ${langLabel}`;
