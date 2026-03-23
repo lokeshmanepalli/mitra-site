@@ -408,10 +408,35 @@ Y23 BATCH (3.2 SEMESTER) TIMELINE:
 📋 Detention List: 16 April 2026
 📖 End-Sem Theory & Lab Exams: 20 Apr – 03 May 2026
 
-ATTENDANCE RULES:
-• Minimum: 75% attendance required
-• Condonation: Up to 65% with valid medical reason
-• Below 65%: Detained (cannot attend end-sem exams)
+ATTENDANCE POLICY (Official):
+━━━ MINIMUM REQUIREMENT ━━━
+• All programs: Minimum 85% attendance required per course
+• BBA-LLB / LLB / LLM: Minimum 70% attendance required
+
+━━━ CONDONATION (Medical/Special cases) ━━━
+• All programs: Between 75%–85% → Condonation allowed (submit medical certificate)
+• BBA-LLB / LLB / LLM: Between 65%–70% → Condonation allowed
+• Max condonation: 10% only
+• Documents needed: Medical certificate from recognized practitioner
+
+━━━ DETENTION ━━━
+• All programs: Below 75% → DETAINED (no end-sem exam)
+• BBA-LLB / LLB / LLM: Below 65% → DETAINED
+• B.Arch special: Need 85% attendance + 50% internal marks
+• No relaxation in detention — strictly enforced!
+
+━━━ SPECIAL CONDONATION CASES ━━━
+• Medical grounds: Up to 10% condonation (with certificate)
+• Representing KLEF/State/Country in sports or co-curricular: Up to 10%
+• Maximum condonation in any case: 10% only
+
+━━━ ATTENDANCE MARKS (Optional — max 5 marks) ━━━
+All programs (except BBA-LLB/LLB/LLM):
+• 85–88% → 1 mark | 89–91% → 2 marks | 92–94% → 3 marks
+• 95–97% → 4 marks | 98–100% → 5 marks | Below 85% → 0 marks
+BBA-LLB / LLB:
+• 70–80% → 1 mark | 81–85% → 2 marks | 86–90% → 3 marks
+• 91–95% → 4 marks | 96–100% → 5 marks | Below 70% → 0 marks
 
 GRADING SYSTEM:
 • Internal: 40 marks | External: 60 marks | Total: 100
@@ -536,7 +561,7 @@ function buildKLUContext(userMsg) {
 
   // If nothing matched, send brief summary
   if (ctx === KLU_DATA.about + '\n\n') {
-    ctx += `QUICK SUMMARY: CSE fees ₹2,90,000/year | Hostel Non-AC from ₹1,28,975/year | AC from ₹1,38,975/year | Min 75% attendance | Scholarships available via KLEEE/JEE/EAMCET/CBSE | 9 Boys Hostels + 2 Girls Hostels | 1014+ faculty`;
+    ctx += `QUICK SUMMARY: CSE fees ₹2,90,000/year | Hostel Non-AC from ₹1,28,975/year | AC from ₹1,38,975/year | Min 85% attendance (75% with condonation) | Scholarships available via KLEEE/JEE/EAMCET/CBSE | 9 Boys Hostels + 2 Girls Hostels | 1014+ faculty`;
   }
 
   return ctx;
