@@ -346,20 +346,19 @@ Friday: Idly, Atukulu, Mysore Baji, Tomato Rava Bhath, Sambar, Mirchi Palli Chut
 Saturday: Idly, Uthappam, Wheat Rava Upma, Tomato Bhath, Sambar, Ginger Coconut Chutney, Dal Chutney, Jam, Bread, Cornflakes, Milk, Coffee, Boiled Egg
 Sunday: Idly, Semiya Bhath, Wheat Rava Upma, Sambar, Garlic Peanut Chutney, Onion Tomato Chutney, Jam, Bread, Cornflakes, Milk, Coffee, Boiled Egg
 
-LUNCH MENU (Daily includes): Plain Rice, Salad, Chapati, Sabzi/Curry, Rasam/Sambar, Flavoured Rice, Dal, Pickle, Curd, Buttermilk, Brown Rice, Millet
-Sunday Special: Veg Biryani + Chicken Masala
+LUNCH MENU (All days include): Plain Rice, Salad, Chapati, Rasam/Sambar, Dal, Pickle, Curd, Buttermilk, Brown Rice, Millet
+LUNCH DAY-WISE SABZI/CURRY:
+Monday: Sorakai 65 + Mix Veg Curry | Tuesday: Ladish Finger Fry + Aloo Green Peas Tomato
+Wednesday: Alu Mudhkura + Louki Channa | Thursday: Dondakai 65 + Aloo Capsicum Masala
+Friday: Cabbage Pakodi + Aloo Kabuli Channa Masala | Saturday: Fryams + Aloo Kabuli Channa
+Sunday SPECIAL: Veg Biryani + Chicken Masala + Paneer Capsicum + Onion Raitha + Curd
 
-SNACKS MENU:
-Monday: Pani Puri, Tea & Milk
-Tuesday: Dil Pasand, Badam Milk
-Wednesday: Masala Palli, Tea & Milk
-Thursday: Pastry, Tea & Milk
-Friday: Basundi, Tea & Milk
-Saturday: Mirchi Bajji, Tea & Milk
-Sunday: Biscuits, Tea & Milk
-
-DINNER MENU (Daily includes): Plain Rice, Salad, Idly, Chapati, Sabzi/Dry Curry, Egg/Chicken, Sambar/Rasam, Chutney, Dal, Pachadi, Curd, Pickle
-Friday/Wednesday/Sunday: Chicken Curry | Monday-Thursday: Boiled Egg
+DINNER MENU (All days include): Plain Rice, Salad, Idly, Chapati, Sambar/Rasam, Dal, Pachadi, Curd, Pickle
+DINNER NON-VEG DAY-WISE:
+Monday: Boiled Egg + Carrot Fry | Tuesday: Egg Burji + Channa Masala
+Wednesday: Chicken Curry + Methi Paneer | Thursday: Egg Curry + Tindle Masala
+Friday: Chicken Curry + Cabbage Fry | Saturday: Beans Carrot Alu Kurma (VEG ONLY)
+Sunday: Drumstick Alu Curry + Carrot Beans White Peas Dry
 Note: Menu subject to change based on availability`,
 
   // ════════════════════════════════
