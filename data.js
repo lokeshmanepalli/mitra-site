@@ -499,69 +499,73 @@ function buildKLUContext(userMsg) {
   const m = userMsg.toLowerCase();
   let ctx = KLU_DATA.about + '\n\n';
 
-  // Fee queries
+  // ── Fee queries ──
   const needsFees = /fee|fees|tuition|cost|price|amount|pay|how much|enta|entha|rupee|rupees|₹|semester fee|year fee/i.test(m);
   const needsHydFees = /hyderabad|hyd|aziz|bowrampet|kondapur|gbs/i.test(m);
-
   if (needsFees && needsHydFees) {
     ctx += KLU_DATA.fees_hyderabad + '\n\n';
   } else if (needsFees) {
     ctx += KLU_DATA.fees_vijayawada + '\n\n';
-    // Also add HYD if campus not specified
-    if (!/vijayawada|klv|main campus/i.test(m)) {
-      ctx += KLU_DATA.fees_hyderabad + '\n\n';
-    }
+    if (!/vijayawada|klv|main campus/i.test(m)) ctx += KLU_DATA.fees_hyderabad + '\n\n';
   }
 
-  // Scholarship queries
+  // ── Scholarship queries ──
   if (/scholarship|merit|rank|discount|waiver|concession|free seat|kleee|jee|eamcet|cbse|state board|gate|nata|clat|klecet|klhat|klsat|klmat/i.test(m)) {
     ctx += KLU_DATA.scholarships + '\n\n';
   }
 
-  // Hostel queries
-  const needsHostel = /hostel|room|accommodation|stay|mess|pg|bed|ac room|non.?ac|dormitory|warden|incharge/i.test(m);
-  const needsGirls = /girl|female|women|himalaya|kanchanganga/i.test(m);
+  // ── Hostel detection — expanded keywords ──
+  const needsHostel = /hostel|accommodation|stay|mess|pg|dormitory|warden|incharge|boys hostel|girls hostel/i.test(m);
+  const needsContact = /contact|phone|number|call|reach|incharge|warden/i.test(m);
   const needsBoys = /boy|male|men|aravali|vindhya|tulip|tirumala|sahyadri|satpura|kailash|nilagiri|malabar/i.test(m);
+  const needsGirls = /girl|female|women|himalaya|kanchanganga/i.test(m);
 
-  if (needsHostel) {
-    if (needsGirls) {
-      ctx += KLU_DATA.hostels_girls + '\n\n';
-    } else if (needsBoys) {
-      ctx += KLU_DATA.hostels_boys + '\n\n';
-    } else {
-      ctx += KLU_DATA.hostels_boys + '\n\n' + KLU_DATA.hostels_girls + '\n\n';
-    }
+  // Send hostel data if hostel mentioned OR specific hostel name mentioned OR contact asked in hostel context
+  if (needsHostel || needsBoys || needsGirls) {
+    ctx += KLU_DATA.hostels_boys + '\n\n';
+    ctx += KLU_DATA.hostels_girls + '\n\n';
   }
 
-  // Hostel fees
-  if (/hostel fee|room rent|mess fee|electricity deposit|hostel cost|hostel amount/i.test(m) || (needsHostel && needsFees)) {
+  // ── Hostel fees ──
+  if (/hostel fee|room rent|mess fee|electricity deposit|hostel cost|room type|ac room|non.?ac|deluxe|suite|bed/i.test(m)
+      || (needsHostel && needsFees)) {
     ctx += KLU_DATA.hostel_fees + '\n\n';
   }
 
-  // Food/menu queries
-  if (/food|menu|breakfast|lunch|dinner|snack|mess menu|dining|eat|tiffin|biryani|meal/i.test(m)) {
+  // ── Food/Menu queries — VERY expanded triggers ──
+  const needsFood = /food|menu|breakfast|lunch|dinner|snack|mess menu|dining|eat|tiffin|biryani|meal|dish|dishes|non.?veg|nonveg|vegetarian|\bveg\b|sunday|monday|tuesday|wednesday|thursday|friday|saturday|weekly menu|today.*food|food.*today|what.*eat|eating|served|serving|available.*food|food.*available|rice|chapati|idly|dosa|curry|sambar|rasam/i.test(m);
+  if (needsFood) {
     ctx += KLU_DATA.hostel_dining + '\n\n';
+    // Also send hostel info in case phone/contact needed
+    if (!needsHostel && !needsBoys && !needsGirls) {
+      ctx += KLU_DATA.hostels_boys + '\n\n';
+    }
   }
 
-  // Hostel rules
-  if (/rule|regulation|timing|curfew|visitor|fine|prohibited|allowed|not allowed/i.test(m) && needsHostel) {
+  // ── Hostel rules ──
+  if (/rule|regulation|timing|curfew|visitor|fine|prohibited|allowed|not allowed|tv time|study hour/i.test(m)) {
     ctx += KLU_DATA.hostel_rules + '\n\n';
+    ctx += KLU_DATA.hostels_boys + '\n\n';
+    ctx += KLU_DATA.hostels_girls + '\n\n';
   }
 
-  // Academic queries
+  // ── Academic queries ──
   if (/attendance|exam|holiday|schedule|grading|internal|external|gpa|cgpa|pass|fail|detain|semester|sem|calendar|detention|end.?sem|in.?sem/i.test(m)) {
     ctx += KLU_DATA.academic + '\n\n';
   }
 
-  // Faculty count query (just numbers, not full names)
-  // Full FAC_DATA is handled separately in index.html
+  // ── Faculty queries ──
   if (/professor|faculty|staff|lecturer|teacher|hod|who teach|evaru/i.test(m)) {
     ctx += `KLU FACULTY: 1014+ faculty members across all departments at Vijayawada and Hyderabad campuses. CSE dept alone has 55+ Professors, 120+ Associate Professors, 150+ Assistant Professors. Check the Faculty tab for complete directory with search & filter.\n\n`;
   }
 
-  // If nothing matched, send brief summary
+  // ── Fallback — if NOTHING matched, send all hostel + basic summary ──
+  // This handles follow-up queries like "give me contact details" / "what about fees"
   if (ctx === KLU_DATA.about + '\n\n') {
-    ctx += `QUICK SUMMARY: CSE fees ₹2,90,000/year | Hostel Non-AC from ₹1,28,975/year | AC from ₹1,38,975/year | Min 85% attendance (75% with condonation) | Scholarships available via KLEEE/JEE/EAMCET/CBSE | 9 Boys Hostels + 2 Girls Hostels | 1014+ faculty`;
+    ctx += KLU_DATA.hostels_boys + '\n\n';
+    ctx += KLU_DATA.hostels_girls + '\n\n';
+    ctx += KLU_DATA.hostel_dining + '\n\n';
+    ctx += `QUICK SUMMARY: CSE fees ₹2,90,000/year | Hostel Non-AC from ₹1,28,975/year | AC from ₹1,38,975/year | Min 85% attendance | Scholarships via KLEEE/JEE/EAMCET/CBSE | 9 Boys + 2 Girls Hostels | 1014+ faculty`;
   }
 
   return ctx;
